@@ -1,5 +1,7 @@
 import { CollisionEngine } from "./collisionEngine.js";
 import { Shape, Vector } from "./math.js";
+import { Assets } from "./assets.js";
+import { bg } from "./assets.gen/bg.js";
 
 export class Game {
     lastTick = 0;
@@ -15,6 +17,7 @@ export class Game {
     ctx;
 
     collisionEngine = new CollisionEngine();
+    assets = new Assets();
 
     playerShape = new Shape([new Vector(0, 0), new Vector(0, 50), new Vector(50, 50), new Vector(50, 0)]);
     testShape = new Shape([new Vector(75, 50), new Vector(100, 75), new Vector(100, 25)])
@@ -23,9 +26,10 @@ export class Game {
     constructor() {
         this.lastTick = performance.now();
         this.lastRender = this.lastTick;
-        this.ctx = canvas.getContext("2d");
+        this.ctx = this.canvas.getContext("2d");
         document.addEventListener("keydown", e => this.keyDownHandler(e), false);
         document.addEventListener("keyup", e => this.keyUpHandler(e), false);
+        this.assets.loadSvg("bg", bg);
     }
 
     loop(tFrame) {
@@ -87,6 +91,7 @@ export class Game {
     render(tFrame) {
         const ctx = this.ctx;
         ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        if (this.assets.ready) ctx.drawImage(this.assets.bg, 0, 0);
         ctx.beginPath();
         const collide = this.collisionEngine.satCollide(this.playerShape, this.testShape);
         if (collide != null) {
