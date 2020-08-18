@@ -83,20 +83,46 @@ export class Bell {
     }
 
     setup() {
-        this.gainNode = this.context.createGain();
+        const gainNode = this.context.createGain();
+        gainNode.gain.value = 0;
         this.oscillator = this.context.createOscillator();
         this.oscillator.type = 'sine';
         this.oscillator.frequency.value = 880;
-        this.oscillator.connect(this.gainNode);
-        this.gainNode.connect(this.context.destination);
+        this.oscillator.connect(gainNode);
+        this.oscillator.start(this.context.currentTime);
+        this.adsr = new Adsr();
+        this.adsr.connect(gainNode.gain);
+        gainNode.connect(this.context.destination);
     }
 
     trigger(time) {
         this.setup();
-        this.oscillator.start(time);
-        this.oscillator.stop(time + 1);
-        this.gainNode.gain.setValueAtTime(0, time);
-        this.gainNode.gain.linearRampToValueAtTime(1, time + 0.01);
-        this.gainNode.gain.linearRampToValueAtTime(0, time + 1);
+        this.adsr.play(time, 1);
+    }
+}
+
+export class Adsr {
+    constructor(attack = 0.05, decay = 0.02, sustain = 0.5, release = 0.02) {
+        this.attack = attack;
+        this.decay = decay;
+        this.sustain = sustain;
+        this.release = release;
+    }
+
+    connect(destination) {
+        this.param = destination;
+    }
+
+    disconnect() {
+        this.param = null;
+    }
+
+    play(now, duration) {
+        this.param.cancelScheduledValues(now);
+        this.param.setValueAtTime(0, now);
+        this.param.linearRampToValueAtTime(1, now + this.attack);
+        this.param.linearRampToValueAtTime(this.sustain, now + this.attack + this.decay);
+        this.param.linearRampToValueAtTime(0, now + duration);
+        setTimeout(this.disconnect(), duration);
     }
 }
