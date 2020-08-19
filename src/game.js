@@ -10,8 +10,6 @@ export class Game {
 
     right = false;
     left = false;
-    down = false;
-    up = false;
 
     canvas = document.getElementById("canvas");
     ctx;
@@ -19,9 +17,10 @@ export class Game {
     collisionEngine = new CollisionEngine();
     assets = new Assets();
 
-    playerShape = new Shape([new Vector(0, 0), new Vector(0, 50), new Vector(50, 50), new Vector(50, 0)]);
-    testShape = new Shape([new Vector(75, 50), new Vector(100, 75), new Vector(100, 25)])
-    testShape2 = new Shape([new Vector(150, 150), new Vector(150, 200), new Vector(200, 200), new Vector(200, 150)]);
+    playerShape = Shape.circle(50, 50, 20);
+    speed = new Vector(0, 0);
+    testShape = new Shape([new Vector(75, 50), new Vector(100, 75), new Vector(100, 25)]);
+    groundShape = new Shape([new Vector(0, 480), new Vector(320, 480), new Vector(320, 450), new Vector(0, 400)]);
 
     constructor() {
         this.lastTick = performance.now();
@@ -55,11 +54,23 @@ export class Game {
     }
 
     update(tFrame) {
-        const factor = 1;
-        if (this.right) this.translateX(factor);
-        if (this.left) this.translateX(-factor);
-        if (this.up) this.translateY(-factor);
-        if (this.down) this.translateY(factor);
+        const factor = 0.0001;
+        if (this.right) this.speed.x += factor;
+        if (this.left) this.speed.x -= factor;
+        this.speed.y += 0.0001;
+        const collision = this.collisionEngine.satCollide(this.playerShape, this.testShape);
+        if (collision != null) {
+        }
+        const collision2 = this.collisionEngine.satCollide(this.playerShape, this.groundShape);
+        if (collision2 != null) {
+            const reaction = -0.5 * collision2.dot(this.speed);
+            if (reaction < 0) {
+                this.speed.x = collision2.x * reaction;
+                this.speed.y = collision2.y * reaction;
+            }
+        }
+        this.translateX(this.speed.x * tFrame);
+        this.translateY(this.speed.y * tFrame);
     }
 
     translateX(value) {
@@ -77,15 +88,11 @@ export class Game {
     keyDownHandler(event) {
         if (event.key == "ArrowRight") this.right = true;
         if (event.key == "ArrowLeft") this.left = true;
-        if (event.key == "ArrowUp") this.up = true;
-        if (event.key == "ArrowDown") this.down = true;
     }
 
     keyUpHandler(event) {
         if (event.key == "ArrowRight") this.right = false;
         if (event.key == "ArrowLeft") this.left = false;
-        if (event.key == "ArrowUp") this.up = false;
-        if (event.key == "ArrowDown") this.down = false;
     }
 
     render(tFrame) {
@@ -93,31 +100,26 @@ export class Game {
         ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         if (this.assets.ready) ctx.drawImage(this.assets.bg, 0, 0);
         ctx.beginPath();
-        const collide = this.collisionEngine.satCollide(this.playerShape, this.testShape);
-        if (collide != null) {
-            this.translateX(collide.x);
-            this.translateY(collide.y);
-        }
-        const collide2 = this.collisionEngine.satCollide(this.playerShape, this.testShape2);
-        if (collide2 != null) {
-            this.translateX(collide2.x);
-            this.translateY(collide2.y);
-        }
-        ctx.rect(this.playerShape.vertices[0].x, this.playerShape.vertices[0].y, 50, 50);
+        ctx.fillStyle = "#000000";
+        this.draw(this.playerShape, ctx);
+        ctx.fill();
+        ctx.closePath();
         ctx.fillStyle = "#FF0000";
+        ctx.beginPath();
+        this.draw(this.testShape, ctx);
         ctx.fill();
         ctx.closePath();
         ctx.beginPath();
-        ctx.moveTo(this.testShape.vertices[0].x, this.testShape.vertices[0].y);
-        ctx.lineTo(this.testShape.vertices[1].x, this.testShape.vertices[1].y);
-        ctx.lineTo(this.testShape.vertices[2].x, this.testShape.vertices[2].y);
-        ctx.fillStyle = collide2 != null ? "#FF0000" : "#000000";
+        this.draw(this.groundShape, ctx);
         ctx.fill();
         ctx.closePath();
-        ctx.beginPath();
-        ctx.rect(this.testShape2.vertices[0].x, this.testShape2.vertices[0].y, 50, 50);
-        ctx.fillStyle = collide2 != null ? "#FF0000" : "#000000";
-        ctx.fill();
-        ctx.closePath();
+    }
+
+    draw(shape, ctx) {
+        ctx.moveTo(shape.vertices[0].x, shape.vertices[0].y);
+        for (let i = 1; i < shape.vertices.length; i++) {
+            const vertex = shape.vertices[i];
+            ctx.lineTo(vertex.x, vertex.y);
+        }
     }
 }

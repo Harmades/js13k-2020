@@ -66,8 +66,8 @@ export class CollisionEngine {
             }
         }
 
-        minVector.x = minOverlap * minVector.x;
-        minVector.y = minOverlap * minVector.y;
+        minVector.x = minVector.x;
+        minVector.y = minVector.y;
         return minVector;
     }
 
