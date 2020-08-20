@@ -1,15 +1,4 @@
-export class Vector {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    dot(vector) { return this.x * vector.x + this.y * vector.y; }
-
-    perp() { return new Vector(this.y, -this.x); }
-
-    subtract(vector) { return new Vector(this.x - vector.x, this.y - vector.y); }
-}
+import { Vector } from "./vector.js";
 
 export class Shape {
     constructor(vertices) {
@@ -20,12 +9,18 @@ export class Shape {
         return this.vertices.reduce(
             (minMax, vertice) => {
                 const value = vertice.dot(vector);
-                if (value < minMax.min) minMax.min = value;
-                if (value > minMax.max) minMax.max = value;
+                if (value < minMax.min)
+                    minMax.min = value;
+                if (value > minMax.max)
+                    minMax.max = value;
                 return minMax;
             },
             { min: this.vertices[0].dot(vector), max: this.vertices[0].dot(vector) }
         );
+    }
+
+    translate(vector) {
+        this.vertices = this.vertices.map(vertex => vertex.add(vector));
     }
 
     static circle(x, y, radius) {
@@ -36,5 +31,9 @@ export class Shape {
             vertices[i] = new Vector(x + radius * Math.cos(i * angle), y + radius * Math.sin(i * angle));
         }
         return new Shape(vertices);
+    }
+
+    static rectangle(x, y, width, height) {
+        return new Shape([new Vector(x, y), new Vector(x, y + height), new Vector(x + width, y + height), new Vector(x + width, y)]);
     }
 }

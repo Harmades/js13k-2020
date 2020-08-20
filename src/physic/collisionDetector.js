@@ -1,30 +1,13 @@
-import { Vector, Shape } from './math.js';
+import { Vector } from "../math/vector.js";
+import { Shape } from "../math/shape.js";
 
-export class CollisionEngine {
-    constructor() { }
-
-
-    run(entities) {
-        
-    }
-
-    detect(entities) {
-
-    }
-
-    resolve(collisions) {
-        
-    }
-
+export class CollisionDetector {
     getSeparatingAxes(shape) {
         let axes = [];
         for (let i = 0; i < shape.vertices.length; i++) {
             const v1 = shape.vertices[i];
             const v2 = shape.vertices[(i + 1) % (shape.vertices.length)];
-            const edge = v2.subtract(v1);
-            const length = Math.sqrt(edge.x ** 2 + edge.y ** 2);
-            edge.x = edge.x / length;
-            edge.y = edge.y / length;
+            const edge = v2.subtract(v1).normalize();
             axes[i] = edge.perp();
         }
         return axes;
@@ -66,9 +49,7 @@ export class CollisionEngine {
             }
         }
 
-        minVector.x = minVector.x;
-        minVector.y = minVector.y;
-        return minVector;
+        return minVector.multiply(minOverlap);
     }
 
     getOverlap(projection1, projection2) {
@@ -76,13 +57,5 @@ export class CollisionEngine {
         const min = Math.max(projection1.min, projection2.min);
         const max = Math.min(projection1.max, projection2.max);
         return Math.sign(projection1.min - projection2.min) * (max - min);
-    }
-}
-
-export class Collision {
-    constructor(entity1, entity2, translationVector) {
-        this.entity1 = entity1;
-        this.entity2 = entity2;
-        this.translationVector = translationVector;
     }
 }

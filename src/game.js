@@ -1,7 +1,9 @@
-import { CollisionEngine } from "./collisionEngine.js";
-import { Shape, Vector } from "./math.js";
+import { Vector } from "./math/vector.js";
+import { Shape } from "./math/shape.js";
 import { Assets } from "./assets.js";
 import { bg } from "./assets.gen/bg.js";
+import { Body } from "./physic/body.js";
+import { CollisionEngine } from "./physic/collisionEngine.js";
 
 export class Game {
     lastTick = 0;
@@ -12,15 +14,7 @@ export class Game {
     left = false;
 
     canvas = document.getElementById("canvas");
-    ctx;
-
-    collisionEngine = new CollisionEngine();
     assets = new Assets();
-
-    playerShape = Shape.circle(50, 50, 20);
-    speed = new Vector(0, 0);
-    testShape = new Shape([new Vector(75, 50), new Vector(100, 75), new Vector(100, 25)]);
-    groundShape = new Shape([new Vector(0, 480), new Vector(320, 480), new Vector(320, 450), new Vector(0, 400)]);
 
     constructor() {
         this.lastTick = performance.now();
@@ -29,6 +23,15 @@ export class Game {
         document.addEventListener("keydown", e => this.keyDownHandler(e), false);
         document.addEventListener("keyup", e => this.keyUpHandler(e), false);
         this.assets.loadSvg("bg", bg);
+
+        this.ground = new Body(null);
+        this.ground.shape = new Shape([new Vector(0, 480), new Vector(320, 480), new Vector(320, 450), new Vector(0, 400)]);
+        this.ground.position = new Vector(0, 480);
+        this.player = new Body(null);
+        this.player.shape = Shape.circle(50, 50, 25);
+        this.player.position = new Vector(50, 50);
+
+        this.collisionEngine = new CollisionEngine();
     }
 
     loop(tFrame) {
@@ -49,40 +52,15 @@ export class Game {
     queueUpdates(numTicks) {
         for (var i = 0; i < numTicks; i++) {
             this.lastTick += this.tickLength;
-            this.update(this.lastTick);
+            this.update(this.tickLength);
         }
     }
 
     update(tFrame) {
-        const factor = 0.0001;
-        if (this.right) this.speed.x += factor;
-        if (this.left) this.speed.x -= factor;
-        this.speed.y += 0.0001;
-        const collision = this.collisionEngine.satCollide(this.playerShape, this.testShape);
-        if (collision != null) {
-        }
-        const collision2 = this.collisionEngine.satCollide(this.playerShape, this.groundShape);
-        if (collision2 != null) {
-            const reaction = -0.5 * collision2.dot(this.speed);
-            if (reaction < 0) {
-                this.speed.x = collision2.x * reaction;
-                this.speed.y = collision2.y * reaction;
-            }
-        }
-        this.translateX(this.speed.x * tFrame);
-        this.translateY(this.speed.y * tFrame);
-    }
-
-    translateX(value) {
-        for (const vertex of this.playerShape.vertices) {
-            vertex.x += value; 
-        }
-    }
-
-    translateY(value) {
-        for (const vertex of this.playerShape.vertices) {
-            vertex.y += value; 
-        }
+        if (this.right) this.player.applyImpulse(new Vector(1000, 0));
+        if (this.left) this.player.applyImpulse(new Vector(-1000, 0));
+        this.collisionEngine.update(this.player, this.ground);
+        this.player.update(tFrame / 1000);
     }
 
     keyDownHandler(event) {
@@ -101,16 +79,12 @@ export class Game {
         if (this.assets.ready) ctx.drawImage(this.assets.bg, 0, 0);
         ctx.beginPath();
         ctx.fillStyle = "#000000";
-        this.draw(this.playerShape, ctx);
+        this.draw(this.player.shape, ctx);
         ctx.fill();
         ctx.closePath();
         ctx.fillStyle = "#FF0000";
         ctx.beginPath();
-        this.draw(this.testShape, ctx);
-        ctx.fill();
-        ctx.closePath();
-        ctx.beginPath();
-        this.draw(this.groundShape, ctx);
+        this.draw(this.ground.shape, ctx);
         ctx.fill();
         ctx.closePath();
     }
