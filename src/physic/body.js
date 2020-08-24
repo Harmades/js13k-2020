@@ -14,6 +14,10 @@ export class Body {
         this.force = this.force.add(force);
     }
 
+    rotate(angle) {
+        this.shape.rotate(angle);
+    }
+
     translate(vector) {
         this.position.add(vector);
         this.shape.translate(vector);

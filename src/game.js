@@ -4,14 +4,12 @@ import { Assets } from "./assets.js";
 import { bg } from "./assets.gen/bg.js";
 import { Body } from "./physic/body.js";
 import { CollisionEngine } from "./physic/collisionEngine.js";
+import { Input } from './input.js';
 
 export class Game {
     lastTick = 0;
     tickLength = 10;
     lastRender = 0;
-
-    right = false;
-    left = false;
 
     canvas = document.getElementById("canvas");
     assets = new Assets();
@@ -20,8 +18,6 @@ export class Game {
         this.lastTick = performance.now();
         this.lastRender = this.lastTick;
         this.ctx = this.canvas.getContext("2d");
-        document.addEventListener("keydown", e => this.keyDownHandler(e), false);
-        document.addEventListener("keyup", e => this.keyUpHandler(e), false);
         this.assets.loadSvg("bg", bg);
 
         this.ground = new Body(null);
@@ -31,7 +27,13 @@ export class Game {
         this.player.shape = Shape.circle(50, 50, 25);
         this.player.position = new Vector(50, 50);
 
+        this.leftFlipper = new Body(null);
+        this.leftFlipper.shape = new Shape([new Vector(20, 480), new Vector(100, 480), new Vector(100, 450), new Vector(20, 450)]);
+        this.leftFlipper.position = new Vector(20, 480);
+        this.lRotate = false;
+
         this.collisionEngine = new CollisionEngine();
+        this.input = new Input();
     }
 
     loop(tFrame) {
@@ -57,20 +59,18 @@ export class Game {
     }
 
     update(tFrame) {
-        if (this.right) this.player.applyImpulse(new Vector(1000, 0));
-        if (this.left) this.player.applyImpulse(new Vector(-1000, 0));
-        this.collisionEngine.update(this.player, this.ground);
+        if (this.input.right) {
+        }
+        if (this.input.left && !this.lRotate) {
+            this.leftFlipper.rotate(-Math.PI / 6);
+            this.lRotate = true;
+        }
+        if (!this.input.left && this.lRotate) {
+            this.leftFlipper.rotate(Math.PI / 6);
+            this.lRotate = false;
+        }
+        this.collisionEngine.update(this.player, this.leftFlipper);
         this.player.update(tFrame / 1000);
-    }
-
-    keyDownHandler(event) {
-        if (event.key == "ArrowRight") this.right = true;
-        if (event.key == "ArrowLeft") this.left = true;
-    }
-
-    keyUpHandler(event) {
-        if (event.key == "ArrowRight") this.right = false;
-        if (event.key == "ArrowLeft") this.left = false;
     }
 
     render(tFrame) {
@@ -84,7 +84,11 @@ export class Game {
         ctx.closePath();
         ctx.fillStyle = "#FF0000";
         ctx.beginPath();
-        this.draw(this.ground.shape, ctx);
+        // this.draw(this.ground.shape, ctx);
+        // ctx.fill();
+        ctx.closePath();
+        ctx.beginPath();
+        this.draw(this.leftFlipper.shape, ctx);
         ctx.fill();
         ctx.closePath();
     }

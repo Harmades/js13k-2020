@@ -23,6 +23,17 @@ export class Shape {
         this.vertices = this.vertices.map(vertex => vertex.add(vector));
     }
 
+    rotate(angle) {
+        const c = Math.cos(angle);
+        const s = Math.sin(angle);
+        const center = this.vertices[0];
+        this.vertices = this.vertices.map(vertex =>
+            new Vector(
+                c * (vertex.x - center.x) - s * (vertex.y - center.y) + center.x,
+                s * (vertex.x - center.x) + c * (vertex.y - center.y) + center.y
+            ));
+    }
+
     static circle(x, y, radius) {
         const vertices = [];
         const sides = 26;
