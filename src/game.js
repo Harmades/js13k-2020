@@ -5,6 +5,8 @@ import { bg } from "./assets.gen/bg.js";
 import { Body } from "./physic/body.js";
 import { CollisionEngine } from "./physic/collisionEngine.js";
 import { Input } from './input.js';
+import { Paddle } from "./paddle.js";
+import { Ball } from "./ball.js";
 
 export class Game {
     lastTick = 0;
@@ -20,17 +22,25 @@ export class Game {
         this.ctx = this.canvas.getContext("2d");
         this.assets.loadSvg("bg", bg);
 
-        this.ground = new Body(null);
-        this.ground.shape = new Shape([new Vector(0, 480), new Vector(320, 480), new Vector(320, 450), new Vector(0, 400)]);
-        this.ground.position = new Vector(0, 480);
-        this.player = new Body(null);
-        this.player.shape = Shape.circle(50, 50, 25);
-        this.player.position = new Vector(50, 50);
+        this.leftFlipper = new Paddle(new Vector(5, 460), 'right', -Math.PI / 6);
+        this.rightFlipper = new Paddle(new Vector(315, 460), 'left', Math.PI / 6);
 
-        this.leftFlipper = new Body(null);
-        this.leftFlipper.shape = new Shape([new Vector(20, 480), new Vector(100, 480), new Vector(100, 450), new Vector(20, 450)]);
-        this.leftFlipper.position = new Vector(20, 480);
-        this.lRotate = false;
+        this.player = new Ball();
+
+        this.leftWall = { };
+        this.leftWall.body = new Body(null);
+        this.leftWall.body.shape = new Shape([new Vector(-100, 0), new Vector(-100, 480), new Vector(0, 480), new Vector(0, 0)]);
+        this.leftWall.body.position = new Vector(0, 0);
+
+        this.topWall = { };
+        this.topWall.body = new Body(null);
+        this.topWall.body.shape = new Shape([new Vector(0, 0), new Vector(320, 0), new Vector(320, -100), new Vector(0, -100)]);
+        this.topWall.body.position = new Vector(0, -100);
+
+        this.rightWall = { };
+        this.rightWall.body = new Body(null);
+        this.rightWall.body.shape = new Shape([new Vector(320, 0), new Vector(320, 480), new Vector(420, 480), new Vector(420, 0)]);
+        this.rightWall.body.position = new Vector(320, 0);
 
         this.collisionEngine = new CollisionEngine();
         this.input = new Input();
@@ -59,17 +69,16 @@ export class Game {
     }
 
     update(tFrame) {
-        if (this.input.right) {
-        }
-        if (this.input.left && !this.lRotate) {
-            this.leftFlipper.rotate(-Math.PI / 6);
-            this.lRotate = true;
-        }
-        if (!this.input.left && this.lRotate) {
-            this.leftFlipper.rotate(Math.PI / 6);
-            this.lRotate = false;
-        }
+        if (this.input.left) this.leftFlipper.flip();
+        if (this.input.right) this.rightFlipper.flip();
+        this.leftFlipper.update(tFrame);
+        this.rightFlipper.update(tFrame);
         this.collisionEngine.update(this.player, this.leftFlipper);
+        this.collisionEngine.update(this.player, this.rightFlipper);
+        this.collisionEngine.update(this.player, this.leftWall);
+        this.collisionEngine.update(this.player, this.topWall);
+        this.collisionEngine.update(this.player, this.rightWall);
+
         this.player.update(tFrame / 1000);
     }
 
@@ -79,16 +88,16 @@ export class Game {
         if (this.assets.ready) ctx.drawImage(this.assets.bg, 0, 0);
         ctx.beginPath();
         ctx.fillStyle = "#000000";
-        this.draw(this.player.shape, ctx);
+        this.draw(this.player.body.shape, ctx);
         ctx.fill();
         ctx.closePath();
         ctx.fillStyle = "#FF0000";
         ctx.beginPath();
-        // this.draw(this.ground.shape, ctx);
-        // ctx.fill();
+        this.draw(this.leftFlipper.body.shape, ctx);
+        ctx.fill();
         ctx.closePath();
         ctx.beginPath();
-        this.draw(this.leftFlipper.shape, ctx);
+        this.draw(this.rightFlipper.body.shape, ctx);
         ctx.fill();
         ctx.closePath();
     }

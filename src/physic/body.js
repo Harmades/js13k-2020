@@ -5,17 +5,18 @@ export class Body {
     constructor(mass) {
         this.position = Vector.zero();
         this.speed = Vector.zero();
-        this.mass = mass || 10;
+        this.mass = mass;
         this.shape = Shape.rectangle(0, 0, 50, 50);
-        this.force = Vector.zero();
+        this.impulse = Vector.zero();
+        this.field = new Vector(0, 100 * this.mass);
     }
 
     applyImpulse(force) {
-        this.force = this.force.add(force);
+        this.impulse = this.impulse.add(force);
     }
 
     rotate(angle) {
-        this.shape.rotate(angle);
+        this.shape.rotate(this.position, angle);
     }
 
     translate(vector) {
@@ -24,8 +25,8 @@ export class Body {
     }
 
     update(delta) {
-        this.speed = this.speed.add(this.force.multiply(1 / this.mass * delta));
+        this.speed = this.speed.add(this.impulse.add(this.field).multiply(1 / this.mass * delta));
         this.translate(this.speed.multiply(delta));
-        this.force = new Vector(0, 1000);
+        this.impulse = Vector.zero();
     }
 }

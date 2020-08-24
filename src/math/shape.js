@@ -23,10 +23,9 @@ export class Shape {
         this.vertices = this.vertices.map(vertex => vertex.add(vector));
     }
 
-    rotate(angle) {
+    rotate(center, angle) {
         const c = Math.cos(angle);
         const s = Math.sin(angle);
-        const center = this.vertices[0];
         this.vertices = this.vertices.map(vertex =>
             new Vector(
                 c * (vertex.x - center.x) - s * (vertex.y - center.y) + center.x,
