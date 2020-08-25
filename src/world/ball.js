@@ -1,7 +1,7 @@
-import { Shape } from "./math/shape.js";
-import { Vector } from "./math/vector.js";
-import { Body } from "./physic/body.js";
-import { Settings } from "./settings.js";
+import { Shape } from "../math/shape.js";
+import { Vector } from "../math/vector.js";
+import { Body } from "../physic/body.js";
+import { Settings } from "../settings.js";
 
 export class Ball {
     constructor() {

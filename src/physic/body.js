@@ -10,6 +10,8 @@ export class Body {
         this.impulse = Vector.zero();
         this.field = Vector.zero();
         this.bounciness = 1;
+        this.isStatic = false;
+        this.ignoreCollision = false;
     }
 
     applyImpulse(force) {

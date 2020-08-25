@@ -1,13 +1,12 @@
 import { Vector } from "./math/vector.js";
-import { Shape } from "./math/shape.js";
 import { Assets } from "./assets.js";
 import { bg } from "./assets.gen/bg.js";
-import { Body } from "./physic/body.js";
 import { CollisionEngine } from "./physic/collisionEngine.js";
 import { Input } from './input.js';
-import { Paddle } from "./paddle.js";
-import { Ball } from "./ball.js";
+import { Paddle } from "./world/paddle.js";
+import { Ball } from "./world/ball.js";
 import { Settings } from "./settings.js";
+import { Wall } from "./world/wall.js";
 
 export class Game {
 
@@ -24,26 +23,10 @@ export class Game {
 
         this.leftFlipper = new Paddle(new Vector(5, 460), 'right');
         this.rightFlipper = new Paddle(new Vector(315, 460), 'left');
-
         this.player = new Ball();
-
-        this.leftWall = { };
-        this.leftWall.body = new Body(null);
-        this.leftWall.body.shape = new Shape([new Vector(-100, 0), new Vector(-100, 480), new Vector(0, 480), new Vector(0, 0)]);
-        this.leftWall.body.position = new Vector(0, 0);
-        this.leftWall.body.bounciness = Settings.wallBounciness;
-
-        this.topWall = { };
-        this.topWall.body = new Body(null);
-        this.topWall.body.shape = new Shape([new Vector(0, 0), new Vector(320, 0), new Vector(320, -100), new Vector(0, -100)]);
-        this.topWall.body.position = new Vector(0, -100);
-        this.topWall.body.bounciness = Settings.wallBounciness;
-
-        this.rightWall = { };
-        this.rightWall.body = new Body(null);
-        this.rightWall.body.shape = new Shape([new Vector(320, 0), new Vector(320, 480), new Vector(420, 480), new Vector(420, 0)]);
-        this.rightWall.body.position = new Vector(320, 0);
-        this.rightWall.body.bounciness = Settings.wallBounciness;
+        this.leftWall = new Wall(new Vector(-100, 0), 100, 480);
+        this.topWall = new Wall(new Vector(0, -100), 320, 100);
+        this.rightWall = new Wall(new Vector(320, 0), 100, 480);
 
         this.collisionEngine = new CollisionEngine();
         this.input = new Input();

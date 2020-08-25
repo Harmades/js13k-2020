@@ -1,6 +1,5 @@
 import { Vector } from "../math/vector.js";
 import { Body } from "../physic/body.js";
-import { Paddle } from "../paddle.js";
 
 export class CollisionResolver {
     resolve(body1, body2, mtv) {
