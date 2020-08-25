@@ -7,23 +7,23 @@ import { CollisionEngine } from "./physic/collisionEngine.js";
 import { Input } from './input.js';
 import { Paddle } from "./paddle.js";
 import { Ball } from "./ball.js";
+import { Settings } from "./settings.js";
 
 export class Game {
-    lastTick = 0;
-    tickLength = 10;
-    lastRender = 0;
-
-    canvas = document.getElementById("canvas");
-    assets = new Assets();
 
     constructor() {
+        this.tickLength = Settings.engineTimeResolution;
         this.lastTick = performance.now();
         this.lastRender = this.lastTick;
+
+        this.canvas = document.getElementById("canvas");
         this.ctx = this.canvas.getContext("2d");
+
+        this.assets = new Assets();
         this.assets.loadSvg("bg", bg);
 
-        this.leftFlipper = new Paddle(new Vector(5, 460), 'right', -Math.PI / 6);
-        this.rightFlipper = new Paddle(new Vector(315, 460), 'left', Math.PI / 6);
+        this.leftFlipper = new Paddle(new Vector(5, 460), 'right');
+        this.rightFlipper = new Paddle(new Vector(315, 460), 'left');
 
         this.player = new Ball();
 
@@ -64,22 +64,21 @@ export class Game {
     queueUpdates(numTicks) {
         for (var i = 0; i < numTicks; i++) {
             this.lastTick += this.tickLength;
-            this.update(this.tickLength);
+            this.update(this.tickLength / 1000);
         }
     }
 
-    update(tFrame) {
+    update(delta) {
         if (this.input.left) this.leftFlipper.flip();
         if (this.input.right) this.rightFlipper.flip();
-        this.leftFlipper.update(tFrame);
-        this.rightFlipper.update(tFrame);
-        this.collisionEngine.update(this.player, this.leftFlipper);
-        this.collisionEngine.update(this.player, this.rightFlipper);
-        this.collisionEngine.update(this.player, this.leftWall);
-        this.collisionEngine.update(this.player, this.topWall);
-        this.collisionEngine.update(this.player, this.rightWall);
-
-        this.player.update(tFrame / 1000);
+        this.leftFlipper.update(delta);
+        this.rightFlipper.update(delta);
+        this.collisionEngine.update(this.player.body, this.leftFlipper.body);
+        this.collisionEngine.update(this.player.body, this.rightFlipper.body);
+        this.collisionEngine.update(this.player.body, this.leftWall.body);
+        this.collisionEngine.update(this.player.body, this.topWall.body);
+        this.collisionEngine.update(this.player.body, this.rightWall.body);
+        this.player.update(delta);
     }
 
     render(tFrame) {

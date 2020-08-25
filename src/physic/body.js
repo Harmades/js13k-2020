@@ -8,11 +8,16 @@ export class Body {
         this.mass = mass;
         this.shape = Shape.rectangle(0, 0, 50, 50);
         this.impulse = Vector.zero();
-        this.field = new Vector(0, 100 * this.mass);
+        this.field = Vector.zero();
+        this.bounciness = 1;
     }
 
     applyImpulse(force) {
         this.impulse = this.impulse.add(force);
+    }
+
+    applyField(force) {
+        this.field = this.field.add(force);
     }
 
     rotate(angle) {

@@ -7,10 +7,10 @@ export class CollisionEngine {
         this.resolver = new CollisionResolver();
     }
 
-    update(entity1, entity2) {
-        const normal = this.detector.satCollide(entity1.body.shape, entity2.body.shape);
+    update(body1, body2) {
+        const normal = this.detector.satCollide(body1.shape, body2.shape);
         if (normal != null) {
-            this.resolver.resolve(entity1, entity2, normal);
+            this.resolver.resolve(body1, body2, normal);
         }
     }
 }
