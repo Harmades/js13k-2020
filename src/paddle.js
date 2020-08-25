@@ -27,7 +27,7 @@ export class Paddle {
 
     flip() {
         this.flipping = true;
-        this.bounciness = Settings.paddleBounciness;
+        this.body.bounciness = Settings.paddleBounciness;
     }
 
     getContactFactor(position) {

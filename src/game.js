@@ -31,16 +31,19 @@ export class Game {
         this.leftWall.body = new Body(null);
         this.leftWall.body.shape = new Shape([new Vector(-100, 0), new Vector(-100, 480), new Vector(0, 480), new Vector(0, 0)]);
         this.leftWall.body.position = new Vector(0, 0);
+        this.leftWall.body.bounciness = Settings.wallBounciness;
 
         this.topWall = { };
         this.topWall.body = new Body(null);
         this.topWall.body.shape = new Shape([new Vector(0, 0), new Vector(320, 0), new Vector(320, -100), new Vector(0, -100)]);
         this.topWall.body.position = new Vector(0, -100);
+        this.topWall.body.bounciness = Settings.wallBounciness;
 
         this.rightWall = { };
         this.rightWall.body = new Body(null);
         this.rightWall.body.shape = new Shape([new Vector(320, 0), new Vector(320, 480), new Vector(420, 480), new Vector(420, 0)]);
         this.rightWall.body.position = new Vector(320, 0);
+        this.rightWall.body.bounciness = Settings.wallBounciness;
 
         this.collisionEngine = new CollisionEngine();
         this.input = new Input();
