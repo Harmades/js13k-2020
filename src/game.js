@@ -7,6 +7,7 @@ import { Paddle } from "./world/paddle.js";
 import { Ball } from "./world/ball.js";
 import { Settings } from "./settings.js";
 import { Wall } from "./world/wall.js";
+import { boule } from "./assets.gen/boule.js";
 
 export class Game {
 
@@ -20,6 +21,7 @@ export class Game {
 
         this.assets = new Assets();
         this.assets.loadSvg("bg", bg);
+        this.assets.loadSvg("boule", boule);
 
         this.leftFlipper = new Paddle(new Vector(5, 460), 'right');
         this.rightFlipper = new Paddle(new Vector(315, 460), 'left');
@@ -70,7 +72,10 @@ export class Game {
     render(tFrame) {
         const ctx = this.ctx;
         ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        if (this.assets.ready) ctx.drawImage(this.assets.bg, 0, 0);
+        if (this.assets.ready) {
+            ctx.drawImage(this.assets.bg, 0, 0);
+            ctx.drawImage(this.assets.boule, 0, 0);
+        }
         ctx.beginPath();
         ctx.fillStyle = "#000000";
         this.draw(this.player.body.shape, ctx);
