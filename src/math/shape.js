@@ -38,7 +38,7 @@ export class Shape {
         const sides = 26;
         const angle = 2 * Math.PI / sides;
         for (let i = 0; i < sides; i++) {
-            vertices[i] = new Vector(x + radius * Math.cos(i * angle), y + radius * Math.sin(i * angle));
+            vertices[i] = new Vector(x + radius * (1 +Math.cos(i * angle)), y + radius * (1 + Math.sin(i * angle)));
         }
         return new Shape(vertices);
     }

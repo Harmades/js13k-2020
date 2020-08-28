@@ -1,13 +1,12 @@
 import { Vector } from "./math/vector.js";
 import { Assets } from "./assets.js";
-import { bg } from "./assets.gen/bg.js";
 import { CollisionEngine } from "./physic/collisionEngine.js";
 import { Input } from './input.js';
 import { Paddle } from "./world/paddle.js";
 import { Ball } from "./world/ball.js";
 import { Settings } from "./settings.js";
 import { Wall } from "./world/wall.js";
-import { boulee } from "./assets.gen/boulee.js";
+import { ball } from "./assets.gen/ball.js";
 
 export class Game {
 
@@ -19,9 +18,12 @@ export class Game {
         this.canvas = document.getElementById("canvas");
         this.ctx = this.canvas.getContext("2d");
 
-        this.assets = new Assets();
-        this.assets.loadSvg("bg", bg);
-        this.assets.loadSvg("boulee", boulee);
+        canvas.onmousemove = e => {
+            document.getElementById("x").textContent = e.offsetX;
+            document.getElementById("y").textContent = e.offsetY;
+        }
+
+        Assets.loadSvg("ball", ball);
 
         this.leftFlipper = new Paddle(new Vector(5, 460), 'right');
         this.rightFlipper = new Paddle(new Vector(315, 460), 'left');
@@ -66,21 +68,13 @@ export class Game {
         this.collisionEngine.update(this.player.body, this.leftWall.body);
         this.collisionEngine.update(this.player.body, this.topWall.body);
         this.collisionEngine.update(this.player.body, this.rightWall.body);
-        this.player.update(delta);
+        // this.player.update(delta);
     }
 
     render(tFrame) {
         const ctx = this.ctx;
         ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        if (this.assets.ready) {
-            ctx.drawImage(this.assets.bg, 0, 0);
-            ctx.drawImage(this.assets.boulee, 0, 0);
-        }
-        ctx.beginPath();
-        ctx.fillStyle = "#000000";
-        this.draw(this.player.body.shape, ctx);
-        ctx.fill();
-        ctx.closePath();
+        this.player.render(ctx, tFrame);
         ctx.fillStyle = "#FF0000";
         ctx.beginPath();
         this.draw(this.leftFlipper.body.shape, ctx);

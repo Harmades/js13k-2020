@@ -1,4 +1,4 @@
-export class Assets {
+class AssetsImpl {
     ready;
     loadSvg(name, svg) {
         this.ready = false;
@@ -8,3 +8,5 @@ export class Assets {
         image.src = b64;
     }
 }
+
+export const Assets = new AssetsImpl();

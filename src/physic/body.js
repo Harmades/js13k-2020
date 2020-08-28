@@ -27,7 +27,7 @@ export class Body {
     }
 
     translate(vector) {
-        this.position.add(vector);
+        this.position = this.position.add(vector);
         this.shape.translate(vector);
     }
 
