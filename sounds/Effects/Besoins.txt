@@ -1,0 +1,14 @@
+- Bruit piece d'or
+- Bruit pluie de pièce
+- Bruit lanceur
+- Bruit Fer
+- Bruit bumper
+- Son Game over
+- Son jackpot
+- Bruit cmd droite gauche
+- Bruit cassage d'arbre
+- Bruit de tambour de guerre
+- Bruit d'arme
+- Bruit combat / Yaaar
+- Bruit hit de mec
+- Bruit hit boss
