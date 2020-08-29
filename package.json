@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "npx serve",
-    "publish": "npx terser game.js -m -c"
+    "publish": "npx terser index.js src/*.js src/assets.gen/*.js src/math/*.js src/physic/*.js src/world/*.js --module -o game.min.js"
   },
   "repository": {
     "type": "git",

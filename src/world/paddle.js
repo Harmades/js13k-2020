@@ -1,14 +1,16 @@
 import { Body } from '../physic/body.js';
 import { Shape } from '../math/shape.js';
 import { Vector } from '../math/vector.js';
-import { Settings } from '../settings.js'
+import { Settings } from '../settings.js';
+import { Input } from '../input.js';
 
 
 export class Paddle {
-    constructor(position, direction) {
+    constructor(position, side) {
         let sign = null;
-        if (direction == 'left') sign = -1;
-        if (direction == 'right') sign = 1;
+        if (side == 'right') sign = -1;
+        if (side == 'left') sign = 1;
+        this.side = side;
         this.body = new Body(null);
         this.body.shape = new Shape([
             new Vector(position.x, position.y + 10),
@@ -53,6 +55,18 @@ export class Paddle {
                 this.flipping = false;
                 this.body.bounciness = Settings.wallBounciness;
             }
+        }
+
+        if (Input.left && this.side == 'left' || Input.right && this.side == 'right') {
+            this.flip();
+        }
+    }
+
+    render(delta, context) {
+        if (Settings.debug) {
+            Shape.debugDraw(this.body.shape, context);
+        } else {
+
         }
     }
 }

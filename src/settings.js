@@ -1,4 +1,9 @@
 export const Settings = {
+    debug: true,
+
+    width: 600,
+    height: 800,
+
     gravity: 100,
 
     engineTimeResolution: 0.1,

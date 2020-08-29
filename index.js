@@ -1,8 +1,12 @@
 import { Game } from './src/game.js';
 import { Kick, Snare, Bell } from './src/synthesizer.js';
+import { Assets } from './src/assets.js';
+import { ball } from './src/assets.gen/ball.js';
 
-const game = new Game();
-game.loop(performance.now());
+Assets.loadSvg("ball", ball, () => {
+    const game = new Game();
+    game.loop(performance.now());
+});
 const context = new AudioContext();
 const kick = new Kick(context);
 const snare = new Snare(context);

@@ -46,4 +46,16 @@ export class Shape {
     static rectangle(x, y, width, height) {
         return new Shape([new Vector(x, y), new Vector(x, y + height), new Vector(x + width, y + height), new Vector(x + width, y)]);
     }
+
+    static debugDraw(shape, context) {
+        context.beginPath();
+        context.fillStyle = "#FF0000";
+        context.moveTo(shape.vertices[0].x, shape.vertices[0].y);
+        for (let i = 1; i < shape.vertices.length; i++) {
+            const vertex = shape.vertices[i];
+            context.lineTo(vertex.x, vertex.y);
+        }
+        context.fill();
+        context.closePath();
+    }
 }

@@ -1,10 +1,8 @@
 class AssetsImpl {
-    ready;
-    loadSvg(name, svg) {
-        this.ready = false;
+    loadSvg(name, svg, onload) {
         const b64 = `data:image/svg+xml;base64,${btoa(svg)}`;
         const image = new Image();
-        image.onload = () => { this[name] = image; this.ready = true; }
+        image.onload = () => { this[name] = image; onload(); };
         image.src = b64;
     }
 }
