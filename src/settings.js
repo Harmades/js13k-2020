@@ -16,7 +16,7 @@ export const Settings = {
 
     ballMass: 1,
     ballBounciness: 1,
-    ballRadius: 25,
+    ballRadius: 20,
 
     launcherAmplitude: 50,
     launcherCompressingSpeed: 100,

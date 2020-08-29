@@ -56,6 +56,8 @@ export class CollisionDetector {
         if (projection1.max < projection2.min || projection2.max < projection1.min) return null;
         const min = Math.max(projection1.min, projection2.min);
         const max = Math.min(projection1.max, projection2.max);
-        return Math.sign(projection1.min - projection2.min) * (max - min);
+        let sign = Math.sign(projection1.min - projection2.min);
+        if (sign == 0) sign = Math.sign(projection1.max - projection2.max);
+        return sign * (max - min);
     }
 }

@@ -7,7 +7,7 @@ import { Input } from "../input.js";
 export class Launcher {
     constructor(position) {
         this.body = new Body(Settings.ballMass);
-        this.body.shape = Shape.rectangle(position.x, position.y, 90, 25);
+        this.body.shape = Shape.rectangle(position.x, position.y, 80, 25);
         this.body.position = position;
         this.body.bounciness = Settings.launcherBounciness;
         this.sprite = null;
