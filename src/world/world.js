@@ -10,20 +10,25 @@ import { Launcher } from "./plunger.js";
 export class World {
     constructor() {
         this.leftFlipper = new Paddle(new Vector(100, Settings.height - 200), 'left');
-        this.leftKicker = new StaticElement(new Vector(100, Settings.height - 350), new Shape([new Vector(100, Settings.height - 350), new Vector(125, Settings.height - 270), new Vector(200, Settings.height - 250)]), Settings.wallBounciness);
+        const leftKickerShape = Shape.fromSvgData("m 82.76,487.2 v 99.6 l 85.14,23 z");
+        this.leftKicker = new StaticElement(leftKickerShape[0], leftKickerShape, Settings.wallBounciness);
         this.rightFlipper = new Paddle(new Vector(Settings.width - 200, Settings.height - 200), 'right');
+        const rightKickerShape = Shape.fromSvgData("m 444.6,487.2 v 99.2 l -85.1,23.1 z");
+        this.rightKicker = new StaticElement(rightKickerShape[0], rightKickerShape, Settings.wallBounciness);
         this.player = new Ball(new Vector(Settings.width - 55, 60)); 
         this.leftWall = new StaticElement(new Vector(-100, 0), Shape.rectangle(-100, 0, 100, Settings.height), Settings.wallBounciness);
         this.topWall = new StaticElement(new Vector(0, -100), Shape.rectangle(0, -100, Settings.width, 100), Settings.wallBounciness);
         this.rightWall = new StaticElement(new Vector(Settings.width, 0), Shape.rectangle(Settings.width, 0, 100, Settings.height, Settings.wallBounciness));
-        const deflectorShape = Shape.rectangle(Settings.width - 75, 3-30, 150, 25);
-        deflectorShape.rotate(deflectorShape.vertices[0], Math.PI / 4);
-        this.topRightDeflector = new StaticElement(new Vector(Settings.width - 75, -30), deflectorShape, Settings.wallBounciness);
+        const deflectorShape = Shape.fromSvgData("M 608.5,59.85 549.4,-9.938 639.4,-26.2 Z");
+        this.topRightDeflector = new StaticElement(deflectorShape[0], deflectorShape, Settings.wallBounciness);
         this.launcher = new Launcher(new Vector(Settings.width - 60, Settings.height - 150));
-        this.launcherWall = new StaticElement(new Vector(Settings.width - 75, 100), Shape.rectangle(Settings.width - 75, 100, 15, Settings.height - 100));
+        const launcherWallShape = Shape.fromSvgData("m 520.5,114.2 h 7.6 v 685.4 h -7.6 z");
+        this.launcherWall = new StaticElement(launcherWallShape[0], launcherWallShape, Settings.wallBounciness);
         this.bumper = new StaticElement(new Vector(200, 100), Shape.circle(200, 100, 35), Settings.wallBounciness);
-        this.leftGutter = new StaticElement(new Vector(0, Settings.height - 100), new Shape([new Vector(0, Settings.height - 100), new Vector(0, Settings.height), new Vector(200, Settings.height), new Vector(200, Settings.height - 50)]), Settings.wallBounciness);
-        this.rightGutter = new StaticElement(new Vector(250, Settings.height - 50), new Shape([new Vector(300, Settings.height - 50), new Vector(300, Settings.height), new Vector(500, Settings.height), new Vector(500, Settings.height - 100)]), Settings.wallBounciness);
+        const leftGutterShape = Shape.fromSvgData("m 0,671.4 207.4,58.4 v 69.9 H 0 Z");
+        this.leftGutter = new StaticElement(leftGutterShape[0], leftGutterShape, Settings.wallBounciness);
+        const rightGutterShape = Shape.fromSvgData("m 520.5,671.7 -207.3,58.1 v 69.9 h 207.3 z");
+        this.rightGutter = new StaticElement(rightGutterShape[0], rightGutterShape, Settings.wallBounciness);
         this.collisionEngine = new CollisionEngine();
     }
 
@@ -54,6 +59,7 @@ export class World {
         this.topWall.render(delta, context);
         this.launcherWall.render(delta, context);
         this.leftKicker.render(delta, context);
+        this.rightKicker.render(delta, context);
         this.bumper.render(delta, context);
         this.leftGutter.render(delta, context);
         this.rightGutter.render(delta, context);

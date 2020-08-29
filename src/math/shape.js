@@ -58,4 +58,61 @@ export class Shape {
         context.fill();
         context.closePath();
     }
+
+    static fromSvgData(data) {
+        let lastPosition = new Vector(0, 0);
+        let lastCommand = null;
+        const sequence = data.split(" ");
+        const vertices = [];
+        for (const element of sequence) {
+            switch (element) {
+                case 'm':
+                case 'M':
+                case 'v':
+                case 'V':
+                case 'h':
+                case 'H':
+                case 'l':
+                case 'L':
+                case 'z':
+                case 'Z':
+                    lastCommand = element;
+                    break;
+                default:
+                    const coordinates = element.split(",").map(c => Number.parseFloat(c));
+                    switch (lastCommand) {
+                        case 'm':
+                            vertices.push(lastPosition.add(new Vector(coordinates[0], coordinates[1])));
+                            break;
+                        case 'M':
+                            vertices.push(new Vector(coordinates[0], coordinates[1]));
+                            break;
+                        case 'v':
+                            vertices.push(lastPosition.add(new Vector(0, coordinates[0])));
+                            break;
+                        case 'V':
+                            vertices.push(new Vector(lastPosition.x, coordinates[0]));
+                            break;
+                        case 'h':
+                            vertices.push(lastPosition.add(new Vector(coordinates[0], 0)));
+                            break;
+                        case 'H':
+                            vertices.push(new Vector(coordinates[0], lastPosition.y));
+                            break;
+                        case 'l':
+                            vertices.push(lastPosition.add(new Vector(coordinates[0], coordinates[1])));
+                            break;
+                        case 'L':
+                            vertices.push(new Vector(coordinates[0], coordinates[1]));
+                            break;
+                        case 'z':
+                        case 'Z':
+                            break;
+                    }
+                    lastPosition = vertices[vertices.length - 1];
+                    break;
+            }
+        }
+        return new Shape(vertices);
+    }
 }
