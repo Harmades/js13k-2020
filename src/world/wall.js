@@ -10,4 +10,14 @@ export class Wall {
         this.body.isStatic = true;
         this.body.position = position;
     }
+
+    update(delta) { }
+
+    render(delta, context) {
+        if (Settings.debug) {
+            Shape.debugDraw(this.body.shape, context);
+        } else {
+
+        }
+    }
 }

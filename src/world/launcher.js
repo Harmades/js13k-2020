@@ -6,8 +6,8 @@ import { Input } from "../input.js";
 
 export class Launcher {
     constructor(position) {
-        this.body = new Body(null);
-        this.body.shape = Shape.rectangle(position.x, position.y, 100, 25);
+        this.body = new Body(Settings.ballMass);
+        this.body.shape = Shape.rectangle(position.x, position.y, 90, 25);
         this.body.position = position;
         this.body.bounciness = Settings.launcherBounciness;
         this.sprite = null;
@@ -15,19 +15,22 @@ export class Launcher {
     }
 
     update(delta) {
+        const posY = this.body.position.y;
         if (Input.space) {
             if (this.compression <= Settings.launcherAmplitude) {
-                const translation = Settings.launcherCompressingSpeed * delta;
-                this.compression += translation;
-                this.body.translate(new Vector(0, translation));
+                this.body.speed = new Vector(0, Settings.launcherCompressingSpeed);
+            } else {
+                this.body.speed = Vector.zero();
             }
         } else {
             if (this.compression > 0) {
-                const translation = -Settings.launcherSpeed * delta;
-                this.compression += translation;
-                this.body.translate(new Vector(0, translation));
+                this.body.speed = new Vector(0, -Settings.launcherSpeed);
+            } else {
+                this.body.speed = Vector.zero();
             }
         }
+        this.body.update(delta);
+        this.compression += this.body.position.y - posY;
     }
 
     render(delta, context) {

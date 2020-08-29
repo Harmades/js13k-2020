@@ -10,10 +10,10 @@ export class World {
     constructor() {
         this.leftFlipper = new Paddle(new Vector(5, 460), 'left');
         this.rightFlipper = new Paddle(new Vector(315, 460), 'right');
-        this.player = new Ball();
-        this.leftWall = new Wall(new Vector(-100, 0), 100, 480);
-        this.topWall = new Wall(new Vector(0, -100), 320, 100);
-        this.rightWall = new Wall(new Vector(320, 0), 100, 480);
+        this.player = new Ball(new Vector(Settings.width - 75, 50));
+        this.leftWall = new Wall(new Vector(-100, 0), 100, Settings.height);
+        this.topWall = new Wall(new Vector(0, -100), Settings.width, 100);
+        this.rightWall = new Wall(new Vector(Settings.width, 0), 100, Settings.height);
         this.launcher = new Launcher(new Vector(Settings.width - 100, Settings.height - 150));
         this.collisionEngine = new CollisionEngine();
     }
@@ -26,6 +26,7 @@ export class World {
         this.collisionEngine.update(this.player.body, this.leftWall.body);
         this.collisionEngine.update(this.player.body, this.topWall.body);
         this.collisionEngine.update(this.player.body, this.rightWall.body);
+        this.collisionEngine.update(this.player.body, this.launcher.body);
         this.player.update(delta);
         this.launcher.update(delta);
     }
@@ -36,5 +37,6 @@ export class World {
         this.leftFlipper.render(delta, context);
         this.rightFlipper.render(delta, context);
         this.launcher.render(delta, context);
+        this.topWall.render(delta, context);
     }
 }

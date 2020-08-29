@@ -5,10 +5,10 @@ import { Settings } from "../settings.js";
 import { Assets } from "../assets.js";
 
 export class Ball {
-    constructor() {
+    constructor(position) {
         this.body = new Body(Settings.ballMass);
-        this.body.shape = Shape.circle(50, 50, Settings.ballRadius);
-        this.body.position = new Vector(50, 50);
+        this.body.shape = Shape.circle(position.x, position.y, Settings.ballRadius);
+        this.body.position = new Vector(position.x, position.y);
         this.body.bounciness = Settings.ballBounciness;
         this.body.applyField(new Vector(0, this.body.mass * Settings.gravity));
         this.sprite = Assets.ball;

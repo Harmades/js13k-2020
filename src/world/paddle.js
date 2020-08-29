@@ -20,6 +20,7 @@ export class Paddle {
         ]);
         this.body.position = new Vector(position.x, position.y);
         this.body.bounciness = Settings.wallBounciness;
+        this.body.isStatic = true;
         this.maxAngle = -sign * Settings.paddleMaxAngle;
         this.angularSpeed = Settings.paddleAngularSpeed;
         this.angle = 0;
