@@ -4,9 +4,9 @@ export const Settings = {
     width: 600,
     height: 800,
 
-    gravity: 100,
-
     engineTimeResolution: 0.1,
+
+    gravity: 100,
 
     wallBounciness: 20000,
 
@@ -16,5 +16,10 @@ export const Settings = {
 
     ballMass: 1,
     ballBounciness: 1,
-    ballRadius: 25
+    ballRadius: 25,
+
+    launcherAmplitude: 50,
+    launcherCompressingSpeed: 100,
+    launcherSpeed: 500,
+    launcherBounciness: 20000
 }

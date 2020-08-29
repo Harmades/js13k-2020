@@ -27,6 +27,7 @@ export class World {
         this.collisionEngine.update(this.player.body, this.topWall.body);
         this.collisionEngine.update(this.player.body, this.rightWall.body);
         this.player.update(delta);
+        this.launcher.update(delta);
     }
 
     render(delta, context) {
