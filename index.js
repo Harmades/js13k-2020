@@ -1,12 +1,39 @@
 import { Game } from './src/game.js';
 import { Kick, Snare, Bell } from './src/synthesizer.js';
 import { Assets } from './src/assets.js';
-import { ball } from './src/assets.gen/ball.js';
+import { p1 } from './src/assets.gen/p1.js';
 
-Assets.loadSvg("ball", ball, () => {
-    const game = new Game();
-    game.loop(performance.now());
-});
+Assets.loadColliders(
+    p1,
+    [
+        'wall-1.collider',
+        'wall-2.collider',
+        'wall-3.collider',
+        'wall-4.collider',
+        'wall-5.collider',
+        'wall-6.collider',
+        'wall-7.collider',
+        'wall-8.collider',
+        'wall-9.collider',
+        'wall-10.collider',
+        'wall-11.collider',
+        'plunger.collider',
+        'left-kicker.collider',
+        'left-flipper.collider',
+        'right-flipper.collider',
+        'right-kicker.collider',
+        'ball.collider',
+        // 'iron-1.collider',
+        // 'iron-2.collider',
+        // 'iron-3.collider',
+        // 'iron-4.collider',
+        // 'iron-5.collider',
+        // 'tree-1.collider',
+        // 'tree-1.collider',
+    ]
+);
+const game = new Game();
+game.loop(performance.now());
 const context = new AudioContext();
 const kick = new Kick(context);
 const snare = new Snare(context);

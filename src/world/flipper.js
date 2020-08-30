@@ -6,19 +6,14 @@ import { Input } from '../input.js';
 
 
 export class Paddle {
-    constructor(position, side) {
+    constructor(shape, side) {
         let sign = null;
         if (side == 'right') sign = -1;
         if (side == 'left') sign = 1;
         this.side = side;
         this.body = new Body(null);
-        this.body.shape = new Shape([
-            new Vector(position.x, position.y + 10),
-            new Vector(position.x + sign * 100, position.y + 10),
-            new Vector(position.x + sign * 100, position.y - 10),
-            new Vector(position.x, position.y - 10)
-        ]);
-        this.body.position = new Vector(position.x, position.y);
+        this.body.shape = shape;
+        this.body.position = shape.vertices[0];
         this.body.bounciness = Settings.wallBounciness;
         this.body.isStatic = true;
         this.maxAngle = -sign * Settings.paddleMaxAngle;

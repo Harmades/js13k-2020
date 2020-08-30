@@ -4,11 +4,11 @@ import { Shape } from "../math/shape.js";
 import { Vector } from "../math/vector.js";
 import { Input } from "../input.js";
 
-export class Launcher {
-    constructor(position) {
+export class Plunger {
+    constructor(shape) {
         this.body = new Body(Settings.ballMass);
-        this.body.shape = Shape.rectangle(position.x, position.y, 60, 25);
-        this.body.position = position;
+        this.body.shape = shape;
+        this.body.position = shape.vertices[0];
         this.body.bounciness = Settings.launcherBounciness;
         this.sprite = null;
         this.compression = 0;
