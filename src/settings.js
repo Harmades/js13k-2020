@@ -6,15 +6,15 @@ export const Settings = {
 
     engineTimeResolution: 0.1,
 
-    gravity: 2000,
+    gravity: 1000,
 
-    wallBounciness: 20000,
+    wallBounciness: 300000,
 
-    paddleBounciness: 200000,
-    paddleMaxAngle: Math.PI / 6,
-    paddleAngularSpeed: 10,
+    paddleBounciness: 600000,
+    paddleMaxAngle: Math.PI / 2.5,
+    paddleAngularSpeed: 15,
 
-    ballMass: 10,
+    ballMass: 20,
     ballBounciness: 1,
     ballRadius: 20,
 
