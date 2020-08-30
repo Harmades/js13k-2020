@@ -9,7 +9,8 @@ export class Iron {
         this.body.bounciness = bounciness;
         this.body.isStatic = true;
         this.body.position = shape.vertices[0];
-        this.healthPoint = 3;
+        this.body.onCollision = () => this.onCollision();
+        this.healthPoint = 1;
     }
 
     update(delta) {

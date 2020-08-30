@@ -10,6 +10,7 @@ export class Gold {
         this.body.isStatic = true;
         this.body.isRigid = false;
         this.body.position = shape.vertices[0];
+        this.body.onCollision = (normal) => this.onCollision(normal);
     }
 
     update(delta) { }

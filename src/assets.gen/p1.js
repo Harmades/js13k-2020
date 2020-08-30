@@ -105,9 +105,9 @@ export const p1 = `
      inkscape:document-rotation="0"
      inkscape:current-layer="layer2"
      inkscape:document-units="px"
-     inkscape:cy="563.3"
-     inkscape:cx="318.8"
-     inkscape:zoom="0.7"
+     inkscape:cy="534.6"
+     inkscape:cx="233.1"
+     inkscape:zoom="1.98"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -3079,62 +3079,37 @@ export const p1 = `
      id="layer2"
      inkscape:groupmode="layer">
     <path
-       style="display:inline;fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 115.5,457.3 -7.4,-2.8 -7.3,6.1 v 81.8 l 79.5,45.9 5.1,-5.1 v -10.5 z"
-       id="left-kicker.collider" />
-    <path
        id="left-flipper.collider"
        d="m 171.2,659.6 5,-3.9 6,-0.7 52.2,41.4 0.7,7.5 -4.6,4.3 -6.1,-0.3 -52.9,-31.1 -3.9,-7.9 z"
        style="fill:#fb0000;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    <rect
-       y="120.7"
-       x="142.4"
-       height="41.16"
-       width="29.55"
-       id="iron-3.collider"
-       style="fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000" />
-    <rect
+    <path
+       d="M 142.4,120.7 H 172 v 41.2 h -29.6 z"
+       style="fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="iron-3.collider" />
+    <path
+       d="m 123.1,177.6 h 44.4 v 61.9 h -44.4 z"
        style="display:inline;fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
-       id="tree-1.collider"
-       width="44.42"
-       height="61.87"
-       x="123.1"
-       y="177.6" />
-    <rect
-       y="279.5"
-       x="362.5"
-       height="61.87"
-       width="44.42"
-       id="tree-2.collider"
-       style="display:inline;fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000" />
-    <rect
+       id="tree-1.collider" />
+    <path
+       d="m 362.5,279.5 h 44.4 v 61.9 h -44.4 z"
        style="display:inline;fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
-       id="iron-2.collider"
-       width="29.55"
-       height="41.16"
-       x="143.5"
-       y="60.13" />
-    <rect
+       id="tree-2.collider" />
+    <path
+       d="M 143.5,60.13 H 173 v 41.17 h -29.5 z"
        style="display:inline;fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
-       id="iron-1.collider"
-       width="29.55"
-       height="41.16"
-       x="142.7"
-       y="0.4914" />
-    <rect
+       id="iron-2.collider" />
+    <path
+       d="m 142.7,0.4914 h 29.5 V 41.65 h -29.5 z"
        style="display:inline;fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
-       id="iron-4.collider"
-       width="29.55"
-       height="41.16"
-       x="64.87"
-       y="193.4" />
-    <rect
+       id="iron-1.collider" />
+    <path
+       d="m 64.87,193.4 h 29.55 v 41.2 H 64.87 Z"
        style="display:inline;fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
-       id="iron-5.collider"
-       width="29.55"
-       height="41.16"
-       x="12.01"
-       y="192.7" />
+       id="iron-4.collider" />
+    <path
+       d="m 12.01,192.7 h 29.55 v 41.2 H 12.01 Z"
+       style="display:inline;fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="iron-5.collider" />
     <path
        inkscape:transform-center-y="0.03841"
        inkscape:transform-center-x="-0.02613"
@@ -3165,10 +3140,6 @@ export const p1 = `
        d="M 0.5053,653 213.7,755.1 v 45.4 H 0.5053 Z"
        style="fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
        id="wall-3.collider" />
-    <path
-       id="right-kicker.collider"
-       d="m 417.7,457.1 7.4,-2.8 7.3,6.1 v 81.8 l -79.5,45.9 -5.1,-5.1 v -10.5 z"
-       style="display:inline;fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        style="display:inline;fill:#fb0000;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 362,659.4 -5,-3.9 -6,-0.7 -52.2,41.4 -0.7,7.5 4.6,4.3 6.1,-0.3 52.9,-31.1 3.9,-7.9 z"
@@ -3210,6 +3181,32 @@ export const p1 = `
        style="display:inline;fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 493.1,583.5 362.5,670.7 353.6,656.6 479.1,570 Z"
        id="wall-4.collider" />
+    <path
+       sodipodi:nodetypes="ccccc"
+       id="left-kicker.collider"
+       d="M 116.4,458.3 185.9,572.7 170.7,576 108.3,473.2 Z"
+       style="fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="display:inline;fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 416.9,458.1 -69.5,114.4 15.2,3.3 L 425,473 Z"
+       id="right-kicker.collider"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       id="wall-12.collider"
+       d="m 116.4,458.2 -8.3,-3.5 -7.6,5.9 v 77.7 l 14.2,-0.1 z"
+       style="fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       id="wall-13.collider"
+       d="m 100.4,538.2 73.7,44.8 8.4,-1.4 3.1,-8.9 -73.3,-42.5 z"
+       style="fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="display:inline;fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 417.1,458.1 8.3,-3.5 7.6,5.9 v 77.7 l -14.2,-0.1 z"
+       id="wall-15.collider" />
+    <path
+       style="display:inline;fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 433.1,538.1 -73.7,44.8 -8.4,-1.4 -3.1,-8.9 73.3,-42.5 z"
+       id="wall-14.collider" />
   </g>
 </svg>
 `
