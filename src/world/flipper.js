@@ -15,7 +15,6 @@ export class Paddle {
         this.body.shape = shape;
         this.body.position = shape.vertices[0];
         this.body.bounciness = Settings.wallBounciness;
-        this.body.isStatic = true;
         this.maxAngle = -sign * Settings.paddleMaxAngle;
         this.angularSpeed = Settings.paddleAngularSpeed;
         this.angle = 0;
@@ -25,11 +24,6 @@ export class Paddle {
 
     flip() {
         this.flipping = true;
-        this.body.bounciness = Settings.paddleBounciness;
-    }
-
-    getContactFactor(position) {
-        return this.body.position.dot(position);
     }
 
     update(delta) {
@@ -38,9 +32,10 @@ export class Paddle {
                 const rotation = Math.sign(this.maxAngle) * this.angularSpeed * delta;
                 this.angle += rotation;
                 this.body.rotate(rotation);
+                this.body.speed = new Vector(Math.sign(this.maxAngle) * Math.cos(this.angle), -Math.sign(this.maxAngle) * Math.sin(this.angle)).multiply(100000 * this.angularSpeed * 6 * delta); 
             } else {
                 this.flipping = false;
-                this.body.bounciness = Settings.wallBounciness;
+                this.body.speed = Vector.zero();
             }
         } else {
             if (Math.abs(this.angle) > Math.PI / 360) {
@@ -49,7 +44,7 @@ export class Paddle {
                 this.body.rotate(rotation);
             } else {
                 this.flipping = false;
-                this.body.bounciness = Settings.wallBounciness;
+                this.body.speed = Vector.zero();
             }
         }
 

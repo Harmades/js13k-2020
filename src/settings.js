@@ -10,7 +10,6 @@ export const Settings = {
 
     wallBounciness: 300000,
 
-    paddleBounciness: 600000,
     paddleMaxAngle: Math.PI / 2.5,
     paddleAngularSpeed: 15,
 

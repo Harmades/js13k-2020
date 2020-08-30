@@ -2,7 +2,7 @@ import { Body } from "../physic/body.js";
 import { Shape } from "../math/shape.js";
 import { Settings } from "../settings.js";
 
-export class Rock {
+export class Iron {
     constructor(shape, bounciness) {
         this.body = new Body(null);
         this.body.shape = shape;
