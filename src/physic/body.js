@@ -12,6 +12,7 @@ export class Body {
         this.bounciness = 1;
         this.isStatic = false;
         this.ignoreCollision = false;
+        this.isRigid = true;
     }
 
     applyImpulse(force) {

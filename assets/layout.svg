@@ -40,9 +40,9 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
-     inkscape:cy="636.2"
-     inkscape:cx="336.3"
-     inkscape:zoom="0.495"
+     inkscape:cy="615.7"
+     inkscape:cx="85.58"
+     inkscape:zoom="1"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -66,17 +66,10 @@
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Layer 1">
-    <rect
-       y="114.2"
-       x="520.5"
-       height="685.4"
-       width="7.582"
-       id="rect833"
-       style="fill:#fb0000;fill-opacity:1;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000" />
     <path
-       d="m 528.3,-0.1182 v 0 L 598.9,70.57 h 0.4 V -0.1182 Z"
+       d="m 520.5,114.2 h 7.6 v 685.4 h -7.6 z"
        style="fill:#fb0000;fill-opacity:1;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
-       id="path855" />
+       id="rect833" />
     <path
        sodipodi:nodetypes="ccccc"
        d="m 0,671.4 207.4,58.4 v 69.9 H 0 Z"
@@ -87,44 +80,49 @@
        style="fill:#fb0000;fill-opacity:1;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
        d="m 520.5,671.7 -207.3,58.1 v 69.9 h 207.3 z"
        sodipodi:nodetypes="ccccc" />
-    <rect
+    <path
+       d="m 214,581.6 h 119.3 v 9.3 H 214 Z"
        transform="rotate(16.11)"
-       y="581.6"
-       x="214"
-       height="9.269"
-       width="119.3"
-       id="rect876"
-       style="fill:#fb0000;fill-opacity:1;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000" />
-    <rect
-       y="493.6"
-       x="41.55"
-       height="133.6"
-       width="8.564"
-       id="rect893"
-       style="fill:#fb0000;fill-opacity:1;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000" />
+       style="fill:#fb0000;fill-opacity:1;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect876" />
+    <path
+       d="m 41.55,493.6 h 8.56 v 133.6 h -8.56 z"
+       style="fill:#fb0000;fill-opacity:1;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect893" />
     <path
        id="path895"
        d="m 82.76,487.2 v 99.6 l 85.14,23 z"
        style="fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:1.13937px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    <rect
+    <path
+       d="m -293.1,727.9 h 119.3 v 9.3 h -119.3 z"
+       transform="matrix(-0.9608,0.2773,0.2773,0.9608,0,0)"
        style="fill:#fb0000;fill-opacity:1;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
-       id="rect876-9"
-       width="119.3"
-       height="9.269"
-       x="-293.1"
-       y="727.9"
-       transform="matrix(-0.9608,0.2773,0.2773,0.9608,0,0)" />
-    <rect
+       id="rect876-9" />
+    <path
+       d="m -486.1,493.3 h 8.6 v 133.6 h -8.6 z"
        transform="scale(-1,1)"
        style="fill:#fb0000;fill-opacity:1;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
-       id="rect893-9"
-       width="8.564"
-       height="133.6"
-       x="-486.1"
-       y="493.3" />
+       id="rect893-9" />
     <path
        style="fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:1.13927px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 444.6,487.2 v 99.2 l -85.1,23.1 z"
        id="path895-7" />
+    <path
+       inkscape:transform-center-y="8.926"
+       inkscape:transform-center-x="4.74"
+       d="M 608.5,59.85 549.4,-9.938 639.4,-26.2 Z"
+       inkscape:randomized="0"
+       inkscape:rounded="0"
+       inkscape:flatsided="true"
+       sodipodi:arg2="2.439"
+       sodipodi:arg1="1.392"
+       sodipodi:r2="26.4"
+       sodipodi:r1="52.79"
+       sodipodi:cy="7.906"
+       sodipodi:cx="599.1"
+       sodipodi:sides="3"
+       id="path960"
+       style="fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       sodipodi:type="star" />
   </g>
 </svg>

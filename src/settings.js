@@ -21,5 +21,9 @@ export const Settings = {
     launcherAmplitude: 50,
     launcherCompressingSpeed: 100,
     launcherSpeed: 2000,
-    launcherBounciness: 10000
+    launcherBounciness: 10000,
+
+    rockScoreGoal: 10,
+    goldScoreGoal: 10,
+    treeScoreGoal: 10
 }
