@@ -1,6 +1,7 @@
 import { Body } from "../physic/body.js";
 import { Shape } from "../math/shape.js";
 import { Settings } from "../settings.js";
+import { Phase1 } from "./phase1.js";
 
 export class Gold {
     constructor(shape, bounciness) {
@@ -10,13 +11,13 @@ export class Gold {
         this.body.isStatic = true;
         this.body.isRigid = false;
         this.body.position = shape.vertices[0];
-        this.body.onCollision = (normal) => this.onCollision(normal);
+        this.body.onAreaEnter = () => this.onAreaEnter();
     }
 
     update(delta) { }
 
-    onCollision() {
-        // Trigger gold collection
+    onAreaEnter() {
+        Phase1.goldScore++;
     }
 
     render(delta, context) {

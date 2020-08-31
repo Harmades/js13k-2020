@@ -1,6 +1,7 @@
 import { Body } from "../physic/body.js";
 import { Shape } from "../math/shape.js";
 import { Settings } from "../settings.js";
+import { Phase1 } from "./phase1.js";
 
 export class Tree {
     constructor(shape, bounciness) {
@@ -15,6 +16,7 @@ export class Tree {
 
     onCollision() {
         this.healthPoint--;
+        Phase1.woodScore++;
     }
 
     update(delta) { }

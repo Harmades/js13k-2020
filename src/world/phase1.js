@@ -1,15 +1,17 @@
 import { Settings } from "../settings.js";
 
-export class Phase1 {
+class Phase1Impl {
     constructor() {
-        this.treeScore = 0;
+        this.woodScore = 0;
         this.goldScore = 0;
-        this.rockScore = 0;
+        this.ironScore = 0;
     }
 
     isComplete() {
-        this.treeScore >= Settings.treeScoreGoal;
+        this.woodScore >= Settings.treeScoreGoal;
         this.goldScore >= Settings.goldScoreGoal;
-        this.rockScore >= Settings.rockScoreGoal;
+        this.ironScore >= Settings.rockScoreGoal;
     }
 }
+
+export const Phase1 = new Phase1Impl();

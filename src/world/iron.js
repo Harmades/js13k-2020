@@ -1,6 +1,7 @@
 import { Body } from "../physic/body.js";
 import { Shape } from "../math/shape.js";
 import { Settings } from "../settings.js";
+import { Phase1 } from "./phase1.js";
 
 export class Iron {
     constructor(shape, bounciness) {
@@ -19,6 +20,7 @@ export class Iron {
 
     onCollision() {
         this.healthPoint--;
+        Phase1.ironScore++;
     }
 
     render(delta, context) {

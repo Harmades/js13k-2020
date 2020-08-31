@@ -10,6 +10,7 @@ import { Tree } from "./tree.js";
 import { Iron } from "./iron.js";
 import { Gold } from "./gold.js";
 import { Assets } from "../assets.js";
+import { Phase1 } from "./phase1.js";
 
 export class World {
     constructor() {
@@ -90,6 +91,10 @@ export class World {
         if (this.iron3.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron3.body);
         if (this.iron4.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron4.body);
         if (this.iron5.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron5.body);
+
+        document.getElementById("gold").textContent = Phase1.goldScore;
+        document.getElementById("iron").textContent = Phase1.ironScore;
+        document.getElementById("wood").textContent = Phase1.woodScore;
     }
 
     render(delta, context) {
