@@ -6,6 +6,7 @@ import { Assets } from "../assets.js";
 
 export class Ball {
     constructor(shape) {
+        this.initialPosition = shape.vertices[0];
         this.body = new Body(Settings.ballMass);
         this.body.shape = shape;
         this.body.position = shape.vertices[0];
@@ -16,6 +17,9 @@ export class Ball {
 
     update(delta) {
         this.body.update(delta);
+        if (this.body.position.y > Settings.height) {
+            this.body.translate(this.initialPosition.subtract(this.body.position));
+        }
     }
 
     render(delta, context) {
