@@ -21,6 +21,8 @@ Assets.loadColliders(
         'wall-13.collider',
         'wall-14.collider',
         'wall-15.collider',
+        'wall-16.collider',
+        'wall-17.collider',
         'plunger.collider',
         'left-kicker.collider',
         'left-flipper.collider',
@@ -34,6 +36,9 @@ Assets.loadColliders(
         'iron-5.collider',
         'tree-1.collider',
         'tree-2.collider',
+        'gold-1.collider',
+        'gold-2.collider',
+        'gold-3.collider',
     ]
 );
 const game = new Game();

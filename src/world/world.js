@@ -8,6 +8,7 @@ import { Settings } from "../settings.js";
 import { Plunger } from "./plunger.js";
 import { Tree } from "./tree.js";
 import { Iron } from "./iron.js";
+import { Gold } from "./gold.js";
 import { Assets } from "../assets.js";
 
 export class World {
@@ -37,6 +38,8 @@ export class World {
         this.wall13 = new StaticElement(Assets['wall-13.collider'], Settings.wallBounciness);
         this.wall14 = new StaticElement(Assets['wall-14.collider'], Settings.wallBounciness);
         this.wall15 = new StaticElement(Assets['wall-15.collider'], Settings.wallBounciness);
+        this.wall16 = new StaticElement(Assets['wall-16.collider'], Settings.wallBounciness);
+        this.wall17 = new StaticElement(Assets['wall-17.collider'], Settings.wallBounciness);
         this.tree1 = new Tree(Assets['tree-1.collider'], Settings.wallBounciness);
         this.tree2 = new Tree(Assets['tree-2.collider'], Settings.wallBounciness);
         this.iron1 = new Iron(Assets['iron-1.collider'], Settings.wallBounciness);
@@ -44,6 +47,9 @@ export class World {
         this.iron3 = new Iron(Assets['iron-3.collider'], Settings.wallBounciness);
         this.iron4 = new Iron(Assets['iron-4.collider'], Settings.wallBounciness);
         this.iron5 = new Iron(Assets['iron-5.collider'], Settings.wallBounciness);
+        this.gold1 = new Gold(Assets['gold-1.collider'], Settings.wallBounciness);
+        this.gold2 = new Gold(Assets['gold-2.collider'], Settings.wallBounciness);
+        this.gold3 = new Gold(Assets['gold-3.collider'], Settings.wallBounciness);
         this.collisionEngine = new CollisionEngine();
     }
 
@@ -72,6 +78,11 @@ export class World {
         this.collisionEngine.update(this.player.body, this.wall13.body);
         this.collisionEngine.update(this.player.body, this.wall14.body);
         this.collisionEngine.update(this.player.body, this.wall15.body);
+        this.collisionEngine.update(this.player.body, this.wall16.body);
+        this.collisionEngine.update(this.player.body, this.wall17.body);
+        this.collisionEngine.update(this.player.body, this.gold1.body);
+        this.collisionEngine.update(this.player.body, this.gold2.body);
+        this.collisionEngine.update(this.player.body, this.gold3.body);
         if (this.tree1.healthPoint > 0) this.collisionEngine.update(this.player.body, this.tree1.body);
         if (this.tree2.healthPoint > 0) this.collisionEngine.update(this.player.body, this.tree2.body);
         if (this.iron1.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron1.body);
@@ -104,6 +115,11 @@ export class World {
         this.wall13.render(delta, context);
         this.wall14.render(delta, context);
         this.wall15.render(delta, context);
+        this.wall16.render(delta, context);
+        this.wall17.render(delta, context);
+        this.gold1.render(delta, context);
+        this.gold2.render(delta, context);
+        this.gold3.render(delta, context);
         if (this.tree1.healthPoint > 0) this.tree1.render(delta, context);
         if (this.tree2.healthPoint > 0) this.tree2.render(delta, context);
         if (this.iron1.healthPoint > 0) this.iron1.render(delta, context);

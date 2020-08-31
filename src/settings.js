@@ -26,5 +26,5 @@ export const Settings = {
     goldScoreGoal: 10,
     treeScoreGoal: 10,
 
-    kickerImpulseSpeed: 1000,
+    kickerImpulseSpeed: 800,
 }
