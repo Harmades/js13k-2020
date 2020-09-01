@@ -4,16 +4,16 @@ import { Ball } from "./ball.js";
 import { StaticElement } from "./staticElement.js";
 import { Vector } from "../math/vector.js";
 import { Plunger } from "./plunger.js";
-import { Tree } from "./tree.js";
-import { Iron } from "./iron.js";
-import { Gold } from "./gold.js";
 import { Assets } from "../assets.js";
+import { CollisionEngine } from "../physic/collisionEngine.js";
 
-class Phase1Impl {
+class Phase2Impl {
     constructor() {
-        this.woodScore = 0;
-        this.goldScore = 0;
-        this.ironScore = 0;
+        this.weapons = ['sword', 'axe', 'lance'];
+        this.rollWeapon();
+        this.playerWeapon = null;
+        this.fightResults = [null, null, null];
+        this.currentRound = 0;
     }
 
     load() {
@@ -42,20 +42,40 @@ class Phase1Impl {
         this.wall13 = new StaticElement(Assets['wall-13.collider'], Settings.wallBounciness);
         this.wall14 = new StaticElement(Assets['wall-14.collider'], Settings.wallBounciness);
         this.wall15 = new StaticElement(Assets['wall-15.collider'], Settings.wallBounciness);
-        this.wall16 = new StaticElement(Assets['wall-16.collider'], Settings.wallBounciness);
-        this.wall17 = new StaticElement(Assets['wall-17.collider'], Settings.wallBounciness);
-        this.tree1 = new Tree(Assets['tree-1.collider'], Settings.wallBounciness);
-        this.tree2 = new Tree(Assets['tree-2.collider'], Settings.wallBounciness);
-        this.iron1 = new Iron(Assets['iron-1.collider'], Settings.wallBounciness);
-        this.iron2 = new Iron(Assets['iron-2.collider'], Settings.wallBounciness);
-        this.iron3 = new Iron(Assets['iron-3.collider'], Settings.wallBounciness);
-        this.iron4 = new Iron(Assets['iron-4.collider'], Settings.wallBounciness);
-        this.iron5 = new Iron(Assets['iron-5.collider'], Settings.wallBounciness);
-        this.gold1 = new Gold(Assets['gold-1.collider'], Settings.wallBounciness);
-        this.gold2 = new Gold(Assets['gold-2.collider'], Settings.wallBounciness);
-        this.gold3 = new Gold(Assets['gold-3.collider'], Settings.wallBounciness);
-        this.bumper = new StaticElement(Assets['bumper.collider'], Settings.bumperBounciness);
+        this.axeBumper = new StaticElement(Assets['axe-bumper.collider'], Settings.bumperBounciness);
+        this.axeBumper.body.onCollision = () => {
+            this.playerWeapon = 'axe';
+            this.resolveFight();
+        }
+        this.swordBumper = new StaticElement(Assets['sword-bumper.collider'], Settings.bumperBounciness);
+        this.swordBumper.body.onCollision = () => {
+            this.playerWeapon = 'sword';
+            this.resolveFight();
+        }
+        this.lanceBumper = new StaticElement(Assets['lance-bumper.collider'], Settings.bumperBounciness);
+        this.lanceBumper.body.onCollision = () => {
+            this.playerWeapon = 'lance';
+            this.resolveFight();
+        }
         this.collisionEngine = new CollisionEngine();
+    }
+
+    rollWeapon() {
+        const randomIndex = Math.floor(Math.random() * 3);
+        this.enemyWeapon = this.weapons[randomIndex];
+    }
+
+    resolveFight() {
+        if (this.currentRound == 3) return;
+        if (this.enemyWeapon == 'sword' && this.playerWeapon == 'lance'
+            || this.enemyWeapon == 'axe' && this.playerWeapon == 'sword'
+            || this.enemyWeapon == 'lance' && this.playerWeapon == 'axe') {
+            this.fightResults[this.currentRound] = true;    
+            this.currentRound++;
+            this.rollWeapon();
+        } else {
+            this.fightResults[this.currentRound] = false;    
+        }
     }
 
     update(delta) {
@@ -83,23 +103,12 @@ class Phase1Impl {
         this.collisionEngine.update(this.player.body, this.wall13.body);
         this.collisionEngine.update(this.player.body, this.wall14.body);
         this.collisionEngine.update(this.player.body, this.wall15.body);
-        this.collisionEngine.update(this.player.body, this.wall16.body);
-        this.collisionEngine.update(this.player.body, this.wall17.body);
-        this.collisionEngine.update(this.player.body, this.gold1.body);
-        this.collisionEngine.update(this.player.body, this.gold2.body);
-        this.collisionEngine.update(this.player.body, this.gold3.body);
-        this.collisionEngine.update(this.player.body, this.bumper.body);
-        if (this.tree1.healthPoint > 0) this.collisionEngine.update(this.player.body, this.tree1.body);
-        if (this.tree2.healthPoint > 0) this.collisionEngine.update(this.player.body, this.tree2.body);
-        if (this.iron1.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron1.body);
-        if (this.iron2.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron2.body);
-        if (this.iron3.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron3.body);
-        if (this.iron4.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron4.body);
-        if (this.iron5.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron5.body);
+        this.collisionEngine.update(this.player.body, this.axeBumper.body);
+        this.collisionEngine.update(this.player.body, this.swordBumper.body);
+        this.collisionEngine.update(this.player.body, this.lanceBumper.body);
 
-        document.getElementById("gold").textContent = Phase1.goldScore;
-        document.getElementById("iron").textContent = Phase1.ironScore;
-        document.getElementById("wood").textContent = Phase1.woodScore;
+        document.getElementById("enemyWeapon").textContent = this.enemyWeapon;
+        document.getElementById("round").textContent = this.currentRound;
     }
 
     render(delta, context) {
@@ -124,26 +133,12 @@ class Phase1Impl {
         this.wall13.render(delta, context);
         this.wall14.render(delta, context);
         this.wall15.render(delta, context);
-        this.wall16.render(delta, context);
-        this.wall17.render(delta, context);
-        this.gold1.render(delta, context);
-        this.gold2.render(delta, context);
-        this.gold3.render(delta, context);
-        this.bumper.render(delta, context);
-        if (this.tree1.healthPoint > 0) this.tree1.render(delta, context);
-        if (this.tree2.healthPoint > 0) this.tree2.render(delta, context);
-        if (this.iron1.healthPoint > 0) this.iron1.render(delta, context);
-        if (this.iron2.healthPoint > 0) this.iron2.render(delta, context);
-        if (this.iron3.healthPoint > 0) this.iron3.render(delta, context);
-        if (this.iron4.healthPoint > 0) this.iron4.render(delta, context);
-        if (this.iron5.healthPoint > 0) this.iron5.render(delta, context);
+        this.axeBumper.render(delta, context);
+        this.swordBumper.render(delta, context);
+        this.lanceBumper.render(delta, context);
     }
 
-    isComplete() {
-        this.woodScore >= Settings.treeScoreGoal;
-        this.goldScore >= Settings.goldScoreGoal;
-        this.ironScore >= Settings.rockScoreGoal;
-    }
+    isComplete() { return this.fightResults.filter(r => r == true).length == 3; }
 }
 
-export const Phase1 = new Phase1Impl();
+export const Phase2 = new Phase2Impl();

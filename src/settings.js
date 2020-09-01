@@ -27,4 +27,6 @@ export const Settings = {
     treeScoreGoal: 10,
 
     kickerImpulseSpeed: 800,
+
+    bumperBounciness: 300000 * 1.5
 }

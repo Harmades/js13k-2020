@@ -1,11 +1,17 @@
 import { Game } from './src/game.js';
 import { Kick, Snare, Bell } from './src/synthesizer.js';
 import { Assets } from './src/assets.js';
-import { p1 } from './src/assets.gen/p1.js';
+import { p2 } from './src/assets.gen/p2.js';
 
 Assets.loadColliders(
-    p1,
+    p2,
     [
+        'ball.collider',
+        'plunger.collider',
+        'left-kicker.collider',
+        'left-flipper.collider',
+        'right-flipper.collider',
+        'right-kicker.collider',
         'wall-1.collider',
         'wall-2.collider',
         'wall-3.collider',
@@ -21,24 +27,25 @@ Assets.loadColliders(
         'wall-13.collider',
         'wall-14.collider',
         'wall-15.collider',
-        'wall-16.collider',
-        'wall-17.collider',
-        'plunger.collider',
-        'left-kicker.collider',
-        'left-flipper.collider',
-        'right-flipper.collider',
-        'right-kicker.collider',
-        'ball.collider',
-        'iron-1.collider',
-        'iron-2.collider',
-        'iron-3.collider',
-        'iron-4.collider',
-        'iron-5.collider',
-        'tree-1.collider',
-        'tree-2.collider',
-        'gold-1.collider',
-        'gold-2.collider',
-        'gold-3.collider',
+
+
+        // 'wall-16.collider',
+        // 'wall-17.collider',
+        // 'iron-1.collider',
+        // 'iron-2.collider',
+        // 'iron-3.collider',
+        // 'iron-4.collider',
+        // 'iron-5.collider',
+        // 'tree-1.collider',
+        // 'tree-2.collider',
+        // 'gold-1.collider',
+        // 'gold-2.collider',
+        // 'gold-3.collider',
+        // 'bumper.collider'
+
+        'axe-bumper.collider',
+        'sword-bumper.collider',
+        'lance-bumper.collider'
     ]
 );
 const game = new Game();
