@@ -1,25 +1,25 @@
 import { Game } from './src/game.js';
 import { Kick, Snare, Bell } from './src/synthesizer.js';
 import { Assets } from './src/assets.js';
-import { p2 } from './src/assets.gen/p2.js';
+import { p3 } from './src/assets.gen/p3.js';
 
 Assets.loadColliders(
-    p2,
+    p3,
     [
         'ball.collider',
-        'plunger.collider',
+        // 'plunger.collider',
         'left-kicker.collider',
         'left-flipper.collider',
         'right-flipper.collider',
         'right-kicker.collider',
-        'wall-1.collider',
-        'wall-2.collider',
+        // 'wall-1.collider',
+        // 'wall-2.collider',
         'wall-3.collider',
-        'wall-4.collider',
-        'wall-5.collider',
+        // 'wall-4.collider',
+        // 'wall-5.collider',
         'wall-6.collider',
-        'wall-7.collider',
-        'wall-8.collider',
+        // 'wall-7.collider',
+        // 'wall-8.collider',
         'wall-9.collider',
         'wall-10.collider',
         'wall-11.collider',
@@ -43,9 +43,15 @@ Assets.loadColliders(
         // 'gold-3.collider',
         // 'bumper.collider'
 
-        'axe-bumper.collider',
-        'sword-bumper.collider',
-        'lance-bumper.collider'
+        // 'axe-bumper.collider',
+        // 'sword-bumper.collider',
+        // 'lance-bumper.collider',
+
+        'enemy-1.collider',
+        'enemy-2.collider',
+        'enemy-3.collider',
+        'enemy-4.collider',
+        'enemy-5.collider',
     ]
 );
 const game = new Game();
