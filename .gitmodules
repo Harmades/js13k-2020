@@ -1,0 +1,6 @@
+[submodule "sounds/lib/zzfx"]
+	path = sounds/lib/zzfx
+	url = git@github.com:KilledByAPixel/ZzFX.git
+[submodule "sounds/lib/zzfxfm"]
+	path = sounds/lib/zzfxfm
+	url = git@github.com:keithclark/ZzFXM.git

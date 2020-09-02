@@ -1,5 +1,0 @@
-- Son intro
-- Son P1 (Campagne, construction, tranquille)
-- Son P2 (Combat, vénère)
-- Son P3 (Combat, +vénère) -> P2 avec plus de percu
-- Son crédit

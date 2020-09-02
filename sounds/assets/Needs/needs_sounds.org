@@ -1,0 +1,5 @@
+** STARTED Son intro
+** TODO Son P1 (Campagne, construction, tranquille)
+** TODO Son P2 (Combat, vénère)
+** TODO Son P3 (Combat, +vénère) -> P2 avec plus de percu
+** TODO Son crédits

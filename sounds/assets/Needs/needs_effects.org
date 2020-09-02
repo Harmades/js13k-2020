@@ -1,0 +1,18 @@
+* Bruitages
+** DONE Bruit piece d'or
+   CLOSED: [2020-09-02 Wed 14:52]
+   - State "DONE"       from "STARTED"    [2020-09-02 Wed 14:52]
+** TODO Bruit pluie de pièce
+** TODO Bruit lanceur
+** TODO Bruit Fer
+** TODO Bruit bumper
+** TODO Bruit cmd droite gauche
+** TODO Bruit cassage d'arbre
+** TODO Bruit de tambour de guerre
+** TODO Bruit d'arme
+** TODO Bruit hit de mec
+** TODO Bruit hit boss
+
+* Jingle
+** TODO Son Game over
+** TODO Son transition de phase
