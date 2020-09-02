@@ -6,7 +6,7 @@ import { Assets } from "../assets.js";
 import { CollisionEngine } from "../physic/collisionEngine.js";
 import { Enemy } from "./enemy.js"
 import { Kicker } from "./kicker.js";
-import { Vector } from "../math/vector.js";
+import { Boss } from "./boss.js";
 
 class Phase3Impl {
     constructor() {
@@ -14,14 +14,6 @@ class Phase3Impl {
     }
 
     load() {
-        const enemies = [];
-        for (let i = 0; i < 15; i++) {
-            const quotient = Math.floor(i / 5);
-            const remainder = i % 5;
-            const entity = new Enemy(Assets[`enemy-${remainder + 1}.collider`]);
-            entity.body.translate(new Vector(0, -20 * quotient));
-            enemies[i] = entity;
-        }
         this.entities = [
             new Ball(Assets['ball.collider']),
             new Paddle(Assets['left-flipper.collider'], 'left'),
@@ -37,7 +29,12 @@ class Phase3Impl {
             new StaticElement(Assets['wall-13.collider'], Settings.wallBounciness),
             new StaticElement(Assets['wall-14.collider'], Settings.wallBounciness),
             new StaticElement(Assets['wall-15.collider'], Settings.wallBounciness),
-            ...enemies
+            new Enemy(Assets['enemy-1.collider']),
+            new Enemy(Assets['enemy-2.collider']),
+            new Enemy(Assets['enemy-3.collider']),
+            new Enemy(Assets['enemy-4.collider']),
+            new Enemy(Assets['enemy-5.collider']),
+            new Boss(Assets['boss.collider'])
         ];
         this.collisionEngine = new CollisionEngine();
     }

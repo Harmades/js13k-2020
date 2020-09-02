@@ -255,8 +255,8 @@ export const p3 = `
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.9899"
-     inkscape:cx="188.9"
-     inkscape:cy="116.7"
+     inkscape:cx="227.3"
+     inkscape:cy="148"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      inkscape:document-rotation="0"
@@ -601,6 +601,10 @@ export const p3 = `
        d="m 469.7,18.78 h 50.7 v 60.01 h -50.7 z"
        style="display:inline;fill:#fb0000;fill-opacity:1;stroke:none;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
        id="enemy-5.collider" />
+    <path
+       id="boss.collider"
+       style="display:inline;fill:#fb0000;fill-opacity:1;stroke:none;stroke-width:1.63757;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       d="m 260.1,-176.4 h 83.1 v 98.26 h -83.1 z" />
   </g>
 </svg>
 `

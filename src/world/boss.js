@@ -3,7 +3,7 @@ import { Shape } from "../math/shape.js";
 import { Settings } from "../settings.js";
 import { Vector } from "../math/vector.js";
 
-export class Enemy {
+export class Boss {
     constructor(shape) {
         this.body = new Body(1);
         this.body.shape = shape;
@@ -11,9 +11,9 @@ export class Enemy {
         this.body.isStatic = true;
         this.body.position = shape.vertices[0];
         this.body.onCollision = () => this.onCollision();
-        this.healthPoint = 1;
+        this.healthPoint = 3;
     }
-
+    
     onCollision() {
         this.healthPoint--;
         if (this.healthPoint == 0) this.body.ignoreCollision = true;

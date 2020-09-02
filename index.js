@@ -52,6 +52,7 @@ Assets.loadColliders(
         'enemy-3.collider',
         'enemy-4.collider',
         'enemy-5.collider',
+        'boss.collider'
     ]
 );
 const game = new Game();
