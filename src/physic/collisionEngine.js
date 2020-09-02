@@ -9,6 +9,7 @@ export class CollisionEngine {
     }
 
     update(body1, body2) {
+        if (body2.ignoreCollision) return;
         const normal = this.detector.satCollide(body1.shape, body2.shape);
         if (normal != null) {
             if (body2.onCollision != undefined) body2.onCollision(normal);
