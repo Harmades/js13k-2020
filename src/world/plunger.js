@@ -3,14 +3,15 @@ import { Body } from "../physic/body.js";
 import { Shape } from "../math/shape.js";
 import { Vector } from "../math/vector.js";
 import { Input } from "../input.js";
+import { Assets } from "../assets.js";
 
 export class Plunger {
-    constructor(shape) {
+    constructor(id) {
         this.body = new Body(Settings.ballMass);
-        this.body.shape = shape;
-        this.body.position = shape.vertices[0];
+        this.body.shape = Assets[`${id}.collider`];
+        this.body.position = this.body.shape.vertices[0];
         this.body.bounciness = Settings.launcherBounciness;
-        this.sprite = null;
+        this.sprite = Assets[id];
         this.compression = 0;
     }
 
@@ -37,7 +38,8 @@ export class Plunger {
         if (Settings.debug) {
             Shape.debugDraw(this.body.shape, context);
         } else {
-
+            Shape.debugDraw(this.body.shape, context);
+            // context.drawImage(this.sprite, 0, 0);
         }
     }
 }

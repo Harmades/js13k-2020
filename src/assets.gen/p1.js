@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+export const p1 = `
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -1054,3 +1054,4 @@
        d="M 52.9662 104.638 L 48.2625 90.3631 L 52.8506 76.0372 L 64.9935 67.14 L 80.0467 67.0787 L 92.2911 75.8605 L 96.9872 90.1715 L 92.3751 104.504 L 80.2214 113.361 L 65.1703 113.43 Z" />
   </g>
 </svg>
+`

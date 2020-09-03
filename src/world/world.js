@@ -6,15 +6,15 @@ import { Phase3 } from "./phase3.js";
 
 export class World {
     constructor() {
-        Phase3.load();
+        Phase1.load();
     }
 
     update(delta) {
-        Phase3.update(delta);
+        Phase1.update(delta);
     }
 
     render(delta, context) {
         context.clearRect(0, 0, Settings.width, Settings.height);
-        Phase3.render(delta, context);
+        Phase1.render(delta, context);
     }
 }

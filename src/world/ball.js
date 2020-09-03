@@ -5,11 +5,11 @@ import { Settings } from "../settings.js";
 import { Assets } from "../assets.js";
 
 export class Ball {
-    constructor(shape) {
-        this.initialPosition = shape.vertices[0];
+    constructor() {
+        this.initialPosition = Assets['ball.collider'].vertices[0];
         this.body = new Body(Settings.ballMass);
-        this.body.shape = shape;
-        this.body.position = shape.vertices[0];
+        this.body.shape = Assets['ball.collider'];
+        this.body.position = this.initialPosition;
         this.body.bounciness = Settings.ballBounciness;
         this.body.applyField(new Vector(0, this.body.mass * Settings.gravity));
         this.sprite = Assets.ball;
@@ -26,7 +26,8 @@ export class Ball {
         if (Settings.debug) {
             Shape.debugDraw(this.body.shape, context);
         } else {
-            context.drawImage(this.sprite, this.body.position.x, this.body.position.y);
+            Shape.debugDraw(this.body.shape, context);
+            // context.drawImage(this.sprite, this.body.position.x, this.body.position.y);
         }
     }
 }

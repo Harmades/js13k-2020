@@ -1,5 +1,5 @@
 import { Settings } from "../settings.js";
-import { Paddle } from "./flipper.js";
+import { Flipper } from "./flipper.js";
 import { Ball } from "./ball.js";
 import { StaticElement } from "./staticElement.js";
 import { Assets } from "../assets.js";
@@ -16,9 +16,9 @@ class Phase3Impl {
     load() {
         this.entities = [
             new Ball(Assets['ball.collider']),
-            new Paddle(Assets['left-flipper.collider'], 'left'),
+            new Flipper(Assets['left-flipper.collider'], 'left'),
             new Kicker(Assets['left-kicker.collider']),
-            new Paddle(Assets['right-flipper.collider'], 'right'),
+            new Flipper(Assets['right-flipper.collider'], 'right'),
             new Kicker(Assets['right-kicker.collider']),
             new StaticElement(Assets['wall-3.collider'], Settings.wallBounciness),
             new StaticElement(Assets['wall-6.collider'], Settings.wallBounciness),

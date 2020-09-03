@@ -1,5 +1,5 @@
 export const Settings = {
-    debug: true,
+    debug: false,
 
     width: 600,
     height: 800,
