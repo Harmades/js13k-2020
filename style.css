@@ -6,5 +6,9 @@ body {
 
 #canvas {
     border: 1px solid black;
-    display: block;
+    display: inline;
+}
+
+.svg {
+    display: inline;
 }

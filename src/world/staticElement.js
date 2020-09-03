@@ -10,8 +10,7 @@ export class StaticElement {
         this.body.bounciness = bounciness;
         this.body.isStatic = true;
         this.body.position = this.body.shape.vertices[0];
-        this.sprite = Assets[id];
-        this.rendered = false;
+        this.spriteBounds = Assets[id];
     }
 
     update(delta) { }
@@ -19,8 +18,18 @@ export class StaticElement {
     render(delta, context) {
         if (Settings.debug) {
             Shape.debugDraw(this.body.shape, context);
-        } else if (this.sprite !== undefined && !this.rendered) {
-            context.drawImage(this.sprite, 0, 0);
+        } else if (this.spriteBounds !== undefined) {
+            context.drawImage(
+                Assets.svg,
+                this.spriteBounds.x,
+                this.spriteBounds.y,
+                this.spriteBounds.width,
+                this.spriteBounds.height,
+                this.spriteBounds.x,
+                this.spriteBounds.y,
+                this.spriteBounds.width,
+                this.spriteBounds.height
+            );
         }
     }
 }

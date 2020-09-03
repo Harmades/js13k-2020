@@ -1,10 +1,9 @@
 import { Game } from './src/game.js';
 import { Kick, Snare, Bell } from './src/synthesizer.js';
 import { Assets } from './src/assets.js';
-import { p1 } from './src/assets.gen/p1.js';
 
 Assets.load(
-    p1,
+    document.getElementById("svg"),
     [
         'ball',
         'plunger',

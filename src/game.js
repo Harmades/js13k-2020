@@ -10,11 +10,9 @@ export class Game {
         this.canvas = document.getElementById("canvas");
         this.context = this.canvas.getContext("2d");
         this.world = new World();
-        if (Settings.debug) {
-            canvas.onmousemove = e => {
-                document.getElementById("x").textContent = e.offsetX;
-                document.getElementById("y").textContent = e.offsetY;
-            }
+        canvas.onmousemove = e => {
+            document.getElementById("x").textContent = e.offsetX;
+            document.getElementById("y").textContent = e.offsetY;
         }
     }
 

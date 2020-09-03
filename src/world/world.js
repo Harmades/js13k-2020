@@ -3,6 +3,7 @@ import { Settings } from "../settings.js";
 import { Phase1 } from "./phase1.js";
 import { Phase2 } from "./phase2.js";
 import { Phase3 } from "./phase3.js";
+import { Assets } from "../assets.js";
 
 export class World {
     constructor() {
