@@ -1,5 +1,5 @@
 import { Settings } from "../settings.js";
-import { Paddle } from "./flipper.js";
+import { Flipper } from "./flipper.js";
 import { Ball } from "./ball.js";
 import { StaticElement } from "./staticElement.js";
 import { Vector } from "../math/vector.js";
@@ -7,9 +7,9 @@ import { Plunger } from "./plunger.js";
 import { Tree } from "./tree.js";
 import { Iron } from "./iron.js";
 import { Gold } from "./gold.js";
-import { Assets } from "../assets.js";
+import { CollisionEngine } from "../physic/collisionEngine.js"; 
 
-class Phase1Impl {
+export class Phase1Impl {
     constructor() {
         this.woodScore = 0;
         this.goldScore = 0;
@@ -17,44 +17,44 @@ class Phase1Impl {
     }
 
     load() {
-        this.leftFlipper = new Paddle(Assets['left-flipper.collider'], 'left');
-        this.leftKicker = new StaticElement(Assets['left-kicker.collider'], Settings.wallBounciness);
+        this.leftFlipper = new Flipper('left-flipper', 'left');
+        this.leftKicker = new StaticElement('left-kicker', Settings.wallBounciness);
         this.leftKicker.body.speed = new Vector(0, -Settings.kickerImpulseSpeed);
         this.leftKicker.body.isStatic = false;
-        this.rightFlipper = new Paddle(Assets['right-flipper.collider'], 'right');
-        this.rightKicker = new StaticElement(Assets['right-kicker.collider'], Settings.wallBounciness);
+        this.rightFlipper = new Flipper('right-flipper', 'right');
+        this.rightKicker = new StaticElement('right-kicker', Settings.wallBounciness);
         this.rightKicker.body.speed = new Vector(0, -Settings.kickerImpulseSpeed);
         this.rightKicker.body.isStatic = false;
-        this.player = new Ball(Assets['ball.collider']); 
-        this.plunger = new Plunger(Assets['plunger.collider']);
-        this.wall1 = new StaticElement(Assets['wall-1.collider'], Settings.wallBounciness);
-        this.wall2 = new StaticElement(Assets['wall-2.collider'], Settings.wallBounciness);
-        this.wall3 = new StaticElement(Assets['wall-3.collider'], Settings.wallBounciness);
-        this.wall4 = new StaticElement(Assets['wall-4.collider'], Settings.wallBounciness);
-        this.wall5 = new StaticElement(Assets['wall-5.collider'], Settings.wallBounciness);
-        this.wall6 = new StaticElement(Assets['wall-6.collider'], Settings.wallBounciness);
-        this.wall7 = new StaticElement(Assets['wall-7.collider'], Settings.wallBounciness);
-        this.wall8 = new StaticElement(Assets['wall-8.collider'], Settings.wallBounciness);
-        this.wall9 = new StaticElement(Assets['wall-9.collider'], Settings.wallBounciness);
-        this.wall10 = new StaticElement(Assets['wall-10.collider'], Settings.wallBounciness);
-        this.wall11 = new StaticElement(Assets['wall-11.collider'], Settings.wallBounciness);
-        this.wall12 = new StaticElement(Assets['wall-12.collider'], Settings.wallBounciness);
-        this.wall13 = new StaticElement(Assets['wall-13.collider'], Settings.wallBounciness);
-        this.wall14 = new StaticElement(Assets['wall-14.collider'], Settings.wallBounciness);
-        this.wall15 = new StaticElement(Assets['wall-15.collider'], Settings.wallBounciness);
-        this.wall16 = new StaticElement(Assets['wall-16.collider'], Settings.wallBounciness);
-        this.wall17 = new StaticElement(Assets['wall-17.collider'], Settings.wallBounciness);
-        this.tree1 = new Tree(Assets['tree-1.collider'], Settings.wallBounciness);
-        this.tree2 = new Tree(Assets['tree-2.collider'], Settings.wallBounciness);
-        this.iron1 = new Iron(Assets['iron-1.collider'], Settings.wallBounciness);
-        this.iron2 = new Iron(Assets['iron-2.collider'], Settings.wallBounciness);
-        this.iron3 = new Iron(Assets['iron-3.collider'], Settings.wallBounciness);
-        this.iron4 = new Iron(Assets['iron-4.collider'], Settings.wallBounciness);
-        this.iron5 = new Iron(Assets['iron-5.collider'], Settings.wallBounciness);
-        this.gold1 = new Gold(Assets['gold-1.collider'], Settings.wallBounciness);
-        this.gold2 = new Gold(Assets['gold-2.collider'], Settings.wallBounciness);
-        this.gold3 = new Gold(Assets['gold-3.collider'], Settings.wallBounciness);
-        this.bumper = new StaticElement(Assets['bumper.collider'], Settings.bumperBounciness);
+        this.player = new Ball(); 
+        this.plunger = new Plunger('plunger');
+        this.wall1 = new StaticElement('wall-1', Settings.wallBounciness);
+        this.wall2 = new StaticElement('wall-2', Settings.wallBounciness);
+        this.wall3 = new StaticElement('wall-3', Settings.wallBounciness);
+        this.wall4 = new StaticElement('wall-4', Settings.wallBounciness);
+        this.wall5 = new StaticElement('wall-5', Settings.wallBounciness);
+        this.wall6 = new StaticElement('wall-6', Settings.wallBounciness);
+        this.wall7 = new StaticElement('wall-7', Settings.wallBounciness);
+        this.wall8 = new StaticElement('wall-8', Settings.wallBounciness);
+        this.wall9 = new StaticElement('wall-9', Settings.wallBounciness);
+        this.wall10 = new StaticElement('wall-10', Settings.wallBounciness);
+        this.wall11 = new StaticElement('wall-11', Settings.wallBounciness);
+        this.wall12 = new StaticElement('wall-12', Settings.wallBounciness);
+        this.wall13 = new StaticElement('wall-13', Settings.wallBounciness);
+        this.wall14 = new StaticElement('wall-14', Settings.wallBounciness);
+        this.wall15 = new StaticElement('wall-15', Settings.wallBounciness);
+        this.wall16 = new StaticElement('wall-16', Settings.wallBounciness);
+        this.wall17 = new StaticElement('wall-17', Settings.wallBounciness);
+        // this.tree1 = new Tree('tree-1', Settings.wallBounciness);
+        // this.tree2 = new Tree('tree-2', Settings.wallBounciness);
+        // this.iron1 = new Iron('iron-1', Settings.wallBounciness);
+        // this.iron2 = new Iron('iron-2', Settings.wallBounciness);
+        // this.iron3 = new Iron('iron-3', Settings.wallBounciness);
+        // this.iron4 = new Iron('iron-4', Settings.wallBounciness);
+        // this.iron5 = new Iron('iron-5', Settings.wallBounciness);
+        // this.gold1 = new Gold('gold-1', Settings.wallBounciness);
+        // this.gold2 = new Gold('gold-2', Settings.wallBounciness);
+        // this.gold3 = new Gold('gold-3', Settings.wallBounciness);
+        this.bumper = new StaticElement('bumper', Settings.bumperBounciness);
         this.collisionEngine = new CollisionEngine();
     }
 
@@ -85,17 +85,17 @@ class Phase1Impl {
         this.collisionEngine.update(this.player.body, this.wall15.body);
         this.collisionEngine.update(this.player.body, this.wall16.body);
         this.collisionEngine.update(this.player.body, this.wall17.body);
-        this.collisionEngine.update(this.player.body, this.gold1.body);
-        this.collisionEngine.update(this.player.body, this.gold2.body);
-        this.collisionEngine.update(this.player.body, this.gold3.body);
+        // this.collisionEngine.update(this.player.body, this.gold1.body);
+        // this.collisionEngine.update(this.player.body, this.gold2.body);
+        // this.collisionEngine.update(this.player.body, this.gold3.body);
         this.collisionEngine.update(this.player.body, this.bumper.body);
-        if (this.tree1.healthPoint > 0) this.collisionEngine.update(this.player.body, this.tree1.body);
-        if (this.tree2.healthPoint > 0) this.collisionEngine.update(this.player.body, this.tree2.body);
-        if (this.iron1.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron1.body);
-        if (this.iron2.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron2.body);
-        if (this.iron3.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron3.body);
-        if (this.iron4.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron4.body);
-        if (this.iron5.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron5.body);
+        // if (this.tree1.healthPoint > 0) this.collisionEngine.update(this.player.body, this.tree1.body);
+        // if (this.tree2.healthPoint > 0) this.collisionEngine.update(this.player.body, this.tree2.body);
+        // if (this.iron1.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron1.body);
+        // if (this.iron2.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron2.body);
+        // if (this.iron3.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron3.body);
+        // if (this.iron4.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron4.body);
+        // if (this.iron5.healthPoint > 0) this.collisionEngine.update(this.player.body, this.iron5.body);
 
         document.getElementById("gold").textContent = Phase1.goldScore;
         document.getElementById("iron").textContent = Phase1.ironScore;
@@ -126,17 +126,17 @@ class Phase1Impl {
         this.wall15.render(delta, context);
         this.wall16.render(delta, context);
         this.wall17.render(delta, context);
-        this.gold1.render(delta, context);
-        this.gold2.render(delta, context);
-        this.gold3.render(delta, context);
+        // this.gold1.render(delta, context);
+        // this.gold2.render(delta, context);
+        // this.gold3.render(delta, context);
         this.bumper.render(delta, context);
-        if (this.tree1.healthPoint > 0) this.tree1.render(delta, context);
-        if (this.tree2.healthPoint > 0) this.tree2.render(delta, context);
-        if (this.iron1.healthPoint > 0) this.iron1.render(delta, context);
-        if (this.iron2.healthPoint > 0) this.iron2.render(delta, context);
-        if (this.iron3.healthPoint > 0) this.iron3.render(delta, context);
-        if (this.iron4.healthPoint > 0) this.iron4.render(delta, context);
-        if (this.iron5.healthPoint > 0) this.iron5.render(delta, context);
+        // if (this.tree1.healthPoint > 0) this.tree1.render(delta, context);
+        // if (this.tree2.healthPoint > 0) this.tree2.render(delta, context);
+        // if (this.iron1.healthPoint > 0) this.iron1.render(delta, context);
+        // if (this.iron2.healthPoint > 0) this.iron2.render(delta, context);
+        // if (this.iron3.healthPoint > 0) this.iron3.render(delta, context);
+        // if (this.iron4.healthPoint > 0) this.iron4.render(delta, context);
+        // if (this.iron5.healthPoint > 0) this.iron5.render(delta, context);
     }
 
     isComplete() {

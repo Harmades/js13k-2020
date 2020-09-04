@@ -3,23 +3,25 @@ import { Shape } from '../math/shape.js';
 import { Vector } from '../math/vector.js';
 import { Settings } from '../settings.js';
 import { Input } from '../input.js';
+import { Assets } from '../assets.js';
 
 
-export class Paddle {
-    constructor(shape, side) {
+export class Flipper {
+    constructor(id, side) {
         let sign = null;
         if (side == 'right') sign = -1;
         if (side == 'left') sign = 1;
         this.side = side;
         this.body = new Body(null);
-        this.body.shape = shape;
-        this.body.position = shape.vertices[0];
+        this.body.shape = Assets[`${id}.collider`];
+        this.body.position = this.body.shape.vertices[0];
         this.body.bounciness = Settings.wallBounciness;
         this.maxAngle = -sign * Settings.paddleMaxAngle;
         this.angularSpeed = Settings.paddleAngularSpeed;
         this.angle = 0;
         this.flipping = false;
-        this.tag = 'paddle';
+        this.sprite = Assets[id];
+        this.rendered = false;
     }
 
     flip() {
@@ -63,8 +65,9 @@ export class Paddle {
     render(delta, context) {
         if (Settings.debug) {
             Shape.debugDraw(this.body.shape, context);
-        } else {
-
+        } else if(!this.rendered) {
+            Shape.debugDraw(this.body.shape, context);
+            // context.drawImage(this.sprite, this.body.position.x, this.body.position.y);
         }
     }
 }

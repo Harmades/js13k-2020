@@ -1,5 +1,5 @@
 import { Settings } from "../settings.js";
-import { Paddle } from "./flipper.js";
+import { Flipper } from "./flipper.js";
 import { Ball } from "./ball.js";
 import { StaticElement } from "./staticElement.js";
 import { Vector } from "../math/vector.js";
@@ -17,11 +17,11 @@ class Phase2Impl {
     }
 
     load() {
-        this.leftFlipper = new Paddle(Assets['left-flipper.collider'], 'left');
+        this.leftFlipper = new Flipper(Assets['left-flipper.collider'], 'left');
         this.leftKicker = new StaticElement(Assets['left-kicker.collider'], Settings.wallBounciness);
         this.leftKicker.body.speed = new Vector(0, -Settings.kickerImpulseSpeed);
         this.leftKicker.body.isStatic = false;
-        this.rightFlipper = new Paddle(Assets['right-flipper.collider'], 'right');
+        this.rightFlipper = new Flipper(Assets['right-flipper.collider'], 'right');
         this.rightKicker = new StaticElement(Assets['right-kicker.collider'], Settings.wallBounciness);
         this.rightKicker.body.speed = new Vector(0, -Settings.kickerImpulseSpeed);
         this.rightKicker.body.isStatic = false;
