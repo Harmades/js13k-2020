@@ -10,14 +10,14 @@
   </rdf:RDF>
  </metadata>
  <g>
-  <ellipse cx="102" cy="113" rx="51.6" ry="42.3" fill="#540000" fill-rule="evenodd" stop-color="#000000" stroke="#000" stroke-width=".7" style="font-variation-settings:normal"/>
-  <ellipse cx="103" cy="91.6" rx="62.8" ry="52.4" fill="#fc0" fill-rule="evenodd" stop-color="#000000" stroke="#000" style="font-variation-settings:normal"/>
-  <path transform="scale(.265)" d="m317 156-12 82-122 9.19 68.6 64.3-91.2 84.1 127-4.95-7.07 132 95.5-86.3 90.5 96.2 10.6-124 128 14.1-77.8-84.1 82.7-60.8-117-22.6-7.07-87.7-71.4 40.3-32.5-7.07z" fill="#800000" stroke-dashoffset="2.69" stroke-width="2.65"/>
-  <ellipse cx="103" cy="78.9" rx="35" ry="28.8" fill="#800000" fill-rule="evenodd" stop-color="#000000" stroke="#000" stroke-width=".7" style="font-variation-settings:normal"/>
+  <ellipse cx="102" cy="113" rx="52" ry="42" fill="#540000" fill-rule="evenodd" stop-color="#000000" stroke="#000" stroke-width=".7" style="font-variation-settings:normal"/>
+  <ellipse cx="103" cy="92" rx="63" ry="52" fill="#fc0" fill-rule="evenodd" stop-color="#000000" stroke="#000" style="font-variation-settings:normal"/>
+  <path transform="scale(.26)" d="m317 156-12 82-122 9.2 69 64-91 84 127-5-7.1 132 95-86 91 96 11-124 128 14-78-84 83-61-117-23-7.1-88-71 40-33-7.1z" fill="#800000" stroke-dashoffset="2.7" stroke-width="2.6"/>
+  <ellipse cx="103" cy="79" rx="35" ry="29" fill="#800000" fill-rule="evenodd" stop-color="#000000" stroke="#000" stroke-width=".7" style="font-variation-settings:normal"/>
   <g fill-rule="evenodd">
-   <path transform="scale(.265)" d="m520 279a132 109 0 0 1 2.04 19.1 132 109 0 0 1-132 109 132 109 0 0 1-128-81 132 112 0 0 0 131 95.5 132 112 0 0 0 132-112 132 112 0 0 0-4.81-30.1z" opacity=".242" stop-color="#000000" stroke-width="0" style="font-variation-settings:normal"/>
-   <ellipse cx="104" cy="78.1" rx="26.9" ry="21.2" opacity=".205" stop-color="#000000" stroke-width="0" style="font-variation-settings:normal"/>
-   <path transform="scale(.265)" d="m597 250a264 209 0 0 1 9.79 56.3 264 209 0 0 1-264 209 264 209 0 0 1-107-17.7 237 198 0 0 0 154 47.3 237 198 0 0 0 238-198 237 198 0 0 0-30.1-96.6z" opacity=".252" stop-color="#000000" style="font-variation-settings:normal"/>
+   <path transform="scale(.26)" d="m520 279c1.4 6.3 2 13 2 19-5.6e-4 60-59 109-132 109-60 5.2e-4 -112-33-128-81 9.8 55 65 95 131 95 100-5.4 151-68 127-142z" opacity=".24" stop-color="#000000" stroke-width="0" style="font-variation-settings:normal"/>
+   <ellipse cx="104" cy="78" rx="27" ry="21" opacity=".21" stop-color="#000000" stroke-width="0" style="font-variation-settings:normal"/>
+   <path transform="scale(.26)" d="m597 250a264 209 0 0 1 9.8 56 264 209 0 0 1-264 209 264 209 0 0 1-107-18 237 198 0 0 0 154 47 237 198 0 0 0 238-198 237 198 0 0 0-30-97z" opacity=".25" stop-color="#000000" style="font-variation-settings:normal"/>
   </g>
  </g>
 </svg>
