@@ -33,12 +33,20 @@ export class Shape {
             ));
     }
 
+    hFlip(axe) {
+        const vertices = [];
+        for (const vertex of this.vertices) {
+            vertices.push(new Vector(vertex.x + 2 * (axe - vertex.x), vertex.y));
+        }
+        return new Shape(vertices);
+    }
+
     static circle(x, y, radius) {
         const vertices = [];
         const sides = 26;
         const angle = 2 * Math.PI / sides;
         for (let i = 0; i < sides; i++) {
-            vertices[i] = new Vector(x + radius * (1 +Math.cos(i * angle)), y + radius * (1 + Math.sin(i * angle)));
+            vertices[i] = new Vector(x + radius * (1 + Math.cos(i * angle)), y + radius * (1 + Math.sin(i * angle)));
         }
         return new Shape(vertices);
     }
@@ -47,19 +55,21 @@ export class Shape {
         return new Shape([new Vector(x, y), new Vector(x, y + height), new Vector(x + width, y + height), new Vector(x + width, y)]);
     }
 
-    static debugDraw(shape, context) {
+    static debugDraw(body, context) {
         context.beginPath();
+        context.save();
         context.fillStyle = "#FF0000";
-        context.moveTo(shape.vertices[0].x, shape.vertices[0].y);
-        for (let i = 1; i < shape.vertices.length; i++) {
-            const vertex = shape.vertices[i];
+        context.translate(body.position.x, body.position.y);
+        for (let i = 0; i < body.shape.vertices.length; i++) {
+            const vertex = body.shape.vertices[i];
             context.lineTo(vertex.x, vertex.y);
         }
         context.fill();
+        context.restore();
         context.closePath();
     }
 
-    static fromSvgData(data) {
+    static fromSvgData(data, bBox) {
         let lastPosition = new Vector(0, 0);
         let lastCommand = null;
         const sequence = data.split(" ");
@@ -112,6 +122,10 @@ export class Shape {
                     lastPosition = vertices[vertices.length - 1];
                     break;
             }
+        }
+        for (const vertex of vertices) {
+            vertex.x -= bBox.x;
+            vertex.y -= bBox.y;
         }
         return new Shape(vertices);
     }

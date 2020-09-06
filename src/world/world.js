@@ -16,6 +16,18 @@ export class World {
 
     render(delta, context) {
         context.clearRect(0, 0, Settings.width, Settings.height);
+        const spriteBounds = Assets.sprites.background;
+        context.drawImage(
+            Assets.atlas,
+            spriteBounds.x,
+            spriteBounds.y,
+            spriteBounds.width,
+            spriteBounds.height,
+            0,
+            0,
+            spriteBounds.width,
+            spriteBounds.height
+        );
         Phase1.render(delta, context);
     }
 }

@@ -6,13 +6,14 @@ import { Assets } from "../assets.js";
 
 export class Ball {
     constructor() {
-        this.initialPosition = Assets['ball.collider'].vertices[0];
+        const position = new Vector(560, 632);
+        this.initialPosition = position;
         this.body = new Body(Settings.ballMass);
-        this.body.shape = Assets['ball.collider'];
-        this.body.position = this.initialPosition;
+        this.body.shape = Assets.colliders['ball.collider'];
+        this.body.position = position;
         this.body.bounciness = Settings.ballBounciness;
         this.body.applyField(new Vector(0, this.body.mass * Settings.gravity));
-        this.sprite = Assets.ball;
+        this.spriteBounds = Assets.sprites.ball;
     }
 
     update(delta) {
@@ -24,10 +25,19 @@ export class Ball {
 
     render(delta, context) {
         if (Settings.debug) {
-            Shape.debugDraw(this.body.shape, context);
+            Shape.debugDraw(this.body, context);
         } else {
-            Shape.debugDraw(this.body.shape, context);
-            // context.drawImage(this.sprite, this.body.position.x, this.body.position.y);
+            context.drawImage(
+                Assets.atlas,
+                this.spriteBounds.x,
+                this.spriteBounds.y,
+                this.spriteBounds.width,
+                this.spriteBounds.height,
+                this.body.position.x,
+                this.body.position.y,
+                this.spriteBounds.width,
+                this.spriteBounds.height
+            );
         }
     }
 }

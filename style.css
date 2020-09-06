@@ -6,9 +6,10 @@ body {
 
 #canvas {
     border: 1px solid black;
-    display: inline;
 }
 
-.svg {
-    display: inline;
+#svg {
+    left: 0px;
+    position: absolute;
+    z-index: -1;
 }

@@ -6,12 +6,12 @@ import { Input } from "../input.js";
 import { Assets } from "../assets.js";
 
 export class Plunger {
-    constructor(id) {
+    constructor() {
         this.body = new Body(Settings.ballMass);
-        this.body.shape = Assets[`${id}.collider`];
-        this.body.position = this.body.shape.vertices[0];
+        this.body.shape = Assets.colliders[`plunger.collider`];
+        this.body.position = new Vector(546.8, 663.3);
         this.body.bounciness = Settings.launcherBounciness;
-        this.sprite = Assets[id];
+        this.spriteBounds = Assets.sprites['plunger'];
         this.compression = 0;
     }
 
@@ -36,10 +36,19 @@ export class Plunger {
 
     render(delta, context) {
         if (Settings.debug) {
-            Shape.debugDraw(this.body.shape, context);
+            Shape.debugDraw(this.body, context);
         } else {
-            Shape.debugDraw(this.body.shape, context);
-            // context.drawImage(this.sprite, 0, 0);
+            context.drawImage(
+                Assets.atlas,
+                this.spriteBounds.x,
+                this.spriteBounds.y,
+                this.spriteBounds.width,
+                this.spriteBounds.height,
+                this.body.position.x,
+                this.body.position.y,
+                this.spriteBounds.width,
+                this.spriteBounds.height
+            );
         }
     }
 }

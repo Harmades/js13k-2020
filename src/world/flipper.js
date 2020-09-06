@@ -8,20 +8,27 @@ import { Assets } from '../assets.js';
 
 export class Flipper {
     constructor(id, side) {
-        let sign = null;
-        if (side == 'right') sign = -1;
-        if (side == 'left') sign = 1;
-        this.side = side;
+        this.sign = null;
+        this.spriteBounds = Assets.sprites[id];
         this.body = new Body(null);
-        this.body.shape = Assets[`${id}.collider`];
-        this.body.position = this.body.shape.vertices[0];
+        this.body.shape = Assets.colliders[`${id}.collider`];
         this.body.bounciness = Settings.wallBounciness;
-        this.maxAngle = -sign * Settings.paddleMaxAngle;
+        if (side == 'right') {
+            this.sign = -1;
+            this.body.position = new Vector(298.61, 654.71);
+            this.center = new Vector(354, 664.3);
+            this.body.hFlip(this.spriteBounds.width / 2);
+        }
+        if (side == 'left') {
+            this.sign = 1;
+            this.body.position = new Vector(168.11, 654.71);
+            this.center = new Vector(178.2, 664.3);
+        }
+        this.side = side;
+        this.maxAngle = -this.sign * Settings.paddleMaxAngle;
         this.angularSpeed = Settings.paddleAngularSpeed;
         this.angle = 0;
         this.flipping = false;
-        this.sprite = Assets[id];
-        this.rendered = false;
     }
 
     flip() {
@@ -33,7 +40,7 @@ export class Flipper {
             if (Math.abs(this.angle) < Math.abs(this.maxAngle)) {
                 const rotation = Math.sign(this.maxAngle) * this.angularSpeed * delta;
                 this.angle += rotation;
-                this.body.rotate(rotation);
+                this.body.rotate(this.center.subtract(this.body.position), rotation);
                 this.body.speed = new Vector(
                     Math.sign(this.maxAngle) * Math.cos(this.angle),
                     -Math.sign(this.maxAngle) * Math.sin(this.angle)
@@ -46,7 +53,7 @@ export class Flipper {
             if (Math.abs(this.angle) > Math.PI / 360) {
                 const rotation = -Math.sign(this.maxAngle) * this.angularSpeed * delta;
                 this.angle += rotation;
-                this.body.rotate(rotation);
+                this.body.rotate(this.center.subtract(this.body.position), rotation);
                 this.body.speed = new Vector(
                     Math.sign(this.maxAngle) * Math.cos(this.angle),
                     -Math.sign(this.maxAngle) * Math.sin(this.angle)
@@ -64,10 +71,25 @@ export class Flipper {
 
     render(delta, context) {
         if (Settings.debug) {
-            Shape.debugDraw(this.body.shape, context);
-        } else if(!this.rendered) {
-            Shape.debugDraw(this.body.shape, context);
-            // context.drawImage(this.sprite, this.body.position.x, this.body.position.y);
+            Shape.debugDraw(this.body, context);
+        } else {
+            context.save();
+            context.scale(this.sign, 1);
+            context.translate(this.sign * this.center.x, this.center.y);
+            const offset = this.sign == -1 ? -this.spriteBounds.width : 0;
+            context.rotate(this.sign * this.angle);
+            context.drawImage(
+                Assets.atlas,
+                this.spriteBounds.x,
+                this.spriteBounds.y,
+                this.spriteBounds.width,
+                this.spriteBounds.height,
+                this.sign * this.body.position.x + offset - this.sign * this.center.x,
+                this.body.position.y - this.center.y,
+                this.spriteBounds.width,
+                this.spriteBounds.height
+            );
+            context.restore();
         }
     }
 }

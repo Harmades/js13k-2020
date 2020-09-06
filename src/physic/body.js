@@ -15,6 +15,10 @@ export class Body {
         this.isRigid = true;
     }
 
+    hFlip(axe) {
+        this.shape = this.shape.hFlip(axe);
+    }
+
     applyImpulse(force) {
         this.impulse = this.impulse.add(force);
     }
@@ -23,13 +27,16 @@ export class Body {
         this.field = this.field.add(force);
     }
 
-    rotate(angle) {
-        this.shape.rotate(this.position, angle);
+    rotate(center, angle) {
+        this.shape.rotate(center, angle);
     }
 
     translate(vector) {
         this.position = this.position.add(vector);
-        this.shape.translate(vector);
+    }
+
+    getShape() {
+        return new Shape(this.shape.vertices.map(v => v.add(this.position)));
     }
 
     update(delta) {

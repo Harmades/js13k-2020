@@ -2,16 +2,18 @@ import { Body } from "../physic/body.js";
 import { Shape } from "../math/shape.js";
 import { Settings } from "../settings.js";
 import { Phase1 } from "./phase1.js";
+import { Assets } from "../assets.js";
 
 export class Gold {
-    constructor(shape, bounciness) {
+    constructor(position) {
         this.body = new Body(null);
-        this.body.shape = shape;
-        this.body.bounciness = bounciness;
+        this.body.shape = Assets.colliders['gold.collider'];
+        this.body.bounciness = Settings.wallBounciness;
         this.body.isStatic = true;
         this.body.isRigid = false;
-        this.body.position = shape.vertices[0];
+        this.body.position = position;
         this.body.onAreaEnter = () => this.onAreaEnter();
+        this.spriteBounds = Assets.sprites.gold;
     }
 
     update(delta) { }
@@ -22,9 +24,19 @@ export class Gold {
 
     render(delta, context) {
         if (Settings.debug) {
-            Shape.debugDraw(this.body.shape, context);
+            Shape.debugDraw(this.body, context);
         } else {
-
+            context.drawImage(
+                Assets.atlas,
+                this.spriteBounds.x,
+                this.spriteBounds.y,
+                this.spriteBounds.width,
+                this.spriteBounds.height,
+                this.body.position.x,
+                this.body.position.y,
+                this.spriteBounds.width,
+                this.spriteBounds.height
+            );
         }
     }
 }
