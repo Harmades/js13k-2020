@@ -70,9 +70,61 @@ export class Shape {
     }
 
     static fromSvgData(data, bBox) {
+        let dataArray = data.split('');
+        let res = "";
+        const one_numb = ['v','h','V','H','z'];
+        const two_numb = ['m','M','l','L','c','z'];
+        let type_data = 0;
+        let count = 0;
+        let coords = ["",""];
+        for (const i in dataArray){
+          let force_print = false;
+          const c = dataArray[i];
+          if(one_numb.includes(c) || two_numb.includes(c)){
+            force_print = true;
+          } else if (c === '-') {
+            if(coords[0] !== ""){
+              count += 1;
+              if (count < 2){
+                coords[count] = coords[count] + c;
+              }
+            }else{
+              coords[count] = c;
+            }
+          } else if (c !== " ") {
+            coords[count] = coords[count] + c;
+          }else{
+            count +=1;
+          }
+          if(count === type_data || force_print){
+            if(type_data === 2 && coords[0] !== ""){
+              res = res + coords[0] + "," + coords[1] + " ";
+            }else if(type_data === 1 && coords[0] !== ""){
+              res = res + coords[0] + " ";
+            }
+            if(force_print){
+              if(one_numb.includes(c)){
+                type_data = 1;
+              } else if (two_numb.includes(c)) {
+                type_data = 2;
+              }
+              res = res + c;
+              if(c !== "z"){
+                res = res + " ";
+              }
+            }
+            coords = ["",""];
+            if(c === "-"){
+              coords[0] = "-";
+            }
+            count = 0;
+          }
+        }
+        console.log(data);
+        console.log(res);
         let lastPosition = new Vector(0, 0);
         let lastCommand = null;
-        const sequence = data.split(" ");
+        const sequence = res.split(" ");
         const vertices = [];
         for (const element of sequence) {
             switch (element) {
@@ -127,6 +179,8 @@ export class Shape {
             vertex.x -= bBox.x;
             vertex.y -= bBox.y;
         }
+
+        console.log(vertices);
         return new Shape(vertices);
     }
 }
