@@ -17,9 +17,9 @@ export class Phase1Impl {
     load(collisionEngine) {
         this.collisionEngine = collisionEngine;
         this.player = Base.player;
-        this.sMineWall = new StaticElement('small-mine-wall', new Vector(-11.67, 190.5));
-        this.lMineWall = new StaticElement('large-mine-wall', new Vector(138.2, -81.93));
-        this.tree1 = new Tree(new Vector(129.7, 193.2));
+        this.sMineWall = new StaticElement('small-mine-wall', new Vector(0, 220));
+        this.lMineWall = new StaticElement('large-mine-wall', new Vector(160, 0));
+        this.tree1 = new Tree(new Vector(140, 150));
         this.tree2 = new Tree(new Vector(373.4, 266));
         this.iron1 = new Iron(new Vector(10.91, 8.75));
         this.iron2 = new Iron(new Vector(114.4, 7.95));

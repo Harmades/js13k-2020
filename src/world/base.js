@@ -5,6 +5,7 @@ import { Vector } from "../math/vector.js";
 import { Plunger } from "./plunger.js";
 import { Kicker } from "./kicker.js";
 import { Assets } from "../assets.js";
+import { Settings } from "../settings.js";
 
 class BaseImpl {
     load(collisionEngine) {
@@ -26,7 +27,7 @@ class BaseImpl {
         this.rGutter = new StaticElement('gutter', new Vector(319.5, 653));
         this.rGutter.hFlip();
         this.fence = new StaticElement('fence', new Vector(530.8, 107.1));
-        this.deflector = new StaticElement('deflector', new Vector(512.3, -79.2));
+        this.deflector = new StaticElement('deflector', new Vector(539, 0));
         this.lWall = new StaticElement('left-wall', new Vector(-100, 0));
         this.tWall = new StaticElement('top-wall', new Vector(-100, -100));
         this.rWall = new StaticElement('right-wall', new Vector(600, 0));
@@ -60,18 +61,9 @@ class BaseImpl {
     }
 
     renderStatic(delta, context) {
-        const spriteBounds = Assets.sprites.background;
-        context.drawImage(
-            Assets.atlas,
-            spriteBounds.x,
-            spriteBounds.y,
-            spriteBounds.width,
-            spriteBounds.height,
-            0,
-            0,
-            spriteBounds.width,
-            spriteBounds.height
-        );
+        context.fillStyle = "#71c837";
+        context.fillRect(0, 0, Settings.width, Settings.height);
+        
         this.lBend1.render(delta, context);
         this.lBend2.render(delta, context);
         this.rBend1.render(delta, context);
