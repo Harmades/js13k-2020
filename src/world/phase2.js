@@ -7,7 +7,7 @@ import { Plunger } from "./plunger.js";
 import { Assets } from "../assets.js";
 import { CollisionEngine } from "../physic/collisionEngine.js";
 import { Base } from "./base.js";
-import { Phase1 } from "./phase1.js"
+import { Phase3 } from "./phase3.js"
 
 class Phase2Impl {
     constructor() {
@@ -97,7 +97,7 @@ class Phase2Impl {
 
     isComplete() { return this.fightResults.filter(r => r == true).length == 3; }
 
-    nextPhase() { return Phase1; }
+    nextPhase() { return Phase3; }
 }
 
 export const Phase2 = new Phase2Impl();
