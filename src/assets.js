@@ -27,7 +27,10 @@ class AssetsImpl {
             if (node.getBBox) this.sprites[node.id] = node.getBBox();
         }
         document.getElementById("layer2").style.display = "none";
-        this.loadSvg(svg, () => onload());
+        this.loadSvg(svg, () => {
+            onload();
+            svg.style.display = "none";
+        });
     }
 }
 

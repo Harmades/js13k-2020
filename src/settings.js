@@ -4,11 +4,11 @@ export const Settings = {
     width: 600,
     height: 800,
 
-    engineTimeResolution: 0.1,
+    engineTimeResolution: 1,
 
     gravity: 1000,
 
-    wallBounciness: 300000,
+    wallBounciness: 30000,
 
     paddleMaxAngle: Math.PI / 2.5,
     paddleAngularSpeed: 15,
@@ -20,7 +20,7 @@ export const Settings = {
     launcherAmplitude: 50,
     launcherCompressingSpeed: 100,
     launcherSpeed: 2000,
-    launcherBounciness: 10000,
+    launcherBounciness: 1000,
 
     rockScoreGoal: 10,
     goldScoreGoal: 10,
@@ -28,5 +28,5 @@ export const Settings = {
 
     kickerImpulseSpeed: 800,
 
-    bumperBounciness: 300000 * 1.5
+    bumperBounciness: 30000 * 1.5
 }

@@ -1,5 +1,6 @@
 import { Settings } from "./settings.js";
 import { World } from "./world/world.js";
+import { CanvasContext } from "./canvasContext.js";
 
 export class Game {
 
@@ -7,10 +8,16 @@ export class Game {
         this.tickLength = Settings.engineTimeResolution;
         this.lastTick = performance.now();
         this.lastRender = this.lastTick;
-        this.canvas = document.getElementById("canvas");
-        this.context = this.canvas.getContext("2d");
+        this.dynamicCanvas = document.getElementById("dynamic-canvas");
+        this.hybridCanvas = document.getElementById("hybrid-canvas");
+        this.staticCanvas = document.getElementById("static-canvas");
+        this.context = new CanvasContext(
+            this.staticCanvas.getContext("2d"),
+            this.hybridCanvas.getContext("2d"),
+            this.dynamicCanvas.getContext("2d")
+        );
         this.world = new World();
-        canvas.onmousemove = e => {
+        this.dynamicCanvas.onmousemove = e => {
             document.getElementById("x").textContent = e.offsetX;
             document.getElementById("y").textContent = e.offsetY;
         }

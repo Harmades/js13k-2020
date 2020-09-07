@@ -4,12 +4,20 @@ body {
     align-items: center;
 }
 
-#canvas {
-    border: 1px solid black;
-}
-
 #svg {
     left: 0px;
     position: absolute;
     z-index: -1;
+}
+
+.canvas {
+    border: 1px solid black;
+    position: absolute;
+    top: 0px;
+}
+
+.canvas-container {
+    position: relative;
+    width: 600px;
+    height: 800px;
 }

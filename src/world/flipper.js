@@ -44,7 +44,7 @@ export class Flipper {
                 this.body.speed = new Vector(
                     Math.sign(this.maxAngle) * Math.cos(this.angle),
                     -Math.sign(this.maxAngle) * Math.sin(this.angle)
-                    ).multiply(100000 * this.angularSpeed * 6 * delta); 
+                    ).multiply(10000 * this.angularSpeed * 6 * delta); 
             } else {
                 this.flipping = false;
                 this.body.speed = Vector.zero();
@@ -57,7 +57,7 @@ export class Flipper {
                 this.body.speed = new Vector(
                     Math.sign(this.maxAngle) * Math.cos(this.angle),
                     -Math.sign(this.maxAngle) * Math.sin(this.angle)
-                    ).multiply(-100000 * this.angularSpeed * 6 * delta); 
+                    ).multiply(-10000 * this.angularSpeed * 6 * delta); 
             } else {
                 this.flipping = false;
                 this.body.speed = Vector.zero();

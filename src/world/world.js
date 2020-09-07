@@ -8,6 +8,7 @@ import { Assets } from "../assets.js";
 export class World {
     constructor() {
         Phase1.load();
+        this.staticDrawn = false;
     }
 
     update(delta) {
@@ -15,19 +16,13 @@ export class World {
     }
 
     render(delta, context) {
-        context.clearRect(0, 0, Settings.width, Settings.height);
-        const spriteBounds = Assets.sprites.background;
-        context.drawImage(
-            Assets.atlas,
-            spriteBounds.x,
-            spriteBounds.y,
-            spriteBounds.width,
-            spriteBounds.height,
-            0,
-            0,
-            spriteBounds.width,
-            spriteBounds.height
-        );
-        Phase1.render(delta, context);
+        if (!this.staticDrawn) {
+            Phase1.renderStatic(delta, context.staticContext);
+            this.staticDrawn = true;
+        }
+        context.hybridContext.clearRect(0, 0, Settings.width, Settings.height);
+        Phase1.renderHybrid(delta, context.hybridContext);
+        context.dynamicContext.clearRect(0, 0, Settings.width, Settings.height);
+        Phase1.renderDynamic(delta, context.dynamicContext);
     }
 }
