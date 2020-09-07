@@ -7,22 +7,29 @@ import { Assets } from "../assets.js";
 
 export class World {
     constructor() {
-        Phase1.load();
+        this.currentPhase = Phase1;
+        this.currentPhase.load();
         this.staticDrawn = false;
     }
 
     update(delta) {
-        Phase1.update(delta);
+        this.currentPhase.update(delta);
+        if (this.currentPhase.isComplete()) {
+            this.currentPhase = this.currentPhase.nextPhase();
+            this.currentPhase.load();
+            this.staticDrawn = false;
+        }
     }
 
     render(delta, context) {
         if (!this.staticDrawn) {
-            Phase1.renderStatic(delta, context.staticContext);
+            context.staticContext.clearRect(0, 0, Settings.width, Settings.height);
+            this.currentPhase.renderStatic(delta, context.staticContext);
             this.staticDrawn = true;
         }
         context.hybridContext.clearRect(0, 0, Settings.width, Settings.height);
-        Phase1.renderHybrid(delta, context.hybridContext);
+        this.currentPhase.renderHybrid(delta, context.hybridContext);
         context.dynamicContext.clearRect(0, 0, Settings.width, Settings.height);
-        Phase1.renderDynamic(delta, context.dynamicContext);
+        this.currentPhase.renderDynamic(delta, context.dynamicContext);
     }
 }

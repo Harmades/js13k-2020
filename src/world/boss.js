@@ -2,16 +2,18 @@ import { Body } from "../physic/body.js";
 import { Shape } from "../math/shape.js";
 import { Settings } from "../settings.js";
 import { Vector } from "../math/vector.js";
+import { Assets } from "../assets.js";
 
 export class Boss {
-    constructor(shape) {
+    constructor(position) {
         this.body = new Body(1);
-        this.body.shape = shape;
+        this.body.shape = Assets.colliders['boss.collider'];
         this.body.bounciness = Settings.wallBounciness;
         this.body.isStatic = true;
-        this.body.position = shape.vertices[0];
+        this.body.position = position;
         this.body.onCollision = () => this.onCollision();
         this.healthPoint = 3;
+        this.spriteBounds = Assets.sprites.boss;
     }
     
     onCollision() {
@@ -25,12 +27,22 @@ export class Boss {
     }
 
     render(delta, context) {
+        if (this.healthPoint == 0) return;
         if (Settings.debug) {
-            if (this.healthPoint != 0) {
-                Shape.debugDraw(this.body.shape, context);
-            }
+            Shape.debugDraw(this.body, context);
         } else {
-
+            Shape.debugDraw(this.body, context);
+            // context.drawImage(
+            //     Assets.atlas,
+            //     this.spriteBounds.x,
+            //     this.spriteBounds.y,
+            //     this.spriteBounds.width,
+            //     this.spriteBounds.height,
+            //     this.body.position.x,
+            //     this.body.position.y,
+            //     this.spriteBounds.width,
+            //     this.spriteBounds.height
+            // );
         }
     }
 }

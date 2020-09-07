@@ -22,9 +22,9 @@ export const Settings = {
     launcherSpeed: 2000,
     launcherBounciness: 1000,
 
-    rockScoreGoal: 10,
-    goldScoreGoal: 10,
-    treeScoreGoal: 10,
+    rockScoreGoal: 2,
+    goldScoreGoal: 20,
+    treeScoreGoal: 2,
 
     kickerImpulseSpeed: 800,
 

@@ -11,6 +11,7 @@ import { Kicker } from "./kicker.js";
 import { CollisionEngine } from "../physic/collisionEngine.js"; 
 import { Assets } from "../assets.js";
 import { Base } from "./base.js";
+import { Phase2 } from "./phase2.js";
 
 export class Phase1Impl {
     constructor() {
@@ -86,10 +87,12 @@ export class Phase1Impl {
     }
 
     isComplete() {
-        this.woodScore >= Settings.treeScoreGoal;
-        this.goldScore >= Settings.goldScoreGoal;
-        this.ironScore >= Settings.rockScoreGoal;
+        return this.woodScore >= Settings.treeScoreGoal
+            && this.goldScore >= Settings.goldScoreGoal
+            && this.ironScore >= Settings.rockScoreGoal;
     }
+
+    nextPhase() { return Phase2; }
 }
 
 export const Phase1 = new Phase1Impl();

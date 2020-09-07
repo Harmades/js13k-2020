@@ -27,9 +27,10 @@ export class Iron {
     }
 
     render(delta, context) {
+        if (this.healthPoint == 0) return;
         if (Settings.debug) {
             Shape.debugDraw(this.body.shape, context);
-        } else if (this.healthPoint != 0) {
+        } else {
             context.drawImage(
                 Assets.atlas,
                 this.spriteBounds.x,
