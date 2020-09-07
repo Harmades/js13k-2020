@@ -3,6 +3,7 @@ import { StaticElement } from "./staticElement.js";
 import { Vector } from "../math/vector.js";
 import { Phase3 } from "./phase3.js";
 import { Base } from "./base.js";
+import { Assets } from "../assets.js";
 
 class Phase2Impl {
     constructor() {
@@ -83,6 +84,19 @@ class Phase2Impl {
 
     renderHybrid(delta, context) {
         Base.renderHybrid(delta, context);
+        
+        const spriteBounds = Assets.sprites[this.enemyWeapon];
+        context.drawImage(
+            Assets.atlas,
+            spriteBounds.x,
+            spriteBounds.y,
+            spriteBounds.width,
+            spriteBounds.height,
+            330,
+            330,
+            spriteBounds.width,
+            spriteBounds.height
+        );
     }
 
     renderDynamic(delta, context) {
@@ -91,7 +105,10 @@ class Phase2Impl {
 
     isComplete() { return this.fightResults.filter(r => r == true).length == 3; }
 
-    nextPhase() { return Phase3; }
+    nextPhase() {
+        this.year = '-404'
+        return Phase3;
+    }
 }
 
 export const Phase2 = new Phase2Impl();

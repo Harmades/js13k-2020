@@ -66,7 +66,7 @@ class BaseImpl {
         context.fillStyle = "#71c837";
         context.fillRect(0, 0, Settings.width, Settings.height);
 
-        context.fillStyle = "black";
+        context.fillStyle = "white";
         this.sign.render(delta, context);
         context.font = '48px serif';
         context.fillText(this.year, 225, 355);
