@@ -1,13 +1,8 @@
 import { Settings } from "../settings.js";
-import { Flipper } from "./flipper.js";
-import { Ball } from "./ball.js";
 import { StaticElement } from "./staticElement.js";
 import { Vector } from "../math/vector.js";
-import { Plunger } from "./plunger.js";
-import { Assets } from "../assets.js";
-import { CollisionEngine } from "../physic/collisionEngine.js";
+import { Phase3 } from "./phase3.js";
 import { Base } from "./base.js";
-import { Phase3 } from "./phase3.js"
 
 class Phase2Impl {
     constructor() {
@@ -16,13 +11,11 @@ class Phase2Impl {
         this.playerWeapon = null;
         this.fightResults = [null, null, null];
         this.currentRound = 0;
-        this.collisionEngine = new CollisionEngine();
-        this.base = new Base(this.collisionEngine);
     }
 
-    load() {
-        this.base.load();
-        this.player = this.base.player;
+    load(collisionEngine) {
+        this.collisionEngine = collisionEngine;
+        this.player = Base.player;
         this.lanceBumper = new StaticElement('bumper', new Vector(19.64, 163), Settings.bumperBounciness);
         this.lanceBumper.body.onCollision = () => {
             this.playerWeapon = 'lance';
@@ -67,7 +60,7 @@ class Phase2Impl {
     }
 
     update(delta) {
-        this.base.update(delta);
+        Base.update(delta);
         this.collisionEngine.update(this.player.body, this.axeBumper.body);
         this.collisionEngine.update(this.player.body, this.swordBumper.body);
         this.collisionEngine.update(this.player.body, this.lanceBumper.body);
@@ -77,7 +70,7 @@ class Phase2Impl {
     }
 
     renderStatic(delta, context) {
-        this.base.renderStatic(delta, context);
+        Base.renderStatic(delta, context);
 
         this.axeBumper.render(delta, context);
         this.axe.render(delta, context);
@@ -88,11 +81,11 @@ class Phase2Impl {
     }
 
     renderHybrid(delta, context) {
-        this.base.renderHybrid(delta, context);
+        Base.renderHybrid(delta, context);
     }
 
     renderDynamic(delta, context) {
-        this.base.renderDynamic(delta, context);
+        Base.renderDynamic(delta, context);
     }
 
     isComplete() { return this.fightResults.filter(r => r == true).length == 3; }

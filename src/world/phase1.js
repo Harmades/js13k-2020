@@ -1,30 +1,22 @@
 import { Settings } from "../settings.js";
-import { Flipper } from "./flipper.js";
-import { Ball } from "./ball.js";
 import { StaticElement } from "./staticElement.js";
 import { Vector } from "../math/vector.js";
-import { Plunger } from "./plunger.js";
 import { Tree } from "./tree.js";
 import { Iron } from "./iron.js";
 import { Gold } from "./gold.js";
-import { Kicker } from "./kicker.js";
-import { CollisionEngine } from "../physic/collisionEngine.js"; 
-import { Assets } from "../assets.js";
-import { Base } from "./base.js";
 import { Phase2 } from "./phase2.js";
+import { Base } from "./base.js";
 
 export class Phase1Impl {
     constructor() {
         this.woodScore = 0;
         this.goldScore = 0;
         this.ironScore = 0;
-        this.collisionEngine = new CollisionEngine();
-        this.base = new Base(this.collisionEngine);
     }
 
-    load() {
-        this.base.load();
-        this.player = this.base.player;
+    load(collisionEngine) {
+        this.collisionEngine = collisionEngine;
+        this.player = Base.player;
         this.sMineWall = new StaticElement('small-mine-wall', new Vector(-11.67, 190.5));
         this.lMineWall = new StaticElement('large-mine-wall', new Vector(138.2, -81.93));
         this.tree1 = new Tree(new Vector(129.7, 193.2));
@@ -41,7 +33,7 @@ export class Phase1Impl {
     }
 
     update(delta) {
-        this.base.update(delta);
+        Base.update(delta);
         this.collisionEngine.update(this.player.body, this.tree1.body);
         this.collisionEngine.update(this.player.body, this.tree2.body);
         this.collisionEngine.update(this.player.body, this.gold1.body);
@@ -62,12 +54,12 @@ export class Phase1Impl {
     }
     
     renderStatic(delta, context) {
-        this.base.renderStatic(delta, context);
+        Base.renderStatic(delta, context);
         this.bumper.render(delta, context);
     }
 
     renderHybrid(delta, context) {
-        this.base.renderHybrid(delta, context);
+        Base.renderHybrid(delta, context);
         this.tree1.render(delta, context);
         this.tree2.render(delta, context);
         this.gold1.render(delta, context);
@@ -81,7 +73,7 @@ export class Phase1Impl {
     }
 
     renderDynamic(delta, context) {
-        this.base.renderDynamic(delta, context);
+        Base.renderDynamic(delta, context);
         this.sMineWall.render(delta, context);
         this.lMineWall.render(delta, context);
     }

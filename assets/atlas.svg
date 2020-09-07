@@ -126,11 +126,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="-160.8"
-     inkscape:cy="541.9"
+     inkscape:zoom="0.9899"
+     inkscape:cx="1051"
+     inkscape:cy="548.1"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      inkscape:document-rotation="0"
      showgrid="false"
      units="px"
@@ -698,7 +698,7 @@
     <path
        id="kicker.collider.2"
        d="m 668.9,91.64 73.7,44.96 8.4,-2 3.1,-9 -73.3,-41.96 z"
-       style="display:inline;fill:#fb0000;fill-opacity:0.5;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+       style="display:inline;fill:#fb0000;fill-opacity:0.5;stroke:none;stroke-width:1.00004px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        d="M 775.5,4.939 H 788 V 174.6 l -12.8,-5 z"
        style="display:inline;fill:#fb0000;fill-opacity:0.5;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"

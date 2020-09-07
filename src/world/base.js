@@ -6,17 +6,14 @@ import { Plunger } from "./plunger.js";
 import { Kicker } from "./kicker.js";
 import { Assets } from "../assets.js";
 
-export class Base {
-    constructor(collisionEngine) {
+class BaseImpl {
+    load(collisionEngine) {
         this.collisionEngine = collisionEngine;
-    }
-
-    load() {
-        this.leftFlipper = new Flipper('flipper', 'left');
+        this.player = new Ball();
+        this.leftFlipper = new Flipper('flipper', 'left', this.player);
         this.leftKicker = new Kicker('left');
-        this.rightFlipper = new Flipper('flipper', 'right');
+        this.rightFlipper = new Flipper('flipper', 'right', this.player);
         this.rightKicker = new Kicker('right'),
-        this.player = new Ball(); 
         this.plunger = new Plunger('plunger');
         this.lBend1 = new StaticElement('bend.1', new Vector(48.68, 415.1));
         this.lBend1.spriteBounds = Assets.sprites['bend'];
@@ -100,3 +97,5 @@ export class Base {
         this.fence.render(delta, context);
     }
 }
+
+export const Base = new BaseImpl()

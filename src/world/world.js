@@ -4,11 +4,14 @@ import { Phase1 } from "./phase1.js";
 import { Phase2 } from "./phase2.js";
 import { Phase3 } from "./phase3.js";
 import { Assets } from "../assets.js";
+import { Base } from "./base.js";
 
 export class World {
     constructor() {
+        this.collisionEngine = new CollisionEngine();
         this.currentPhase = Phase1;
-        this.currentPhase.load();
+        Base.load(this.collisionEngine);
+        this.currentPhase.load(this.collisionEngine);
         this.staticDrawn = false;
     }
 
@@ -16,7 +19,7 @@ export class World {
         this.currentPhase.update(delta);
         if (this.currentPhase.isComplete()) {
             this.currentPhase = this.currentPhase.nextPhase();
-            this.currentPhase.load();
+            this.currentPhase.load(this.collisionEngine);
             this.staticDrawn = false;
         }
     }

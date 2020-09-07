@@ -12,6 +12,7 @@ export const Settings = {
 
     paddleMaxAngle: Math.PI / 2.5,
     paddleAngularSpeed: 15,
+    paddleBounciness: 10000,
 
     ballMass: 20,
     ballBounciness: 1,

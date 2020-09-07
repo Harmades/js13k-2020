@@ -7,12 +7,13 @@ import { Assets } from '../assets.js';
 
 
 export class Flipper {
-    constructor(id, side) {
+    constructor(id, side, player) {
+        this.player = player;
         this.sign = null;
         this.spriteBounds = Assets.sprites[id];
         this.body = new Body(null);
         this.body.shape = Assets.colliders[`${id}.collider`];
-        this.body.bounciness = Settings.wallBounciness;
+        this.body.bounciness = Settings.paddleBounciness;
         if (side == 'right') {
             this.sign = -1;
             this.body.position = new Vector(298.61, 654.71);
@@ -39,12 +40,13 @@ export class Flipper {
         if (this.flipping) {
             if (Math.abs(this.angle) < Math.abs(this.maxAngle)) {
                 const rotation = Math.sign(this.maxAngle) * this.angularSpeed * delta;
+                const distance = this.center.subtract(this.player.body.position).length() + 20;
                 this.angle += rotation;
                 this.body.rotate(this.center.subtract(this.body.position), rotation);
                 this.body.speed = new Vector(
                     Math.sign(this.maxAngle) * Math.cos(this.angle),
                     -Math.sign(this.maxAngle) * Math.sin(this.angle)
-                    ).multiply(10000 * this.angularSpeed * 6 * delta); 
+                    ).multiply(10000 * this.angularSpeed / distance); 
             } else {
                 this.flipping = false;
                 this.body.speed = Vector.zero();
@@ -52,12 +54,13 @@ export class Flipper {
         } else {
             if (Math.abs(this.angle) > Math.PI / 360) {
                 const rotation = -Math.sign(this.maxAngle) * this.angularSpeed * delta;
+                const distance = this.center.subtract(this.player.body.position).length() + 20;
                 this.angle += rotation;
                 this.body.rotate(this.center.subtract(this.body.position), rotation);
                 this.body.speed = new Vector(
                     Math.sign(this.maxAngle) * Math.cos(this.angle),
                     -Math.sign(this.maxAngle) * Math.sin(this.angle)
-                    ).multiply(-10000 * this.angularSpeed * 6 * delta); 
+                    ).multiply(-10000 * this.angularSpeed / distance); 
             } else {
                 this.flipping = false;
                 this.body.speed = Vector.zero();

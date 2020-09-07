@@ -1,19 +1,17 @@
 import { CollisionEngine } from "../physic/collisionEngine.js";
 import { Enemy } from "./enemy.js"
 import { Boss } from "./boss.js";
-import { Base } from "./base.js";
 import { Vector } from "../math/vector.js";
+import { Base } from "./base.js";
 
 class Phase3Impl {
     constructor() {
         this.entities = [];
-        this.collisionEngine = new CollisionEngine();
-        this.base = new Base(this.collisionEngine);
     }
 
-    load() {
-        this.base.load();
-        this.player = this.base.player;
+    load(collisionEngine) {
+        this.collisionEngine = collisionEngine;
+        this.player = Base.player;
         this.enemy1 = new Enemy(new Vector(50, -100));
         this.enemy2 = new Enemy(new Vector(150, -100));
         this.enemy3 = new Enemy(new Vector(250, -100));
@@ -23,7 +21,7 @@ class Phase3Impl {
     }
 
     update(delta) {
-        this.base.update(delta);
+        Base.update(delta);
         this.enemy1.update(delta);
         this.enemy2.update(delta);
         this.enemy3.update(delta);
@@ -39,15 +37,15 @@ class Phase3Impl {
     }
 
     renderStatic(delta, context) {
-        this.base.renderStatic(delta, context);
+        Base.renderStatic(delta, context);
     }
 
     renderHybrid(delta, context) {
-        this.base.renderHybrid(delta, context);
+        Base.renderHybrid(delta, context);
     }
     
     renderDynamic(delta, context) {
-        this.base.renderDynamic(delta, context);
+        Base.renderDynamic(delta, context);
         this.enemy1.render(delta, context);
         this.enemy2.render(delta, context);
         this.enemy3.render(delta, context);
