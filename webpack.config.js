@@ -7,11 +7,5 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
-  },
-  optimization: {
-    minimize: true,
-    minimizer: [
-        new TerserPlugin({})
-        ]
   }
 };

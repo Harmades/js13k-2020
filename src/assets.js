@@ -2,9 +2,12 @@ import { Shape } from './math/shape.js';
 
 class AssetsImpl {
 
-    atlas = null;
-    sprites = {};
-    colliders = {};
+    constructor() {
+      this.atlas = null;
+      this.sprites = {};
+      this.colliders = {};
+    }
+
 
     loadSvg(svg, onload) {
         const b64 = `data:image/svg+xml;base64,${btoa(svg.outerHTML)}`;
