@@ -12,6 +12,7 @@ export class Phase1Impl {
         this.woodScore = 0;
         this.goldScore = 0;
         this.ironScore = 0;
+        this.year = '-431';
     }
 
     load(collisionEngine) {

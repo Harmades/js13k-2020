@@ -11,6 +11,7 @@ class Phase2Impl {
         this.playerWeapon = null;
         this.fightResults = [null, null, null];
         this.currentRound = 0;
+        this.year = '-421';
     }
 
     load(collisionEngine) {

@@ -13,6 +13,7 @@ export class World {
         Base.load(this.collisionEngine);
         this.currentPhase.load(this.collisionEngine);
         this.staticDrawn = false;
+        Base.year = this.currentPhase.year;
     }
 
     update(delta) {
@@ -21,6 +22,7 @@ export class World {
             this.currentPhase = this.currentPhase.nextPhase();
             this.currentPhase.load(this.collisionEngine);
             this.staticDrawn = false;
+            Base.year = this.currentPhase.year;
         }
     }
 

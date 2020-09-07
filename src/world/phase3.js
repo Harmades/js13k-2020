@@ -7,6 +7,7 @@ import { Base } from "./base.js";
 class Phase3Impl {
     constructor() {
         this.entities = [];
+        this.year = '-413';
     }
 
     load(collisionEngine) {
