@@ -83,7 +83,6 @@ export class Base {
         this.rightKicker.render(delta, context);
         this.lGutter.render(delta, context);
         this.rGutter.render(delta, context);
-        this.fence.render(delta, context);
         this.deflector.render(delta, context);
         this.lWall.render(delta, context);
         this.tWall.render(delta, context);
@@ -98,5 +97,6 @@ export class Base {
 
     renderDynamic(delta, context) {
         this.player.render(delta, context);
+        this.fence.render(delta, context);
     }
 }

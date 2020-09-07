@@ -64,8 +64,6 @@ export class Phase1Impl {
     renderStatic(delta, context) {
         this.base.renderStatic(delta, context);
         this.bumper.render(delta, context);
-        this.sMineWall.render(delta, context);
-        this.lMineWall.render(delta, context);
     }
 
     renderHybrid(delta, context) {
@@ -84,6 +82,8 @@ export class Phase1Impl {
 
     renderDynamic(delta, context) {
         this.base.renderDynamic(delta, context);
+        this.sMineWall.render(delta, context);
+        this.lMineWall.render(delta, context);
     }
 
     isComplete() {
