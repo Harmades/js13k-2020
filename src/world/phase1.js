@@ -36,6 +36,13 @@ export class Phase1Impl {
 
     update(delta) {
         Base.update(delta);
+        this.tree1.update(delta);
+        this.tree2.update(delta);
+        this.iron1.update(delta);
+        this.iron2.update(delta);
+        this.iron3.update(delta);
+        this.iron4.update(delta);
+        this.iron5.update(delta);
         this.collisionEngine.update(this.player.body, this.tree1.body);
         this.collisionEngine.update(this.player.body, this.tree2.body);
         this.collisionEngine.update(this.player.body, this.gold1.body);

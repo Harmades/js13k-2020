@@ -14,12 +14,16 @@ export class Gold {
         this.body.position = position;
         this.body.onAreaEnter = () => this.onAreaEnter();
         this.spriteBounds = Assets.sprites.gold;
+        this.jackpot = false;
     }
 
-    update(delta) { }
+    update(delta) {
+
+    }
 
     onAreaEnter() {
         Phase1.goldScore++;
+        this.jackpot = !this.jackpot;
     }
 
     render(delta, context) {
@@ -37,6 +41,10 @@ export class Gold {
                 this.spriteBounds.width,
                 this.spriteBounds.height
             );
+            if (!this.jackpot) {
+                context.fillStyle = "rgba(0, 0, 0, 0.5)";
+                context.fillRect(this.body.position.x, this.body.position.y, this.spriteBounds.width, this.spriteBounds.height);
+            }
         }
     }
 }

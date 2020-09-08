@@ -14,10 +14,13 @@ export class Iron {
         this.body.onCollision = () => this.onCollision();
         this.healthPoint = 1;
         this.spriteBounds = Assets.sprites.iron;
+        this.scale = 1;
     }
 
     update(delta) {
-
+        if (this.healthPoint == 0 && this.scale > 0) {
+            this.scale -= 5 * delta;
+        }
     }
 
     onCollision() {
@@ -27,7 +30,7 @@ export class Iron {
     }
 
     render(delta, context) {
-        if (this.healthPoint == 0) return;
+        if (this.scale <= 0) return;
         if (Settings.debug) {
             Shape.debugDraw(this.body, context);
         } else {
@@ -39,8 +42,8 @@ export class Iron {
                 this.spriteBounds.height,
                 this.body.position.x,
                 this.body.position.y,
-                this.spriteBounds.width,
-                this.spriteBounds.height
+                this.spriteBounds.width * this.scale,
+                this.spriteBounds.height * this.scale
             );
         }
     }

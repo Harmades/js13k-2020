@@ -179,8 +179,6 @@ export class Shape {
             vertex.x -= bBox.x;
             vertex.y -= bBox.y;
         }
-
-        console.log(vertices);
         return new Shape(vertices);
     }
 }
