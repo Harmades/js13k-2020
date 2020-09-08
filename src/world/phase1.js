@@ -4,6 +4,7 @@ import { Vector } from "../math/vector.js";
 import { Tree } from "./tree.js";
 import { Iron } from "./iron.js";
 import { Gold } from "./gold.js";
+import { Bumper } from "./bumper.js";
 import { Phase2 } from "./phase2.js";
 import { Base } from "./base.js";
 import { Fx } from "../fx/fx.js";
@@ -31,7 +32,7 @@ export class Phase1Impl {
         this.gold1 = new Gold(new Vector(77.51, 318));
         this.gold2 = new Gold(new Vector(281.9, 401.9));
         this.gold3 = new Gold(new Vector(310.1, 91.76));
-        this.bumper = new StaticElement('bumper', new Vector(14.76, 83.63), Settings.bumperBounciness);
+        this.bumper = new Bumper(new Vector(14.76, 83.63));
     }
 
     update(delta) {
@@ -43,6 +44,7 @@ export class Phase1Impl {
         this.iron3.update(delta);
         this.iron4.update(delta);
         this.iron5.update(delta);
+        this.bumper.update(delta);
         this.collisionEngine.update(this.player.body, this.tree1.body);
         this.collisionEngine.update(this.player.body, this.tree2.body);
         this.collisionEngine.update(this.player.body, this.gold1.body);
@@ -65,7 +67,6 @@ export class Phase1Impl {
     
     renderStatic(delta, context) {
         Base.renderStatic(delta, context);
-        this.bumper.render(delta, context);
     }
 
     renderHybrid(delta, context) {
@@ -80,6 +81,7 @@ export class Phase1Impl {
         this.iron3.render(delta, context);
         this.iron4.render(delta, context);
         this.iron5.render(delta, context);
+        this.bumper.render(delta, context);
     }
 
     renderDynamic(delta, context) {

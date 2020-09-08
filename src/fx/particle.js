@@ -9,6 +9,7 @@ export class Particle {
         this.alpha = 1;
         this.alphaSpeed = 0;
         this.lineWidth = 1;
+        this.fill = false;
         this.hFlip = false;
     }
 
@@ -24,10 +25,12 @@ export class Particle {
         context.save();
         context.globalAlpha = this.alpha;
         context.strokeStyle = this.color;
+        context.fillStyle = this.color;
         context.lineWidth = this.lineWidth;
         if (this.hFlip) context.scale(this.hFlip, 1);
         context.translate(this.hFlip * this.position.x, this.position.y);
-        context.stroke(this.path2d);
+        if (this.fill) context.fill(this.path2d);
+        else context.stroke(this.path2d);
         context.restore();
     }
 }
