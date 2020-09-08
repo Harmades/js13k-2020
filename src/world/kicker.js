@@ -3,6 +3,8 @@ import { Settings } from "../settings.js";
 import { Shape } from "../math/shape.js";
 import { Vector } from "../math/vector.js";
 import { Assets } from "../assets.js";
+import { Fx } from "../fx/fx.js";
+import { Particle } from "../fx/particle.js";
 
 export class Kicker {
     constructor(side) {
@@ -38,6 +40,27 @@ export class Kicker {
         this.body.bounciness = Settings.wallBounciness;
         this.body.speed = new Vector(0, -Settings.kickerImpulseSpeed);
         this.body.isStatic = false;
+        this.body.onCollision = () => this.onCollision()
+    }
+
+    onCollision() {
+        const offset = this.sign == -1 ? new Vector(15, -15) : Vector.zero();
+        const position = this.body1.position
+            .subtract(new Vector(this.sign * this.spriteBounds.x, this.sign * this.spriteBounds.y))
+            .add(offset);
+        const kickerGlow = new Particle(Assets.fxs['kicker.fx'], position);
+        kickerGlow.alphaSpeed = -0.7;
+        kickerGlow.scaleSpeed = 0.1;
+        kickerGlow.life = 1.5;
+        kickerGlow.hFlip = this.sign;
+        kickerGlow.lineWidth = 2;
+        Fx.particles.push(kickerGlow);
+        const helmetGlow = new Particle(Assets.fxs['helmet.fx'], position);
+        helmetGlow.alphaSpeed = -0.7;
+        helmetGlow.scaleSpeed = 0.1;
+        helmetGlow.life = 1.5;
+        helmetGlow.hFlip = this.sign;
+        Fx.particles.push(helmetGlow);
     }
 
     update(delta) {

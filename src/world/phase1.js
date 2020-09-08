@@ -6,6 +6,7 @@ import { Iron } from "./iron.js";
 import { Gold } from "./gold.js";
 import { Phase2 } from "./phase2.js";
 import { Base } from "./base.js";
+import { Fx } from "../fx/fx.js";
 
 export class Phase1Impl {
     constructor() {
@@ -48,6 +49,7 @@ export class Phase1Impl {
         this.collisionEngine.update(this.player.body, this.bumper.body);
         this.collisionEngine.update(this.player.body, this.sMineWall.body);
         this.collisionEngine.update(this.player.body, this.lMineWall.body);
+        Fx.update(delta);
 
         document.getElementById("gold-score").textContent = Phase1.goldScore;
         document.getElementById("iron-score").textContent = Phase1.ironScore;
@@ -77,6 +79,7 @@ export class Phase1Impl {
         Base.renderDynamic(delta, context);
         this.sMineWall.render(delta, context);
         this.lMineWall.render(delta, context);
+        Fx.render(delta, context);
     }
 
     isComplete() {

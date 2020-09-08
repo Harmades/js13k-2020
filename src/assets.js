@@ -6,6 +6,7 @@ class AssetsImpl {
       this.atlas = null;
       this.sprites = {};
       this.colliders = {};
+      this.fxs = {};
     }
 
     loadSvg(svg, onload) {
@@ -27,6 +28,7 @@ class AssetsImpl {
         }
         for (const node of svg.getElementById("layer1").querySelectorAll("*")) {
             if (node.getBBox) this.sprites[node.id] = node.getBBox();
+            if (node.id.endsWith(".fx")) this.fxs[node.id] = new Path2D(node.getAttribute("d"));
         }
         document.getElementById("layer2").style.display = "none";
         this.loadSvg(svg, () => {
