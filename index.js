@@ -1,5 +1,5 @@
 import { Game } from './src/game.js';
-import { Kick, Snare, Bell } from './src/synthesizer.js';
+import { Songs } from './src/sounds.js';
 import { Assets } from './src/assets.js';
 
 Assets.load(
@@ -10,17 +10,15 @@ Assets.load(
     }
 );
 
-const context = new AudioContext();
-const kick = new Kick(context);
-const snare = new Snare(context);
-const bell = new Bell(context);
+const songs = new Songs();
 
-function playKick() { kick.trigger(context.currentTime); }
+function playIntro() { songs.play_intro();}
+function playPone() { songs.play_pone();}
+function playPtwo() { songs.play_ptwo();}
+function stop() { songs.stop_song();}
 
-function playSnare() { snare.trigger(context.currentTime); }
+window.playIntro = () => playIntro();
+window.playPone = () => playPone();
+window.playPtwo = () => playPtwo();
+window.stop = () => stop();
 
-function playBell() { bell.trigger(context.currentTime); }
-
-window.playKick = playKick;
-window.playSnare = playSnare;
-window.playBell = playBell;
