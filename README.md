@@ -12,3 +12,23 @@ https://andyhall.github.io/webaudio-instruments/
 https://learningsynths.ableton.com/en/
 
 https://keithclark.github.io/ZzFXM/
+
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin({
+            sourceMap: false,
+            extractComments: false, // To avoid separate file with licenses.
+            terserOptions: {
+                mangle: {
+                    properties: {
+                        regex: /.*/
+                    }
+                },
+                module: true,
+                sourceMap: false,
+                keep_classnames: false,
+                keep_fnames: false,
+                toplevel: true,
+            },
+        })],
+    },
