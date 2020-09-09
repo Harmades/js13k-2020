@@ -3,7 +3,9 @@ import { StaticElement } from "./staticElement.js";
 import { Vector } from "../math/vector.js";
 import { Phase3 } from "./phase3.js";
 import { Base } from "./base.js";
+import { Bumper } from "./bumper.js";
 import { Assets } from "../assets.js";
+import { Fx } from "../fx/fx.js"
 
 class Phase2Impl {
     constructor() {
@@ -18,29 +20,23 @@ class Phase2Impl {
     load(collisionEngine) {
         this.collisionEngine = collisionEngine;
         this.player = Base.player;
-        this.lanceBumper = new StaticElement('bumper', new Vector(19.64, 163), Settings.bumperBounciness);
-        this.lanceBumper.body.onCollision = () => {
+        this.lanceBumper = new Bumper(new Vector(19.64, 163), 'lance');
+        this.lanceBumper.onCollision = () => {
             this.playerWeapon = 'lance';
             this.resolveFight();
         }
-        this.lance = new StaticElement('lance', this.lanceBumper.body.position.add(new Vector(18, 10)));
-        this.lance.body.ignoreCollision = true;
 
-        this.axeBumper = new StaticElement('bumper', new Vector(222, 11.03), Settings.bumperBounciness);
-        this.axeBumper.body.onCollision = () => {
+        this.axeBumper = new Bumper(new Vector(222, 11.03), 'axe');
+        this.axeBumper.onCollision = () => {
             this.playerWeapon = 'axe';
             this.resolveFight();
         }
-        this.axe = new StaticElement('axe', this.axeBumper.body.position.add(new Vector(18, 10)));
-        this.axe.body.ignoreCollision = true;
 
-        this.swordBumper = new StaticElement('bumper', new Vector(413.4, 163), Settings.bumperBounciness);
-        this.swordBumper.body.onCollision = () => {
+        this.swordBumper = new Bumper(new Vector(413.4, 163), 'sword');
+        this.swordBumper.onCollision = () => {
             this.playerWeapon = 'sword';
             this.resolveFight();
         }
-        this.sword = new StaticElement('sword', this.swordBumper.body.position.add(new Vector(18, 10)));
-        this.sword.body.ignoreCollision = true;
     }
 
     rollWeapon() {
@@ -63,9 +59,13 @@ class Phase2Impl {
 
     update(delta) {
         Base.update(delta);
+        this.axeBumper.update(delta);
+        this.swordBumper.update(delta);
+        this.lanceBumper.update(delta);
         this.collisionEngine.update(this.player.body, this.axeBumper.body);
         this.collisionEngine.update(this.player.body, this.swordBumper.body);
         this.collisionEngine.update(this.player.body, this.lanceBumper.body);
+        Fx.update(delta);
 
         document.getElementById("enemyWeapon").textContent = this.enemyWeapon;
         document.getElementById("round").textContent = this.currentRound;
@@ -73,18 +73,17 @@ class Phase2Impl {
 
     renderStatic(delta, context) {
         Base.renderStatic(delta, context);
-
-        this.axeBumper.render(delta, context);
-        this.axe.render(delta, context);
-        this.swordBumper.render(delta, context);
-        this.sword.render(delta, context);
-        this.lanceBumper.render(delta, context);
-        this.lance.render(delta, context);
     }
 
     renderHybrid(delta, context) {
         Base.renderHybrid(delta, context);
         
+        context.fillStyle = "#0d5eaf";
+        context.strokeStyle = "white";
+        context.rect(365, 300, 60, 77);
+        context.fill();
+        context.stroke();
+
         const spriteBounds = Assets.sprites[this.enemyWeapon];
         context.drawImage(
             Assets.atlas,
@@ -92,15 +91,20 @@ class Phase2Impl {
             spriteBounds.y,
             spriteBounds.width,
             spriteBounds.height,
-            330,
-            330,
-            spriteBounds.width,
-            spriteBounds.height
+            375,
+            321,
+            spriteBounds.width * 2.5,
+            spriteBounds.height * 2.5
         );
+
+        this.axeBumper.render(delta, context);
+        this.swordBumper.render(delta, context);
+        this.lanceBumper.render(delta, context);
     }
 
     renderDynamic(delta, context) {
         Base.renderDynamic(delta, context);
+        Fx.render(delta, context);
     }
 
     isComplete() { return this.fightResults.filter(r => r == true).length == 3; }

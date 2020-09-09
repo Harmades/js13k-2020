@@ -7,19 +7,21 @@ import { Fx } from "../fx/fx.js"
 import { Particle } from "../fx/particle.js"
 
 export class Bumper {
-    constructor(position) {
+    constructor(position, weaponId) {
         this.body = new Body(null);
         this.body.shape = Assets.colliders[`bumper.collider`];
         this.body.bounciness = Settings.bumperBounciness;
         this.body.isStatic = true;
         this.body.position = position;
         this.spriteBounds = Assets.sprites['bumper'];
+        this.weaponSpriteBounds = Assets.sprites[weaponId];
         this.scale = 1;
-        this.body.onCollision = () => this.onCollision();
+        this.body.onCollision = () => this.onBodyCollision();
         this.bumperGlow = null;
+        this.onCollision = null;
     }
 
-    onCollision() {
+    onBodyCollision() {
         const position = this.body.position.subtract(new Vector(this.spriteBounds.x, this.spriteBounds.y));
         let path = new Path2D();
         path.arc(
@@ -38,6 +40,7 @@ export class Bumper {
         this.bumperGlow.fill = true;
         this.bumperGlow.alpha = 0.6;
         Fx.particles.push(this.bumperGlow);
+        if (this.onCollision != null) this.onCollision();
     }
 
     update(delta) {
@@ -66,6 +69,19 @@ export class Bumper {
                 this.spriteBounds.width * this.scale,
                 this.spriteBounds.height * this.scale
             );
+            if (this.weaponSpriteBounds != undefined) {
+                context.drawImage(
+                    Assets.atlas,
+                    this.weaponSpriteBounds.x,
+                    this.weaponSpriteBounds.y,
+                    this.weaponSpriteBounds.width,
+                    this.weaponSpriteBounds.height,
+                    this.body.position.x + 18 * this.scale,
+                    this.body.position.y + 10 * this.scale,
+                    this.weaponSpriteBounds.width * this.scale,
+                    this.weaponSpriteBounds.height * this.scale
+                );
+            }
         }
     }
 }
