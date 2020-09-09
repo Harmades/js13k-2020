@@ -11,9 +11,11 @@ export class Enemy {
         this.body.bounciness = Settings.wallBounciness;
         this.body.isStatic = true;
         this.body.position = position;
+        this.body.isRigid = false;
         this.body.onCollision = () => this.onCollision();
         this.healthPoint = 1;
         this.spriteBounds = Assets.sprites.enemy;
+        this.armor = Assets.fxs['armor.fx'];
     }
 
     onCollision() {
@@ -22,7 +24,7 @@ export class Enemy {
     }
 
     update(delta) {
-        this.body.speed = new Vector(0, 10);
+        this.body.speed = new Vector(0, 60);
         this.body.update(delta);
     }
 
@@ -31,7 +33,6 @@ export class Enemy {
         if (Settings.debug) {
             Shape.debugDraw(this.body, context);
         } else {
-            Shape.debugDraw(this.body, context);
             context.drawImage(
                 Assets.atlas,
                 this.spriteBounds.x,
@@ -43,6 +44,12 @@ export class Enemy {
                 this.spriteBounds.width,
                 this.spriteBounds.height
             );
+            context.save();
+            context.globalAlpha = 0.7;
+            context.fillStyle = "gray";
+            context.translate(this.body.position.x - 657, this.body.position.y - 612);
+            context.fill(this.armor);
+            context.restore();
         }
     }
 }

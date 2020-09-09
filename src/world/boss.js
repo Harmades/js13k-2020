@@ -6,14 +6,15 @@ import { Assets } from "../assets.js";
 
 export class Boss {
     constructor(position) {
+        this.scale = 2;
         this.body = new Body(1);
-        this.body.shape = Assets.colliders['enemy.collider'];
+        this.body.shape = new Shape(Assets.colliders['enemy.collider'].vertices.map(v => v.multiply(this.scale)));
         this.body.bounciness = Settings.wallBounciness;
         this.body.isStatic = true;
         this.body.position = position;
         this.body.onCollision = () => this.onCollision();
         this.healthPoint = 3;
-        this.spriteBounds = Assets.sprites.enemy;
+        this.spriteBounds = Assets.sprites['enemy'];
     }
 
     onCollision() {
@@ -22,7 +23,7 @@ export class Boss {
     }
 
     update(delta) {
-        this.body.speed = new Vector(0, 10);
+        this.body.speed = new Vector(0, 60);
         this.body.update(delta);
     }
 
@@ -39,9 +40,10 @@ export class Boss {
                 this.spriteBounds.height,
                 this.body.position.x,
                 this.body.position.y,
-                this.spriteBounds.width,
-                this.spriteBounds.height
+                this.spriteBounds.width * this.scale,
+                this.spriteBounds.height * this.scale
             );
+
         }
     }
 }

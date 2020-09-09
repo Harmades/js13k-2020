@@ -3,6 +3,7 @@ import { Enemy } from "./enemy.js"
 import { Boss } from "./boss.js";
 import { Vector } from "../math/vector.js";
 import { Base } from "./base.js";
+import { Fx } from "../fx/fx.js";
 
 class Phase3Impl {
     constructor() {
@@ -13,27 +14,23 @@ class Phase3Impl {
     load(collisionEngine) {
         this.collisionEngine = collisionEngine;
         this.player = Base.player;
-        this.enemy1 = new Enemy(new Vector(50, -100));
-        this.enemy2 = new Enemy(new Vector(150, -100));
-        this.enemy3 = new Enemy(new Vector(250, -100));
-        this.enemy4 = new Enemy(new Vector(350, -100));
-        this.enemy5 = new Enemy(new Vector(450, -100));
-        this.boss = new Boss(new Vector(300, -300));
+        this.enemies = [];
+        for (let i = 0; i < 25; i++) {
+            const quotient = Math.floor(i / 5);
+            const remainder = i % 5;
+            this.enemies.push(new Enemy(new Vector(50 + 100 * remainder, -100 -300 * quotient)))
+        }
+        this.boss = new Boss(new Vector(225, -2000));
     }
 
     update(delta) {
         Base.update(delta);
-        this.enemy1.update(delta);
-        this.enemy2.update(delta);
-        this.enemy3.update(delta);
-        this.enemy4.update(delta);
-        this.enemy5.update(delta);
+        Fx.update(delta);
+        for (const enemy of this.enemies) {
+            enemy.update(delta);
+            if (enemy.body.position.y > -enemy.spriteBounds.height) this.collisionEngine.update(this.player.body, enemy.body);
+        }
         this.boss.update(delta);
-        this.collisionEngine.update(this.player.body, this.enemy1.body);
-        this.collisionEngine.update(this.player.body, this.enemy2.body);
-        this.collisionEngine.update(this.player.body, this.enemy3.body);
-        this.collisionEngine.update(this.player.body, this.enemy4.body);
-        this.collisionEngine.update(this.player.body, this.enemy5.body);
         this.collisionEngine.update(this.player.body, this.boss.body);
     }
 
@@ -47,12 +44,9 @@ class Phase3Impl {
     
     renderDynamic(delta, context) {
         Base.renderDynamic(delta, context);
-        this.enemy1.render(delta, context);
-        this.enemy2.render(delta, context);
-        this.enemy3.render(delta, context);
-        this.enemy4.render(delta, context);
-        this.enemy5.render(delta, context);
+        for (const enemy of this.enemies) enemy.render(delta, context);
         this.boss.render(delta, context);
+        Fx.render(delta, context);
     }
 
     isComplete() { return false; }
