@@ -9,7 +9,7 @@ import { Base } from "./base.js";
 export class World {
     constructor() {
         this.collisionEngine = new CollisionEngine();
-        this.currentPhase = Phase1;
+        this.currentPhase = Phase2;
         Base.load(this.collisionEngine);
         this.currentPhase.load(this.collisionEngine);
         this.staticDrawn = false;
