@@ -13,9 +13,9 @@ export class Boss {
         this.body.position = position;
         this.body.onCollision = () => this.onCollision();
         this.healthPoint = 3;
-        this.spriteBounds = Assets.sprites.boss;
+        this.spriteBounds = Assets.sprites.enemy;
     }
-    
+
     onCollision() {
         this.healthPoint--;
         if (this.healthPoint == 0) this.body.ignoreCollision = true;
