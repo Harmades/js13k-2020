@@ -31,7 +31,7 @@ class BaseImpl {
         this.lWall = new StaticElement('left-wall', new Vector(-100, 0));
         this.tWall = new StaticElement('top-wall', new Vector(-100, -100));
         this.rWall = new StaticElement('right-wall', new Vector(600, 0));
-        this.sign = new StaticElement('sign', new Vector(180, 300))
+        this.sign = new StaticElement('sign', new Vector(220, 300))
         this.year = 0;
     }
 
@@ -69,7 +69,7 @@ class BaseImpl {
         context.fillStyle = "white";
         this.sign.render(delta, context);
         context.font = '48px serif';
-        context.fillText(this.year, 225, 355);
+        context.fillText(this.year, 235, 355);
 
         this.lBend1.render(delta, context);
         this.lBend2.render(delta, context);
