@@ -25,7 +25,7 @@ export class Kicker {
         this.body = new Body(null);
         this.body.shape = Assets.colliders['kicker.collider.3'];
         if (side == 'right') {
-            this.body.position = new Vector(347.4, 454.69);
+            this.body.position = new Vector(344.4, 454.69);
             this.body1.position = new Vector(417.1, 454);
             this.body2.position = new Vector(347.9, 530);
             this.sign = -1;
@@ -33,7 +33,7 @@ export class Kicker {
             this.body.hFlip(this.spriteBounds.width / 2);
         }
         if (side == 'left') {
-            this.body.position = new Vector(100.18, 454.69);
+            this.body.position = new Vector(105.18, 454.69);
             this.sign = 1;
         }
 
@@ -44,7 +44,7 @@ export class Kicker {
     }
 
     onCollision() {
-        const offset = this.sign == -1 ? new Vector(15, -15) : Vector.zero();
+        const offset = this.sign == -1 ? new Vector(16.5, -16.5) : Vector.zero();
         const position = this.body1.position
             .subtract(new Vector(this.sign * this.spriteBounds.x, this.sign * this.spriteBounds.y))
             .add(offset);
@@ -73,9 +73,10 @@ export class Kicker {
             Shape.debugDraw(this.body1, context);
             Shape.debugDraw(this.body2, context);
         } else {
+
             context.save();
             context.scale(this.sign, 1);
-            const offset = this.sign == -1 ? -this.spriteBounds.width : 0;
+            const offset = this.sign == -1 ? -this.spriteBounds.width -5 : -5;
             context.drawImage(
                 Assets.atlas,
                 this.spriteBounds.x,

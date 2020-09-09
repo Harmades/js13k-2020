@@ -56,6 +56,7 @@ export class Shape {
     }
 
     static debugDraw(body, context) {
+        if (body.shape == undefined) return;
         context.beginPath();
         context.save();
         context.fillStyle = "#FF0000";

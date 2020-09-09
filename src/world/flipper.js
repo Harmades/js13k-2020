@@ -16,14 +16,14 @@ export class Flipper {
         this.body.bounciness = Settings.paddleBounciness;
         if (side == 'right') {
             this.sign = -1;
-            this.body.position = new Vector(298.61, 654.71);
-            this.center = new Vector(354, 664.3);
+            this.body.position = new Vector(290.61, 652.71);
+            this.center = new Vector(344, 664.3);
             this.body.hFlip(this.spriteBounds.width / 2);
         }
         if (side == 'left') {
             this.sign = 1;
-            this.body.position = new Vector(168.11, 654.71);
-            this.center = new Vector(178.2, 664.3);
+            this.body.position = new Vector(178.11, 653);
+            this.center = new Vector(188.2, 664.3);
         }
         this.side = side;
         this.maxAngle = -this.sign * Settings.paddleMaxAngle;
