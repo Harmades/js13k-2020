@@ -37,6 +37,9 @@ class Phase2Impl {
             this.playerWeapon = 'sword';
             this.resolveFight();
         }
+
+        this.crossSpriteBounds = Assets.sprites['cross'];
+        this.checkSpriteBounds = Assets.sprites['check'];
     }
 
     rollWeapon() {
@@ -96,6 +99,24 @@ class Phase2Impl {
             spriteBounds.width * 2.5,
             spriteBounds.height * 2.5
         );
+        
+        let result = this.fightResults[this.currentRound];
+        if (result == null && this.currentRound != 0 && this.fightResults[this.currentRound - 1]) result = this.fightResults[this.currentRound - 1];
+        let sprite = result == null ? null : result ? this.checkSpriteBounds : this.crossSpriteBounds;
+
+        if (sprite != null) {
+            context.drawImage(
+                Assets.atlas,
+                sprite.x,
+                sprite.y,
+                sprite.width,
+                sprite.height,
+                150,
+                310,
+                sprite.width,
+                sprite.height
+            );
+        }
 
         this.axeBumper.render(delta, context);
         this.swordBumper.render(delta, context);

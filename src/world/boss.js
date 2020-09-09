@@ -7,7 +7,7 @@ import { Assets } from "../assets.js";
 export class Boss {
     constructor(position) {
         this.body = new Body(1);
-        this.body.shape = Assets.colliders['boss.collider'];
+        this.body.shape = Assets.colliders['enemy.collider'];
         this.body.bounciness = Settings.wallBounciness;
         this.body.isStatic = true;
         this.body.position = position;
@@ -31,18 +31,17 @@ export class Boss {
         if (Settings.debug) {
             Shape.debugDraw(this.body, context);
         } else {
-            Shape.debugDraw(this.body, context);
-            // context.drawImage(
-            //     Assets.atlas,
-            //     this.spriteBounds.x,
-            //     this.spriteBounds.y,
-            //     this.spriteBounds.width,
-            //     this.spriteBounds.height,
-            //     this.body.position.x,
-            //     this.body.position.y,
-            //     this.spriteBounds.width,
-            //     this.spriteBounds.height
-            // );
+            context.drawImage(
+                Assets.atlas,
+                this.spriteBounds.x,
+                this.spriteBounds.y,
+                this.spriteBounds.width,
+                this.spriteBounds.height,
+                this.body.position.x,
+                this.body.position.y,
+                this.spriteBounds.width,
+                this.spriteBounds.height
+            );
         }
     }
 }

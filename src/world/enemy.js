@@ -32,17 +32,17 @@ export class Enemy {
             Shape.debugDraw(this.body, context);
         } else {
             Shape.debugDraw(this.body, context);
-            // context.drawImage(
-            //     Assets.atlas,
-            //     this.spriteBounds.x,
-            //     this.spriteBounds.y,
-            //     this.spriteBounds.width,
-            //     this.spriteBounds.height,
-            //     this.body.position.x,
-            //     this.body.position.y,
-            //     this.spriteBounds.width,
-            //     this.spriteBounds.height
-            // );
+            context.drawImage(
+                Assets.atlas,
+                this.spriteBounds.x,
+                this.spriteBounds.y,
+                this.spriteBounds.width,
+                this.spriteBounds.height,
+                this.body.position.x,
+                this.body.position.y,
+                this.spriteBounds.width,
+                this.spriteBounds.height
+            );
         }
     }
 }
