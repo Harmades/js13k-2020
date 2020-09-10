@@ -11,5 +11,6 @@ export class CollisionResolver {
             body1.applyImpulse(normal.multiply(-reaction));
             body1.translate(mtv);
         }
+		return mtv.length();
     }
 }
