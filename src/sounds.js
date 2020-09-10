@@ -1,3 +1,5 @@
+import { Settings } from './settings.js';
+
 let zzfx, zzfxP, zzfxG, zzfxM, zzfxV, zzfxR, zzfxX
 
 // zzfx() - the universal entry point -- returns a AudioBufferSourceNode
@@ -21,17 +23,40 @@ zzfxX=new(top.AudioContext||webkitAudioContext);
 zzfxM=(n,f,t,e=125)=>{let l,o,z,r,g,h,x,a,u,c,d,i,m,p,G,M=0,R=[],b=[],j=[],k=0,q=0,s=1,v={},w=zzfxR/e*60>>2;for(;s;k++)R=[s=a=d=m=0],t.map((e,d)=>{for(x=f[e][k]||[0,0,0],s|=!!f[e][k],G=m+(f[e][0].length-2-!a)*w,p=d==t.length-1,o=2,r=m;o<x.length+p;a=++o){for(g=x[o],u=o==x.length+p-1&&p||c!=(x[0]||0)|g|0,z=0;z<w&&a;z++>w-99&&u?i+=(i<1)/99:0)h=(1-i)*R[M++]/2||0,b[r]=(b[r]||0)-h*q+h,j[r]=(j[r++]||0)+h*q+h;g&&(i=g%1,q=x[1]||0,(g|=0)&&(R=v[[c=x[M=0]||0,g]]=v[[c,g]]||(l=[...n[c]],l[2]*=2**((g-12)/12),g>0?zzfxG(...l):[])))}m=G});return[b,j]}
 
 
-export class SoundEffects {
+class SoundEffects {
   coin() {
-	zzfx(...[,,1300,,.05,.5,1,2,,,1300,.07,,,.1,,,.9]);
+	zzfx(...[.6,,1300,,.05,.5,1,2,,,1300,.07,,,.1,,,.9]);
   }
 
-  impact() {
-	zzfx(...[,,200,,.02,.11,,5,,-0.1,600,.3,,8,,,,.9,0.1,.01]);
+  impact(speed) {
+	const norm_speed = ((speed > Settings.maxSpeed ? Settings.maxSpeed : speed) - Settings.minImpactSoundSpeed)/(Settings.maxSpeed - Settings.minImpactSoundSpeed);
+	const volume = norm_speed*(Settings.maxSoundImpactVolume - Settings.minSoundImpactVolume) + Settings.minSoundImpactVolume;
+	zzfx(...[volume,,200,,,,,5,,-0.1,600,.3,,8,,,,.9,.1,.01]);
+  }
+
+  impact_tree() {
+	zzfx(...[.5,,304,.1,.3,,5,.1,-46,,,,,,-165]);
   }
 
   impact_foe() {
 	zzfx(...[,,420,,.02,.2,4,1.05,-9,,2e3,.5,,,,.5]);
+  }
+
+  impact_bumper() {
+	zzfx(...[,,224,.02,.02,.08,1,1.7,-13.9,,,,,,6.7]);
+  }
+
+  impact_iron() {
+	zzfx(...[.4,,941,,,.4,4,.74,-222,,,,,.8,,1]);
+  }
+
+  launcher() {
+	zzfx(...[.7,,1e3,,.1,.8,,,,,100,.01,.03]);
+  }
+
+  paddle() {
+	zzfx(...[.2,,537,.02,.02,.22,1,1.59,-6.98,4.97]);
+	zzfx(...[.5,,150,.05,,.05,,1.3,,,,,,3]);
   }
 }
 
@@ -42,7 +67,7 @@ const pone = [[[,0,80,,.1,.6,2,,,,,,,,,.02,.01],[.3,0,80,,.08,.18,3],[.7,0,22,,.
 
 const ptwo = [[[3,0,43,,,.25,,,,,,,,2],[.8,0,2100,,,.2,3,3,,,-400,,,2],[,0,23,,,.2,3,5]],[[[,,20,,,,20,,20,,,,20,,20,,,,20,,,,20,,20,,,,20,,20,,,,20,,,,20,,20,,,,20,,20,,,,20,,,,20,,20,,,,20,,20,,,,],[1,,20,,,,20,,20,,,,20,,20,,,,20,,,,20,,20,,,,20,,20,,,,20,,,,20,,20,,,,20,,20,,,,20,,,,20,,20,,,,20,,20,,,,],[2,-1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,],[,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,]],[[,,20,,,,20,,20,,,,20,,20,,,,20,,,,20,,20,,,,20,,20,,,,20,,,,20,,20,,,,20,,20,,,,20,,,,20,,20,,,,20,,20,,,,],[1,,20,,,,20,,20,,,,20,,20,,,,20,,,,20,,20,,,,20,,20,,,,20,,,,20,,20,,,,20,,20,,,,20,,,,20,,20,,,,20,,20,,,,],[2,,13,,13,,13,,13,,13,,13,,13,,16,,13,,13,,13,,13,,13,,13,,13,,16,,13,,13,,13,,13,,13,,13,,13,,16,,13,,13,,13,,13,,13,,16,,18,,19,,],[,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,]]],[1],120,];
 
-export class Songs {
+class SoundSongs {
   constructor() {
 	this.is_playing = false;
 	this.intro = zzfxM(...intro);
@@ -70,7 +95,6 @@ export class Songs {
 	  this.audio_node.stop();
 	}
 	this.audio_node = zzfxP(...this.ptwo);
-	this.audio_node.loop = true;
   }
 
   stop_song() {
@@ -83,3 +107,6 @@ export class Songs {
 	zzfxV = level;
   }
 }
+
+export const Songs = new SoundSongs()
+export const Effects = new SoundEffects()

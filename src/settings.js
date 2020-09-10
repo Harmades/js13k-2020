@@ -29,5 +29,10 @@ export const Settings = {
 
     kickerImpulseSpeed: 800,
 
-    bumperBounciness: 30000 * 1.5
+	bumperBounciness: 30000 * 1.5,
+
+	minImpactSoundSpeed: 0.25,
+	maxSpeed: 1.5,
+	minSoundImpactVolume: 0.1,
+	maxSoundImpactVolume: 0.5,
 }
