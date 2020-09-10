@@ -6,7 +6,7 @@ export class Body {
         this.position = Vector.zero();
         this.speed = Vector.zero();
         this.mass = mass;
-        this.shape = Shape.rectangle(0, 0, 50, 50);
+        this.shape = null;
         this.impulse = Vector.zero();
         this.field = Vector.zero();
         this.bounciness = 1;

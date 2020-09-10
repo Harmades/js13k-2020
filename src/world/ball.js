@@ -18,9 +18,7 @@ export class Ball {
 
     update(delta) {
         this.body.update(delta);
-        if (this.body.position.y > Settings.height) {
-            this.body.translate(this.initialPosition.subtract(this.body.position));
-        }
+
     }
 
     render(delta, context) {

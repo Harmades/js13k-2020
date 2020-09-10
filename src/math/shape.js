@@ -41,20 +41,6 @@ export class Shape {
         return new Shape(vertices);
     }
 
-    static circle(x, y, radius) {
-        const vertices = [];
-        const sides = 26;
-        const angle = 2 * Math.PI / sides;
-        for (let i = 0; i < sides; i++) {
-            vertices[i] = new Vector(x + radius * (1 + Math.cos(i * angle)), y + radius * (1 + Math.sin(i * angle)));
-        }
-        return new Shape(vertices);
-    }
-
-    static rectangle(x, y, width, height) {
-        return new Shape([new Vector(x, y), new Vector(x, y + height), new Vector(x + width, y + height), new Vector(x + width, y)]);
-    }
-
     static debugDraw(body, context) {
         if (body.shape == undefined) return;
         context.beginPath();

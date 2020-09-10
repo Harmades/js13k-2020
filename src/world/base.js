@@ -6,6 +6,8 @@ import { Plunger } from "./plunger.js";
 import { Kicker } from "./kicker.js";
 import { Assets } from "../assets.js";
 import { Settings } from "../settings.js";
+import { Body } from "../physic/body.js";
+import { Shape } from "../math/shape.js";
 
 class BaseImpl {
     load(collisionEngine) {
@@ -31,7 +33,13 @@ class BaseImpl {
         this.lWall = new StaticElement('left-wall', new Vector(-100, 0));
         this.tWall = new StaticElement('top-wall', new Vector(-100, -100));
         this.rWall = new StaticElement('right-wall', new Vector(600, 0));
-        this.sign = new StaticElement('sign', new Vector(220, 300))
+        this.sign = new StaticElement('sign', new Vector(220, 300));
+        this.invisibleWall = new Body(1);
+        this.invisibleWall.position = new Vector(540, 200);
+        this.invisibleWall.shape = new Shape([new Vector(0, 0),new Vector(0, -100),new Vector(60, -100),new Vector(60, 0)]);
+        this.invisibleWall.isRigid = false;
+        this.invisibleWall.onAreaExit = () => {if (this.player.body.position.y < 200) this.invisibleWall.isRigid = true;}
+        this.invisibleWall.bounciness = Settings.wallBounciness;
         this.year = 0;
     }
 
@@ -60,6 +68,11 @@ class BaseImpl {
         this.collisionEngine.update(this.player.body, this.lWall.body);
         this.collisionEngine.update(this.player.body, this.tWall.body);
         this.collisionEngine.update(this.player.body, this.rWall.body);
+        this.collisionEngine.update(this.player.body, this.invisibleWall);
+        if (this.player.body.position.y > Settings.height) {
+            this.player.body.translate(this.player.initialPosition.subtract(this.player.body.position));
+            this.invisibleWall.isRigid = false;
+        }
     }
 
     renderStatic(delta, context) {
