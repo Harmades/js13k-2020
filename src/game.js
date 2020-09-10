@@ -17,10 +17,6 @@ export class Game {
             this.dynamicCanvas.getContext("2d")
         );
         this.world = new World();
-        this.dynamicCanvas.onmousemove = e => {
-            document.getElementById("x").textContent = e.offsetX;
-            document.getElementById("y").textContent = e.offsetY;
-        }
     }
 
     loop(tFrame) {

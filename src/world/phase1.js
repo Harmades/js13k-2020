@@ -15,6 +15,15 @@ export class Phase1Impl {
         this.goldScore = 0;
         this.ironScore = 0;
         this.year = '-431';
+        this.text = `(431 BC) Welcome, commander. The Spartan assembly voted war ⚔️ against our forever enemy, Athens and its Delian League. Commander, you must to lead Sparta and the Peloponnesian League to victory!
+        We need to be ready as soon as possible, but we're missing resources, strategy and soldiers.
+
+        We first need to collect some resources for our army:
+
+        🌲 ${Settings.treeScoreGoal} units of wood
+        ⛏️ ${Settings.rockScoreGoal} units of iron
+        📀 ${Settings.goldScoreGoal} gold
+        `;
     }
 
     load(collisionEngine) {
@@ -59,10 +68,6 @@ export class Phase1Impl {
         this.collisionEngine.update(this.player.body, this.sMineWall.body);
         this.collisionEngine.update(this.player.body, this.lMineWall.body);
         Fx.update(delta);
-
-        document.getElementById("gold-score").textContent = Phase1.goldScore;
-        document.getElementById("iron-score").textContent = Phase1.ironScore;
-        document.getElementById("wood-score").textContent = Phase1.woodScore;
     }
     
     renderStatic(delta, context) {

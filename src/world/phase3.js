@@ -4,11 +4,18 @@ import { Boss } from "./boss.js";
 import { Vector } from "../math/vector.js";
 import { Base } from "./base.js";
 import { Fx } from "../fx/fx.js";
+import { Phase4 } from "./phase4.js";
 
 class Phase3Impl {
     constructor() {
         this.entities = [];
         this.year = '-413';
+        this.text = `(413 BC) Victory is near, commander. Now is time for war ⚔️. Defeat all incoming Delian soldiers!
+        
+        Hit as many Delian soldiers as possible, and defeat their commander: if he dies, they will most likely surrender to our superiority.
+
+        Charge!
+        `;
     }
 
     load(collisionEngine) {
@@ -49,9 +56,9 @@ class Phase3Impl {
         Fx.render(delta, context);
     }
 
-    isComplete() { return false; }
+    isComplete() { return this.boss.healthPoint == 0; }
 
-    nextPhase() { return null; }
+    nextPhase() { return Phase4; }
 }
 
 export const Phase3 = new Phase3Impl();

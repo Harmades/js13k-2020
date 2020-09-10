@@ -12,13 +12,5 @@ Assets.load(
 
 const songs = new Songs();
 
-function playIntro() { songs.play_intro();}
-function playPone() { songs.play_pone();}
-function playPtwo() { songs.play_ptwo();}
-function stop() { songs.stop_song();}
-
-window.playIntro = () => playIntro();
-window.playPone = () => playPone();
-window.playPtwo = () => playPtwo();
-window.stop = () => stop();
-
+// songs.play_intro();
+// songs.play_ptwo();

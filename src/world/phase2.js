@@ -15,6 +15,14 @@ class Phase2Impl {
         this.fightResults = [null, null, null];
         this.currentRound = 0;
         this.year = '-421';
+        this.text = `(421 BC) Excellent job, commander. We have all the resources we need to build and equip an army!
+        
+        Let's show soldiers some strategy. Your enemy's weapon is shown in blue, and you have to hit the right bumper to win the round. Choose your weapon bumper with care:
+
+        🗡️ > 🪓
+        🪓 > 🔱
+        🔱 > 🗡️
+        `;
     }
 
     load(collisionEngine) {
@@ -69,9 +77,6 @@ class Phase2Impl {
         this.collisionEngine.update(this.player.body, this.swordBumper.body);
         this.collisionEngine.update(this.player.body, this.lanceBumper.body);
         Fx.update(delta);
-
-        document.getElementById("enemyWeapon").textContent = this.enemyWeapon;
-        document.getElementById("round").textContent = this.currentRound;
     }
 
     renderStatic(delta, context) {

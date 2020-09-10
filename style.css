@@ -16,6 +16,20 @@ body {
     top: 0px;
 }
 
+#dialog {
+    margin-left: 4px;
+    position: absolute;
+    bottom: 0px;
+    width: 92.5%;
+    height: 200px;
+    background-color: rgb(128, 0, 0, 95%);
+    border: 4px solid ghostwhite;
+    border-radius: 16px;
+    color: white;
+    padding: 16px;
+    font-family: sans-serif;
+}
+
 .canvas-container {
     position: relative;
     width: 600px;

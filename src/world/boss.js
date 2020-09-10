@@ -24,6 +24,7 @@ export class Boss {
 
     update(delta) {
         this.body.speed = new Vector(0, 60);
+        if (this.body.position.y > Settings.height) this.body.position.y = -this.spriteBounds.height;
         this.body.update(delta);
     }
 
