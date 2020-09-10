@@ -8,6 +8,7 @@ import { Bumper } from "./bumper.js";
 import { Phase2 } from "./phase2.js";
 import { Base } from "./base.js";
 import { Fx } from "../fx/fx.js";
+import { Songs } from "../sounds.js";
 
 export class Phase1Impl {
     constructor() {
@@ -102,7 +103,14 @@ export class Phase1Impl {
             && this.ironScore >= Settings.rockScoreGoal;
     }
 
-    nextPhase() { return Phase2; }
+	playSong() {
+		Songs.play_pone();
+	}
+
+	nextPhase() {
+	  Songs.stop_song();
+	  return Phase2;
+	}
 }
 
 export const Phase1 = new Phase1Impl();

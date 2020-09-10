@@ -5,7 +5,8 @@ import { Phase3 } from "./phase3.js";
 import { Base } from "./base.js";
 import { Bumper } from "./bumper.js";
 import { Assets } from "../assets.js";
-import { Fx } from "../fx/fx.js"
+import { Fx } from "../fx/fx.js";
+import { Songs } from "../sounds.js";
 
 class Phase2Impl {
     constructor() {
@@ -135,7 +136,12 @@ class Phase2Impl {
 
     isComplete() { return this.fightResults.filter(r => r == true).length == 3; }
 
-    nextPhase() {
+	playSong() {
+		Songs.play_ptwo();
+	}
+
+	nextPhase() {
+		Songs.stop_song();
         this.year = '-404'
         return Phase3;
     }
