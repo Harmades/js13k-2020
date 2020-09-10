@@ -4,6 +4,7 @@ import { Shape } from "../math/shape.js";
 import { Vector } from "../math/vector.js";
 import { Input } from "../input.js";
 import { Assets } from "../assets.js";
+import { Effects } from "../sounds.js";
 
 export class Plunger {
     constructor() {
@@ -12,14 +13,17 @@ export class Plunger {
         this.body.position = new Vector(546.8, 663.3);
         this.body.bounciness = Settings.launcherBounciness;
         this.spriteBounds = Assets.sprites['plunger'];
-        this.compression = 0;
+		this.compression = 0;
     }
 
     update(delta) {
         const posY = this.body.position.y;
-        if (Input.space) {
+		if (Input.space) {
+			if (this.compression == 0) {
+				Effects.launcher();
+			}
             if (this.compression <= Settings.launcherAmplitude) {
-                this.body.speed = new Vector(0, Settings.launcherCompressingSpeed);
+				this.body.speed = new Vector(0, Settings.launcherCompressingSpeed);
             } else {
                 this.body.speed = Vector.zero();
             }
@@ -27,7 +31,8 @@ export class Plunger {
             if (this.compression > 0) {
                 this.body.speed = new Vector(0, -Settings.launcherSpeed);
             } else {
-                this.body.speed = Vector.zero();
+				this.body.speed = Vector.zero();
+				this.compression = posY - this.body.position.y;
             }
         }
         this.body.update(delta);

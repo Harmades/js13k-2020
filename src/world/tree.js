@@ -3,6 +3,7 @@ import { Shape } from "../math/shape.js";
 import { Settings } from "../settings.js";
 import { Phase1 } from "./phase1.js";
 import { Assets } from "../assets.js";
+import { Effects } from "../sounds.js";
 
 export class Tree {
     constructor(position) {
@@ -20,7 +21,8 @@ export class Tree {
     onCollision() {
         this.healthPoint--;
         Phase1.woodScore++;
-        this.body.ignoreCollision = true;
+		this.body.ignoreCollision = true;
+		Effects.impact_tree();
     }
 
     update(delta) {

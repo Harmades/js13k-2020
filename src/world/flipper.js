@@ -4,7 +4,7 @@ import { Vector } from '../math/vector.js';
 import { Settings } from '../settings.js';
 import { Input } from '../input.js';
 import { Assets } from '../assets.js';
-
+import { Effects } from '../sounds.js';
 
 export class Flipper {
     constructor(id, side, player) {
@@ -37,7 +37,10 @@ export class Flipper {
     }
 
     update(delta) {
-        if (this.flipping) {
+		if (this.flipping) {
+			if (this.angle == 0) {
+			  Effects.paddle();
+			}
             if (Math.abs(this.angle) < Math.abs(this.maxAngle)) {
                 const rotation = Math.sign(this.maxAngle) * this.angularSpeed * delta;
                 const distance = this.center.subtract(this.player.body.position).length() + 20;
@@ -63,11 +66,12 @@ export class Flipper {
                     ).multiply(-10000 * this.angularSpeed / distance); 
             } else {
                 this.flipping = false;
-                this.body.speed = Vector.zero();
+				this.body.speed = Vector.zero();
+				this.angle = 0;
             }
         }
 
-        if (Input.left && this.side == 'left' || Input.right && this.side == 'right') {
+		if (Input.left && this.side == 'left' || Input.right && this.side == 'right') {
             this.flip();
         }
     }

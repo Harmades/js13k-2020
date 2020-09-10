@@ -5,6 +5,7 @@ import { Vector } from "../math/vector.js";
 import { Assets } from "../assets.js";
 import { Fx } from "../fx/fx.js";
 import { Particle } from "../fx/particle.js";
+import { Effects } from "../sounds.js";
 
 export class Kicker {
     constructor(side) {
@@ -40,7 +41,7 @@ export class Kicker {
         this.body.bounciness = Settings.wallBounciness;
         this.body.speed = new Vector(0, -Settings.kickerImpulseSpeed);
         this.body.isStatic = false;
-        this.body.onCollision = () => this.onCollision()
+		this.body.onCollision = () => this.onCollision()
     }
 
     onCollision() {
@@ -60,7 +61,8 @@ export class Kicker {
         helmetGlow.scaleSpeed = 0.1;
         helmetGlow.life = 1.5;
         helmetGlow.hFlip = this.sign;
-        Fx.particles.push(helmetGlow);
+		Fx.particles.push(helmetGlow);
+		Effects.impact_bumper();
     }
 
     update(delta) {

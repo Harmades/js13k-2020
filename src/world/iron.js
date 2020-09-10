@@ -3,6 +3,7 @@ import { Shape } from "../math/shape.js";
 import { Settings } from "../settings.js";
 import { Phase1 } from "./phase1.js";
 import { Assets } from "../assets.js";
+import { Effects } from "../sounds.js";
 
 export class Iron {
     constructor(position) {
@@ -26,7 +27,8 @@ export class Iron {
     onCollision() {
         this.healthPoint--;
         Phase1.ironScore++;
-        this.body.ignoreCollision = true;
+		this.body.ignoreCollision = true;
+		Effects.impact_iron();
     }
 
     render(delta, context) {

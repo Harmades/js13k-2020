@@ -5,6 +5,7 @@ import { Assets } from "../assets.js";
 import { Vector } from "../math/vector.js";
 import { Fx } from "../fx/fx.js"
 import { Particle } from "../fx/particle.js"
+import { Effects } from "../sounds.js";
 
 export class Bumper {
     constructor(position, weaponId) {
@@ -16,7 +17,7 @@ export class Bumper {
         this.spriteBounds = Assets.sprites['bumper'];
         this.weaponSpriteBounds = Assets.sprites[weaponId];
         this.scale = 1;
-        this.body.onCollision = () => this.onBodyCollision();
+		this.body.onCollision = () => this.onBodyCollision();
         this.bumperGlow = null;
         this.onCollision = null;
     }
@@ -42,6 +43,10 @@ export class Bumper {
         Fx.particles.push(this.bumperGlow);
         if (this.onCollision != null) this.onCollision();
     }
+
+	onCollision() {
+		Effects.impact_bumper();
+	}
 
     update(delta) {
         if (this.bumperGlow != null) {

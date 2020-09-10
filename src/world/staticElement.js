@@ -3,6 +3,7 @@ import { Shape } from "../math/shape.js";
 import { Settings } from "../settings.js";
 import { Assets } from "../assets.js";
 import { Vector } from "../math/vector.js";
+import { Effects } from "../sounds.js";
 
 export class StaticElement {
     constructor(id, position, bounciness = Settings.wallBounciness) {
@@ -10,7 +11,8 @@ export class StaticElement {
         this.body.shape = Assets.colliders[`${id}.collider`];
         this.body.bounciness = bounciness;
         this.body.isStatic = true;
-        this.body.position = position;
+		this.body.position = position;
+		this.body.onCollisionResolved = (speed) => this.onCollisionResolved(speed);
         this.spriteBounds = Assets.sprites[id];
         this.sign = 1;
     }
@@ -21,7 +23,13 @@ export class StaticElement {
         this.sign = -1;
     }
 
-    update(delta) { }
+	update(delta) { }
+
+  onCollisionResolved(speed) {
+	  if(speed > Settings.minImpactSoundSpeed) {
+		Effects.impact(speed);
+	  }
+  }
 
     render(delta, context) {
         if (Settings.debug) {
