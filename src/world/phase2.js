@@ -141,7 +141,7 @@ class Phase2Impl {
     isComplete() { return this.fightResults.filter(r => r == true).length == 3; }
 
     updateScore() {
-        document.getElementById("objectives").innerText = `Win: ${this.currentRound + 1} / 3`;
+        document.getElementById("objectives").innerText = `Win: ${this.currentRound} / 3`;
     }
 
 	playSong() {
