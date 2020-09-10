@@ -123,6 +123,7 @@ export class Phase1Impl {
     
 	nextPhase() {
 	  Songs.stop_song();
+	  Songs.play_win();
 	  return Phase2;
 	}
 }
