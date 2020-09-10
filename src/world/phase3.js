@@ -5,13 +5,14 @@ import { Vector } from "../math/vector.js";
 import { Base } from "./base.js";
 import { Fx } from "../fx/fx.js";
 import { Phase4 } from "./phase4.js";
+import { Songs } from "../sounds.js";
 
 class Phase3Impl {
     constructor() {
         this.entities = [];
         this.year = '-413';
         this.text = `(413 BC) Victory is near, commander. Now is time for war ⚔️. Defeat all incoming Delian soldiers!
-        
+
         Hit as many Delian soldiers as possible, and defeat their commander: if he dies, they will most likely surrender to our superiority.
 
         Charge!
@@ -50,7 +51,7 @@ class Phase3Impl {
     renderHybrid(delta, context) {
         Base.renderHybrid(delta, context);
     }
-    
+
     renderDynamic(delta, context) {
         Base.renderDynamic(delta, context);
         for (const enemy of this.enemies) enemy.render(delta, context);
@@ -58,9 +59,17 @@ class Phase3Impl {
         Fx.render(delta, context);
     }
 
+	playSong() {
+	  Songs.play_pthree();
+	}
+
+
     isComplete() { return this.boss.healthPoint == 0; }
 
-    nextPhase() { return Phase4; }
+	nextPhase() {
+	  Songs.stop_song();
+	  return Phase4;
+	}
 }
 
 export const Phase3 = new Phase3Impl();

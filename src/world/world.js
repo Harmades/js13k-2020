@@ -7,12 +7,18 @@ import { Phase4 } from "./phase4.js";
 import { Assets } from "../assets.js";
 import { Base } from "./base.js";
 import { Input } from "../input.js";
+import { Songs } from "../sounds.js";
+
 
 export class World {
     constructor() {
         this.collisionEngine = new CollisionEngine();
-		this.currentPhase = Phase1;
-		this.currentPhase.playSong();
+		this.currentPhase = Phase3;
+		if(this.currentPhase == Phase1) {
+		  Songs.play_intro();
+		} else {
+		  this.currentPhase.playSong();
+		}
         Base.load(this.collisionEngine);
         this.currentPhase.load(this.collisionEngine);
         this.staticDrawn = false;
@@ -23,7 +29,8 @@ export class World {
 
     update(delta) {
         if (!this.started) {
-            if (Input.space) {
+			if (Input.space) {
+				if (this.currentPhase == Phase1) Songs.play_pone();
                 this.started = true;
                 document.getElementById("dialog").style.display = "none";
             }

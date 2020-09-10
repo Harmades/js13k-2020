@@ -150,6 +150,7 @@ class Phase2Impl {
 
 	nextPhase() {
 		Songs.stop_song();
+		Songs.play_win();
         this.year = '-404'
         return Phase3;
     }

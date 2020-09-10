@@ -4,6 +4,7 @@ import { Settings } from "../settings.js";
 import { Vector } from "../math/vector.js";
 import { Assets } from "../assets.js";
 import { Score } from "./score.js";
+import { Effects, Songs } from "../sounds.js";
 
 export class Boss {
     constructor(position) {
@@ -22,8 +23,11 @@ export class Boss {
         this.healthPoint--;
         if (this.healthPoint == 0) {
             this.body.ignoreCollision = true;
-            Score.score(50);
-        }
+			Score.score(50);
+			Songs.win_vf();
+		} else {
+			Effects.impact_boss();
+		}
     }
 
     update(delta) {

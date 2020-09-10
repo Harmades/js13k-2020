@@ -1,4 +1,5 @@
 import { Base } from "./base.js";
+import { Songs } from "../sounds.js";
 
 class Phase4Impl {
     constructor() {
@@ -28,6 +29,10 @@ class Phase4Impl {
     
     renderDynamic(delta, context) {
     }
+
+	playSong() {
+	  Songs.play_intro();
+	}
 
     isComplete() { return false; }
 

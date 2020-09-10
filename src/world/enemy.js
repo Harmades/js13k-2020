@@ -4,6 +4,7 @@ import { Settings } from "../settings.js";
 import { Vector } from "../math/vector.js";
 import { Assets } from "../assets.js";
 import { Score } from "./score.js";
+import { Effects } from "../sounds.js";
 
 export class Enemy {
     constructor(position) {
@@ -25,6 +26,7 @@ export class Enemy {
             this.body.ignoreCollision = true;
             Score.score(50);
         }
+		Effects.impact_foe();
     }
 
     update(delta) {
