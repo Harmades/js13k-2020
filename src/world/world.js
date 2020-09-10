@@ -30,7 +30,10 @@ export class World {
     update(delta) {
         if (!this.started) {
 			if (Input.space) {
-				if (this.currentPhase == Phase1) Songs.play_pone();
+			  if (this.currentPhase == Phase1) {
+				  Songs.stop_song();
+				  Songs.play_pone();
+				}
                 this.started = true;
                 document.getElementById("dialog").style.display = "none";
             }

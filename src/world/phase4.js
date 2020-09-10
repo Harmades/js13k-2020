@@ -31,7 +31,7 @@ class Phase4Impl {
     }
 
 	playSong() {
-	  Songs.play_intro();
+	  setTimeout(() => Songs.play_intro(), 2500);
 	}
 
     isComplete() { return false; }

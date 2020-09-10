@@ -28,7 +28,7 @@ class Phase3Impl {
         for (let i = 0; i < 25; i++) {
             const quotient = Math.floor(i / 5);
             const remainder = i % 5;
-            this.enemies.push(new Enemy(new Vector(50 + 100 * remainder, -100 -300 * quotient)))
+			this.enemies.push(new Enemy(new Vector(50 + 100 * remainder, -100 -300 * quotient)));
         }
         this.boss = new Boss(new Vector(225, -2000));
     }
@@ -68,6 +68,7 @@ class Phase3Impl {
 
 	nextPhase() {
 	  Songs.stop_song();
+	  Songs.play_win_vf();
 	  return Phase4;
 	}
 }

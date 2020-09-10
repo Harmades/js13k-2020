@@ -24,7 +24,6 @@ export class Boss {
         if (this.healthPoint == 0) {
             this.body.ignoreCollision = true;
 			Score.score(50);
-			Songs.win_vf();
 		} else {
 			Effects.impact_boss();
 		}
