@@ -26,54 +26,40 @@ export class Phase1Impl {
         ⛏️ ${Settings.rockScoreGoal} units of iron
         📀 ${Settings.goldScoreGoal} gold
         `;
+        this.entities = [];
     }
 
     load(collisionEngine) {
         this.updateScore();
         this.collisionEngine = collisionEngine;
         this.player = Base.player;
-        this.sMineWall = new StaticElement('small-mine-wall', new Vector(0, 220));
-        this.lMineWall = new StaticElement('large-mine-wall', new Vector(160, 0));
-        this.tree1 = new Tree(new Vector(140, 150));
-        this.tree2 = new Tree(new Vector(373.4, 266));
-        this.iron1 = new Iron(new Vector(10.91, 8.75));
-        this.iron2 = new Iron(new Vector(114.4, 7.95));
-        this.iron3 = new Iron(new Vector(115.6, 90.85));
-        this.iron4 = new Iron(new Vector(75.95, 177.4));
-        this.iron5 = new Iron(new Vector(11.40, 167));
-        this.gold1 = new Gold(new Vector(77.51, 318));
-        this.gold2 = new Gold(new Vector(281.9, 401.9));
-        this.gold3 = new Gold(new Vector(310.1, 91.76));
-        this.bumper = new Bumper(new Vector(14.76, 83.63));
+        this.entities = [
+            new StaticElement('small-mine-wall', new Vector(0, 220)),
+            new StaticElement('large-mine-wall', new Vector(160, 0)),
+            new Tree(new Vector(140, 150)),
+            new Tree(new Vector(373.4, 266)),
+            new Iron(new Vector(10.91, 8.75)),
+            new Iron(new Vector(114.4, 7.95)),
+            new Iron(new Vector(115.6, 90.85)),
+            new Iron(new Vector(75.95, 177.4)),
+            new Iron(new Vector(11.40, 167)),
+            new Gold(new Vector(77.51, 318)),
+            new Gold(new Vector(281.9, 401.9)),
+            new Gold(new Vector(310.1, 91.76)),
+            new Bumper(new Vector(14.76, 83.63))
+        ];
     }
 
     update(delta) {
         Base.update(delta);
-        this.tree1.update(delta);
-        this.tree2.update(delta);
-        this.iron1.update(delta);
-        this.iron2.update(delta);
-        this.iron3.update(delta);
-        this.iron4.update(delta);
-        this.iron5.update(delta);
-        this.bumper.update(delta);
-        this.collisionEngine.update(this.player.body, this.tree1.body);
-        this.collisionEngine.update(this.player.body, this.tree2.body);
-        this.collisionEngine.update(this.player.body, this.gold1.body);
-        this.collisionEngine.update(this.player.body, this.gold2.body);
-        this.collisionEngine.update(this.player.body, this.gold3.body);
-        this.collisionEngine.update(this.player.body, this.iron1.body);
-        this.collisionEngine.update(this.player.body, this.iron2.body);
-        this.collisionEngine.update(this.player.body, this.iron3.body);
-        this.collisionEngine.update(this.player.body, this.iron4.body);
-        this.collisionEngine.update(this.player.body, this.iron5.body);
-        this.collisionEngine.update(this.player.body, this.bumper.body);
-        this.collisionEngine.update(this.player.body, this.sMineWall.body);
-        this.collisionEngine.update(this.player.body, this.lMineWall.body);
-        if (this.gold1.jackpot && this.gold2.jackpot && this.gold3.jackpot) {
-            this.gold1.jackpot = false;
-            this.gold2.jackpot = false;
-            this.gold3.jackpot = false;
+        for (let entity of this.entities) {
+            entity.update(delta);
+            this.collisionEngine.update(this.player.body, entity.body);
+        }
+        if (this.entities[9].jackpot && this.entities[10].jackpot && this.entities[11].jackpot) {
+            this.entities[9].jackpot = false;
+            this.entities[10].jackpot = false;
+            this.entities[11].jackpot = false;
             this.goldScore += 5;
             Score.score(100);
             this.updateScore();
@@ -87,23 +73,15 @@ export class Phase1Impl {
 
     renderHybrid(context) {
         Base.renderHybrid(context);
-        this.tree1.render(context);
-        this.tree2.render(context);
-        this.gold1.render(context);
-        this.gold2.render(context);
-        this.gold3.render(context);
-        this.iron1.render(context);
-        this.iron2.render(context);
-        this.iron3.render(context);
-        this.iron4.render(context);
-        this.iron5.render(context);
-        this.bumper.render(context);
+        for (let i = 2; i < this.entities.length; i++) {
+            this.entities[i].render(context);
+        }
     }
 
     renderDynamic(context) {
         Base.renderDynamic(context);
-        this.sMineWall.render(context);
-        this.lMineWall.render(context);
+        this.entities[0].render(context);
+        this.entities[1].render(context);
         Fx.render(context);
     }
 

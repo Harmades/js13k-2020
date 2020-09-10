@@ -63,11 +63,8 @@ class Phase3Impl {
 	  Songs.play_pthree();
 	}
 
-
     isComplete() { return this.boss.healthPoint == 0; }
     
-    playSong() {}
-
 	nextPhase() {
 	  Songs.stop_song();
 	  Songs.play_win_vf();
