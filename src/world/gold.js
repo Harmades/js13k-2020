@@ -24,6 +24,7 @@ export class Gold {
 
     onAreaEnter() {
         Phase1.goldScore++;
+        Phase1.updateScore();
 		this.jackpot = !this.jackpot;
 		Effects.coin();
     }

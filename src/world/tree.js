@@ -21,6 +21,7 @@ export class Tree {
     onCollision() {
         this.healthPoint--;
         Phase1.woodScore++;
+        Phase1.updateScore();
 		this.body.ignoreCollision = true;
 		Effects.impact_tree();
     }

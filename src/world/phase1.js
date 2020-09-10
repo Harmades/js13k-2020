@@ -28,6 +28,7 @@ export class Phase1Impl {
     }
 
     load(collisionEngine) {
+        this.updateScore();
         this.collisionEngine = collisionEngine;
         this.player = Base.player;
         this.sMineWall = new StaticElement('small-mine-wall', new Vector(0, 220));
@@ -105,8 +106,12 @@ export class Phase1Impl {
 
 	playSong() {
 		Songs.play_pone();
-	}
+    }
 
+    updateScore() {
+        document.getElementById("objectives").innerText = `🌲: ${this.woodScore} | ⛏️: ${this.ironScore} | 📀: ${this.goldScore}`;
+    }
+    
 	nextPhase() {
 	  Songs.stop_song();
 	  return Phase2;

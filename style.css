@@ -30,6 +30,18 @@ body {
     font-family: sans-serif;
 }
 
+#score {
+    position: absolute;
+    top: 8px;
+    left: 100px;
+}
+
+#objectives {
+    position: absolute;
+    top: 8px;
+    right: 100px;
+}
+
 .canvas-container {
     position: relative;
     width: 600px;

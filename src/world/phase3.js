@@ -19,6 +19,7 @@ class Phase3Impl {
     }
 
     load(collisionEngine) {
+        document.getElementById("objectives").innerText = '';
         this.collisionEngine = collisionEngine;
         this.player = Base.player;
         this.enemies = [];

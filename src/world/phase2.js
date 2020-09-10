@@ -1,5 +1,3 @@
-import { Settings } from "../settings.js";
-import { StaticElement } from "./staticElement.js";
 import { Vector } from "../math/vector.js";
 import { Phase3 } from "./phase3.js";
 import { Base } from "./base.js";
@@ -27,6 +25,7 @@ class Phase2Impl {
     }
 
     load(collisionEngine) {
+        this.updateScore();
         this.collisionEngine = collisionEngine;
         this.player = Base.player;
         this.lanceBumper = new Bumper(new Vector(19.64, 163), 'lance');
@@ -63,6 +62,7 @@ class Phase2Impl {
             || this.enemyWeapon == 'lance' && this.playerWeapon == 'axe') {
             this.fightResults[this.currentRound] = true;    
             this.currentRound++;
+            this.updateScore();
             this.rollWeapon();
         } else {
             this.fightResults[this.currentRound] = false;    
@@ -135,6 +135,10 @@ class Phase2Impl {
     }
 
     isComplete() { return this.fightResults.filter(r => r == true).length == 3; }
+
+    updateScore() {
+        document.getElementById("objectives").innerText = `Win: ${this.currentRound + 1} / 3`;
+    }
 
 	playSong() {
 		Songs.play_ptwo();
