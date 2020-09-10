@@ -14,8 +14,8 @@ export class CollisionEngine {
         if (normal != null) {
             if (body2.onCollision != undefined) body2.onCollision(normal);
             if (body2.isRigid) {
-                this.resolver.resolve(body1, body2, normal);
-                if (body2.onCollisionResolved != undefined) body2.onCollisionResolved();
+                const speed = this.resolver.resolve(body1, body2, normal);
+				if (body2.onCollisionResolved != undefined) body2.onCollisionResolved(speed);
             } else {
                 if (this.previousOverlap.body1 == null && this.previousOverlap.body2 == null && body2.onAreaEnter) {
                     body2.onAreaEnter();
