@@ -69,6 +69,13 @@ export class Phase1Impl {
         this.collisionEngine.update(this.player.body, this.bumper.body);
         this.collisionEngine.update(this.player.body, this.sMineWall.body);
         this.collisionEngine.update(this.player.body, this.lMineWall.body);
+        if (this.gold1.jackpot && this.gold2.jackpot && this.gold3.jackpot) {
+            this.gold1.jackpot = false;
+            this.gold2.jackpot = false;
+            this.gold3.jackpot = false;
+            this.goldScore += 5;
+            this.updateScore();
+        }
         Fx.update(delta);
     }
     

@@ -11,7 +11,7 @@ import { Input } from "../input.js";
 export class World {
     constructor() {
         this.collisionEngine = new CollisionEngine();
-		this.currentPhase = Phase2;
+		this.currentPhase = Phase1;
 		this.currentPhase.playSong();
         Base.load(this.collisionEngine);
         this.currentPhase.load(this.collisionEngine);
