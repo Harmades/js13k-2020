@@ -11,7 +11,8 @@ import { Input } from "../input.js";
 export class World {
     constructor() {
         this.collisionEngine = new CollisionEngine();
-        this.currentPhase = Phase4;
+		this.currentPhase = Phase1;
+		this.currentPhase.playSong();
         Base.load(this.collisionEngine);
         this.currentPhase.load(this.collisionEngine);
         this.staticDrawn = false;
@@ -30,7 +31,8 @@ export class World {
         }
         this.currentPhase.update(delta);
         if (this.currentPhase.isComplete()) {
-            this.currentPhase = this.currentPhase.nextPhase();
+			this.currentPhase = this.currentPhase.nextPhase();
+			this.currentPhase.playSong();
             this.currentPhase.load(this.collisionEngine);
             this.staticDrawn = false;
             Base.year = this.currentPhase.year;
