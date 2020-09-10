@@ -84,12 +84,12 @@ class Phase2Impl {
         Fx.update(delta);
     }
 
-    renderStatic(delta, context) {
-        Base.renderStatic(delta, context);
+    renderStatic(context) {
+        Base.renderStatic(context);
     }
 
-    renderHybrid(delta, context) {
-        Base.renderHybrid(delta, context);
+    renderHybrid(context) {
+        Base.renderHybrid(context);
         
         context.fillStyle = "#0d5eaf";
         context.strokeStyle = "white";
@@ -128,14 +128,14 @@ class Phase2Impl {
             );
         }
 
-        this.axeBumper.render(delta, context);
-        this.swordBumper.render(delta, context);
-        this.lanceBumper.render(delta, context);
+        this.axeBumper.render(context);
+        this.swordBumper.render(context);
+        this.lanceBumper.render(context);
     }
 
-    renderDynamic(delta, context) {
-        Base.renderDynamic(delta, context);
-        Fx.render(delta, context);
+    renderDynamic(context) {
+        Base.renderDynamic(context);
+        Fx.render(context);
     }
 
     isComplete() { return this.fightResults.filter(r => r == true).length == 3; }

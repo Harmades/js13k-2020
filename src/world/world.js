@@ -53,15 +53,15 @@ export class World {
         }
     }
 
-    render(delta, context) {
+    render(context) {
         if (!this.staticDrawn) {
             context.staticContext.clearRect(0, 0, Settings.width, Settings.height);
-            this.currentPhase.renderStatic(delta, context.staticContext);
+            this.currentPhase.renderStatic(context.staticContext);
             this.staticDrawn = true;
         }
         context.hybridContext.clearRect(0, 0, Settings.width, Settings.height);
-        this.currentPhase.renderHybrid(delta, context.hybridContext);
+        this.currentPhase.renderHybrid(context.hybridContext);
         context.dynamicContext.clearRect(0, 0, Settings.width, Settings.height);
-        this.currentPhase.renderDynamic(delta, context.dynamicContext);
+        this.currentPhase.renderDynamic(context.dynamicContext);
     }
 }

@@ -44,19 +44,19 @@ class Phase3Impl {
         this.collisionEngine.update(this.player.body, this.boss.body);
     }
 
-    renderStatic(delta, context) {
-        Base.renderStatic(delta, context);
+    renderStatic(context) {
+        Base.renderStatic(context);
     }
 
-    renderHybrid(delta, context) {
-        Base.renderHybrid(delta, context);
+    renderHybrid(context) {
+        Base.renderHybrid(context);
     }
-
-    renderDynamic(delta, context) {
-        Base.renderDynamic(delta, context);
-        for (const enemy of this.enemies) enemy.render(delta, context);
-        this.boss.render(delta, context);
-        Fx.render(delta, context);
+    
+    renderDynamic(context) {
+        Base.renderDynamic(context);
+        for (const enemy of this.enemies) enemy.render(context);
+        this.boss.render(context);
+        Fx.render(context);
     }
 
 	playSong() {
@@ -65,6 +65,8 @@ class Phase3Impl {
 
 
     isComplete() { return this.boss.healthPoint == 0; }
+    
+    playSong() {}
 
 	nextPhase() {
 	  Songs.stop_song();

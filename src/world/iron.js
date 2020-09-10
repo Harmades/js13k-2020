@@ -1,55 +1,25 @@
-import { Body } from "../physic/body.js";
-import { Shape } from "../math/shape.js";
-import { Settings } from "../settings.js";
 import { Phase1 } from "./phase1.js";
-import { Assets } from "../assets.js";
 import { Effects } from "../sounds.js";
-import { Score } from "./score.js";
+import { DestroyableEntity } from "./destroyableEntity.js";
+import { Vector } from "../math/vector.js";
 
-export class Iron {
+export class Iron extends DestroyableEntity {
     constructor(position) {
-        this.body = new Body(null);
-        this.body.shape = Assets.colliders[`iron.collider`];
-        this.body.bounciness = Settings.wallBounciness;
-        this.body.isStatic = true;
-        this.body.position = position;
-        this.body.onCollision = () => this.onCollision();
-        this.healthPoint = 1;
-        this.spriteBounds = Assets.sprites.iron;
-        this.scale = 1;
+        super('iron', position);
+        this.score = 50;
     }
 
     update(delta) {
-        if (this.healthPoint == 0 && this.scale > 0) {
-            this.scale -= 5 * delta;
+        if (this.life == 2 && this.scale.x > 0) {
+            this.scale = this.scale.subtract(new Vector(5 * delta, 5 * delta));
         }
     }
 
     onCollision() {
-        this.healthPoint--;
+        super.onCollision();
         Phase1.ironScore++;
         Phase1.updateScore();
-		this.body.ignoreCollision = true;
-        Score.score(50);
 		Effects.impact_iron();
-    }
-
-    render(delta, context) {
-        if (this.scale <= 0) return;
-        if (Settings.debug) {
-            Shape.debugDraw(this.body, context);
-        } else {
-            context.drawImage(
-                Assets.atlas,
-                this.spriteBounds.x,
-                this.spriteBounds.y,
-                this.spriteBounds.width,
-                this.spriteBounds.height,
-                this.body.position.x,
-                this.body.position.y,
-                this.spriteBounds.width * this.scale,
-                this.spriteBounds.height * this.scale
-            );
-        }
+        this.life = 2;
     }
 }

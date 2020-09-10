@@ -30,7 +30,7 @@ export class Game {
         }
         
         this.queueUpdates(numTicks);
-        this.render(tFrame - this.lastRender);
+        this.render();
         this.lastRender = tFrame;
     }
 
@@ -45,7 +45,7 @@ export class Game {
         this.world.update(delta);
     }
 
-    render(delta) {
-        this.world.render(delta, this.context);
+    render() {
+        this.world.render(this.context);
     }
 }

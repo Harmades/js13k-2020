@@ -12,6 +12,7 @@ export class Plunger {
         this.body.shape = Assets.colliders[`plunger.collider`];
         this.body.position = new Vector(546.8, 663.3);
         this.body.bounciness = Settings.launcherBounciness;
+        this.body.isStatic = false;
         this.spriteBounds = Assets.sprites['plunger'];
 		this.compression = 0;
     }
@@ -39,7 +40,7 @@ export class Plunger {
         this.compression += this.body.position.y - posY;
     }
 
-    render(delta, context) {
+    render(context) {
         if (Settings.debug) {
             Shape.debugDraw(this.body, context);
         } else {

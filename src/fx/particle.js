@@ -21,7 +21,7 @@ export class Particle {
         this.life -= delta;
     }
 
-    render(delta, context) {
+    render(context) {
         context.save();
         context.globalAlpha = this.alpha;
         context.strokeStyle = this.color;

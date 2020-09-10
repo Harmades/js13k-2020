@@ -1,6 +1,3 @@
-import { Vector } from "../math/vector.js";
-import { Shape } from "../math/shape.js";
-
 export class CollisionDetector {
     getSeparatingAxes(shape) {
         let axes = [];
@@ -14,15 +11,12 @@ export class CollisionDetector {
     }
 
     satCollide(shape1, shape2) {
-        const axes1 = this.getSeparatingAxes(shape1);
-        const axes2 = this.getSeparatingAxes(shape2);
+        const axes = this.getSeparatingAxes(shape1).concat(this.getSeparatingAxes(shape2));
         let minVector = null;
         let minOverlap = null;
-        for (let i = 0; i < axes1.length; i++) {
-            const axe = axes1[i];
-            const projection1 = shape1.project(axe);
+        for (let axe of axes) {
             const projection2 = shape2.project(axe);
-            const overlap = this.getOverlap(projection1, projection2);
+            const overlap = this.getOverlap(shape1.project(axe), shape2.project(axe));
             if (overlap != null) {
                 if (minOverlap == null || Math.abs(overlap) < Math.abs(minOverlap)) {
                     minOverlap = overlap;
@@ -32,23 +26,6 @@ export class CollisionDetector {
                 return null;
             }
         }
-
-        for (let i = 0; i < axes2.length; i++) {
-            const axe = axes2[i];
-            const projection1 = shape1.project(axe);
-            const projection2 = shape2.project(axe);
-            const overlap = this.getOverlap(projection1, projection2);
-            if (overlap != null) {
-                if (minOverlap == null || Math.abs(overlap) < Math.abs(minOverlap)) {
-                    minOverlap = overlap;
-                    minVector = axe;
-                }
-            }
-            else {
-                return null;
-            }
-        }
-
         return minVector.multiply(minOverlap);
     }
 

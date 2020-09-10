@@ -5,30 +5,34 @@ import { Settings } from '../settings.js';
 import { Input } from '../input.js';
 import { Assets } from '../assets.js';
 import { Effects } from '../sounds.js';
+import { Entity } from './entity.js';
 
-export class Flipper {
-    constructor(id, side, player) {
+export class Flipper extends Entity {
+    constructor(side, player) {
+        let position;
+        let center;
+        if (side == 'left') {
+            position = new Vector(178.11, 653);
+            center = new Vector(188.2, 664.3);
+        }
+        if (side == 'right') {
+            position = new Vector(290.61, 652.71);
+            center = new Vector(344, 664.3);
+        }
+        super('flipper', position, Settings.paddleBounciness);
         this.player = player;
-        this.sign = null;
-        this.spriteBounds = Assets.sprites[id];
-        this.body = new Body(null);
-        this.body.shape = Assets.colliders[`${id}.collider`];
-        this.body.bounciness = Settings.paddleBounciness;
+        this.sign = sign;
+        this.body.isStatic = false;
         if (side == 'right') {
             this.sign = -1;
-            this.body.position = new Vector(290.61, 652.71);
-            this.center = new Vector(344, 664.3);
-            this.body.hFlip(this.spriteBounds.width / 2);
+            this.hFlip();
         }
         if (side == 'left') {
             this.sign = 1;
-            this.body.position = new Vector(178.11, 653);
-            this.center = new Vector(188.2, 664.3);
         }
-        this.side = side;
+        this.center = center;
         this.maxAngle = -this.sign * Settings.paddleMaxAngle;
         this.angularSpeed = Settings.paddleAngularSpeed;
-        this.angle = 0;
         this.flipping = false;
     }
 
@@ -71,32 +75,8 @@ export class Flipper {
             }
         }
 
-		if (Input.left && this.side == 'left' || Input.right && this.side == 'right') {
+		if (Input.left && this.sign == 1 || Input.right && this.sign == -1) {
             this.flip();
-        }
-    }
-
-    render(delta, context) {
-        if (Settings.debug) {
-            Shape.debugDraw(this.body, context);
-        } else {
-            context.save();
-            context.scale(this.sign, 1);
-            context.translate(this.sign * this.center.x, this.center.y);
-            const offset = this.sign == -1 ? -this.spriteBounds.width : 0;
-            context.rotate(this.sign * this.angle);
-            context.drawImage(
-                Assets.atlas,
-                this.spriteBounds.x,
-                this.spriteBounds.y,
-                this.spriteBounds.width,
-                this.spriteBounds.height,
-                this.sign * this.body.position.x + offset - this.sign * this.center.x,
-                this.body.position.y - this.center.y,
-                this.spriteBounds.width,
-                this.spriteBounds.height
-            );
-            context.restore();
         }
     }
 }

@@ -81,30 +81,30 @@ export class Phase1Impl {
         Fx.update(delta);
     }
     
-    renderStatic(delta, context) {
-        Base.renderStatic(delta, context);
+    renderStatic(context) {
+        Base.renderStatic(context);
     }
 
-    renderHybrid(delta, context) {
-        Base.renderHybrid(delta, context);
-        this.tree1.render(delta, context);
-        this.tree2.render(delta, context);
-        this.gold1.render(delta, context);
-        this.gold2.render(delta, context);
-        this.gold3.render(delta, context);
-        this.iron1.render(delta, context);
-        this.iron2.render(delta, context);
-        this.iron3.render(delta, context);
-        this.iron4.render(delta, context);
-        this.iron5.render(delta, context);
-        this.bumper.render(delta, context);
+    renderHybrid(context) {
+        Base.renderHybrid(context);
+        this.tree1.render(context);
+        this.tree2.render(context);
+        this.gold1.render(context);
+        this.gold2.render(context);
+        this.gold3.render(context);
+        this.iron1.render(context);
+        this.iron2.render(context);
+        this.iron3.render(context);
+        this.iron4.render(context);
+        this.iron5.render(context);
+        this.bumper.render(context);
     }
 
-    renderDynamic(delta, context) {
-        Base.renderDynamic(delta, context);
-        this.sMineWall.render(delta, context);
-        this.lMineWall.render(delta, context);
-        Fx.render(delta, context);
+    renderDynamic(context) {
+        Base.renderDynamic(context);
+        this.sMineWall.render(context);
+        this.lMineWall.render(context);
+        Fx.render(context);
     }
 
     isComplete() {

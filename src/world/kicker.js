@@ -70,7 +70,7 @@ export class Kicker {
 
     }
 
-    render(delta, context) {
+    render(context) {
         if (Settings.debug) {
             Shape.debugDraw(this.body, context);
             Shape.debugDraw(this.body1, context);

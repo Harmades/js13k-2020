@@ -1,26 +1,15 @@
-import { Body } from "../physic/body.js";
-import { Shape } from "../math/shape.js";
 import { Settings } from "../settings.js";
 import { Phase1 } from "./phase1.js";
-import { Assets } from "../assets.js";
 import { Effects } from "../sounds.js";
 import { Score } from "./score.js";
+import { Entity } from "./entity.js";
 
-export class Gold {
+export class Gold extends Entity {
     constructor(position) {
-        this.body = new Body(null);
-        this.body.shape = Assets.colliders['gold.collider'];
-        this.body.bounciness = Settings.wallBounciness;
-        this.body.isStatic = true;
+        super('gold', position);
         this.body.isRigid = false;
-        this.body.position = position;
         this.body.onAreaEnter = () => this.onAreaEnter();
-        this.spriteBounds = Assets.sprites.gold;
         this.jackpot = false;
-    }
-
-    update(delta) {
-
     }
 
     onAreaEnter() {
@@ -31,25 +20,12 @@ export class Gold {
 		Effects.coin();
     }
 
-    render(delta, context) {
-        if (Settings.debug) {
-            Shape.debugDraw(this.body, context);
-        } else {
-            context.drawImage(
-                Assets.atlas,
-                this.spriteBounds.x,
-                this.spriteBounds.y,
-                this.spriteBounds.width,
-                this.spriteBounds.height,
-                this.body.position.x,
-                this.body.position.y,
-                this.spriteBounds.width,
-                this.spriteBounds.height
-            );
-            if (!this.jackpot) {
-                context.fillStyle = "rgba(0, 0, 0, 0.5)";
-                context.fillRect(this.body.position.x, this.body.position.y, this.spriteBounds.width, this.spriteBounds.height);
-            }
+    render(context) {
+        super.render(context);
+        if (Settings.debug) return;
+        if (!this.jackpot) {
+            context.fillStyle = "rgba(0, 0, 0, 0.5)";
+            context.fillRect(this.body.position.x, this.body.position.y, this.spriteBounds.width, this.spriteBounds.height);
         }
     }
 }

@@ -1,57 +1,28 @@
-import { Body } from "../physic/body.js";
 import { Shape } from "../math/shape.js";
 import { Settings } from "../settings.js";
 import { Vector } from "../math/vector.js";
-import { Assets } from "../assets.js";
-import { Score } from "./score.js";
-import { Effects, Songs } from "../sounds.js";
+import { Enemy } from "./enemy.js";
+import { Effects } from "../sounds.js";
 
-export class Boss {
+export class Boss extends Enemy {
     constructor(position) {
-        this.scale = 2;
-        this.body = new Body(1);
-        this.body.shape = new Shape(Assets.colliders['enemy.collider'].vertices.map(v => v.multiply(this.scale)));
-        this.body.bounciness = Settings.wallBounciness;
-        this.body.isStatic = true;
-        this.body.position = position;
+        super(position);
+        this.body.shape = new Shape(this.body.shape.vertices.map(v => v.multiply(2)));
+        this.body.isRigid = true;
         this.body.onCollision = () => this.onCollision();
-        this.healthPoint = 3;
-        this.spriteBounds = Assets.sprites['enemy'];
+        this.score = 500;
+        this.life = 3;
+        this.scale = new Vector(2, 2);
+        this.armor = null;
     }
 
     onCollision() {
-        this.healthPoint--;
-        if (this.healthPoint == 0) {
-            this.body.ignoreCollision = true;
-			Score.score(50);
-		} else {
-			Effects.impact_boss();
-		}
+        super.onCollision();
+        Effects.impact_boss();
     }
 
     update(delta) {
-        this.body.speed = new Vector(0, 60);
         if (this.body.position.y > Settings.height) this.body.position.y = -this.spriteBounds.height;
-        this.body.update(delta);
-    }
-
-    render(delta, context) {
-        if (this.healthPoint == 0) return;
-        if (Settings.debug) {
-            Shape.debugDraw(this.body, context);
-        } else {
-            context.drawImage(
-                Assets.atlas,
-                this.spriteBounds.x,
-                this.spriteBounds.y,
-                this.spriteBounds.width,
-                this.spriteBounds.height,
-                this.body.position.x,
-                this.body.position.y,
-                this.spriteBounds.width * this.scale,
-                this.spriteBounds.height * this.scale
-            );
-
-        }
+        super.update(delta);
     }
 }

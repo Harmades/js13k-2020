@@ -20,14 +20,14 @@ class Phase4Impl {
 
     }
 
-    renderStatic(delta, context) {
-        Base.renderStatic(delta, context);
+    renderStatic(context) {
+        Base.renderStatic(context);
     }
 
-    renderHybrid(delta, context) {
+    renderHybrid(context) {
     }
     
-    renderDynamic(delta, context) {
+    renderDynamic(context) {
     }
 
 	playSong() {

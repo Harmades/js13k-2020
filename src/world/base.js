@@ -13,9 +13,9 @@ class BaseImpl {
     load(collisionEngine) {
         this.collisionEngine = collisionEngine;
         this.player = new Ball();
-        this.leftFlipper = new Flipper('flipper', 'left', this.player);
+        this.leftFlipper = new Flipper('left', this.player);
         this.leftKicker = new Kicker('left');
-        this.rightFlipper = new Flipper('flipper', 'right', this.player);
+        this.rightFlipper = new Flipper('right', this.player);
         this.rightKicker = new Kicker('right'),
         this.plunger = new Plunger('plunger');
         this.lBend1 = new StaticElement('bend.1', new Vector(44.68, 415.1));
@@ -75,38 +75,38 @@ class BaseImpl {
         }
     }
 
-    renderStatic(delta, context) {
+    renderStatic(context) {
         context.fillStyle = "#71c837";
         context.fillRect(0, 0, Settings.width, Settings.height);
 
         context.fillStyle = "white";
-        this.sign.render(delta, context);
+        this.sign.render(context);
         context.font = '48px serif';
         context.fillText(this.year, 235, 355);
 
-        this.lBend1.render(delta, context);
-        this.lBend2.render(delta, context);
-        this.rBend1.render(delta, context);
-        this.rBend2.render(delta, context);
-        this.leftKicker.render(delta, context);
-        this.rightKicker.render(delta, context);
-        this.lGutter.render(delta, context);
-        this.rGutter.render(delta, context);
-        this.deflector.render(delta, context);
-        this.lWall.render(delta, context);
-        this.tWall.render(delta, context);
-        this.rWall.render(delta, context);
+        this.lBend1.render(context);
+        this.lBend2.render(context);
+        this.rBend1.render(context);
+        this.rBend2.render(context);
+        this.leftKicker.render(context);
+        this.rightKicker.render(context);
+        this.lGutter.render(context);
+        this.rGutter.render(context);
+        this.deflector.render(context);
+        this.lWall.render(context);
+        this.tWall.render(context);
+        this.rWall.render(context);
     }
 
-    renderHybrid(delta, context) {
-        this.leftFlipper.render(delta, context);
-        this.rightFlipper.render(delta, context);
-        this.plunger.render(delta, context);
+    renderHybrid(context) {
+        this.leftFlipper.render(context);
+        this.rightFlipper.render(context);
+        this.plunger.render(context);
     }
 
-    renderDynamic(delta, context) {
-        this.player.render(delta, context);
-        this.fence.render(delta, context);
+    renderDynamic(context) {
+        this.player.render(context);
+        this.fence.render(context);
     }
 }
 

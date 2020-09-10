@@ -11,9 +11,9 @@ class FxImpl {
         this.particles = this.particles.filter(p => p.life > 0);
     }
 
-    render(delta, context) {
+    render(context) {
         for (const particle of this.particles) {
-            particle.render(delta, context);
+            particle.render(context);
         }
     }
 }
