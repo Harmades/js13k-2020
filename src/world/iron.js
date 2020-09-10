@@ -4,6 +4,7 @@ import { Settings } from "../settings.js";
 import { Phase1 } from "./phase1.js";
 import { Assets } from "../assets.js";
 import { Effects } from "../sounds.js";
+import { Score } from "./score.js";
 
 export class Iron {
     constructor(position) {
@@ -29,6 +30,7 @@ export class Iron {
         Phase1.ironScore++;
         Phase1.updateScore();
 		this.body.ignoreCollision = true;
+        Score.score(50);
 		Effects.impact_iron();
     }
 

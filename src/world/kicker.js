@@ -37,7 +37,7 @@ export class Kicker {
             this.body.position = new Vector(105.18, 454.69);
             this.sign = 1;
         }
-        const factor = this.sign == -1 ? 0.90 : 1.1;
+        const factor = this.sign == -1 ? 0.90 : 1.05;
 
         this.body.bounciness = Settings.wallBounciness * factor;
         this.body.speed = new Vector(0, -Settings.kickerImpulseSpeed);

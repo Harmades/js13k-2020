@@ -3,6 +3,7 @@ import { Shape } from "../math/shape.js";
 import { Settings } from "../settings.js";
 import { Vector } from "../math/vector.js";
 import { Assets } from "../assets.js";
+import { Score } from "./score.js";
 
 export class Enemy {
     constructor(position) {
@@ -20,7 +21,10 @@ export class Enemy {
 
     onCollision() {
         this.healthPoint--;
-        if (this.healthPoint == 0) this.body.ignoreCollision = true;
+        if (this.healthPoint == 0) {
+            this.body.ignoreCollision = true;
+            Score.score(50);
+        }
     }
 
     update(delta) {

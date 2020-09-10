@@ -4,6 +4,7 @@ import { Settings } from "../settings.js";
 import { Phase1 } from "./phase1.js";
 import { Assets } from "../assets.js";
 import { Effects } from "../sounds.js";
+import { Score } from "./score.js";
 
 export class Tree {
     constructor(position) {
@@ -23,6 +24,7 @@ export class Tree {
         Phase1.woodScore++;
         Phase1.updateScore();
 		this.body.ignoreCollision = true;
+        Score.score(25);
 		Effects.impact_tree();
     }
 

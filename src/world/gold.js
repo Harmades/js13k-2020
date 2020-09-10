@@ -4,6 +4,7 @@ import { Settings } from "../settings.js";
 import { Phase1 } from "./phase1.js";
 import { Assets } from "../assets.js";
 import { Effects } from "../sounds.js";
+import { Score } from "./score.js";
 
 export class Gold {
     constructor(position) {
@@ -25,7 +26,8 @@ export class Gold {
     onAreaEnter() {
         Phase1.goldScore++;
         Phase1.updateScore();
-		this.jackpot = !this.jackpot;
+        this.jackpot = !this.jackpot;
+        Score.score(5);
 		Effects.coin();
     }
 

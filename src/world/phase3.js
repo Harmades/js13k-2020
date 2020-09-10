@@ -22,6 +22,7 @@ class Phase3Impl {
         document.getElementById("objectives").innerText = '';
         this.collisionEngine = collisionEngine;
         this.player = Base.player;
+        this.player.reset();
         this.enemies = [];
         for (let i = 0; i < 25; i++) {
             const quotient = Math.floor(i / 5);

@@ -5,6 +5,7 @@ import { Bumper } from "./bumper.js";
 import { Assets } from "../assets.js";
 import { Fx } from "../fx/fx.js";
 import { Songs } from "../sounds.js";
+import { Score } from "./score.js";
 
 class Phase2Impl {
     constructor() {
@@ -28,6 +29,7 @@ class Phase2Impl {
         this.updateScore();
         this.collisionEngine = collisionEngine;
         this.player = Base.player;
+        this.player.reset();
         this.lanceBumper = new Bumper(new Vector(19.64, 163), 'lance');
         this.lanceBumper.onCollision = () => {
             this.playerWeapon = 'lance';
@@ -63,9 +65,11 @@ class Phase2Impl {
             this.fightResults[this.currentRound] = true;    
             this.currentRound++;
             this.updateScore();
+            Score.score(100);
             this.rollWeapon();
         } else {
             this.fightResults[this.currentRound] = false;    
+            Score.score(-10);
         }
     }
 

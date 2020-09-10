@@ -16,9 +16,10 @@ export class Ball {
         this.spriteBounds = Assets.sprites.ball;
     }
 
+    reset() { this.body.position = this.initialPosition; }
+
     update(delta) {
         this.body.update(delta);
-
     }
 
     render(delta, context) {

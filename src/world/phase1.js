@@ -9,6 +9,7 @@ import { Phase2 } from "./phase2.js";
 import { Base } from "./base.js";
 import { Fx } from "../fx/fx.js";
 import { Songs } from "../sounds.js";
+import { Score } from "./score.js";
 
 export class Phase1Impl {
     constructor() {
@@ -74,6 +75,7 @@ export class Phase1Impl {
             this.gold2.jackpot = false;
             this.gold3.jackpot = false;
             this.goldScore += 5;
+            Score.score(100);
             this.updateScore();
         }
         Fx.update(delta);

@@ -31,7 +31,8 @@ export class World {
         }
         this.currentPhase.update(delta);
         if (this.currentPhase.isComplete()) {
-			this.currentPhase = this.currentPhase.nextPhase();
+            this.currentPhase = this.currentPhase.nextPhase();
+            Base.invisibleWall.isRigid = false;
             this.currentPhase.load(this.collisionEngine);
 			this.currentPhase.playSong();
             this.staticDrawn = false;
