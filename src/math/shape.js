@@ -63,6 +63,7 @@ export class Shape {
         const two_numb = ['m','M','l','L','c','z'];
         let type_data = 0;
         let count = 0;
+        let point = false;
         let coords = ["",""];
         for (const i in dataArray){
           let force_print = false;
@@ -70,6 +71,7 @@ export class Shape {
           if(one_numb.includes(c) || two_numb.includes(c)){
             force_print = true;
           } else if (c === '-') {
+            point = false;
             if(coords[0] !== ""){
               count += 1;
               if (count < 2){
@@ -78,12 +80,23 @@ export class Shape {
             }else{
               coords[count] = c;
             }
+          } else if (c === "."){
+            if(!point){
+              point = true;
+              coords[count] = coords[count] + c;
+            }else{
+              count +=1;
+              coords[count] = coords[count] + c;
+            }
+
           } else if (c !== " ") {
             coords[count] = coords[count] + c;
           }else{
+            point =false;
             count +=1;
           }
           if(count === type_data || force_print){
+            point = false;
             if(type_data === 2 && coords[0] !== ""){
               res = res + coords[0] + "," + coords[1] + " ";
             }else if(type_data === 1 && coords[0] !== ""){
@@ -109,7 +122,7 @@ export class Shape {
         }
         let lastPosition = new Vector(0, 0);
         let lastCommand = null;
-        const sequence = data.split(" ");
+        const sequence = res.split(" ");
         const vertices = [];
         for (const element of sequence) {
             switch (element) {
