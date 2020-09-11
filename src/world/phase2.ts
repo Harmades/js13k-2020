@@ -5,7 +5,7 @@ import { Bumper } from "./bumper";
 import { Assets } from "../assets";
 import { Fx } from "../fx/fx";
 import { Songs } from "../sounds";
-import { Score } from "./score";
+import { Gui } from "./gui";
 import { Ball } from "./ball";
 import { CollisionEngine } from "../physic/collisionEngine";
 
@@ -75,11 +75,11 @@ export class Phase2Impl {
             this.fightResults[this.currentRound] = true;    
             this.currentRound++;
             this.updateScore();
-            Score.score(100);
+            Gui.score(100);
             this.rollWeapon();
         } else {
             this.fightResults[this.currentRound] = false;    
-            Score.score(-10);
+            Gui.score(-10);
         }
     }
 
@@ -150,7 +150,7 @@ export class Phase2Impl {
     isComplete() { return this.fightResults.filter(r => r == true).length == 3; }
 
     updateScore() {
-        document.getElementById("objectives").innerText = `Win: ${this.currentRound} / 3`;
+        Gui.objectives(`Win: ${this.currentRound} / 3`);
     }
 
 	playSong() {

@@ -8,6 +8,7 @@ import { Phase4 } from "./phase4";
 import { Songs } from "../sounds";
 import { Ball } from "./ball";
 import { Entity } from "./entity";
+import { Gui } from "./gui";
 
 export class Phase3Impl {
     entities: Entity[];
@@ -25,7 +26,7 @@ export class Phase3Impl {
     }
 
     load(collisionEngine: CollisionEngine) {
-        document.getElementById("objectives").innerText = '';
+        Gui.objectives('');
         this.collisionEngine = collisionEngine;
         this.player = Base.player;
         this.player.reset();

@@ -1,5 +1,5 @@
 import { Entity } from "./entity";
-import { Score } from "./score";
+import { Gui } from "./gui";
 import { Settings } from "../settings";
 import { Vector } from "../math/vector";
 
@@ -20,7 +20,7 @@ export class DestroyableEntity extends Entity {
         this.life -= this.decay;
         if (this.life <= 0) {
             this.body.ignoreCollision = true;
-            Score.score(this.score);
+            Gui.score(this.score);
         }
     }
 

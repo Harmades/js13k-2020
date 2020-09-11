@@ -9,7 +9,7 @@ import { Phase2 } from "./phase2";
 import { Base } from "./base";
 import { Fx } from "../fx/fx";
 import { Songs } from "../sounds";
-import { Score } from "./score";
+import { Gui } from "./gui";
 import { Ball } from "./ball";
 import { CollisionEngine } from "../physic/collisionEngine";
 
@@ -64,7 +64,7 @@ export class Phase1Impl {
             this.entities[10].jackpot = false;
             this.entities[11].jackpot = false;
             this.goldScore += 5;
-            Score.score(100);
+            Gui.score(100);
             this.updateScore();
         }
         Fx.update(delta);
@@ -99,7 +99,7 @@ export class Phase1Impl {
     }
 
     updateScore() {
-        document.getElementById("objectives").innerText = `🌲: ${this.woodScore} / ${Settings.treeScoreGoal} | ⛏️: ${this.ironScore} / ${Settings.rockScoreGoal} | 📀: ${this.goldScore} / ${Settings.goldScoreGoal}`;
+        Gui.objectives(`🌲: ${this.woodScore} / ${Settings.treeScoreGoal} | ⛏️: ${this.ironScore} / ${Settings.rockScoreGoal} | 📀: ${this.goldScore} / ${Settings.goldScoreGoal}`);
     }
     
 	nextPhase() {

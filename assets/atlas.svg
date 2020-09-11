@@ -8,174 +8,174 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="atlas.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   id="svg"
-   version="1.1"
-   viewBox="0 0 2066 900"
+   width="2066"
    height="900"
-   width="2066">
+   viewBox="0 0 2066 900"
+   version="1.1"
+   id="svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="atlas.svg">
   <defs
      id="defs1064">
     <pattern
-       inkscape:collect="always"
-       xlink:href="#pattern1097"
+       patternTransform="matrix(1,0,0,1.165,1092,166.7)"
        id="pattern2065"
-       patternTransform="matrix(1,0,0,1.165,1092,166.7)" />
+       xlink:href="#pattern1097"
+       inkscape:collect="always" />
     <radialGradient
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.2322,0,0,0.2135,601,327.4)"
-       r="78.39"
-       cy="93.49"
+       id="radialGradient6087-1"
        cx="285.3"
-       id="radialGradient6087-1">
+       cy="93.49"
+       r="78.39"
+       gradientTransform="matrix(0.2322,0,0,0.2135,601,327.4)"
+       gradientUnits="userSpaceOnUse">
       <stop
-         id="stop10077"
+         stop-color="#fff"
          offset="0"
-         stop-color="#fff" />
+         id="stop10077" />
       <stop
-         id="stop10079"
+         stop-color="#fff"
          offset=".49493"
-         stop-color="#fff" />
+         id="stop10079" />
       <stop
-         id="stop10081"
+         stop-color="#bababa"
          offset=".62372"
-         stop-color="#bababa" />
+         id="stop10081" />
       <stop
-         id="stop10083"
-         offset=".75109" />
+         offset=".75109"
+         id="stop10083" />
       <stop
-         id="stop10085"
+         stop-color="#fff"
          offset="1"
-         stop-color="#fff" />
+         id="stop10085" />
     </radialGradient>
     <radialGradient
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(-0.2505,0,0,-0.2538,699.4,376.8)"
-       r="78.39"
-       cy="103.6"
+       id="radialGradient6065-2"
        cx="117.7"
-       id="radialGradient6065-2">
+       cy="103.6"
+       r="78.39"
+       gradientTransform="matrix(-0.2505,0,0,-0.2538,699.4,376.8)"
+       gradientUnits="userSpaceOnUse">
       <stop
-         id="stop10066"
+         stop-color="#fff"
+         stop-opacity="0"
          offset="0"
-         stop-opacity="0"
-         stop-color="#fff" />
+         id="stop10066" />
       <stop
-         id="stop10068"
+         stop-color="#6c6c6c"
+         stop-opacity="0"
          offset=".61894"
-         stop-opacity="0"
-         stop-color="#6c6c6c" />
+         id="stop10068" />
       <stop
-         id="stop10070"
+         stop-color="#43434f"
          offset=".69913"
-         stop-color="#43434f" />
+         id="stop10070" />
       <stop
-         id="stop10072"
-         offset=".81967"
+         stop-color="#fff"
          stop-opacity="0"
-         stop-color="#fff" />
+         offset=".81967"
+         id="stop10072" />
       <stop
-         id="stop10074"
+         stop-color="#5d5d5d"
          offset="1"
-         stop-color="#5d5d5d" />
+         id="stop10074" />
     </radialGradient>
     <filter
-       id="filter1385"
-       x="-0.05475"
-       y="-0.05506"
-       width="1.11"
+       color-interpolation-filters="sRGB"
        height="1.11"
-       color-interpolation-filters="sRGB">
+       width="1.11"
+       y="-0.05506"
+       x="-0.05475"
+       id="filter1385">
       <feGaussianBlur
-         stdDeviation="4.5858825"
-         id="feGaussianBlur5" />
+         id="feGaussianBlur5"
+         stdDeviation="4.5858825" />
     </filter>
     <filter
-       id="filter1033"
-       x="-0.2969"
-       y="-0.3239"
-       width="1.594"
+       color-interpolation-filters="sRGB"
        height="1.648"
-       color-interpolation-filters="sRGB">
-      <feGaussianBlur
-         stdDeviation="0.32272887"
-         id="feGaussianBlur2" />
-    </filter>
-    <filter
-       id="filter1813"
-       x="-0.2969"
-       y="-0.3239"
        width="1.594"
-       height="1.648"
-       color-interpolation-filters="sRGB">
+       y="-0.3239"
+       x="-0.2969"
+       id="filter1033">
       <feGaussianBlur
-         stdDeviation="0.32272887"
-         id="feGaussianBlur1811" />
+         id="feGaussianBlur2"
+         stdDeviation="0.32272887" />
     </filter>
     <filter
-       id="filter1397"
-       x="-0.05554"
-       y="-0.07209"
-       width="1.111"
+       color-interpolation-filters="sRGB"
+       height="1.648"
+       width="1.594"
+       y="-0.3239"
+       x="-0.2969"
+       id="filter1813">
+      <feGaussianBlur
+         id="feGaussianBlur1811"
+         stdDeviation="0.32272887" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
        height="1.144"
-       color-interpolation-filters="sRGB">
+       width="1.111"
+       y="-0.07209"
+       x="-0.05554"
+       id="filter1397">
       <feGaussianBlur
-         stdDeviation="1.7859282"
-         id="feGaussianBlur8" />
+         id="feGaussianBlur8"
+         stdDeviation="1.7859282" />
     </filter>
     <pattern
-       patternUnits="userSpaceOnUse"
-       width="21.6"
-       height="137.4"
+       id="pattern1097"
        patternTransform="translate(1286,292.1)"
-       id="pattern1097">
+       height="137.4"
+       width="21.6"
+       patternUnits="userSpaceOnUse">
       <g
-         id="g1079"
+         transform="matrix(2.624,0,0,3.789,-2.755,-4.547)"
          stroke="#28170b"
-         transform="matrix(2.624,0,0,3.789,-2.755,-4.547)">
+         id="g1079">
         <path
-           id="path1073"
-           stroke-width="0.5"
-           stroke-linejoin="round"
-           stroke-dashoffset="2.69"
+           d="m 1.32,3.44 v 18.8 c 1.28,0.91 2.57,1.42 3.97,1.36 1.26,-0.1 1.98,-0.52 3.48,-1.52 L 9.031,3.58 Z"
            fill="#552200"
-           d="m 1.32,3.44 v 18.8 c 1.28,0.91 2.57,1.42 3.97,1.36 1.26,-0.1 1.98,-0.52 3.48,-1.52 L 9.031,3.58 Z" />
+           stroke-dashoffset="2.69"
+           stroke-linejoin="round"
+           stroke-width="0.5"
+           id="path1073" />
         <ellipse
-           id="ellipse1075"
-           style="font-variation-settings:normal"
-           stroke-width="0.5"
-           stop-color="#000000"
-           fill-rule="evenodd"
-           fill="#e9c6af"
-           ry="2.1"
-           rx="3.84"
+           cx="5.14"
            cy="3.55"
-           cx="5.14" />
-        <path
-           id="path1077"
+           rx="3.84"
+           ry="2.1"
+           fill="#e9c6af"
+           fill-rule="evenodd"
+           stop-color="#000000"
            stroke-width="0.5"
-           stroke-linejoin="round"
-           stroke-dashoffset="2.69"
+           style="font-variation-settings:normal"
+           id="ellipse1075" />
+        <path
+           d="M 6.13,12.9 V 37.2 H 4.26 V 12.9 c 0.08,-0.1 0.811,-0.35 0.941,-0.36 0.129,0 0.711,0.16 0.93,0.36 z"
            fill="#552200"
-           d="M 6.13,12.9 V 37.2 H 4.26 V 12.9 c 0.08,-0.1 0.811,-0.35 0.941,-0.36 0.129,0 0.711,0.16 0.93,0.36 z" />
+           stroke-dashoffset="2.69"
+           stroke-linejoin="round"
+           stroke-width="0.5"
+           id="path1077" />
       </g>
     </pattern>
   </defs>
   <sodipodi:namedview
-     inkscape:snap-global="false"
-     inkscape:current-layer="$layer1"
-     inkscape:window-maximized="1"
-     inkscape:window-y="-8"
-     inkscape:window-x="-8"
-     inkscape:window-height="1017"
-     inkscape:window-width="1920"
-     inkscape:cy="166.9"
-     inkscape:cx="656"
-     inkscape:zoom="1.414"
-     showgrid="false"
+     id="namedview23"
      inkscape:document-rotation="0"
-     id="namedview23" />
+     showgrid="false"
+     inkscape:zoom="1.414"
+     inkscape:cx="955.7"
+     inkscape:cy="206.9"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="$layer1"
+     inkscape:snap-global="false" />
   <metadata
      id="metadata1067">
     <rdf:RDF>
@@ -184,582 +184,582 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="atlas"
-     inkscape:groupmode="layer"
+     style="display:inline"
      id="$layer1"
-     style="display:inline">
+     inkscape:groupmode="layer"
+     inkscape:label="atlas">
     <g
        id="$bend">
       <path
-         sodipodi:nodetypes="cccsscsscsc"
-         d="m 879,263.3 -144.3,-84 c -2.2,-2.2 -3.9,-2.9 -4,-7.2 L 731.2,16 c 0,-2.5 3,-5.1 5.6,-4.9 2.8,0.1 5.8,2 5.7,5 l -0.8,151.2 c 0,1.2 -0.3,3.3 1.2,4.2 L 885,253.2 c 3.3,2.5 2.8,6.3 1.2,8.4 -1.6,2.1 -5.1,2.9 -7,1.5"
-         fill="#999999"
-         stroke="#000000"
-         stroke-dashoffset="2.69"
-         stroke-linecap="round"
-         stroke-linejoin="round"
+         id="path1115"
          stroke-width="1.88976"
-         id="path1115" />
+         stroke-linejoin="round"
+         stroke-linecap="round"
+         stroke-dashoffset="2.69"
+         stroke="#000000"
+         fill="#999999"
+         d="m 879,263.3 -144.3,-84 c -2.2,-2.2 -3.9,-2.9 -4,-7.2 L 731.2,16 c 0,-2.5 3,-5.1 5.6,-4.9 2.8,0.1 5.8,2 5.7,5 l -0.8,151.2 c 0,1.2 -0.3,3.3 1.2,4.2 L 885,253.2 c 3.3,2.5 2.8,6.3 1.2,8.4 -1.6,2.1 -5.1,2.9 -7,1.5"
+         sodipodi:nodetypes="cccsscsscsc" />
     </g>
     <g
        id="g_kicker">
       <path
-         d="M 601.4,102.4 V 87.9 l 9.4,3.1 1.3,11.6 c -0.2,1.4 0.2,3.8 -1.1,4.3 -0.5,0.3 -2.3,1.6 -5.6,1.3 -3.2,-0.4 -4.2,-3.5 -4,-5.8 z"
-         fill="#ffcc00"
-         stroke="#000000"
-         stroke-dashoffset="2.694"
-         stroke-linecap="square"
-         stroke-width="0.847"
+         style="display:inline"
          id="path1676"
-         style="display:inline" />
-      <path
-         d="m 685.8,142.3 v -14.4 l -11.2,2.8 -0.3,12.4 c 0,1.5 0.8,2.8 1.9,3.8 1.3,1.4 4.5,1.6 5.6,1.3 2.8,-0.7 4.2,-3.5 4,-5.9 z"
-         fill="#ffcc00"
-         stroke="#000000"
-         stroke-dashoffset="2.694"
-         stroke-linecap="square"
          stroke-width="0.847"
+         stroke-linecap="square"
+         stroke-dashoffset="2.694"
+         stroke="#000000"
+         fill="#ffcc00"
+         d="M 601.4,102.4 V 87.9 l 9.4,3.1 1.3,11.6 c -0.2,1.4 0.2,3.8 -1.1,4.3 -0.5,0.3 -2.3,1.6 -5.6,1.3 -3.2,-0.4 -4.2,-3.5 -4,-5.8 z" />
+      <path
+         style="display:inline"
          id="path1678"
+         stroke-width="0.847"
+         stroke-linecap="square"
+         stroke-dashoffset="2.694"
+         stroke="#000000"
+         fill="#ffcc00"
+         d="m 685.8,142.3 v -14.4 l -11.2,2.8 -0.3,12.4 c 0,1.5 0.8,2.8 1.9,3.8 1.3,1.4 4.5,1.6 5.6,1.3 2.8,-0.7 4.2,-3.5 4,-5.9 z" />
+      <path
+         style="display:inline;fill:#aa8800"
+         d="m 674.4,142.4 c 1.7,0.3 5.8,0.9 9.4,-2.5 0.7,-0.7 2.3,-4.2 1.9,-6.4 0,-1.6 -0.3,-3.1 -1.1,-4.5 L 618.5,17.6 c -0.6,-1.4 -0.9,-2.4 -3,-4.2 -1.8,-1.4 -4.9,-2.2 -7.1,-1.8 -4,0.7 -7.4,4.7 -7.1,9 l 0.2,72.3 c 0.4,4.1 2.1,5.9 4.8,8.1 10.2,6.7 48.3,29.2 68.1,41.4 z"
+         stroke="#000000"
+         stroke-dashoffset="2.694"
+         stroke-width="1.0118"
+         id="path1684" />
+      <path
+         id="$kicker.fx"
+         stroke-dashoffset="2.694"
+         stroke="#000000"
+         fill="#ffcc00"
+         d="m 674.4,136.4 c 1.7,0.3 5.8,0.9 9.4,-2.5 0.7,-0.6 2.3,-4 1.9,-6.2 0,-1.6 -0.3,-3.1 -1.1,-4.4 L 618.5,14.4 c -0.6,-1.2 -0.9,-2.3 -3,-4 -1.8,-1.4 -4.9,-2.2 -7.1,-1.8 -4,0.7 -7.4,4.7 -7.1,8.8 l 0.2,70.7 c 0.4,3.8 2.1,5.7 4.8,7.9 10.2,6.5 48.3,28.5 68.1,40.4 z"
          style="display:inline" />
       <path
-         id="path1684"
-         stroke-width="1.0118"
-         stroke-dashoffset="2.694"
-         stroke="#000000"
-         d="m 674.4,142.4 c 1.7,0.3 5.8,0.9 9.4,-2.5 0.7,-0.7 2.3,-4.2 1.9,-6.4 0,-1.6 -0.3,-3.1 -1.1,-4.5 L 618.5,17.6 c -0.6,-1.4 -0.9,-2.4 -3,-4.2 -1.8,-1.4 -4.9,-2.2 -7.1,-1.8 -4,0.7 -7.4,4.7 -7.1,9 l 0.2,72.3 c 0.4,4.1 2.1,5.9 4.8,8.1 10.2,6.7 48.3,29.2 68.1,41.4 z"
-         style="display:inline;fill:#aa8800" />
-      <path
-         style="display:inline"
-         d="m 674.4,136.4 c 1.7,0.3 5.8,0.9 9.4,-2.5 0.7,-0.6 2.3,-4 1.9,-6.2 0,-1.6 -0.3,-3.1 -1.1,-4.4 L 618.5,14.4 c -0.6,-1.2 -0.9,-2.3 -3,-4 -1.8,-1.4 -4.9,-2.2 -7.1,-1.8 -4,0.7 -7.4,4.7 -7.1,8.8 l 0.2,70.7 c 0.4,3.8 2.1,5.7 4.8,7.9 10.2,6.5 48.3,28.5 68.1,40.4 z"
-         fill="#ffcc00"
-         stroke="#000000"
-         stroke-dashoffset="2.694"
-         id="$kicker.fx" />
-      <path
-         id="$kicker.fx-8"
-         stroke-dashoffset="2.694"
-         stroke="#000000"
-         fill="#ffcc00"
-         d="m 674.1,132.8 c 1.3,0.8 4.6,1.3 6.6,-0.5 1.9,-1.8 2.6,-3 2.4,-4.9 -0.3,-1.8 -1,-2.7 -1.7,-3.9 0,0 -64.2,-105.76 -64.7,-106.55 -0.5,-0.79 -1.2,-2.39 -3.1,-3.94 -1.7,-1.27 -3.5,-1.92 -5.4,-1.32 -2.1,0.65 -3.8,3.14 -3.5,6.88 v 67.29 c 0.4,3.47 1.7,5.73 4.2,7.74 9.3,5.92 47.1,28.3 65.2,39.2 z"
+         sodipodi:nodetypes="szsczssccss"
          style="display:inline;fill:#800000;fill-opacity:1;stroke:none;stroke-width:0.912116"
-         sodipodi:nodetypes="szsczssccss" />
-      <path
-         style="display:inline"
-         d="m 635.9,58.8 -1.6,9.2 c 0.7,0.3 3,1.4 3.7,4 l 4,1.7 -0.7,9.4 0.7,5.1 -7.9,12.5 V 84 c 1.5,-0.89 5.2,-2.44 5.1,-3.9 -0.1,-1.4 -6.1,-1.9 -6.1,0.2 -0.1,0.7 0.2,7.4 -1.1,7.6 -1.2,-0.23 -1.3,-5.28 -1.3,-7.42 0,-1.89 -5.8,-2.15 -6.1,-0.38 -0.2,1.63 3.2,2.98 5,3.9 l 0.1,16.8 -8,-12.7 0.9,-4.9 -0.8,-9.5 4,-1.6 c 0.4,-1.5 1.7,-3.4 3.6,-4 l -1.5,-9.3 c 2.9,-0.49 5.2,-0.46 8,0 z"
+         d="m 674.1,132.8 c 1.3,0.8 4.6,1.3 6.6,-0.5 1.9,-1.8 2.6,-3 2.4,-4.9 -0.3,-1.8 -1,-2.7 -1.7,-3.9 0,0 -64.2,-105.76 -64.7,-106.55 -0.5,-0.79 -1.2,-2.39 -3.1,-3.94 -1.7,-1.27 -3.5,-1.92 -5.4,-1.32 -2.1,0.65 -3.8,3.14 -3.5,6.88 v 67.29 c 0.4,3.47 1.7,5.73 4.2,7.74 9.3,5.92 47.1,28.3 65.2,39.2 z"
          fill="#ffcc00"
-         opacity="0.70915"
+         stroke="#000000"
+         stroke-dashoffset="2.694"
+         id="$kicker.fx-8" />
+      <path
+         sodipodi:nodetypes="cccccccccscccccccccccc"
          id="$helmet.fx"
-         sodipodi:nodetypes="cccccccccscccccccccccc" />
+         opacity="0.70915"
+         fill="#ffcc00"
+         d="m 635.9,58.8 -1.6,9.2 c 0.7,0.3 3,1.4 3.7,4 l 4,1.7 -0.7,9.4 0.7,5.1 -7.9,12.5 V 84 c 1.5,-0.89 5.2,-2.44 5.1,-3.9 -0.1,-1.4 -6.1,-1.9 -6.1,0.2 -0.1,0.7 0.2,7.4 -1.1,7.6 -1.2,-0.23 -1.3,-5.28 -1.3,-7.42 0,-1.89 -5.8,-2.15 -6.1,-0.38 -0.2,1.63 3.2,2.98 5,3.9 l 0.1,16.8 -8,-12.7 0.9,-4.9 -0.8,-9.5 4,-1.6 c 0.4,-1.5 1.7,-3.4 3.6,-4 l -1.5,-9.3 c 2.9,-0.49 5.2,-0.46 8,0 z"
+         style="display:inline" />
     </g>
     <g
-       id="flipper">
+       id="g_flipper">
       <path
-         d="m 924,34.4 c 0.6,4.3 3.3,7.9 7,9.6 l 47.8,28.1 c 1.3,0.8 2.7,1.2 4.1,1.2 4.1,0 7.5,-3.5 7.5,-7.8 0,-0.7 -0.1,-1.5 -0.3,-2.2 0,0.2 0,0.5 0,0.7 0,4.3 -3.4,7.8 -7.5,7.8 -1.4,0 -2.8,-0.5 -4,-1.3 L 930.7,42.4 C 927.4,40.9 925,38 924,34.4 Z"
-         style="font-variation-settings:normal;display:inline;vector-effect:none;fill:#800000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.176531;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
-         id="path1754" />
-      <path
-         id="path1756"
-         style="font-variation-settings:normal;display:inline;opacity:0.352941;vector-effect:none;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.588288;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+         id="path1754"
+         style="font-variation-settings:normal;display:inline;vector-effect:none;fill:#530000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.1765;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
          d="m 924,34.4 c 0.6,4.3 3.3,7.9 7,9.6 l 47.8,28.1 c 1.3,0.8 2.7,1.2 4.1,1.2 4.1,0 7.5,-3.5 7.5,-7.8 0,-0.7 -0.1,-1.5 -0.3,-2.2 0,0.2 0,0.5 0,0.7 0,4.3 -3.4,7.8 -7.5,7.8 -1.4,0 -2.8,-0.5 -4,-1.3 L 930.7,42.4 C 927.4,40.9 925,38 924,34.4 Z" />
       <path
-         sodipodi:nodetypes="csccsssccc"
-         d="m 935.3,18.8 c -6.4,0 -11.7,5.6 -11.7,12.3 0,4.9 2.8,9.4 7.1,11.3 l 47.9,28.1 c 1.2,0.8 2.6,1.3 4,1.3 4.1,0 7.5,-3.5 7.5,-7.8 0,-2.4 -1,-4.6 -2.7,-6.1 v 0 L 943,21.8 c -2.1,-1.72 -5.2,-2.94 -7.7,-3 z"
+         id="path1758"
          style="font-variation-settings:normal;display:inline;vector-effect:none;fill:#800000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.588437;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
-         id="path1758" />
+         d="m 935.3,18.8 c -6.4,0 -11.7,5.6 -11.7,12.3 0,4.9 2.8,9.4 7.1,11.3 l 47.9,28.1 c 1.2,0.8 2.6,1.3 4,1.3 4.1,0 7.5,-3.5 7.5,-7.8 0,-2.4 -1,-4.6 -2.7,-6.1 C 972.6,45.87 957.8,33.83 943,21.8 c -2.1,-1.72 -5.2,-2.94 -7.7,-3 z"
+         sodipodi:nodetypes="csccssccc" />
       <path
-         sodipodi:nodetypes="ssccssssccscss"
-         d="m 934.5,21.4 c -4.1,0 -7.5,3.8 -7.5,8.4 0,2.9 1.3,5.6 3.5,7.1 17.8,9.38 34,21.12 49.5,29.07 1.3,0.68 1.9,0.65 2.7,0.63 0.9,-0 1.8,-0.3 2.4,-1 0.7,-0.7 1.1,-1.7 1.1,-2.7 0,-1.5 -1,-2.67 -2,-3.5 -14.7,-11.95 -29.7,-23.83 -44.5,-35.7 -0.5,-0.5 -1,-0.9 -1.5,-1.2 v 0 0 c -1.1,-0.7 -2.3,-1.1 -3.6,-1.1 z"
+         id="path1764"
          style="font-variation-settings:normal;display:inline;vector-effect:none;fill:#ffcc00;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.411906;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
-         id="path1764" />
+         d="m 928.9,25 c -2.7,2.87 -2.5,8.85 1.6,11.9 17.8,9.38 33.7,21.79 49.2,29.74 3.8,1.34 5.4,0 6.2,-1.15 0.8,-1.12 1.6,-3.22 -1.7,-6.09 -14.7,-11.95 -29.7,-23.83 -44.5,-35.7 -4.3,-3.83 -8.2,-1.56 -10.8,1.3 z"
+         sodipodi:nodetypes="zcczccz" />
     </g>
     <g
        id="g972">
       <circle
-         style="fill:url(#radialGradient6087-1)"
-         id="circle10092"
-         stroke-width="0.0562974"
-         stroke="#b0b0b0"
+         cx="669.9"
+         cy="350.6"
+         r="14.54"
          fill="url(#radialGradient6087)"
-         r="14.54"
-         cy="350.6"
-         cx="669.9" />
-      <circle
-         style="fill:url(#radialGradient6065-2)"
-         id="circle10094"
+         stroke="#b0b0b0"
          stroke-width="0.0562974"
-         stroke="#000000"
-         fill="url(#radialGradient6065)"
-         r="14.54"
+         id="circle10092"
+         style="fill:url(#radialGradient6087-1)" />
+      <circle
+         cx="669.9"
          cy="350.6"
-         cx="669.9" />
+         r="14.54"
+         fill="url(#radialGradient6065)"
+         stroke="#000000"
+         stroke-width="0.0562974"
+         id="circle10094"
+         style="fill:url(#radialGradient6065-2)" />
     </g>
     <g
-       style="stroke:#ffcc00;stroke-opacity:1;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none"
-       id="g4148">
+       id="g4148"
+       style="stroke:#ffcc00;stroke-opacity:1;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none">
       <path
-         d="m 715.5,341.6 h 53 v 18.2 h -53 z"
+         id="$plunger"
          style="display:inline;fill:#800000;fill-opacity:1;stroke:#ffcc00;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-         id="$plunger" />
+         d="m 715.5,341.6 h 53 v 18.2 h -53 z" />
     </g>
     <g
        id="g_tree">
       <path
-         d="m 826.4,346.3 h 19.7 v 26.1 h -19.7 z"
+         id="rect2139"
          style="fill:#502d16;stroke:#28170b;stroke-width:0.8147;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:2.69"
-         id="rect2139" />
+         d="m 826.4,346.3 h 19.7 v 26.1 h -19.7 z" />
       <path
-         d="m 816.4,324.2 -7,13.7 -10,16 c 8.1,-3.6 12.6,-4.6 18.7,-7.6 l 10.6,12.3 13.8,-9.7 16.4,8.4 2.6,-8.6 8.5,2.9 c -7.4,-10.5 -13.6,-22.8 -19.3,-34.9 z"
-         fill="#89a02c"
-         stroke="#677821"
-         id="path2141"
+         sodipodi:nodetypes="ccccccccccc"
          style="stroke-width:0.8147;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:2.69"
-         sodipodi:nodetypes="ccccccccccc" />
+         id="path2141"
+         stroke="#677821"
+         fill="#89a02c"
+         d="m 816.4,324.2 -7,13.7 -10,16 c 8.1,-3.6 12.6,-4.6 18.7,-7.6 l 10.6,12.3 13.8,-9.7 16.4,8.4 2.6,-8.6 8.5,2.9 c -7.4,-10.5 -13.6,-22.8 -19.3,-34.9 z" />
       <path
-         d="m 844.1,300.5 -19.9,3.8 -6,11.9 -9.1,15.3 8.7,-4.8 5.5,6.9 4.8,-7.7 6.7,12.6 8.1,-12.4 5.3,8.5 4,-9.7 10.6,6.7 z"
-         fill="#abc837"
-         stroke="#89a02c"
-         stroke-width="0.816102"
+         style="stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:2.69"
          id="path2143"
-         style="stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:2.69" />
+         stroke-width="0.816102"
+         stroke="#89a02c"
+         fill="#abc837"
+         d="m 844.1,300.5 -19.9,3.8 -6,11.9 -9.1,15.3 8.7,-4.8 5.5,6.9 4.8,-7.7 6.7,12.6 8.1,-12.4 5.3,8.5 4,-9.7 10.6,6.7 z" />
       <path
-         d="m 817.7,311.6 c 2.8,-1 6.8,-2.8 9.5,-4.9 3.1,2.7 4.8,7.6 8.6,10.5 1.6,0 4,-11 5.2,-10.7 4,1.4 8.5,3.9 12.9,5.8 -1.6,-4.7 -8.3,-16.6 -9.6,-19.4 -3.2,-6.7 -5.1,-11.5 -8.7,-18.2 -2,3.9 -5.7,11.6 -7.9,17.6 z"
-         fill="#bcd35f"
-         stroke="#abc837"
+         style="stroke-width:0.8147;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:2.69"
          id="path2145"
-         style="stroke-width:0.8147;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:2.69" />
+         stroke="#abc837"
+         fill="#bcd35f"
+         d="m 817.7,311.6 c 2.8,-1 6.8,-2.8 9.5,-4.9 3.1,2.7 4.8,7.6 8.6,10.5 1.6,0 4,-11 5.2,-10.7 4,1.4 8.5,3.9 12.9,5.8 -1.6,-4.7 -8.3,-16.6 -9.6,-19.4 -3.2,-6.7 -5.1,-11.5 -8.7,-18.2 -2,3.9 -5.7,11.6 -7.9,17.6 z" />
     </g>
     <g
        id="g_iron">
       <path
-         id="path2196"
-         stroke-width="0.7"
-         stroke-linejoin="round"
-         stroke-linecap="round"
-         stroke-dashoffset="2.69"
-         stroke="#333333"
-         fill="#999999"
+         sodipodi:nodetypes="csccccsscccccccccccccscccc"
          d="m 931.3,347.4 c -0.4,-1.3 -0.5,-3.3 -0.4,-4.4 0.7,-1.3 1.9,-3.4 1.9,-3.4 0,0 -1.2,-4.7 -1,-6.3 2,-2.7 4.5,-5.4 7.2,-6.9 5.3,-1.3 13.8,-2.1 13.8,-2.1 0,0 4.2,1.5 4.7,2.2 0.7,0.9 -0.1,1.2 0.9,2.9 1.2,1.2 3.2,3.3 3.2,3.3 l -0.4,1.9 c 0,0 1.3,1.8 1.4,2.4 -0.1,1.8 -0.9,2.7 -1.4,4.5 1.3,2.5 1.5,4.4 1.1,7.2 -2.5,2.3 -5.5,5.3 -7.2,6.2 -5.1,0 -14.7,2 -14.7,2 0,0 -1.1,3.7 -2.2,5.4 -0.3,0.5 -1.7,0.8 -2.2,0.9 -1.6,0.1 -3,0.6 -4.4,1.3 -2.6,0.2 -5.7,-0.2 -7.9,-1.5 -0.6,-0.8 -0.8,-1.5 -0.9,-1.9 -0.1,-2 -1,-3.1 -1,-3.1 0,0 1.7,-2.1 2,-3.1 0.4,-1.4 0,-4.3 0,-4.3 0,0 2.2,-1.4 3.8,-1.4 0.8,-0.9 1.6,-1.9 1.6,-1.9 0,0 0.9,0.4 2.1,0.1 z"
-         sodipodi:nodetypes="csccccsscccccccccccccscccc" />
-      <path
-         id="path2198"
-         stroke-width="0.7"
-         stroke-linejoin="round"
-         stroke-linecap="round"
+         fill="#999999"
+         stroke="#333333"
          stroke-dashoffset="2.69"
-         stroke="#aa4400"
-         fill="#d45500"
-         d="m 927.7,353.4 c 0.3,-0.2 0.8,-1.6 1.4,-1.8 1.3,0.5 2.6,1.9 3.4,2.6 -0.8,1.4 -1.4,3.4 -2.4,2.8 -1.7,-1.2 -4.6,-2.2 -2.4,-3.6 z m 20.1,-25.7 c 1,5.1 2.9,3.6 5.6,1.6 -0.5,-1.8 -1.6,-2.2 -3.2,-3.5 -1.1,0.5 -1.9,0.8 -2.4,1.9 z m -10.7,5 c 1.3,-1.3 4.3,-2.4 5.1,-2 0.4,2.7 2.3,6.3 0.6,6.9 -2,1.1 -3.7,3.3 -4.9,2.2 -0.1,-2.6 -1.6,-4.9 -0.8,-7.1 z"
-         sodipodi:nodetypes="scccsccccccccc" />
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="0.7"
+         id="path2196" />
       <path
-         id="path2200"
-         opacity="0.304"
+         sodipodi:nodetypes="scccsccccccccc"
+         d="m 927.7,353.4 c 0.3,-0.2 0.8,-1.6 1.4,-1.8 1.3,0.5 2.6,1.9 3.4,2.6 -0.8,1.4 -1.4,3.4 -2.4,2.8 -1.7,-1.2 -4.6,-2.2 -2.4,-3.6 z m 20.1,-25.7 c 1,5.1 2.9,3.6 5.6,1.6 -0.5,-1.8 -1.6,-2.2 -3.2,-3.5 -1.1,0.5 -1.9,0.8 -2.4,1.9 z m -10.7,5 c 1.3,-1.3 4.3,-2.4 5.1,-2 0.4,2.7 2.3,6.3 0.6,6.9 -2,1.1 -3.7,3.3 -4.9,2.2 -0.1,-2.6 -1.6,-4.9 -0.8,-7.1 z"
+         fill="#d45500"
+         stroke="#aa4400"
+         stroke-dashoffset="2.69"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="0.7"
+         id="path2198" />
+      <path
+         sodipodi:nodetypes="ccccccccccccccccccccc"
          d="m 950.3,344.1 c -1,0.6 -2,0.8 -2.8,1.8 -0.6,4.9 -3.4,2.5 -5.8,3.9 -1,-1.3 -2.4,-3.5 -3,-4.7 -3.6,-3 -4.2,-0.6 -7.7,0 0,0.8 0.1,1.7 0.3,2.3 0.8,-0.2 1.2,-0.4 1.9,-0.6 4.5,-0.3 5.1,2.6 7.1,5.9 -4.2,6 -10.8,9.3 -17.5,8.3 -0.1,0.6 0.5,1.5 0.8,2.1 2.8,1 4.3,1.3 8,1.5 1.4,-0.9 2.7,-1.1 4.4,-1.3 2.1,-0.1 4.7,-3.8 4.4,-6.3 7,-1.8 11.2,-2.3 14.6,-2 3.5,-1.9 4,-3.7 7.2,-6.2 0.8,-2.7 -0.1,-5 -1,-7.3 0.5,-1.6 1.2,-3.1 1.4,-4.5 -0.1,-0.5 -1.1,-2 -1.4,-2.4 0.6,-2.7 -1.4,-3.5 -2.8,-5.2 -0.9,-3.1 -1.9,-4.3 -5.6,-5.1 6.3,11.8 1.8,17.3 -2.5,19.8 z"
-         sodipodi:nodetypes="ccccccccccccccccccccc" />
+         opacity="0.304"
+         id="path2200" />
     </g>
     <g
        id="$gold">
       <path
-         d="m 974.4,477.2 h 38.6 v 52.7 h -38.6 z"
+         id="rect3474"
          style="fill:#ffdd4f;stroke:#2b2200;stroke-width:0.32907;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:2.7"
-         id="rect3474" />
+         d="m 974.4,477.2 h 38.6 v 52.7 h -38.6 z" />
       <path
-         d="m 1002,508.4 a 7.991,15.51 30 0 1 -14.6,9.4 7.991,15.51 30 0 1 0.8,-17.4 7.991,15.51 30 0 1 14.8,-9.4 7.991,15.51 30 0 1 -1,17.4"
+         id="ellipse3476"
          style="font-variation-settings:normal;fill:#ffd42a;fill-rule:evenodd;stroke:#d4aa00;stroke-width:0.470059;stop-color:#000000"
-         id="ellipse3476" />
+         d="m 1002,508.4 a 7.991,15.51 30 0 1 -14.6,9.4 7.991,15.51 30 0 1 0.8,-17.4 7.991,15.51 30 0 1 14.8,-9.4 7.991,15.51 30 0 1 -1,17.4" />
       <path
-         d="m 999.4,506.9 a 7.991,15.51 30 0 1 -14.6,9.4 7.991,15.51 30 0 1 0.8,-17.4 7.991,15.51 30 0 1 14.4,-9.4 7.991,15.51 30 0 1 -0.6,17.4"
+         id="ellipse3480"
          style="font-variation-settings:normal;fill:#ffd42a;fill-rule:evenodd;stroke:#d4aa00;stroke-width:0.470059;stop-color:#000000"
-         id="ellipse3480" />
+         d="m 999.4,506.9 a 7.991,15.51 30 0 1 -14.6,9.4 7.991,15.51 30 0 1 0.8,-17.4 7.991,15.51 30 0 1 14.4,-9.4 7.991,15.51 30 0 1 -0.6,17.4" />
       <path
-         d="m 989.3,506.9 4.7,-7.5"
-         fill="#aa8800"
-         stroke-dashoffset="2.7"
-         stroke-linecap="round"
-         stroke-linejoin="round"
-         stroke-width="2.11545"
+         style="stroke:#d4aa00"
          id="path3484"
-         style="stroke:#d4aa00" />
+         stroke-width="2.11545"
+         stroke-linejoin="round"
+         stroke-linecap="round"
+         stroke-dashoffset="2.7"
+         fill="#aa8800"
+         d="m 989.3,506.9 4.7,-7.5" />
     </g>
     <g
        id="g_lance">
       <path
-         id="path1721-6"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.300012;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 661.1,558.7 2,-1.8 0.6,0.5 -1.9,1.8 h 2.2 l 3.9,-6.1 -6.8,3.5 z"
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.300012;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         id="path1721-6" />
       <path
-         id="path1723"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.300012;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 660.3,557.7 v 2.3 h 2.5 l -0.7,0.8 H 661 l -1.1,1 -0.4,-0.5 -5.5,4.8 -0.6,-0.5 5.4,-4.9 -0.4,-0.4 1,-0.9 v -1.1 z"
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.300012;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         id="path1723" />
     </g>
     <g
        id="g_sword">
       <path
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.299987;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         sodipodi:nodetypes="cccccc"
+         d="m 718.1,560.7 7.3,-6.7 h 3.3 v 2.9 l -7.4,6.7 z"
          id="path1773"
-         d="m 718.1,560.7 7.3,-6.7 h 3.3 v 2.9 l -7.4,6.7 -1.4,-1.2 6.9,-6.2 -0.1,-0.5 h -0.4 l -6.8,6.2 z" />
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.299987;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <path
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.299987;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 715.8,561.3 1.1,-0.9 4.8,4.4 -1,0.9 z"
          id="path1775"
-         d="m 715.8,561.3 1.1,-0.9 4.8,4.4 -1,0.9 z" />
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.299987;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <path
-         sodipodi:nodetypes="cccc"
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.299987;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 714.9,561.4 2,-1.8 -2.5,-0.4 z"
          id="path1777"
-         d="m 714.9,561.4 2,-1.8 -2.5,-0.4 z" />
-      <path
-         sodipodi:nodetypes="cccc"
          style="fill:#ffffff;stroke:#000000;stroke-width:0.299987;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="path1779"
-         d="m 722.6,564.8 -2,1.8 3,0.4 z" />
+         sodipodi:nodetypes="cccc" />
       <path
-         sodipodi:nodetypes="ccccccccccccc"
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.300003;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 722.6,564.8 -2,1.8 3,0.4 z"
+         id="path1779"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.299987;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         sodipodi:nodetypes="cccc" />
+      <path
+         d="m 716.8,563 -1.3,1.2 H 713 v 4 h 4.5 V 566 l 1.3,-1.2 z m -2.1,2.6 h 1.2 v 1.1 h -1.2 z"
          id="path1781"
-         d="m 716.8,563 -1.3,1.2 H 713 v 4 h 4.5 V 566 l 1.3,-1.2 z m -2.1,2.6 h 1.2 v 1.1 h -1.2 z" />
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.300003;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         sodipodi:nodetypes="ccccccccccccc" />
     </g>
     <g
        id="g_gutter">
       <path
-         d="m 1030,11.56 c -1,-0.1 -2,0.8 -2,1.89 V 160.9 c 0,1.1 1,2 2,1.9 h 214 c 1,0.1 2,-0.8 2,-1.9 v -45 c 0,-0.7 0,-1.4 -1,-1.7 L 1031,11.74 c 0,-0.15 -1,-0.22 -1,-0.19 z"
-         color="#000000"
-         color-rendering="auto"
-         dominant-baseline="auto"
-         fill="#ffcc00"
-         image-rendering="auto"
-         solid-color="#000000"
-         stop-color="#000000"
-         style="font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;text-transform:none;text-orientation:mixed;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;isolation:auto;mix-blend-mode:normal;stroke:#000000;stroke-width:1.134;stroke-linecap:round;stroke-linejoin:round;shape-rendering:auto"
+         sodipodi:nodetypes="cccscc"
          id="path993"
-         sodipodi:nodetypes="sssccsscsss" />
-      <path
-         d="m 1030,13.45 214,102.45 v 45 h -214 z"
-         color="#000000"
-         color-rendering="auto"
-         dominant-baseline="auto"
-         fill="#800000"
-         fill-opacity="0.984"
-         image-rendering="auto"
-         solid-color="#000000"
+         style="font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;text-transform:none;text-orientation:mixed;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;isolation:auto;mix-blend-mode:normal;stroke:#000000;stroke-width:1.134;stroke-linecap:round;stroke-linejoin:round;shape-rendering:auto"
          stop-color="#000000"
+         solid-color="#000000"
+         image-rendering="auto"
+         fill="#ffcc00"
+         dominant-baseline="auto"
+         color-rendering="auto"
+         color="#000000"
+         d="M 1028,10.17 V 163.3 l 218,-0.6 v -46.8 c 0,-0.7 0,-1.2 -1,-1.7 -29,-14 -217,-104.03 -217,-104.03 z" />
+      <path
+         id="path991"
          style="font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;text-transform:none;text-orientation:mixed;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;isolation:auto;mix-blend-mode:normal;stroke:none;stroke-width:1.134;stroke-linecap:round;stroke-linejoin:round;shape-rendering:auto"
-         id="path991" />
+         stop-color="#000000"
+         solid-color="#000000"
+         image-rendering="auto"
+         fill-opacity="0.984"
+         fill="#800000"
+         dominant-baseline="auto"
+         color-rendering="auto"
+         color="#000000"
+         d="m 1030,13.45 214,102.45 v 45 h -214 z" />
     </g>
     <g
-       id="$small-mine-wall"
-       inkscape:label="small-mine-wall">
+       inkscape:label="small-mine-wall"
+       id="$small-mine-wall">
       <path
-         id="path1062"
-         stroke-width="3.61367"
-         stroke-linejoin="round"
-         stroke-linecap="round"
-         stroke-dashoffset="2.69"
-         stroke="#1a1a1a"
+         d="m 650.4,451.3 c -3.3,-12.8 8.8,-26.5 21.9,-21 31.4,2.9 61.5,-3.8 89.3,-0.6 6.2,6.9 7.4,24.2 -0.3,29.7 -13.5,3.9 -30,-0.3 -45.1,0.1 -13.3,-1 -66.5,5.2 -65.8,-8.2 z"
          fill="#666666"
-         d="m 650.4,451.3 c -3.3,-12.8 8.8,-26.5 21.9,-21 31.4,2.9 61.5,-3.8 89.3,-0.6 6.2,6.9 7.4,24.2 -0.3,29.7 -13.5,3.9 -30,-0.3 -45.1,0.1 -13.3,-1 -66.5,5.2 -65.8,-8.2 z" />
+         stroke="#1a1a1a"
+         stroke-dashoffset="2.69"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="3.61367"
+         id="path1062" />
       <path
-         style="stroke-width:3.61367"
-         id="path1064"
+         d="m 755.8,453.8 c -28.3,0.5 -73.7,8.5 -105.5,-2.2 -1,11.7 65.8,7.9 110.9,7.8 7.7,-5.5 6.5,-22.8 0.3,-29.8 -3.2,3.4 2.9,17.3 -5.7,24.2 z"
          opacity="0.294"
-         d="m 755.8,453.8 c -28.3,0.5 -73.7,8.5 -105.5,-2.2 -1,11.7 65.8,7.9 110.9,7.8 7.7,-5.5 6.5,-22.8 0.3,-29.8 -3.2,3.4 2.9,17.3 -5.7,24.2 z" />
+         id="path1064"
+         style="stroke-width:3.61367" />
     </g>
     <path
-       d="m 107.3,19.44 -21.77,23 -17.1,-18.9 -7.3,6.7 17.6,19.4 -16.8,17.7 7.2,6.8 16.3,-17.2 15.97,17.6 7.3,-6.6 -16.47,-18.1 22.27,-23.5 z"
-       color="#000000"
-       color-rendering="auto"
-       dominant-baseline="auto"
-       fill="#d40000"
-       image-rendering="auto"
-       shape-rendering="auto"
-       solid-color="#000000"
-       stop-color="#000000"
-       stroke="#000000"
-       stroke-dashoffset="2.69"
-       stroke-linejoin="round"
-       stroke-width="0.888788"
-       style="font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;text-transform:none;text-orientation:mixed;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;isolation:auto;mix-blend-mode:normal"
+       inkscape:label="red_X"
        id="g_check"
-       inkscape:label="red_X" />
-    <path
-       sodipodi:nodetypes="scccss"
-       d="m 155.1,59.84 c -4.2,-4 -10.6,-9.42 -19.7,-11.5 1.5,10.92 18.3,26 21.1,26.5 11.1,-20.26 27.4,-41.96 34.2,-55.6 -14.6,10.02 -30,31.4 -35.5,40.6 z"
-       color="#000000"
-       color-rendering="auto"
-       dominant-baseline="auto"
-       fill="#00ff00"
-       image-rendering="auto"
-       shape-rendering="auto"
-       solid-color="#000000"
-       stop-color="#000000"
-       stroke="#000000"
-       stroke-dashoffset="2.69"
-       stroke-linecap="round"
-       stroke-linejoin="round"
-       stroke-width="0.823202"
        style="font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;text-transform:none;text-orientation:mixed;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;isolation:auto;mix-blend-mode:normal"
+       stroke-width="0.888788"
+       stroke-linejoin="round"
+       stroke-dashoffset="2.69"
+       stroke="#000000"
+       stop-color="#000000"
+       solid-color="#000000"
+       shape-rendering="auto"
+       image-rendering="auto"
+       fill="#d40000"
+       dominant-baseline="auto"
+       color-rendering="auto"
+       color="#000000"
+       d="m 107.3,19.44 -21.77,23 -17.1,-18.9 -7.3,6.7 17.6,19.4 -16.8,17.7 7.2,6.8 16.3,-17.2 15.97,17.6 7.3,-6.6 -16.47,-18.1 22.27,-23.5 z" />
+    <path
+       inkscape:label="green_V"
        id="g_cross"
-       inkscape:label="green_V" />
+       style="font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;text-transform:none;text-orientation:mixed;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;isolation:auto;mix-blend-mode:normal"
+       stroke-width="0.823202"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       stroke-dashoffset="2.69"
+       stroke="#000000"
+       stop-color="#000000"
+       solid-color="#000000"
+       shape-rendering="auto"
+       image-rendering="auto"
+       fill="#00ff00"
+       dominant-baseline="auto"
+       color-rendering="auto"
+       color="#000000"
+       d="m 155.1,59.84 c -4.2,-4 -10.6,-9.42 -19.7,-11.5 1.5,10.92 18.3,26 21.1,26.5 11.1,-20.26 27.4,-41.96 34.2,-55.6 -14.6,10.02 -30,31.4 -35.5,40.6 z"
+       sodipodi:nodetypes="scccss" />
     <g
        id="$fence">
       <rect
-         y="167.1"
-         x="1200"
-         height="700.6"
-         width="21.63"
+         style="opacity:0.999;fill:url(#pattern2065);fill-opacity:1;stroke-width:0.323801;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
          id="rect2063"
-         style="opacity:0.999;fill:url(#pattern2065);fill-opacity:1;stroke-width:0.323801;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000" />
+         width="21.63"
+         height="700.6"
+         x="1200"
+         y="167.1" />
     </g>
     <g
        id="g_sign">
       <path
-         id="path992"
-         style="font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;text-transform:none;text-orientation:mixed;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;isolation:auto;mix-blend-mode:normal;stroke-width:1.851;shape-rendering:auto"
-         stroke-linejoin="round"
-         stroke-dashoffset="2.69"
-         stroke="#000000"
-         stop-color="#000000"
-         solid-color="#000000"
-         image-rendering="auto"
-         fill="#deaa87"
-         dominant-baseline="auto"
-         color-rendering="auto"
-         color="#000000"
+         sodipodi:nodetypes="ccccccccc"
          d="m 200.7,161.2 c -1.7,0 -3,1.3 -3,3 v 70.3 c 0,1.7 1.3,3 3,3 h 113.2 c 1.7,0 3,-1.3 3,-3 v -70.3 c 0,-1.7 -1.3,-3 -3,-3 z"
-         sodipodi:nodetypes="ccccccccc" />
-      <path
-         id="path990"
-         style="font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;text-transform:none;text-orientation:mixed;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;isolation:auto;mix-blend-mode:normal;stroke-width:1.851;shape-rendering:auto"
-         stop-color="#000000"
-         solid-color="#000000"
-         image-rendering="auto"
-         fill="#800000"
-         dominant-baseline="auto"
-         color-rendering="auto"
          color="#000000"
-         d="m 200.7,164.2 h 113.2 v 70.3 H 200.7 Z" />
+         color-rendering="auto"
+         dominant-baseline="auto"
+         fill="#deaa87"
+         image-rendering="auto"
+         solid-color="#000000"
+         stop-color="#000000"
+         stroke="#000000"
+         stroke-dashoffset="2.69"
+         stroke-linejoin="round"
+         style="font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;text-transform:none;text-orientation:mixed;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;isolation:auto;mix-blend-mode:normal;stroke-width:1.851;shape-rendering:auto"
+         id="path992" />
+      <path
+         d="m 200.7,164.2 h 113.2 v 70.3 H 200.7 Z"
+         color="#000000"
+         color-rendering="auto"
+         dominant-baseline="auto"
+         fill="#800000"
+         image-rendering="auto"
+         solid-color="#000000"
+         stop-color="#000000"
+         style="font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;text-transform:none;text-orientation:mixed;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;isolation:auto;mix-blend-mode:normal;stroke-width:1.851;shape-rendering:auto"
+         id="path990" />
     </g>
     <g
        id="g_enemy">
       <path
-         id="path4"
-         style="font-variation-settings:normal;stroke:#000000;stroke-width:0.56175"
-         stop-color="#000000"
-         fill-rule="evenodd"
+         sodipodi:nodetypes="sccsssccscsccsssscsc"
+         d="m 721.1,666.6 c 0,3.1 -2,5.3 -4.5,5.3 -8.9,-2 -4.5,-9.7 0.8,-10.9 2.5,0 3.7,2.5 3.7,5.6 z m -27.2,-7.7 c 2.4,-1.2 8,-2.5 11.2,1.8 1.4,-0.4 0.8,-0.5 2.8,-0.3 4.6,5.8 0.7,11.1 -5.5,10 -6.7,0.6 -10.1,-5.5 -8.5,-11.5 z m -6.1,27.3 c 0.4,17.7 11.2,14.5 10.8,0.8 -0.2,-2.4 -1.1,-5.1 -1.8,-6 -2,1.5 -7,3.9 -9,5.2 z m -15.2,1.6 c -0.9,2.7 -0.2,8.7 4,8.5 2.8,-0.2 6.3,-2.8 6.2,-6.3 -0.5,-7.9 -7.2,-4 -10.2,-2.2 z m 2.3,-14.7 c -4.5,0 -8.1,-3 -8.1,-6.7 0,-3.7 3.6,-6.7 8.1,-6.7"
          fill="#ffccaa"
-         d="m 721.9,666.7 a 4.494,5.617 0 0 1 -4.5,5.6 4.494,5.617 0 0 1 -4.5,-5.6 4.494,5.617 0 0 1 4.5,-5.7 4.494,5.617 0 0 1 4.5,5.7 z m -28,-7.8 c 2.4,-1.2 8,-2.5 11.2,1.8 1.4,-0.4 0.8,-0.5 2.8,-0.3 1.4,0.8 2,5 2,6.4 -0.3,3.8 -4,3.7 -7.5,3.6 -6.7,0.6 -10.1,-5.5 -8.5,-11.5 z m -6.1,27.3 c 0.4,17.7 11.2,14.5 10.8,0.8 -0.2,-2.4 -1.1,-5.1 -1.8,-6 -2,1.5 -7,3.9 -9,5.2 z m -15.2,1.6 c -0.9,2.7 -0.2,8.7 4,8.5 2.8,-0.2 6.3,-2.8 6.2,-6.3 -0.5,-7.9 -7.2,-4 -10.2,-2.2 z m 2.3,-14.7 c -4.5,0 -8.1,-3 -8.1,-6.7 0,-3.7 3.6,-6.7 8.1,-6.7" />
-      <path
-         style="stroke:#000000;stroke-width:0.56175"
-         id="path6"
-         stroke-linejoin="round"
-         stroke-dashoffset="2.69"
-         fill="#502d16"
-         d="m 706.5,670.4 c 2.5,-4.4 1.5,-7.6 1.4,-10.1 3,-0.7 6.8,1.2 6.4,7.5 -0.2,3.8 -5.3,3.8 -7.8,2.6 z m -7.6,20.9 c 0.9,3 1.2,7.6 1.1,10.5 9.5,8.5 -13.9,6.9 -13.6,0.5 0.8,-2.5 0.3,-7.2 1.6,-10.3 5.5,2 7.2,0.5 10.9,-0.7 z m -26.8,0.8 c -0.9,3.1 -0.7,6.2 -0.6,9.2 -9.5,8.4 13.5,6.3 13.2,1.6 -0.9,-2.5 -0.2,-8.6 -1.5,-11.6 -5.8,2.3 -5.3,2.1 -11.1,0.8 z m 3.6,-30.9 c -1,6.1 -0.8,13 0,19.1 10.8,4.8 16.5,1.3 21.8,-0.8 -1.5,-5.5 -0.5,-4.1 -0.3,-8.5 -0.6,-4.2 0.7,-10.1 -5,-10.6 -4.9,0.7 -11.5,0.5 -16.4,0.8 z"
-         sodipodi:nodetypes="ccscccccccccccsccssss" />
-      <path
-         style="stroke:#000000;stroke-width:0.56175"
-         id="path8"
-         stroke-linejoin="round"
-         stroke-dashoffset="2.69"
-         fill="#0044aa"
-         d="m 681,686.9 c 0.8,1.7 4.1,1.4 6.1,1.2 3.1,-2.2 5.9,-3 9.7,-5.6 1.8,-1.2 1.1,-3.5 -1.1,-2.5 -7.9,1.4 -14.3,3.9 -14.7,6.9 z"
-         sodipodi:nodetypes="ccccc" />
-      <path
-         id="$armor.fx"
+         fill-rule="evenodd"
+         stop-color="#000000"
          style="font-variation-settings:normal;stroke:#000000;stroke-width:0.56175"
-         stop-color="#000000"
-         fill-rule="evenodd"
+         id="path4" />
+      <path
+         sodipodi:nodetypes="ccscccccccccccccsssc"
+         d="m 706.5,670.4 c 2.5,-4.4 1.5,-7.6 1.4,-10.1 3,-0.7 6.8,1.2 6.4,7.5 -0.2,3.8 -5.3,3.8 -7.8,2.6 z m -7.6,20.9 c 0.9,3 1.2,7.6 1.1,10.5 9.5,8.5 -13.9,6.9 -13.6,0.5 0.8,-2.5 0.3,-7.2 1.6,-10.3 5.5,2 7.2,0.5 10.9,-0.7 z m -26.8,0.8 c -0.9,3.1 -0.7,6.2 -0.6,9.2 -9.5,8.4 13.5,6.3 13.2,1.6 -0.9,-2.5 -0.2,-8.6 -1.5,-11.6 -5.8,2.3 -5.3,2.1 -11.1,0.8 z m 3.6,-30.9 c -4.3,18.2 1.5,26.8 21.8,18.3 -1.5,-5.5 -0.5,-4.1 -0.3,-8.5 -0.6,-4.2 0.7,-10.1 -5,-10.6 -4.9,0.7 -11.5,0.5 -16.4,0.8 z"
+         fill="#502d16"
+         stroke-dashoffset="2.69"
+         stroke-linejoin="round"
+         id="path6"
+         style="stroke:#000000;stroke-width:0.56175" />
+      <path
+         sodipodi:nodetypes="ccccc"
+         d="m 681,686.9 c 0.8,1.7 4.1,1.4 6.1,1.2 3.1,-2.2 5.9,-3 9.7,-5.6 1.8,-1.2 1.1,-3.5 -1.1,-2.5 -7.9,1.4 -14.3,3.9 -14.7,6.9 z"
+         fill="#0044aa"
+         stroke-dashoffset="2.69"
+         stroke-linejoin="round"
+         id="path8"
+         style="stroke:#000000;stroke-width:0.56175" />
+      <path
+         sodipodi:nodetypes="csssccsccc"
+         d="m 687,677.9 c 0,7.2 -6.8,13.1 -15.1,13.1 -8.4,0 -15.2,-5.9 -15.2,-13.1 0,-7.2 6.8,-13.1 15.2,-13.1 8.3,0 15.1,5.9 15.1,13.1 m 7.3,-16.5 c -0.1,-11.3 -1.3,-22.1 -10.8,-21.4 -11,0.8 -9.8,15.3 -8.8,24.1 2.4,1.1 8,1.8 10.3,1.7 3.6,-0.4 7.5,-2.2 9.3,-4.4 z"
          fill="#d4aa00"
-         d="m 687,677.9 a 15.17,13.11 0 0 1 -15.1,13.1 15.17,13.11 0 0 1 -15.2,-13.1 15.17,13.11 0 0 1 15.2,-13.1 15.17,13.11 0 0 1 15.1,13.1 m 7.3,-16.5 c -0.1,-11.3 -1.3,-22.1 -10.8,-21.4 -11,0.8 -9.8,15.3 -8.8,24.1 2.4,1.1 8,1.8 10.3,1.7 3.3,0.1 7.2,-1.8 9.4,-4.4 z" />
-      <path
-         d="m 682.4,655.4 3.6,-0.1 -0.2,-4.5 c 2.2,-0.8 6.2,0.1 6.3,2.4 0,2.8 -4.3,3.3 -5.6,3.6 l 0.5,8.9 h -4.4 l -0.4,-8.7 c -3.6,-0.1 -6,-0.1 -5.9,-2.8 0,-2.2 1.5,-3.3 5.9,-3.2 0.1,1.5 0,3 0.2,4.4 z"
-         stroke="#28170b"
-         stroke-dashoffset="2.69"
-         stroke-linejoin="round"
-         stroke-width="0.18725"
-         id="path14"
-         sodipodi:nodetypes="cccsccccscc" />
-      <path
-         id="path16"
-         stroke-width="0.56175"
-         stroke-linejoin="round"
-         stroke-dashoffset="2.69"
-         stroke="#000000"
-         fill="#afc6e9"
-         d="m 715.9,660.7 c 0.3,-6.6 4.6,-22.3 1.6,-26.9 3.9,-6.6 4.9,-14.7 8.1,-22.6 5.2,9.3 2.6,27.6 0,38.2 -4.6,0.6 -4.8,7.5 -5.6,11.8 -1.1,1.5 -4.1,1.5 -4.1,-0.7 z" />
-      <path
-         id="path18"
-         style="font-variation-settings:normal"
-         stroke-width="0"
-         stop-color="#000000"
          fill-rule="evenodd"
-         fill="#ff0000"
-         d="m 689.6,653.6 a 0.8389,0.8389 0 0 1 -0.8,0.9 0.8389,0.8389 0 0 1 -0.8,-0.9 0.8389,0.8389 0 0 1 0.8,-0.8 0.8389,0.8389 0 0 1 0.8,0.8 m -9.1,0.2 a 0.8389,0.8389 0 0 1 -0.8,0.8 0.8389,0.8389 0 0 1 -0.9,-0.8 0.8389,0.8389 0 0 1 0.9,-0.9 0.8389,0.8389 0 0 1 0.8,0.9 z" />
-      <rect
-         id="rect20"
-         stroke-width="0.5529"
+         stop-color="#000000"
+         style="font-variation-settings:normal;stroke:#000000;stroke-width:0.56175"
+         id="$armor.fx" />
+      <path
+         sodipodi:nodetypes="cccsccccscc"
+         id="path14"
+         stroke-width="0.18725"
          stroke-linejoin="round"
          stroke-dashoffset="2.69"
+         stroke="#28170b"
+         d="m 682.4,655.4 3.6,-0.1 -0.2,-4.5 c 0,0 5.4,-0.2 6.2,1.9 1.5,3.9 -5.5,4.1 -5.5,4.1 l 0.5,8.9 h -4.4 l -0.2,-8.8 c 0,0 -6.3,0.9 -6,-3.7 0.1,-1.9 5.8,-2.2 5.8,-2.2 z" />
+      <path
+         sodipodi:nodetypes="cccscc"
+         d="m 717.5,633.8 c 3.9,-6.6 4.9,-14.7 8.1,-22.6 5.2,9.3 2.6,27.6 0,38.2 -4.6,0.6 -4.8,7.5 -5.6,11.8 -1.1,1.5 -4.1,-0.7 -4.1,-0.7 0,0 3.8,-20.6 1.6,-26.7 z"
+         fill="#afc6e9"
          stroke="#000000"
-         fill="#ffcc00"
-         height="2.717"
-         width="10.14"
-         y="556.1"
+         stroke-dashoffset="2.69"
+         stroke-linejoin="round"
+         stroke-width="0.56175"
+         id="path16" />
+      <path
+         d="m 689.6,653.6 a 0.8389,0.8389 0 0 1 -0.8,0.9 0.8389,0.8389 0 0 1 -0.8,-0.9 0.8389,0.8389 0 0 1 0.8,-0.8 0.8389,0.8389 0 0 1 0.8,0.8 m -9.1,0.2 a 0.8389,0.8389 0 0 1 -0.8,0.8 0.8389,0.8389 0 0 1 -0.9,-0.8 0.8389,0.8389 0 0 1 0.9,-0.9 0.8389,0.8389 0 0 1 0.8,0.9 z"
+         fill="#ff0000"
+         fill-rule="evenodd"
+         stop-color="#000000"
+         stroke-width="0"
+         style="font-variation-settings:normal"
+         id="path18" />
+      <rect
+         transform="rotate(7.823)"
          x="796.5"
-         transform="rotate(7.823)" />
+         y="556.1"
+         width="10.14"
+         height="2.717"
+         fill="#ffcc00"
+         stroke="#000000"
+         stroke-dashoffset="2.69"
+         stroke-linejoin="round"
+         stroke-width="0.5529"
+         id="rect20" />
     </g>
     <g
        id="g1087">
       <ellipse
-         ry="18.83"
-         rx="20.97"
-         cy="341.7"
-         cx="1018"
+         style="opacity:0.999;fill:#540000;fill-opacity:1;stroke:none;stroke-width:0.436257;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
          id="path1066"
-         style="opacity:0.999;fill:#540000;fill-opacity:1;stroke:none;stroke-width:0.436257;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000" />
-      <ellipse
-         ry="21.75"
-         rx="25.8"
-         cy="334.6"
          cx="1018"
+         cy="341.7"
+         rx="20.97"
+         ry="18.83" />
+      <ellipse
+         style="opacity:0.999;fill:#ffcc00;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
          id="path1074"
-         style="opacity:0.999;fill:#ffcc00;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000" />
+         cx="1018"
+         cy="334.6"
+         rx="25.8"
+         ry="21.75" />
       <path
-         id="path2237"
-         stroke-width="2.6457"
-         stroke-dashoffset="2.694"
-         fill="#800000"
+         style="display:inline"
          d="m 1010,314.2 -1,8.8 -13.2,1 7.2,6.9 -9.6,9 13.6,-0.5 -1,14.1 11,-9.2 9,10.3 1,-13.4 14,1.5 -8,-9 9,-6.5 -13,-2.4 -1,-9.4 -7,4.3 -4,-0.8 z"
-         style="display:inline" />
+         fill="#800000"
+         stroke-dashoffset="2.694"
+         stroke-width="2.6457"
+         id="path2237" />
       <ellipse
-         ry="11.85"
-         rx="14.15"
-         cy="329.5"
-         cx="1018"
+         style="opacity:0.999;fill:#800000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
          id="path1080"
-         style="opacity:0.999;fill:#800000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000" />
-      <ellipse
-         ry="9.7"
-         rx="12"
-         cy="329.1"
          cx="1018"
+         cy="329.5"
+         rx="14.15"
+         ry="11.85" />
+      <ellipse
+         style="opacity:0.999;fill:#660000;fill-opacity:1;stroke:none;stroke-width:0.548607;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
          id="path1078"
-         style="opacity:0.999;fill:#660000;fill-opacity:1;stroke:none;stroke-width:0.548607;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000" />
+         cx="1018"
+         cy="329.1"
+         rx="12"
+         ry="9.7" />
     </g>
     <g
-       id="g2098"
-       transform="translate(-70.5,-1.5)">
+       transform="translate(-70.5,-1.5)"
+       id="g2098">
       <path
-         sodipodi:nodetypes="ccccc"
-         id="path1135"
+         style="fill:#a68400;fill-opacity:1;stroke:#000000;stroke-width:0.994555px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 1195,457.3 -64,-61.5 v -4.1 l 63,0.3 z"
-         style="fill:#a68400;fill-opacity:1;stroke:#000000;stroke-width:0.994555px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         id="path1092-2"
-         style="display:inline;opacity:0.999;fill:#ffcc00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
-         inkscape:transform-center-x="3.774"
-         inkscape:transform-center-y="3.382"
-         d="m 1195,454.3 -64,-62.7 h 64 z"
-         sodipodi:nodetypes="cccc" />
+         id="path1135"
+         sodipodi:nodetypes="ccccc" />
       <path
          sodipodi:nodetypes="cccc"
-         d="m 1193,450.1 -58,-57 h 58 z"
-         inkscape:transform-center-y="3.07"
-         inkscape:transform-center-x="3.253"
+         d="m 1195,454.3 -64,-62.7 h 64 z"
+         inkscape:transform-center-y="3.382"
+         inkscape:transform-center-x="3.774"
+         style="display:inline;opacity:0.999;fill:#ffcc00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+         id="path1092-2" />
+      <path
+         id="path1092"
          style="opacity:0.999;fill:#800000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
-         id="path1092" />
+         inkscape:transform-center-x="3.253"
+         inkscape:transform-center-y="3.07"
+         d="m 1193,450.1 -58,-57 h 58 z"
+         sodipodi:nodetypes="cccc" />
     </g>
     <g
        id="g_axe">
       <path
-         id="path1663-1"
+         sodipodi:nodetypes="cssccccccc"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.299977;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 695.5,555.3 c 0.2,-0.3 0.6,-0.2 0.8,0 0.3,0.2 0.3,0.4 0.1,0.7 l -8.4,8.4 c 0.4,0.2 0.2,0.6 -0.1,0.8 -1.1,1.1 -3.3,3.7 -3.5,3.6 -0.4,0 -1.6,-1.1 -1.6,-1.4 -0.2,-0.3 2.6,-2.7 3.7,-3.8 0.2,-0.2 0.6,0.2 0.6,0.2 2.8,-2.8 5.6,-5.6 8.4,-8.5 z"
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.299977;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         sodipodi:nodetypes="cssccccccc" />
-      <path
-         id="path1669"
-         d="m 693.2,560.2 2.9,-3 c 1,0.2 1.7,-0.1 2.5,-0.6 0.5,4.1 -2.4,6.1 -5.9,5.8 0.7,-0.7 0.7,-1.5 0.5,-2.2 z"
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.299977;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         sodipodi:nodetypes="ccccc" />
+         id="path1663-1" />
       <path
          sodipodi:nodetypes="ccccc"
-         style="display:inline;fill:#ffffff;stroke:#000000;stroke-width:0.318008;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.299977;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 693.2,560.2 2.9,-3 c 1,0.2 1.7,-0.1 2.5,-0.6 0.5,4.1 -2.4,6.1 -5.9,5.8 0.7,-0.7 0.7,-1.5 0.5,-2.2 z"
+         id="path1669" />
+      <path
+         id="path1669-5"
          d="m 694,555.6 -3,3.2 c -1.1,-0.3 -1.9,0.1 -2.7,0.6 -0.6,-4.5 1.5,-6.6 6.3,-6.1 -0.8,0.7 -0.8,1.6 -0.6,2.3 z"
-         id="path1669-5" />
+         style="display:inline;fill:#ffffff;stroke:#000000;stroke-width:0.318008;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         sodipodi:nodetypes="ccccc" />
     </g>
   </g>
   <g
-     inkscape:groupmode="layer"
-     id="$layer2"
+     style="display:none"
      inkscape:label="colliders"
-     style="display:none">
+     id="$layer2"
+     inkscape:groupmode="layer">
     <path
-       id="$kicker.collider.3"
-       d="M 616.5,11.74 686,125.6 670.8,129.6 608.4,26.64 Z" />
+       d="M 616.5,11.74 686,125.6 670.8,129.6 608.4,26.64 Z"
+       id="$kicker.collider.3" />
     <path
-       id="$kicker.collider.1"
-       d="m 616.5,11.64 -8.3,-3.601 -7.6,6.001 v 77.6 h 14.2 z" />
+       d="m 616.5,11.64 -8.3,-3.601 -7.6,6.001 v 77.6 h 14.2 z"
+       id="$kicker.collider.1" />
     <path
-       id="$kicker.collider.2"
-       d="m 600.5,91.64 73.7,44.96 8.4,-2 3.1,-9 -73.3,-41.96 z" />
+       d="m 600.5,91.64 73.7,44.96 8.4,-2 3.1,-9 -73.3,-41.96 z"
+       id="$kicker.collider.2" />
     <path
-       d="m 730.3,10.77 h 12.5 V 180.5 l -12.8,-5 z"
+       sodipodi:nodetypes="ccccc"
        id="$bend.2.collider"
-       sodipodi:nodetypes="ccccc" />
+       d="m 730.3,10.77 h 12.5 V 180.5 l -12.8,-5 z" />
     <path
-       id="$bend.1.collider"
+       sodipodi:nodetypes="ccccc"
        d="m 733.8,178.9 147.8,86.7 6.7,-11 -146.2,-84.7 z"
-       sodipodi:nodetypes="ccccc" />
+       id="$bend.1.collider" />
     <path
-       id="$flipper.collider"
-       d="m 926.7,23.54 5,-3.9 6,-0.7 52.2,41.4 0.7,7.5 -4.6,3.8 h -6.1 l -52.9,-30.9 -3.9,-7.9 z" />
+       d="m 926.7,23.54 5,-3.9 6,-0.7 52.2,41.4 0.7,7.5 -4.6,3.8 h -6.1 l -52.9,-30.9 -3.9,-7.9 z"
+       id="$flipper.collider" />
     <path
-       d="m 682.6,358.3 -3,3 -3,2.2 -3,1.3 -4,0.3 -4,-0.6 -3,-1.6 -3,-2.5 -3,-3.1 -1,-3.6 v -3.8 -3.8 l 2,-3.4 2,-3 4,-2.2 3,-1.3 4,-0.3 4,0.6 3,1.6 3,2.5 2,3.1 2,3.6 v 3.8 l -1,3.8 z"
-       id="$ball.collider" />
+       id="$ball.collider"
+       d="m 682.6,358.3 -3,3 -3,2.2 -3,1.3 -4,0.3 -4,-0.6 -3,-1.6 -3,-2.5 -3,-3.1 -1,-3.6 v -3.8 -3.8 l 2,-3.4 2,-3 4,-2.2 3,-1.3 4,-0.3 4,0.6 3,1.6 3,2.5 2,3.1 2,3.6 v 3.8 l -1,3.8 z" />
     <path
-       id="$fence.collider"
-       d="m 1204,202.2 h 13 v 665.3 h -13 z" />
+       d="m 1204,202.2 h 13 v 665.3 h -13 z"
+       id="$fence.collider" />
     <path
-       d="m 715.5,341.6 h 53 v 18.2 h -53 z"
-       id="$plunger.collider" />
+       id="$plunger.collider"
+       d="m 715.5,341.6 h 53 v 18.2 h -53 z" />
     <path
-       id="$tree.collider"
-       d="m 808.9,274.3 h 54.5 v 98.3 h -54.5 z" />
+       d="m 808.9,274.3 h 54.5 v 98.3 h -54.5 z"
+       id="$tree.collider" />
     <path
-       id="$iron.collider"
-       d="M 921.8,324.1 H 963 V 365 h -41.2 z" />
+       d="M 921.8,324.1 H 963 V 365 h -41.2 z"
+       id="$iron.collider" />
     <path
-       d="m 997.6,350.9 -4,-14.2 4,-14.3 12.4,-9 h 15 l 13,8.8 4,14.3 -4,14.3 -12,8.9 h -16 z"
-       id="$bumper.collider" />
+       id="$bumper.collider"
+       d="m 997.6,350.9 -4,-14.2 4,-14.3 12.4,-9 h 15 l 13,8.8 4,14.3 -4,14.3 -12,8.9 h -16 z" />
     <path
-       d="m 1266,0 h 800 v 100 h -800 z"
-       id="$top-wall.collider" />
+       id="$top-wall.collider"
+       d="m 1266,0 h 800 v 100 h -800 z" />
     <path
-       id="$left-wall.collider"
-       d="m 1266,100 h 100 v 800 h -100 z" />
+       d="m 1266,100 h 100 v 800 h -100 z"
+       id="$left-wall.collider" />
     <path
-       d="m 1966,100 h 100 v 800 h -100 z"
-       id="$right-wall.collider" />
+       id="$right-wall.collider"
+       d="m 1966,100 h 100 v 800 h -100 z" />
     <path
-       id="$gold.collider"
-       d="m 974.2,477.3 h 38.8 v 52.5 h -38.8 z" />
+       d="m 974.2,477.3 h 38.8 v 52.5 h -38.8 z"
+       id="$gold.collider" />
     <path
-       d="M 665.1,636.3 H 722 v 71.5 h -56.9 z"
-       id="$enemy.collider" />
+       id="$enemy.collider"
+       d="M 665.1,636.3 H 722 v 71.5 h -56.9 z" />
     <path
-       d="m 649.6,428.6 h 117 V 460 h -117 z"
+       id="$small-mine-wall.collider"
        inkscape:label="small-mine-wall.colider"
-       id="$small-mine-wall.collider" />
+       d="m 649.6,428.6 h 117 V 460 h -117 z" />
     <path
-       d="m 1065,392.7 61,59.1 v -59.6 z"
+       inkscape:label="deflector.collider"
        id="$deflector.collider"
-       inkscape:label="deflector.collider" />
+       d="m 1065,392.7 61,59.1 v -59.6 z" />
     <path
-       d="m 1027,10 v 152.9 h 218 v -49 z"
+       inkscape:label="gutter.colider"
        id="$gutter.collider"
-       inkscape:label="gutter.colider" />
+       d="m 1027,10 v 152.9 h 218 v -49 z" />
   </g>
 </svg>

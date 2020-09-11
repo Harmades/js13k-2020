@@ -1,7 +1,7 @@
 import { Settings } from "../settings";
 import { Phase1 } from "./phase1";
 import { Effects } from "../sounds";
-import { Score } from "./score";
+import { Gui } from "./gui";
 import { Entity } from "./entity";
 import { Vector } from "../math/vector";
 
@@ -20,7 +20,7 @@ export class Gold extends Entity {
         Phase1.goldScore++;
         Phase1.updateScore();
         this.jackpot = !this.jackpot;
-        Score.score(5);
+        Gui.score(5);
 		Effects.coin();
     }
 

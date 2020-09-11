@@ -9,6 +9,7 @@ import { Base } from "./base";
 import { Input } from "../input";
 import { Songs } from "../sounds";
 import { CanvasContext } from "../canvasContext";
+import { Gui } from "./gui";
 
 
 export class World {
@@ -29,7 +30,7 @@ export class World {
         this.staticDrawn = false;
         Base.year = this.currentPhase.year;
         this.started = false;
-        document.getElementById("dialog").innerText = this.currentPhase.text;
+        Gui.dialog(this.currentPhase.text);
     }
 
     update(delta: number) {
@@ -40,7 +41,7 @@ export class World {
 				  Songs.play_pone();
 				}
                 this.started = true;
-                document.getElementById("dialog").style.display = "none";
+                Gui.toggleDialog();
             }
             return;
         }
@@ -53,8 +54,8 @@ export class World {
             this.staticDrawn = false;
             Base.year = this.currentPhase.year;
             this.started = false;
-            document.getElementById("dialog").style.display = "block";
-            document.getElementById("dialog").innerText = this.currentPhase.text;
+            Gui.toggleDialog();
+            Gui.dialog(this.currentPhase.text);
         }
     }
 
