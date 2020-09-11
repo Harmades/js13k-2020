@@ -52,7 +52,7 @@ module.exports = {
       runPreEmit: true,
     }),
     new ScriptExtHtmlWebpackPlugin({
-      // inline: "main",
+      inline: "main",
     })
   ],
 };
