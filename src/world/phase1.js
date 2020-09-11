@@ -88,7 +88,7 @@ export class Phase1Impl {
     }
 
     updateScore() {
-        document.getElementById("objectives").innerText = `🌲: ${this.woodScore} | ⛏️: ${this.ironScore} | 📀: ${this.goldScore}`;
+        document.getElementById("objectives").innerText = `🌲: ${this.woodScore} / ${Settings.treeScoreGoal} | ⛏️: ${this.ironScore} / ${Settings.rockScoreGoal} | 📀: ${this.goldScore} / ${Settings.goldScoreGoal}`;
     }
     
 	nextPhase() {
