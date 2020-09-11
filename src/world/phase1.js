@@ -35,8 +35,8 @@ export class Phase1Impl {
         this.player = Base.player;
         this.entities = [
             new StaticElement('small-mine-wall', new Vector(0, 220)),
-            new StaticElement('large-mine-wall', new Vector(160, 0)),
-            new Tree(new Vector(140, 150)),
+            new Tree(new Vector(175, 0)),
+            new Tree(new Vector(150, 150)),
             new Tree(new Vector(373.4, 266)),
             new Iron(new Vector(10.91, 8.75)),
             new Iron(new Vector(114.4, 7.95)),

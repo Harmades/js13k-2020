@@ -35,8 +35,8 @@ class BaseImpl {
         this.rWall = new StaticElement('right-wall', new Vector(600, 0));
         this.sign = new StaticElement('sign', new Vector(220, 300));
         this.invisibleWall = new Body(1);
-        this.invisibleWall.position = new Vector(540, 200);
-        this.invisibleWall.shape = new Shape([new Vector(0, 0),new Vector(0, -100),new Vector(60, -100),new Vector(60, 0)]);
+        this.invisibleWall.position = new Vector(540, 120);
+        this.invisibleWall.shape = new Shape([new Vector(0, 0),new Vector(0, 100),new Vector(60, 100),new Vector(60, -50)]);
         this.invisibleWall.isRigid = false;
         this.invisibleWall.onAreaExit = () => {if (this.player.body.position.y < 200) this.invisibleWall.isRigid = true;}
         this.invisibleWall.bounciness = Settings.wallBounciness;
@@ -76,7 +76,10 @@ class BaseImpl {
     }
 
     renderStatic(context) {
-        context.fillStyle = "#71c837";
+        const gradient = context.createLinearGradient(300, 0, 300, 800);
+        gradient.addColorStop(0, "#9BD077");
+        gradient.addColorStop(1 , "#71c837")
+        context.fillStyle = gradient;
         context.fillRect(0, 0, Settings.width, Settings.height);
 
         context.fillStyle = "white";
