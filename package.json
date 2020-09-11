@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "serve": "npx serve",
-    "publish": "npx terser index.js src/*.js src/assets.gen/*.js src/math/*.js src/physic/*.js src/world/*.js --module -o game.min.js",
     "package": "webpack"
   },
   "repository": {
@@ -19,9 +18,14 @@
   },
   "homepage": "https://github.com/Harmades/js13k-2020#readme",
   "devDependencies": {
+    "html-webpack-plugin": "^4.4.1",
     "serve": "^11.3.2",
     "terser": "^4.8.0",
+    "ts-loader": "^8.0.3",
+    "typescript": "^4.0.2",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "html-webpack-inline-svg-plugin": "^2.3.0",
+    "script-ext-html-webpack-plugin": "^2.1.4"
   }
 }
