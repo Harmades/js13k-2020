@@ -13,10 +13,10 @@ class BaseImpl {
     load(collisionEngine) {
         this.collisionEngine = collisionEngine;
         this.player = new Ball();
-        this.leftFlipper = new Flipper('left', this.player);
-        this.leftKicker = new Kicker('left');
-        this.rightFlipper = new Flipper('right', this.player);
-        this.rightKicker = new Kicker('right'),
+        this.leftFlipper = new Flipper(1, this.player);
+        this.leftKicker = new Kicker(1);
+        this.rightFlipper = new Flipper(-1, this.player);
+        this.rightKicker = new Kicker(-1),
         this.plunger = new Plunger('plunger');
         this.lBend1 = new StaticElement('bend.1', new Vector(44.68, 415.1));
         this.lBend1.spriteBounds = Assets.sprites['bend'];

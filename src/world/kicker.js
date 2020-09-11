@@ -9,6 +9,7 @@ import { Effects } from "../sounds.js";
 
 export class Kicker {
     constructor(side) {
+        this.side = side;
 
         this.body1 = new Body(null);
         this.body1.position = new Vector(100.5, 454.7);
@@ -25,19 +26,17 @@ export class Kicker {
         this.spriteBounds = Assets.sprites['kicker'];
         this.body = new Body(null);
         this.body.shape = Assets.colliders['kicker.collider.3'];
-        if (side == 'right') {
+        if (side == -1) {
             this.body.position = new Vector(344.4, 454.69);
             this.body1.position = new Vector(417.1, 454);
             this.body2.position = new Vector(347.9, 530);
-            this.sign = -1;
             this.body2.hFlip(this.spriteBounds.width / 2);
             this.body.hFlip(this.spriteBounds.width / 2);
         }
         if (side == 'left') {
             this.body.position = new Vector(105.18, 454.69);
-            this.sign = 1;
         }
-        const factor = this.sign == -1 ? 0.90 : 1.05;
+        const factor = this.side == -1 ? 0.90 : 1.05;
 
         this.body.bounciness = Settings.wallBounciness * factor;
         this.body.speed = new Vector(0, -Settings.kickerImpulseSpeed);
@@ -46,22 +45,22 @@ export class Kicker {
     }
 
     onCollision() {
-        const offset = this.sign == -1 ? new Vector(16.5, -16.5) : Vector.zero();
+        const offset = this.side == -1 ? new Vector(16.5, -16.5) : Vector.zero();
         const position = this.body1.position
-            .subtract(new Vector(this.sign * this.spriteBounds.x, this.sign * this.spriteBounds.y))
+            .subtract(new Vector(this.side * this.spriteBounds.x, this.side * this.spriteBounds.y))
             .add(offset);
         const kickerGlow = new Particle(Assets.fxs['kicker.fx'], position);
         kickerGlow.alphaSpeed = -0.7;
         kickerGlow.scaleSpeed = 0.1;
         kickerGlow.life = 1.5;
-        kickerGlow.hFlip = this.sign;
+        kickerGlow.hFlip = this.side;
         kickerGlow.lineWidth = 2;
         Fx.particles.push(kickerGlow);
         const helmetGlow = new Particle(Assets.fxs['helmet.fx'], position);
         helmetGlow.alphaSpeed = -0.7;
         helmetGlow.scaleSpeed = 0.1;
         helmetGlow.life = 1.5;
-        helmetGlow.hFlip = this.sign;
+        helmetGlow.hFlip = this.side;
 		Fx.particles.push(helmetGlow);
 		Effects.impact_bumper();
     }
@@ -78,15 +77,15 @@ export class Kicker {
         } else {
 
             context.save();
-            context.scale(this.sign, 1);
-            const offset = this.sign == -1 ? -this.spriteBounds.width -5 : -5;
+            context.scale(this.side, 1);
+            const offset = this.side == -1 ? -this.spriteBounds.width -5 : -5;
             context.drawImage(
                 Assets.atlas,
                 this.spriteBounds.x,
                 this.spriteBounds.y,
                 this.spriteBounds.width,
                 this.spriteBounds.height,
-                this.sign * this.body.position.x + offset,
+                this.side * this.body.position.x + offset,
                 this.body.position.y,
                 this.spriteBounds.width,
                 this.spriteBounds.height

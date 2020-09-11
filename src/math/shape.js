@@ -122,7 +122,7 @@ export class Shape {
         }
         let lastPosition = new Vector(0, 0);
         let lastCommand = null;
-        const sequence = res.split(" ");
+        const sequence = data.split(" ");
         const vertices = [];
         for (const element of sequence) {
             switch (element) {

@@ -5,15 +5,12 @@ import { Vector } from "../math/vector.js";
 import { Input } from "../input.js";
 import { Assets } from "../assets.js";
 import { Effects } from "../sounds.js";
+import { Entity } from "./entity.js";
 
-export class Plunger {
+export class Plunger extends Entity {
     constructor() {
-        this.body = new Body(Settings.ballMass);
-        this.body.shape = Assets.colliders[`plunger.collider`];
-        this.body.position = new Vector(546.8, 663.3);
-        this.body.bounciness = Settings.launcherBounciness;
+        super('plunger', new Vector(546.8, 663.3), Settings.launcherBounciness, Settings.ballMass);
         this.body.isStatic = false;
-        this.spriteBounds = Assets.sprites['plunger'];
 		this.compression = 0;
     }
 
@@ -38,23 +35,5 @@ export class Plunger {
         }
         this.body.update(delta);
         this.compression += this.body.position.y - posY;
-    }
-
-    render(context) {
-        if (Settings.debug) {
-            Shape.debugDraw(this.body, context);
-        } else {
-            context.drawImage(
-                Assets.atlas,
-                this.spriteBounds.x,
-                this.spriteBounds.y,
-                this.spriteBounds.width,
-                this.spriteBounds.height,
-                this.body.position.x,
-                this.body.position.y,
-                this.spriteBounds.width,
-                this.spriteBounds.height
-            );
-        }
     }
 }
