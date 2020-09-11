@@ -15,7 +15,6 @@ export class CollisionDetector {
         let minVector = null;
         let minOverlap = null;
         for (let axe of axes) {
-            const projection2 = shape2.project(axe);
             const overlap = this.getOverlap(shape1.project(axe), shape2.project(axe));
             if (overlap != null) {
                 if (minOverlap == null || Math.abs(overlap) < Math.abs(minOverlap)) {
