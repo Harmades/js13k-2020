@@ -21,7 +21,6 @@ export class Flipper extends Entity {
         }
         super('flipper', position, Settings.paddleBounciness);
         this.player = player;
-        this.sign = sign;
         this.body.isStatic = false;
         if (side == 'right') {
             this.sign = -1;

@@ -20,17 +20,17 @@ class AssetsImpl {
     }
 
     load(svg, onload) {
-        for (const node of svg.getElementById("layer2").querySelectorAll("*")) {
+        for (const node of svg.getElementById("$layer2").querySelectorAll("*")) {
             const d = node.getAttribute("d");
             const atlas = svg.getElementById(node.id.replace(/(.[0-9])?.collider/g, ""));
             const bBox = atlas != undefined ? atlas.getBBox() : node.getBBox();
-            this.colliders[node.id] = Shape.fromSvgData(d, bBox);
+            this.colliders[node.id.substring(1)] = Shape.fromSvgData(d, bBox);
         }
-        for (const node of svg.getElementById("layer1").querySelectorAll("*")) {
-            if (node.getBBox) this.sprites[node.id] = node.getBBox();
-            if (node.id.endsWith(".fx")) this.fxs[node.id] = new Path2D(node.getAttribute("d"));
+        for (const node of svg.getElementById("$layer1").querySelectorAll("*")) {
+            if (node.getBBox) this.sprites[node.id.substring(1)] = node.getBBox();
+            if (node.id.endsWith(".fx")) this.fxs[node.id.substring(1)] = new Path2D(node.getAttribute("d"));
         }
-        document.getElementById("layer2").style.display = "none";
+        document.getElementById("$layer2").style.display = "none";
         this.loadSvg(svg, () => {
             onload();
             svg.style.display = "none";
