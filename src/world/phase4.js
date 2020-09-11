@@ -5,11 +5,7 @@ class Phase4Impl {
     constructor() {
         this.entities = [];
         this.year = '-404';
-        this.text = `(404 BC) You did it! The Delian League and Athens surrendered.
-        Our allies demand that the city of Athens to be destroyed, but you know that would be a mistake. Let the Spartan Empire grow with a new city!
-
-        Well done.
-        `;
+        this.text = "(404 BC) Victory is ours! The Delian League and Athens surrendered. The Peloponnesian War will be remembered as a great victory of Sparta.\n\nCredits:\n\nBarthélémy Renucci\nAdrian Lissot\nDavid Sebaoun\nFlorent Perez";
     }
 
     load(collisionEngine) {

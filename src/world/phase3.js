@@ -11,12 +11,7 @@ class Phase3Impl {
     constructor() {
         this.entities = [];
         this.year = '-413';
-        this.text = `(413 BC) Victory is near, commander. Now is time for war ⚔️. Defeat all incoming Delian soldiers!
-
-        Hit as many Delian soldiers as possible, and defeat their commander: if he dies, they will most likely surrender to our superiority.
-
-        Charge!
-        `;
+        this.text = "(413 BC) Victory is near, commander. Now is time for war ⚔️. Defeat all incoming Delian soldiers!\n\nHit as many Delian soldiers as possible, and defeat their commander: if he dies, they will most likely surrender to our superiority.\n\nCharge!";
     }
 
     load(collisionEngine) {
@@ -54,7 +49,7 @@ class Phase3Impl {
     
     renderDynamic(context) {
         Base.renderDynamic(context);
-        for (const enemy of this.enemies) enemy.render(context);
+        for (const enemy of this.enemies) if(enemy.body.position.y > -enemy.spriteBounds.height) enemy.render(context);
         this.boss.render(context);
         Fx.render(context);
     }
@@ -63,7 +58,7 @@ class Phase3Impl {
 	  Songs.play_pthree();
 	}
 
-    isComplete() { return this.boss.healthPoint == 0; }
+    isComplete() { return this.boss.life == 0; }
     
 	nextPhase() {
 	  Songs.stop_song();

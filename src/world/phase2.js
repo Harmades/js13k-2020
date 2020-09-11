@@ -15,14 +15,7 @@ class Phase2Impl {
         this.fightResults = [null, null, null];
         this.currentRound = 0;
         this.year = '-421';
-        this.text = `(421 BC) Excellent job, commander. We have all the resources we need to build and equip an army!
-        
-        Let's show soldiers some strategy. Your enemy's weapon is shown in blue, and you have to hit the right bumper to win the round. Choose your weapon bumper with care:
-
-        🗡️ > 🪓
-        🪓 > 🔱
-        🔱 > 🗡️
-        `;
+        this.text = "(421 BC) Excellent job, commander. We have all the resources we need to build and equip an army!\n\nLet's show soldiers some strategy. Your enemy's weapon is shown in blue, and you have to hit the right bumper to win the round. Choose your weapon bumper with care:\n\n🗡️ > 🪓\n🪓 > 🔱\n🔱 > 🗡️\n";
     }
 
     load(collisionEngine) {
@@ -86,16 +79,15 @@ class Phase2Impl {
 
     renderStatic(context) {
         Base.renderStatic(context);
-    }
-
-    renderHybrid(context) {
-        Base.renderHybrid(context);
-        
         context.fillStyle = "#0d5eaf";
         context.strokeStyle = "white";
         context.rect(365, 300, 60, 77);
         context.fill();
         context.stroke();
+    }
+
+    renderHybrid(context) {
+        Base.renderHybrid(context);
 
         const spriteBounds = Assets.sprites[this.enemyWeapon];
         context.drawImage(

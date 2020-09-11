@@ -13,7 +13,7 @@ import { Songs } from "../sounds.js";
 export class World {
     constructor() {
         this.collisionEngine = new CollisionEngine();
-		this.currentPhase = Phase1;
+		this.currentPhase = Phase3;
 		if(this.currentPhase == Phase1) {
 		  Songs.play_intro();
 		} else {
@@ -29,7 +29,7 @@ export class World {
 
     update(delta) {
         if (!this.started) {
-			if (Input.space) {
+			if (Input.space && this.currentPhase != Phase4) {
 			  if (this.currentPhase == Phase1) {
 				  Songs.stop_song();
 				  Songs.play_pone();
