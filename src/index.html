@@ -1,0 +1,72 @@
+<html>
+<head>
+   <style>
+      body {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+
+      #svg {
+         left: 0px;
+         position: absolute;
+         z-index: -1;
+      }
+
+      #d {
+         margin-left: 4px;
+         position: absolute;
+         bottom: 0px;
+         width: 92.5%;
+         height: 200px;
+         background-color: rgb(128, 0, 0, 95%);
+         border: 4px solid ghostwhite;
+         border-radius: 16px;
+         color: white;
+         padding: 16px;
+         font-family: sans-serif;
+      }
+
+      #s {
+         position: absolute;
+         top: 8px;
+         left: 100px;
+      }
+
+      #o {
+         position: absolute;
+         top: 8px;
+         right: 100px;
+      }
+
+      canvas {
+         position: absolute;
+         top: 0px;
+      }
+
+      .cc {
+         position: relative;
+         width: 600px;
+         height: 800px;
+         border: 1px solid black;
+      }
+   </style>
+</head>
+
+<body>
+    <div>
+        <div class="cc">
+            <canvas id="static-canvas" width="600" height="800"></canvas>
+            <canvas id="hybrid-canvas" width="600" height="800"></canvas>
+            <canvas id="dynamic-canvas" width="600" height="800"></canvas>
+            <div id="d"></div>
+            <div id="o"></div>
+            <div id="s"></div>
+        </div>
+
+    <img inline src="assets/atlas.opt.svg" />
+        
+    </div>
+</body>
+
+</html>
