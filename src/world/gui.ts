@@ -7,7 +7,7 @@ class GuiImpl {
 
     score(amount: number) {
         this.value += amount;
-        this.get("s").innerText = this.value.toString();
+        this.get("s").innerText = `Score: ${this.value.toString()}`;
     }
 
     objectives(text: string) {

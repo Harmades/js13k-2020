@@ -6,6 +6,7 @@ import { Assets } from "../assets";
 import { Fx } from "../fx/fx";
 import { Particle } from "../fx/particle";
 import { Effects } from "../sounds";
+import { Base } from "./base";
 
 export class Kicker {
     side: number;
@@ -44,7 +45,6 @@ export class Kicker {
         const factor = this.side == -1 ? 0.90 : 1.05;
 
         this.body.bounciness = Settings.wallBounciness * factor;
-        this.body.speed = new Vector(0, -Settings.kickerImpulseSpeed);
         this.body.isStatic = false;
 		this.body.onCollision = () => this.onCollision()
     }
@@ -71,7 +71,12 @@ export class Kicker {
     }
 
     update(delta: number) {
-
+        if (Base.player.body.pos.y + Base.player.spriteBounds.height > this.body.pos.y + 10) {
+            if (this.body.speed.y == 0) this.body.speed = new Vector(0, -Settings.kickerImpulseSpeed);
+        }
+        else {
+            this.body.speed = Vector.z();
+        }
     }
 
     render(context: CanvasRenderingContext2D) {

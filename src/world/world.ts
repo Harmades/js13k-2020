@@ -55,7 +55,7 @@ export class World {
             Base.year = this.currentPhase.year;
             this.started = false;
             Gui.toggleDialog();
-            Gui.dialog(this.currentPhase.text);
+            Gui.dialog(this.currentPhase.text.replace("{score}", Gui.value.toString()));
         }
     }
 

@@ -8,6 +8,7 @@ import { Songs } from "../sounds";
 import { Gui } from "./gui";
 import { Ball } from "./ball";
 import { CollisionEngine } from "../physic/collisionEngine";
+import { Settings } from "../settings";
 
 export class Phase2Impl {
     weapons: string[];
@@ -29,7 +30,7 @@ export class Phase2Impl {
         this.weapons = ['sword', 'axe', 'lance'];
         this.rollWeapon();
         this.playerWeapon = null;
-        this.fightResults = [null, null, null];
+        this.fightResults = Array(Settings.p2Rounds).fill(null);
         this.currentRound = 0;
         this.year = '-421';
         this.text = "(421 BC) Excellent job, commander. We have all the resources we need to build and equip an army!\n\nLet's show soldiers some strategy. Your enemy's weapon is shown in blue, and you have to hit the right bumper to win the round. Choose your weapon bumper with care:\n\n🗡️ > 🪓\n🪓 > 🔱\n🔱 > 🗡️\n";
@@ -40,19 +41,19 @@ export class Phase2Impl {
         this.collisionEngine = collisionEngine;
         this.player = Base.player;
         this.player.reset();
-        this.lanceBumper = new Bumper(new Vector(19.6, 163), 'lance');
+        this.lanceBumper = new Bumper(new Vector(20, 250), 'lance');
         this.lanceBumper.onCollision = () => {
             this.playerWeapon = 'lance';
             this.resolveFight();
         }
 
-        this.axeBumper = new Bumper(new Vector(222, 11), 'axe');
+        this.axeBumper = new Bumper(new Vector(100, 50), 'axe');
         this.axeBumper.onCollision = () => {
             this.playerWeapon = 'axe';
             this.resolveFight();
         }
 
-        this.swordBumper = new Bumper(new Vector(413, 163), 'sword');
+        this.swordBumper = new Bumper(new Vector(413, 193), 'sword');
         this.swordBumper.onCollision = () => {
             this.playerWeapon = 'sword';
             this.resolveFight();
@@ -68,7 +69,7 @@ export class Phase2Impl {
     }
 
     resolveFight() {
-        if (this.currentRound == 3) return;
+        if (this.currentRound == this.fightResults.length) return;
         if (this.enemyWeapon == 'sword' && this.playerWeapon == 'lance'
             || this.enemyWeapon == 'axe' && this.playerWeapon == 'sword'
             || this.enemyWeapon == 'lance' && this.playerWeapon == 'axe') {
@@ -147,10 +148,10 @@ export class Phase2Impl {
         Fx.render(context);
     }
 
-    isComplete() { return this.fightResults.filter(r => r == true).length == 3; }
+    isComplete() { return this.fightResults.filter(r => r == true).length == Settings.p2Rounds; }
 
     updateScore() {
-        Gui.objectives(`Win: ${this.currentRound} / 3`);
+        Gui.objectives(`Win: ${this.currentRound} / ${Settings.p2Rounds}`);
     }
 
 	playSong() {

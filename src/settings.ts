@@ -4,6 +4,8 @@ export const Settings = {
     width: 600,
     height: 800,
 
+    p2Rounds: 3,
+
     engineTimeResolution: 1,
 
     gravity: 1000,
@@ -23,13 +25,13 @@ export const Settings = {
     launcherSpeed: 2000,
     launcherBounciness: 1000,
 
-    rockScoreGoal: 2,
+    rockScoreGoal: 4,
     goldScoreGoal: 20,
-    treeScoreGoal: 2,
+    treeScoreGoal: 3,
 
     kickerImpulseSpeed: 800,
 
-	bumperBounciness: 30000 * 1.5,
+	bumperBounciness: 30000 * 1.2,
 
 	minImpactSoundSpeed: 0.25,
 	maxSpeed: 1.5,

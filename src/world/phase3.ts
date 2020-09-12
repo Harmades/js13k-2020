@@ -31,12 +31,12 @@ export class Phase3Impl {
         this.player = Base.player;
         this.player.reset();
         this.enemies = [];
-        for (let i = 0; i < 25; i++) {
+        for (let i = 0; i < 40; i++) {
             const quotient = Math.floor(i / 5);
             const remainder = i % 5;
 			this.enemies.push(new Enemy(new Vector(50 + 100 * remainder, -100 -300 * quotient)));
         }
-        this.boss = new Boss(new Vector(225, -2000));
+        this.boss = new Boss(new Vector(225, -2500));
     }
 
     update(delta: number) {
@@ -44,7 +44,7 @@ export class Phase3Impl {
         Fx.update(delta);
         for (const enemy of this.enemies) {
             enemy.update(delta);
-            if (enemy.body.position.y > -enemy.spriteBounds.height) this.collisionEngine.update(this.player.body, enemy.body);
+            if (enemy.body.pos.y > -enemy.spriteBounds.height) this.collisionEngine.update(this.player.body, enemy.body);
         }
         this.boss.update(delta);
         this.collisionEngine.update(this.player.body, this.boss.body);
@@ -60,7 +60,7 @@ export class Phase3Impl {
     
     renderDynamic(context: CanvasRenderingContext2D) {
         Base.renderDynamic(context);
-        for (const enemy of this.enemies) if(enemy.body.position.y > -enemy.spriteBounds.height) enemy.render(context);
+        for (const enemy of this.enemies) if(enemy.body.pos.y > -enemy.spriteBounds.height) enemy.render(context);
         this.boss.render(context);
         Fx.render(context);
     }

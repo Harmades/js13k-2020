@@ -9,6 +9,7 @@ import { Settings } from "../settings";
 import { Body } from "../physic/body";
 import { Shape } from "../math/shape";
 import { CollisionEngine } from "../physic/collisionEngine";
+import { Gui } from "./gui";
 
 class BaseImpl {
     invisibleWall: Body;
@@ -71,6 +72,8 @@ class BaseImpl {
         this.rightFlipper.update(delta);
         this.player.update(delta);
         this.plunger.update(delta);
+        this.leftKicker.update(delta);
+        this.rightKicker.update(delta);
         this.collisionEngine.update(this.player.body, this.leftFlipper.body);
         this.collisionEngine.update(this.player.body, this.leftKicker.body);
         this.collisionEngine.update(this.player.body, this.leftKicker.body1);
@@ -93,6 +96,7 @@ class BaseImpl {
         this.collisionEngine.update(this.player.body, this.rWall.body);
         this.collisionEngine.update(this.player.body, this.invisibleWall);
         if (this.player.body.pos.y > Settings.height) {
+            Gui.score(-50);
             this.player.body.translate(this.player.initialPosition.s(this.player.body.pos));
             this.invisibleWall.isRigid = false;
         }

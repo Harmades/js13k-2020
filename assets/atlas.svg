@@ -376,14 +376,14 @@
        d="m 107.3,19.44 -21.77,23 -17.1,-18.9 -7.3,6.7 17.6,19.4 -16.8,17.7 7.2,6.8 16.3,-17.2 15.97,17.6 7.3,-6.6 -16.47,-18.1 22.27,-23.5 z"
        fill="#d40000"
        stroke="#000000"
-       id="$check"
+       id="$cross"
        inkscape:label="red_X" />
     <path
        sodipodi:nodetypes="scccss"
        d="m 155.1,59.84 c -4.2,-4 -10.6,-9.42 -19.7,-11.5 1.5,10.92 18.3,26 21.1,26.5 11.1,-20.26 27.4,-41.96 34.2,-55.6 -14.6,10.02 -30,31.4 -35.5,40.6 z"
        fill="#00ff00"
        stroke="#000000"
-       id="$cross"
+       id="$check"
        inkscape:label="green_V" />
     <g
        id="$fence">
@@ -531,8 +531,7 @@
   <g
      inkscape:groupmode="layer"
      id="$layer2"
-     inkscape:label="colliders"
-     style="display:none">
+     inkscape:label="colliders">
     <path
        id="$kicker.collider.3"
        d="M 616.5,11.74 686,125.6 670.8,129.6 608.4,26.64 Z" />
