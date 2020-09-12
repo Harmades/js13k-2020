@@ -10,7 +10,7 @@ import { Entity } from "./entity";
 export class Plunger extends Entity {
     compression: number;
     constructor() {
-        super('plunger', new Vector(546.8, 663.3), Settings.launcherBounciness, Settings.ballMass);
+        super('plunger', new Vector(547, 663), Settings.launcherBounciness, Settings.ballMass);
         this.body.isStatic = false;
 		this.compression = 0;
     }

@@ -16,12 +16,12 @@ export class Flipper extends Entity {
         let position;
         let center;
         if (side == 1) {
-            position = new Vector(178.11, 653);
-            center = new Vector(188.2, 664.3);
+            position = new Vector(178, 653);
+            center = new Vector(188, 664);
         }
         if (side == -1) {
-            position = new Vector(290.61, 652.71);
-            center = new Vector(344, 664.3);
+            position = new Vector(290, 653);
+            center = new Vector(343, 664);
         }
         super('flipper', position, Settings.paddleBounciness);
         this.side = side;

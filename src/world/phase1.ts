@@ -40,16 +40,16 @@ export class Phase1Impl {
             new StaticElement('small-mine-wall', new Vector(0, 220)),
             new Tree(new Vector(175, 0)),
             new Tree(new Vector(150, 150)),
-            new Tree(new Vector(373.4, 266)),
-            new Iron(new Vector(10.91, 8.75)),
-            new Iron(new Vector(114.4, 7.95)),
-            new Iron(new Vector(115.6, 90.85)),
-            new Iron(new Vector(75.95, 177.4)),
-            new Iron(new Vector(11.40, 167)),
-            new Gold(new Vector(77.51, 318)),
-            new Gold(new Vector(281.9, 401.9)),
-            new Gold(new Vector(310.1, 91.76)),
-            new Bumper(new Vector(14.76, 83.63))
+            new Tree(new Vector(373, 266)),
+            new Iron(new Vector(10.9, 8.75)),
+            new Iron(new Vector(114, 7.95)),
+            new Iron(new Vector(116, 90.9)),
+            new Iron(new Vector(75.9, 177)),
+            new Iron(new Vector(11.4, 167)),
+            new Gold(new Vector(77.5, 318)),
+            new Gold(new Vector(282, 402)),
+            new Gold(new Vector(310, 91.8)),
+            new Bumper(new Vector(14.8, 83.6))
         ];
     }
 

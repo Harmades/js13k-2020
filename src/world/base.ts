@@ -41,17 +41,17 @@ class BaseImpl {
         this.rightFlipper = new Flipper(-1, this.player);
         this.rightKicker = new Kicker(-1),
         this.plunger = new Plunger();
-        this.lBend1 = new StaticElement('bend.1', new Vector(44.68, 415.1));
+        this.lBend1 = new StaticElement('bend.1', new Vector(45, 415));
         this.lBend1.spriteBounds = Assets.sprites['bend'];
-        this.lBend2 = new StaticElement('bend.2', new Vector(44.68, 415.1));
-        this.rBend1 = new StaticElement('bend.1', new Vector(334.3, 414.4));
+        this.lBend2 = new StaticElement('bend.2', new Vector(45, 415));
+        this.rBend1 = new StaticElement('bend.1', new Vector(334, 414));
         this.rBend1.spriteBounds = Assets.sprites['bend'];
         this.rBend1.hFlip();
-        this.rBend2 = new StaticElement('bend.2', new Vector(474.9, 415.5));
+        this.rBend2 = new StaticElement('bend.2', new Vector(475, 416));
         this.lGutter = new StaticElement('gutter', new Vector(0, 653));
-        this.rGutter = new StaticElement('gutter', new Vector(319.5, 653));
+        this.rGutter = new StaticElement('gutter', new Vector(320, 653));
         this.rGutter.hFlip();
-        this.fence = new StaticElement('fence', new Vector(530.8, 107.1));
+        this.fence = new StaticElement('fence', new Vector(531, 107));
         this.deflector = new StaticElement('deflector', new Vector(539, 0));
         this.lWall = new StaticElement('left-wall', new Vector(-100, 0));
         this.tWall = new StaticElement('top-wall', new Vector(-100, -100));

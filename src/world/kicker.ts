@@ -17,13 +17,13 @@ export class Kicker {
         this.side = side;
 
         this.body1 = new Body(null);
-        this.body1.position = new Vector(100.5, 454.7);
+        this.body1.position = new Vector(101, 455);
         this.body1.shape = Assets.colliders['kicker.collider.1'];
         this.body1.bounciness = Settings.wallBounciness;
         this.body1.isStatic = false;
 
         this.body2 = new Body(null);
-        this.body2.position = new Vector(100.4, 530.2);
+        this.body2.position = new Vector(101, 530);
         this.body2.shape = Assets.colliders['kicker.collider.2'];
         this.body2.bounciness = Settings.wallBounciness;
         this.body2.isStatic = false;
@@ -32,14 +32,14 @@ export class Kicker {
         this.body = new Body(null);
         this.body.shape = Assets.colliders['kicker.collider.3'];
         if (side == -1) {
-            this.body.position = new Vector(344.4, 454.69);
-            this.body1.position = new Vector(417.1, 454);
-            this.body2.position = new Vector(347.9, 530);
+            this.body.position = new Vector(344, 455);
+            this.body1.position = new Vector(417, 454);
+            this.body2.position = new Vector(348, 530);
             this.body2.hFlip(this.spriteBounds.width / 2);
             this.body.hFlip(this.spriteBounds.width / 2);
         }
         if (side == 1) {
-            this.body.position = new Vector(105.18, 454.69);
+            this.body.position = new Vector(105, 455);
         }
         const factor = this.side == -1 ? 0.90 : 1.05;
 
@@ -50,7 +50,7 @@ export class Kicker {
     }
 
     onCollision() {
-        const offset = this.side == -1 ? new Vector(16.5, -16.5) : Vector.zero();
+        const offset = this.side == -1 ? new Vector(17, -15) : new Vector(-1, 0);
         const position = this.body1.position
             .subtract(new Vector(this.side * this.spriteBounds.x, this.side * this.spriteBounds.y))
             .add(offset);

@@ -40,19 +40,19 @@ export class Phase2Impl {
         this.collisionEngine = collisionEngine;
         this.player = Base.player;
         this.player.reset();
-        this.lanceBumper = new Bumper(new Vector(19.64, 163), 'lance');
+        this.lanceBumper = new Bumper(new Vector(19.6, 163), 'lance');
         this.lanceBumper.onCollision = () => {
             this.playerWeapon = 'lance';
             this.resolveFight();
         }
 
-        this.axeBumper = new Bumper(new Vector(222, 11.03), 'axe');
+        this.axeBumper = new Bumper(new Vector(222, 11), 'axe');
         this.axeBumper.onCollision = () => {
             this.playerWeapon = 'axe';
             this.resolveFight();
         }
 
-        this.swordBumper = new Bumper(new Vector(413.4, 163), 'sword');
+        this.swordBumper = new Bumper(new Vector(413, 163), 'sword');
         this.swordBumper.onCollision = () => {
             this.playerWeapon = 'sword';
             this.resolveFight();
