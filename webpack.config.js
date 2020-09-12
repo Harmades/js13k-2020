@@ -20,7 +20,8 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".ts"],
+    modules: ["src", "node_modules"],
+    extensions: [".js", ".ts"],
   },
   optimization: {
     minimizer: [

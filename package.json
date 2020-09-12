@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "npx serve",
+    "start": "webpack-dev-server --mode=development --host 0.0.0.0",
     "package": "webpack --mode=production --env=prod"
   },
   "repository": {
@@ -18,14 +18,15 @@
   },
   "homepage": "https://github.com/Harmades/js13k-2020#readme",
   "devDependencies": {
+    "html-webpack-inline-svg-plugin": "^2.3.0",
     "html-webpack-plugin": "^4.4.1",
+    "script-ext-html-webpack-plugin": "^2.1.4",
     "serve": "^11.3.2",
     "terser": "^4.8.0",
     "ts-loader": "^8.0.3",
     "typescript": "^4.0.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "html-webpack-inline-svg-plugin": "^2.3.0",
-    "script-ext-html-webpack-plugin": "^2.1.4"
+    "webpack-dev-server": "^3.11.0"
   }
 }
