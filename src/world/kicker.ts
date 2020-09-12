@@ -17,13 +17,13 @@ export class Kicker {
         this.side = side;
 
         this.body1 = new Body(null);
-        this.body1.position = new Vector(101, 455);
+        this.body1.pos = new Vector(101, 455);
         this.body1.shape = Assets.colliders['kicker.collider.1'];
         this.body1.bounciness = Settings.wallBounciness;
         this.body1.isStatic = false;
 
         this.body2 = new Body(null);
-        this.body2.position = new Vector(101, 530);
+        this.body2.pos = new Vector(101, 530);
         this.body2.shape = Assets.colliders['kicker.collider.2'];
         this.body2.bounciness = Settings.wallBounciness;
         this.body2.isStatic = false;
@@ -32,14 +32,14 @@ export class Kicker {
         this.body = new Body(null);
         this.body.shape = Assets.colliders['kicker.collider.3'];
         if (side == -1) {
-            this.body.position = new Vector(344, 455);
-            this.body1.position = new Vector(417, 454);
-            this.body2.position = new Vector(348, 530);
+            this.body.pos = new Vector(344, 455);
+            this.body1.pos = new Vector(417, 454);
+            this.body2.pos = new Vector(348, 530);
             this.body2.hFlip(this.spriteBounds.width / 2);
             this.body.hFlip(this.spriteBounds.width / 2);
         }
         if (side == 1) {
-            this.body.position = new Vector(105, 455);
+            this.body.pos = new Vector(105, 455);
         }
         const factor = this.side == -1 ? 0.90 : 1.05;
 
@@ -51,9 +51,9 @@ export class Kicker {
 
     onCollision() {
         const offset = this.side == -1 ? new Vector(17, -15) : new Vector(-1, 0);
-        const position = this.body1.position
-            .subtract(new Vector(this.side * this.spriteBounds.x, this.side * this.spriteBounds.y))
-            .add(offset);
+        const position = this.body1.pos
+            .s(new Vector(this.side * this.spriteBounds.x, this.side * this.spriteBounds.y))
+            .a(offset);
         const kickerGlow = new Particle(Assets.fxs['kicker.fx'], position);
         kickerGlow.alphaSpeed = -0.7;
         kickerGlow.scaleSpeed = 0.1;
@@ -90,8 +90,8 @@ export class Kicker {
                 this.spriteBounds.y,
                 this.spriteBounds.width,
                 this.spriteBounds.height,
-                this.side * this.body.position.x + offset,
-                this.body.position.y,
+                this.side * this.body.pos.x + offset,
+                this.body.pos.y,
                 this.spriteBounds.width,
                 this.spriteBounds.height
             );

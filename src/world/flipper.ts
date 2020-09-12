@@ -47,30 +47,30 @@ export class Flipper extends Entity {
 			}
             if (Math.abs(this.angle) < Math.abs(this.maxAngle)) {
                 const rotation = Math.sign(this.maxAngle) * this.angularSpeed * delta;
-                const distance = this.center.subtract(this.player.body.position).length() + 20;
+                const distance = this.center.s(this.player.body.pos).l() + 20;
                 this.angle += rotation;
-                this.body.rotate(this.center.subtract(this.body.position), rotation);
+                this.body.rotate(this.center.s(this.body.pos), rotation);
                 this.body.speed = new Vector(
                     Math.sign(this.maxAngle) * Math.cos(this.angle),
                     -Math.sign(this.maxAngle) * Math.sin(this.angle)
-                    ).multiply(10000 * this.angularSpeed / distance); 
+                    ).m(10000 * this.angularSpeed / distance); 
             } else {
                 this.flipping = false;
-                this.body.speed = Vector.zero();
+                this.body.speed = Vector.z();
             }
         } else {
             if (Math.abs(this.angle) > Math.PI / 360) {
                 const rotation = -Math.sign(this.maxAngle) * this.angularSpeed * delta;
-                const distance = this.center.subtract(this.player.body.position).length() + 20;
+                const distance = this.center.s(this.player.body.pos).l() + 20;
                 this.angle += rotation;
-                this.body.rotate(this.center.subtract(this.body.position), rotation);
+                this.body.rotate(this.center.s(this.body.pos), rotation);
                 this.body.speed = new Vector(
                     Math.sign(this.maxAngle) * Math.cos(this.angle),
                     -Math.sign(this.maxAngle) * Math.sin(this.angle)
-                    ).multiply(-10000 * this.angularSpeed / distance); 
+                    ).m(-10000 * this.angularSpeed / distance); 
             } else {
                 this.flipping = false;
-				this.body.speed = Vector.zero();
+				this.body.speed = Vector.z();
 				this.angle = 0;
             }
         }

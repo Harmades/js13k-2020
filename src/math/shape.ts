@@ -11,19 +11,19 @@ export class Shape {
     project(vector: Vector) {
         return this.vertices.reduce(
             (minMax, vertice) => {
-                const value = vertice.dot(vector);
+                const value = vertice.d(vector);
                 if (value < minMax.min)
                     minMax.min = value;
                 if (value > minMax.max)
                     minMax.max = value;
                 return minMax;
             },
-            { min: this.vertices[0].dot(vector), max: this.vertices[0].dot(vector) }
+            { min: this.vertices[0].d(vector), max: this.vertices[0].d(vector) }
         );
     }
 
     translate(vector: Vector) {
-        this.vertices = this.vertices.map(vertex => vertex.add(vector));
+        this.vertices = this.vertices.map(vertex => vertex.a(vector));
     }
 
     rotate(center: Vector, angle: number) {
@@ -49,7 +49,7 @@ export class Shape {
         context.beginPath();
         context.save();
         context.fillStyle = "#FF0000";
-        context.translate(body.position.x, body.position.y);
+        context.translate(body.pos.x, body.pos.y);
         for (let i = 0; i < body.shape.vertices.length; i++) {
             const vertex = body.shape.vertices[i];
             context.lineTo(vertex.x, vertex.y);
@@ -146,25 +146,25 @@ export class Shape {
                     let vertex = lastPosition;
                     switch (lastCommand) {
                         case 'm':
-                            vertex = lastPosition.add(new Vector(coordinates[0], coordinates[1]));
+                            vertex = lastPosition.a(new Vector(coordinates[0], coordinates[1]));
                             break;
                         case 'M':
                             vertex = new Vector(coordinates[0], coordinates[1]);
                             break;
                         case 'v':
-                            vertex = lastPosition.add(new Vector(0, coordinates[0]));
+                            vertex = lastPosition.a(new Vector(0, coordinates[0]));
                             break;
                         case 'V':
                             vertex = new Vector(lastPosition.x, coordinates[0]);
                             break;
                         case 'h':
-                            vertex = lastPosition.add(new Vector(coordinates[0], 0));
+                            vertex = lastPosition.a(new Vector(coordinates[0], 0));
                             break;
                         case 'H':
                             vertex = new Vector(coordinates[0], lastPosition.y);
                             break;
                         case 'l':
-                            vertex = lastPosition.add(new Vector(coordinates[0], coordinates[1]));
+                            vertex = lastPosition.a(new Vector(coordinates[0], coordinates[1]));
                             break;
                         case 'L':
                             vertex = new Vector(coordinates[0], coordinates[1]);

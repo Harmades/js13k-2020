@@ -16,9 +16,9 @@ export class Game {
         this.tickLength = Settings.engineTimeResolution;
         this.lastTick = performance.now();
         this.lastRender = this.lastTick;
-        this.dynamicCanvas = document.getElementById("dynamic-canvas") as HTMLCanvasElement;
-        this.hybridCanvas = document.getElementById("hybrid-canvas") as HTMLCanvasElement;
-        this.staticCanvas = document.getElementById("static-canvas") as HTMLCanvasElement;
+        this.dynamicCanvas = document.getElementById("dc") as HTMLCanvasElement;
+        this.hybridCanvas = document.getElementById("hc") as HTMLCanvasElement;
+        this.staticCanvas = document.getElementById("sc") as HTMLCanvasElement;
         this.context = new CanvasContext(
             this.staticCanvas.getContext("2d"),
             this.hybridCanvas.getContext("2d"),

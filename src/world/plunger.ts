@@ -16,7 +16,7 @@ export class Plunger extends Entity {
     }
 
     update(delta: number) {
-        const posY = this.body.position.y;
+        const posY = this.body.pos.y;
 		if (Input.space) {
 			if (this.compression == 0) {
 				Effects.launcher();
@@ -24,17 +24,17 @@ export class Plunger extends Entity {
             if (this.compression <= Settings.launcherAmplitude) {
 				this.body.speed = new Vector(0, Settings.launcherCompressingSpeed);
             } else {
-                this.body.speed = Vector.zero();
+                this.body.speed = Vector.z();
             }
         } else {
             if (this.compression > 0) {
                 this.body.speed = new Vector(0, -Settings.launcherSpeed);
             } else {
-				this.body.speed = Vector.zero();
-				this.compression = posY - this.body.position.y;
+				this.body.speed = Vector.z();
+				this.compression = posY - this.body.pos.y;
             }
         }
         this.body.update(delta);
-        this.compression += this.body.position.y - posY;
+        this.compression += this.body.pos.y - posY;
     }
 }

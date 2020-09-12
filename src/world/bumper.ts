@@ -16,18 +16,18 @@ export class Bumper extends Entity {
 
     constructor(position: Vector, weaponId: string = null) {
         super('bumper', position, Settings.bumperBounciness);
-        this.weaponSpriteBounds = new Entity(weaponId, position.add(new Vector(18 * this.scale.x, 10 * this.scale.y)));
+        this.weaponSpriteBounds = new Entity(weaponId, position.a(new Vector(18 * this.scale.x, 10 * this.scale.y)));
 		this.body.onCollision = () => this.onBodyCollision();
         this.bumperGlow = null;
         this.onCollision = null;
     }
 
     onBodyCollision() {
-        const position = this.body.position.subtract(new Vector(this.spriteBounds.x, this.spriteBounds.y));
+        const position = this.body.pos.s(new Vector(this.spriteBounds.x, this.spriteBounds.y));
         let path = new Path2D();
         path.arc(
-            this.body.position.x + this.spriteBounds.width / 2,
-            this.body.position.y + this.spriteBounds.height / 2,
+            this.body.pos.x + this.spriteBounds.width / 2,
+            this.body.pos.y + this.spriteBounds.height / 2,
             25,
             0,
             Math.PI * 2

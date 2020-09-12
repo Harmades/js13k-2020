@@ -58,10 +58,10 @@ class BaseImpl {
         this.rWall = new StaticElement('right-wall', new Vector(600, 0));
         this.sign = new StaticElement('sign', new Vector(220, 300));
         this.invisibleWall = new Body(1);
-        this.invisibleWall.position = new Vector(540, 120);
+        this.invisibleWall.pos = new Vector(540, 120);
         this.invisibleWall.shape = new Shape([new Vector(0, 0),new Vector(0, 100),new Vector(60, 100),new Vector(60, -50)]);
         this.invisibleWall.isRigid = false;
-        this.invisibleWall.onAreaExit = () => {if (this.player.body.position.y < 200) this.invisibleWall.isRigid = true;}
+        this.invisibleWall.onAreaExit = () => {if (this.player.body.pos.y < 200) this.invisibleWall.isRigid = true;}
         this.invisibleWall.bounciness = Settings.wallBounciness;
         this.year = '0';
     }
@@ -92,8 +92,8 @@ class BaseImpl {
         this.collisionEngine.update(this.player.body, this.tWall.body);
         this.collisionEngine.update(this.player.body, this.rWall.body);
         this.collisionEngine.update(this.player.body, this.invisibleWall);
-        if (this.player.body.position.y > Settings.height) {
-            this.player.body.translate(this.player.initialPosition.subtract(this.player.body.position));
+        if (this.player.body.pos.y > Settings.height) {
+            this.player.body.translate(this.player.initialPosition.s(this.player.body.pos));
             this.invisibleWall.isRigid = false;
         }
     }

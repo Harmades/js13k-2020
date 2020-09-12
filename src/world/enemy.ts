@@ -28,7 +28,7 @@ export class Enemy extends DestroyableEntity {
         context.save();
         context.globalAlpha = 0.7;
         context.fillStyle = "gray";
-        context.translate(this.body.position.x - 657, this.body.position.y - 612);
+        context.translate(this.body.pos.x - 657, this.body.pos.y - 612);
         context.fill(this.armor);
         context.restore();
     }

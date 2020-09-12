@@ -6,19 +6,19 @@ export class Vector {
         this.y = y;
     }
 
-    dot(vector: Vector) { return this.x * vector.x + this.y * vector.y; }
+    d(vector: Vector) { return this.x * vector.x + this.y * vector.y; }
 
-    perp() { return new Vector(this.y, -this.x); }
+    p() { return new Vector(this.y, -this.x); }
 
-    subtract(vector: Vector) { return new Vector(this.x - vector.x, this.y - vector.y); }
+    s(vector: Vector) { return new Vector(this.x - vector.x, this.y - vector.y); }
 
-    length() { return Math.sqrt(this.x ** 2 + this.y ** 2); }
+    l() { return Math.sqrt(this.x ** 2 + this.y ** 2); }
 
-    multiply(scalar: number) { return new Vector(this.x * scalar, this.y * scalar); }
+    m(scalar: number) { return new Vector(this.x * scalar, this.y * scalar); }
 
-    normalize() { return new Vector(this.x / this.length(), this.y / this.length()); }
+    n() { return new Vector(this.x / this.l(), this.y / this.l()); }
 
-    add(vector: Vector) { return new Vector(this.x + vector.x, this.y + vector.y); }
+    a(vector: Vector) { return new Vector(this.x + vector.x, this.y + vector.y); }
 
-    static zero() { return new Vector(0, 0); }
+    static z() { return new Vector(0, 0); }
 }

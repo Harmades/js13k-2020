@@ -2,7 +2,7 @@ import { Vector } from "../math/vector";
 import { Shape } from "../math/shape";
 
 export class Body {
-    position: Vector;
+    pos: Vector;
     speed: Vector;
     mass: number;
     shape: Shape;
@@ -18,12 +18,12 @@ export class Body {
     onAreaExit: () => void;
 
     constructor(mass: number) {
-        this.position = Vector.zero();
-        this.speed = Vector.zero();
+        this.pos = Vector.z();
+        this.speed = Vector.z();
         this.mass = mass;
         this.shape = null;
-        this.impulse = Vector.zero();
-        this.field = Vector.zero();
+        this.impulse = Vector.z();
+        this.field = Vector.z();
         this.bounciness = 1;
         this.isStatic = true;
         this.ignoreCollision = false;
@@ -35,11 +35,11 @@ export class Body {
     }
 
     applyImpulse(force: Vector) {
-        this.impulse = this.impulse.add(force);
+        this.impulse = this.impulse.a(force);
     }
 
     applyField(force: Vector) {
-        this.field = this.field.add(force);
+        this.field = this.field.a(force);
     }
 
     rotate(center: Vector, angle: number) {
@@ -47,16 +47,16 @@ export class Body {
     }
 
     translate(vector: Vector) {
-        this.position = this.position.add(vector);
+        this.pos = this.pos.a(vector);
     }
 
     getShape() {
-        return new Shape(this.shape.vertices.map(v => v.add(this.position)));
+        return new Shape(this.shape.vertices.map(v => v.a(this.pos)));
     }
 
     update(delta: number) {
-        this.speed = this.speed.add(this.impulse.add(this.field).multiply(1 / this.mass * delta));
-        this.translate(this.speed.multiply(delta));
-        this.impulse = Vector.zero();
+        this.speed = this.speed.a(this.impulse.a(this.field).m(1 / this.mass * delta));
+        this.translate(this.speed.m(delta));
+        this.impulse = Vector.z();
     }
 }

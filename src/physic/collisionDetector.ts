@@ -6,8 +6,8 @@ export class CollisionDetector {
         for (let i = 0; i < shape.vertices.length; i++) {
             const v1 = shape.vertices[i];
             const v2 = shape.vertices[(i + 1) % (shape.vertices.length)];
-            const edge = v2.subtract(v1).normalize();
-            axes[i] = edge.perp();
+            const edge = v2.s(v1).n();
+            axes[i] = edge.p();
         }
         return axes;
     }
@@ -27,7 +27,7 @@ export class CollisionDetector {
                 return null;
             }
         }
-        return minVector.multiply(minOverlap);
+        return minVector.m(minOverlap);
     }
 
     getOverlap(projection1: { min: number, max: number }, projection2: { min: number, max: number }) {

@@ -29,7 +29,7 @@ export class Gold extends Entity {
         if (Settings.debug) return;
         if (!this.jackpot) {
             context.fillStyle = "rgba(0, 0, 0, 0.5)";
-            context.fillRect(this.body.position.x, this.body.position.y, this.spriteBounds.width, this.spriteBounds.height);
+            context.fillRect(this.body.pos.x, this.body.pos.y, this.spriteBounds.width, this.spriteBounds.height);
         }
     }
 }

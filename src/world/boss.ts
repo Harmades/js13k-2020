@@ -7,7 +7,7 @@ import { Effects } from "../sounds";
 export class Boss extends Enemy {
     constructor(position: Vector) {
         super(position);
-        this.body.shape = new Shape(this.body.shape.vertices.map(v => v.multiply(2)));
+        this.body.shape = new Shape(this.body.shape.vertices.map(v => v.m(2)));
         this.body.isRigid = true;
         this.body.onCollision = () => this.onCollision();
         this.score = 500;
@@ -22,7 +22,7 @@ export class Boss extends Enemy {
     }
 
     update(delta: number) {
-        if (this.body.position.y > Settings.height) this.body.position.y = -this.spriteBounds.height;
+        if (this.body.pos.y > Settings.height) this.body.pos.y = -this.spriteBounds.height;
         super.update(delta);
     }
 }
