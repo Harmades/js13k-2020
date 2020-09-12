@@ -8,7 +8,7 @@ export class Iron extends DestroyableEntity {
         super('iron', position, 50);
     }
 
-    update(delta: number) {
+    up(delta: number) {
         if (this.life == 2 && this.scale.x > 0) {
             this.scale = this.scale.s(new Vector(5 * delta, 5 * delta));
         }

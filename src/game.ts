@@ -1,6 +1,5 @@
 import { Settings } from "./settings";
 import { World } from "./world/world";
-import { CanvasContext } from "./canvasContext";
 
 export class Game {
     tickLength: number;
@@ -9,8 +8,8 @@ export class Game {
     dynamicCanvas: HTMLCanvasElement;
     hybridCanvas: HTMLCanvasElement;
     staticCanvas: HTMLCanvasElement;
-    context: CanvasContext;
     world: World;
+    context: any;
 
     constructor() {
         this.tickLength = Settings.engineTimeResolution;
@@ -19,11 +18,11 @@ export class Game {
         this.dynamicCanvas = document.getElementById("dc") as HTMLCanvasElement;
         this.hybridCanvas = document.getElementById("hc") as HTMLCanvasElement;
         this.staticCanvas = document.getElementById("sc") as HTMLCanvasElement;
-        this.context = new CanvasContext(
-            this.staticCanvas.getContext("2d"),
-            this.hybridCanvas.getContext("2d"),
-            this.dynamicCanvas.getContext("2d")
-        );
+        this.context = {
+            staticContext: this.staticCanvas.getContext("2d"),
+            hybridContext: this.hybridCanvas.getContext("2d"),
+            dynamicContext: this.dynamicCanvas.getContext("2d")
+        };
         this.world = new World();
     }
 

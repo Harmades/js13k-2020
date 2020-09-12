@@ -20,7 +20,7 @@ export class Enemy extends DestroyableEntity {
 		Effects.impact_foe();
     }
 
-    update(delta: number) { this.body.update(delta); }
+    up(delta: number) { this.body.update(delta); }
 
     render(context: CanvasRenderingContext2D) {
         super.render(context);

@@ -8,125 +8,125 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="atlas.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   id="svg"
-   version="1.1"
-   viewBox="0 0 2066 900"
+   width="2066"
    height="900"
-   width="2066">
+   viewBox="0 0 2066 900"
+   version="1.1"
+   id="svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="atlas.svg">
   <defs
      id="defs1064">
     <pattern
-       inkscape:collect="always"
-       xlink:href="#pattern1097"
+       patternTransform="matrix(1,0,0,1.165,1092,166.7)"
        id="pattern2065"
-       patternTransform="matrix(1,0,0,1.165,1092,166.7)" />
+       xlink:href="#pattern1097"
+       inkscape:collect="always" />
     <radialGradient
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.2322,0,0,0.2135,601,327.4)"
-       r="78.39"
-       cy="93.49"
+       id="radialGradient6087-1"
        cx="285.3"
-       id="radialGradient6087-1">
+       cy="93.49"
+       r="78.39"
+       gradientTransform="matrix(0.2322,0,0,0.2135,601,327.4)"
+       gradientUnits="userSpaceOnUse">
       <stop
-         id="stop10077"
+         stop-color="#fff"
          offset="0"
-         stop-color="#fff" />
+         id="stop10077" />
       <stop
-         id="stop10079"
+         stop-color="#fff"
          offset=".49493"
-         stop-color="#fff" />
+         id="stop10079" />
       <stop
-         id="stop10081"
+         stop-color="#bababa"
          offset=".62372"
-         stop-color="#bababa" />
+         id="stop10081" />
       <stop
-         id="stop10083"
-         offset=".75109" />
+         offset=".75109"
+         id="stop10083" />
       <stop
-         id="stop10085"
+         stop-color="#fff"
          offset="1"
-         stop-color="#fff" />
+         id="stop10085" />
     </radialGradient>
     <radialGradient
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(-0.2505,0,0,-0.2538,699.4,376.8)"
-       r="78.39"
-       cy="103.6"
+       id="radialGradient6065-2"
        cx="117.7"
-       id="radialGradient6065-2">
+       cy="103.6"
+       r="78.39"
+       gradientTransform="matrix(-0.2505,0,0,-0.2538,699.4,376.8)"
+       gradientUnits="userSpaceOnUse">
       <stop
-         id="stop10066"
+         stop-color="#fff"
+         stop-opacity="0"
          offset="0"
-         stop-opacity="0"
-         stop-color="#fff" />
+         id="stop10066" />
       <stop
-         id="stop10068"
+         stop-color="#6c6c6c"
+         stop-opacity="0"
          offset=".61894"
-         stop-opacity="0"
-         stop-color="#6c6c6c" />
+         id="stop10068" />
       <stop
-         id="stop10070"
+         stop-color="#43434f"
          offset=".69913"
-         stop-color="#43434f" />
+         id="stop10070" />
       <stop
-         id="stop10072"
-         offset=".81967"
+         stop-color="#fff"
          stop-opacity="0"
-         stop-color="#fff" />
+         offset=".81967"
+         id="stop10072" />
       <stop
-         id="stop10074"
+         stop-color="#5d5d5d"
          offset="1"
-         stop-color="#5d5d5d" />
+         id="stop10074" />
     </radialGradient>
     <pattern
-       patternUnits="userSpaceOnUse"
-       width="21.6"
-       height="137.4"
+       id="pattern1097"
        patternTransform="translate(1286,292.1)"
-       id="pattern1097">
+       height="137.4"
+       width="21.6"
+       patternUnits="userSpaceOnUse">
       <g
-         id="g1079"
+         transform="matrix(2.624,0,0,3.789,-2.755,-4.547)"
          stroke="#28170b"
-         transform="matrix(2.624,0,0,3.789,-2.755,-4.547)">
+         id="g1079">
         <path
-           id="path1073"
-           stroke-width="0.5"
-           stroke-linejoin="round"
+           d="m 1.32,3.44 v 18.8 c 1.28,0.91 2.57,1.42 3.97,1.36 1.26,-0.1 1.98,-0.52 3.48,-1.52 L 9.031,3.58 Z"
            fill="#552200"
-           d="m 1.32,3.44 v 18.8 c 1.28,0.91 2.57,1.42 3.97,1.36 1.26,-0.1 1.98,-0.52 3.48,-1.52 L 9.031,3.58 Z" />
+           stroke-linejoin="round"
+           stroke-width="0.5"
+           id="path1073" />
         <ellipse
-           id="ellipse1075"
-           stroke-width="0.5"
-           fill="#e9c6af"
-           ry="2.1"
-           rx="3.84"
+           cx="5.14"
            cy="3.55"
-           cx="5.14" />
-        <path
-           id="path1077"
+           rx="3.84"
+           ry="2.1"
+           fill="#e9c6af"
            stroke-width="0.5"
-           stroke-linejoin="round"
+           id="ellipse1075" />
+        <path
+           d="M 6.13,12.9 V 37.2 H 4.26 V 12.9 c 0.08,-0.1 0.811,-0.35 0.941,-0.36 0.129,0 0.711,0.16 0.93,0.36 z"
            fill="#552200"
-           d="M 6.13,12.9 V 37.2 H 4.26 V 12.9 c 0.08,-0.1 0.811,-0.35 0.941,-0.36 0.129,0 0.711,0.16 0.93,0.36 z" />
+           stroke-linejoin="round"
+           stroke-width="0.5"
+           id="path1077" />
       </g>
     </pattern>
   </defs>
   <sodipodi:namedview
-     inkscape:snap-global="false"
-     inkscape:current-layer="$layer1"
-     inkscape:window-maximized="1"
-     inkscape:window-y="-8"
-     inkscape:window-x="-8"
-     inkscape:window-height="1017"
-     inkscape:window-width="1920"
-     inkscape:cy="532.8"
-     inkscape:cx="1076"
-     inkscape:zoom="2.828"
-     showgrid="false"
+     id="namedview23"
      inkscape:document-rotation="0"
-     id="namedview23" />
+     showgrid="false"
+     inkscape:zoom="0.707"
+     inkscape:cx="694.4"
+     inkscape:cy="657.2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="$l1"
+     inkscape:snap-global="false" />
   <metadata
      id="metadata1067">
     <rdf:RDF>
@@ -140,462 +140,454 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="atlas"
+     id="$l1"
      inkscape:groupmode="layer"
-     id="$layer1">
+     inkscape:label="atlas">
     <path
-       sodipodi:nodetypes="ccccsscscc"
-       d="m 734.7,179.3 c -2.2,-2.2 -3.9,-2.9 -4,-7.2 L 731.2,16 c 0.1,-7.257 11.3,-6.818 11.3,0.1 l -0.8,151.2 c 0,1.2 -0.3,3.3 1.2,4.2 L 885,253.2 c 3.3,2.5 2.8,6.3 1.2,8.4 -1.6,2.1 -5.1,2.9 -7,1.5 z"
-       fill="#999999"
-       stroke="#000000"
+       id="$bend"
        stroke-width="2"
-       id="$bend" />
+       stroke="#000000"
+       fill="#999999"
+       d="m 734.7,179.3 c -2.2,-2.2 -3.9,-2.9 -4,-7.2 L 731.2,16 c 0.1,-7.257 11.3,-6.818 11.3,0.1 l -0.8,151.2 c 0,1.2 -0.3,3.3 1.2,4.2 L 885,253.2 c 3.3,2.5 2.8,6.3 1.2,8.4 -1.6,2.1 -5.1,2.9 -7,1.5 z"
+       sodipodi:nodetypes="ccccsscscc" />
     <g
        id="$kicker">
       <path
-         d="M 601.4,102.4 V 87.9 c 12.5,2.28 11.4,17.1 9.6,19 -4.1,2.3 -10,1.1 -9.6,-4.5 z"
-         fill="#ffcc00"
-         stroke="#000000"
-         stroke-width="1"
+         sodipodi:nodetypes="cccc"
          id="path1676"
-         sodipodi:nodetypes="cccc" />
-      <path
-         d="m 685.8,142.3 v -14.4 c -14.1,3.2 -11.2,1.2 -11.5,15.2 2.3,7.6 11.3,5.1 11.5,-0.8 z"
-         fill="#ffcc00"
-         stroke="#000000"
          stroke-width="1"
+         stroke="#000000"
+         fill="#ffcc00"
+         d="M 601.4,102.4 V 87.9 c 12.5,2.28 11.4,17.1 9.6,19 -4.1,2.3 -10,1.1 -9.6,-4.5 z" />
+      <path
+         sodipodi:nodetypes="cccc"
          id="path1678"
-         sodipodi:nodetypes="cccc" />
-      <path
-         id="path1684"
          stroke-width="1"
          stroke="#000000"
-         d="m 674.7,141.7 c 8.1,1.8 11.7,-4.3 10.8,-13.3 -89.2,-66.57 -84,-35.5 -84,-35.5 0,0 2.1,5.9 4.8,8.1 10.2,6.7 48.6,28.5 68.4,40.7 z"
+         fill="#ffcc00"
+         d="m 685.8,142.3 v -14.4 c -14.1,3.2 -11.2,1.2 -11.5,15.2 2.3,7.6 11.3,5.1 11.5,-0.8 z" />
+      <path
+         sodipodi:nodetypes="cccsc"
          style="fill:#aa8800"
-         sodipodi:nodetypes="cccsc" />
-      <path
-         d="m 674.4,136.4 c 3.1,1.9 6.4,0.8 9.4,-2.5 3,-3.3 2.7,-7.4 0.8,-10.6 L 618.5,14.4 c -1.8,-3.73 -5.6,-6.509 -10.1,-5.8 -4,0.7 -7.4,4.7 -7.1,8.8 l 0.2,70.7 c 0.4,3.8 2.1,5.7 4.8,7.9 10.2,6.5 48.2,28.6 68.1,40.4 z"
-         fill="#ffcc00"
+         d="m 674.7,141.7 c 8.1,1.8 11.7,-4.3 10.8,-13.3 -89.2,-66.57 -84,-35.5 -84,-35.5 0,0 2.1,5.9 4.8,8.1 10.2,6.7 48.6,28.5 68.4,40.7 z"
          stroke="#000000"
+         stroke-width="1"
+         id="path1684" />
+      <path
+         sodipodi:nodetypes="szccccccs"
          id="$kicker.fx"
-         sodipodi:nodetypes="szccccccs" />
-      <path
-         id="path1685"
          stroke="#000000"
          fill="#ffcc00"
-         d="m 674.1,132.8 c 1.3,0.8 4.6,1.3 6.6,-0.5 1.9,-1.8 2.6,-3 2.4,-4.9 -0.3,-1.8 -1,-2.7 -1.7,-3.9 0,0 -64.2,-105.76 -64.7,-106.55 -0.5,-0.79 -1.2,-2.39 -3.1,-3.94 -1.7,-1.27 -3.5,-1.92 -5.4,-1.32 -2.1,0.65 -3.8,3.14 -3.5,6.88 v 67.29 c 0.4,3.47 1.7,5.73 4.2,7.74 9.3,5.92 47.1,28.3 65.2,39.2 z"
-         style="fill:#800000"
-         sodipodi:nodetypes="szsczssccss" />
+         d="m 674.4,136.4 c 3.1,1.9 6.4,0.8 9.4,-2.5 3,-3.3 2.7,-7.4 0.8,-10.6 L 618.5,14.4 c -1.8,-3.73 -5.6,-6.509 -10.1,-5.8 -4,0.7 -7.4,4.7 -7.1,8.8 l 0.2,70.7 c 0.4,3.8 2.1,5.7 4.8,7.9 10.2,6.5 48.2,28.6 68.1,40.4 z" />
       <path
-         d="m 635.9,58.8 -1.6,9.2 c 0.7,0.3 3,1.4 3.7,4 l 4,1.7 -0.7,9.4 0.7,5.1 -7.9,12.5 V 84 c 1.5,-0.89 5.2,-2.44 5.1,-3.9 -0.1,-1.4 -6.1,-1.9 -6.1,0.2 -0.1,0.7 0.2,7.4 -1.1,7.6 -1.2,-0.23 -1.3,-5.28 -1.3,-7.42 0,-1.89 -5.8,-2.15 -6.1,-0.38 -0.2,1.63 3.2,2.98 5,3.9 l 0.1,16.8 -8,-12.7 0.9,-4.9 -0.8,-9.5 4,-1.6 c 0.4,-1.5 1.7,-3.4 3.6,-4 l -1.5,-9.3 c 2.9,-0.49 5.2,-0.46 8,0 z"
+         sodipodi:nodetypes="sccccccss"
+         style="fill:#800000"
+         d="m 674.1,132.8 c 1.3,0.8 4.6,1.3 6.6,-0.5 3.2,-3 2.8,-5.2 0.7,-8.8 0,0 -64.2,-105.76 -64.7,-106.55 -2.4,-4.52 -5.2,-6.02 -8.5,-5.26 -2.1,0.65 -3.8,3.14 -3.5,6.88 v 67.29 c 0.4,3.47 1.7,5.73 4.2,7.74 9.3,5.92 47.1,28.3 65.2,39.2 z"
          fill="#ffcc00"
-         opacity="0.70915"
+         stroke="#000000"
+         id="path1685" />
+      <path
+         sodipodi:nodetypes="ccccccccczcccccccccc"
          id="$helmet.fx"
-         sodipodi:nodetypes="cccccccccscccccccccccc" />
+         opacity="0.70915"
+         fill="#ffcc00"
+         d="m 635.9,58.8 -1.6,9.2 c 0.7,0.3 3,1.4 3.7,4 l 4,1.7 -0.7,9.4 0.7,5.1 -7.9,12.5 V 84 c 0,0 5.2,-0 5.1,-3.9 -8.5,-4.82 -4.9,7.79 -7.2,7.8 -2.3,0 1.1,-12.43 -7.4,-7.8 0.1,4.16 5,3.9 5,3.9 l 0.1,16.8 -8,-12.7 0.9,-4.9 -0.8,-9.5 4,-1.6 c 0.4,-1.5 1.7,-3.4 3.6,-4 l -1.5,-9.3 c 2.9,-0.49 5.2,-0.46 8,0 z" />
     </g>
     <g
        id="$flipper">
       <path
-         d="m 924,34.4 c 0,0 -0.5,5.78 7,9.6 l 47.8,28.1 c 11.2,4.69 11.3,-8.8 11.3,-8.8 z"
-         style="fill:#530000;stroke:#000000"
+         sodipodi:nodetypes="cccc"
          id="path1754"
-         sodipodi:nodetypes="ccccc" />
+         style="fill:#530000;stroke:#000000"
+         d="m 951.1,32.72 c -70.5,-9.98 21,35 27.7,39.38 11.2,4.69 11.3,-8.8 11.3,-8.8 z" />
       <path
-         sodipodi:nodetypes="csccssccc"
-         d="m 935.3,18.8 c -6.4,0 -11.7,5.6 -11.7,12.3 0,4.9 2.8,9.4 7.1,11.3 l 47.9,28.1 c 1.2,0.8 2.6,1.3 4,1.3 4.1,0 7.5,-3.5 7.5,-7.8 0,-2.4 -1,-4.6 -2.7,-6.1 C 972.6,45.87 957.8,33.83 943,21.8 c -2.1,-1.72 -5.2,-2.94 -7.7,-3 z"
+         id="path1758"
          style="fill:#800000;stroke:#000000"
-         id="path1758" />
+         d="m 935.3,18.8 c -6.4,0 -11.7,5.6 -11.7,12.3 0,4.9 2.8,9.4 7.1,11.3 l 47.9,28.1 c 1.2,0.8 2.6,1.3 4,1.3 4.1,0 7.5,-3.5 7.5,-7.8 0,-2.4 -1,-4.6 -2.7,-6.1 C 972.6,45.87 957.8,33.83 943,21.8 c -2.1,-1.72 -5.2,-2.94 -7.7,-3 z"
+         sodipodi:nodetypes="csccssccc" />
       <path
-         sodipodi:nodetypes="zcczccz"
-         d="m 928.9,25 c -2.7,2.87 -2.5,8.85 1.6,11.9 17.8,9.38 33.7,21.79 49.2,29.74 3.8,1.34 5.4,0 6.2,-1.15 0.8,-1.12 1.6,-3.22 -1.7,-6.09 -14.7,-11.95 -29.7,-23.83 -44.5,-35.7 -4.3,-3.83 -8.2,-1.56 -10.8,1.3 z"
+         id="path1764"
          style="fill:#ffcc00;stroke:#000000"
-         id="path1764" />
+         d="m 928.9,25 c -2.7,2.87 -2.5,8.85 1.6,11.9 17.8,9.38 33.7,21.79 49.2,29.74 3.8,1.34 5.4,0 6.2,-1.15 0.8,-1.12 1.6,-3.22 -1.7,-6.09 -14.7,-11.95 -29.7,-23.83 -44.5,-35.7 -4.3,-3.83 -8.2,-1.56 -10.8,1.3 z"
+         sodipodi:nodetypes="zcczccz" />
     </g>
     <g
        id="$ball">
       <circle
-         style="fill:url(#radialGradient6087-1)"
-         id="circle10092"
+         cx="669.9"
+         cy="350.6"
+         r="14.54"
          fill="url(#radialGradient6087)"
-         r="14.54"
-         cy="350.6"
-         cx="669.9" />
+         id="circle10092"
+         style="fill:url(#radialGradient6087-1)" />
       <circle
-         style="fill:url(#radialGradient6065-2)"
-         id="circle10094"
-         fill="url(#radialGradient6065)"
-         r="14.54"
+         cx="669.9"
          cy="350.6"
-         cx="669.9" />
+         r="14.54"
+         fill="url(#radialGradient6065)"
+         id="circle10094"
+         style="fill:url(#radialGradient6065-2)" />
     </g>
     <path
-       id="$plunger"
+       d="m 715.5,341.6 h 53 v 18.2 h -53 z"
        style="fill:#800000;stroke:#ffcc00;stroke-width:2;stroke-linejoin:round"
-       d="m 715.5,341.6 h 53 v 18.2 h -53 z" />
+       id="$plunger" />
     <g
        id="$tree">
       <path
-         sodipodi:nodetypes="cccc"
-         d="m 835.5,277.7 10.6,94.7 h -19.7 z"
+         id="rect2139"
          style="fill:#502d16;stroke:#28170b;stroke-linejoin:round"
-         id="rect2139" />
+         d="m 835.5,277.7 10.6,94.7 h -19.7 z"
+         sodipodi:nodetypes="cccc" />
       <path
-         d="m 799.4,353.9 18.7,-7.6 10.6,12.3 13.8,-9.7 16.4,8.4 2.6,-8.6 8.5,2.9 c -7.4,-10.5 -33.5,-60.1 -33.5,-60.1 z"
-         fill="#89a02c"
-         stroke="#677821"
+         sodipodi:nodetypes="ccccccccc"
+         style="stroke-linejoin:round"
          id="path2141"
-         style="stroke-linejoin:round"
-         sodipodi:nodetypes="ccccccccc" />
+         stroke="#677821"
+         fill="#89a02c"
+         d="m 799.4,353.9 18.7,-7.6 10.6,12.3 13.8,-9.7 16.4,8.4 2.6,-8.6 8.5,2.9 c -7.4,-10.5 -33.5,-60.1 -33.5,-60.1 z" />
       <path
-         d="m 835.3,284.9 -26.2,46.6 8.7,-4.8 5.5,6.9 4.8,-7.7 6.7,12.6 8.1,-12.4 5.3,8.5 4,-9.7 10.6,6.7 z"
-         fill="#abc837"
-         stroke="#89a02c"
-         stroke-width="1"
+         sodipodi:nodetypes="ccccccc"
+         style="stroke-linejoin:round"
          id="path2143"
-         style="stroke-linejoin:round"
-         sodipodi:nodetypes="ccccccccccc" />
+         stroke-width="1"
+         stroke="#89a02c"
+         fill="#abc837"
+         d="m 835.3,284.9 -26.2,46.6 8.7,-4.8 17,11.8 17.4,-13.6 10.6,6.7 z" />
       <path
-         d="m 817.7,311.6 c 2.8,-1 6.8,-2.8 9.5,-4.9 3.1,2.7 4.8,7.6 8.6,10.5 1.6,0 4,-11 5.2,-10.7 4,1.4 8.5,3.9 12.9,5.8 -6.3,-12.3 -12.7,-27.2 -18.3,-37.6 -5.7,12.8 -11.3,24.2 -17.9,36.9 z"
-         fill="#bcd35f"
-         stroke="#abc837"
-         id="path2145"
+         sodipodi:nodetypes="ccssccc"
          style="stroke-linejoin:round"
-         sodipodi:nodetypes="ccssccc" />
+         id="path2145"
+         stroke="#abc837"
+         fill="#bcd35f"
+         d="m 817.7,311.6 c 2.8,-1 6.8,-2.8 9.5,-4.9 3.1,2.7 4.8,7.6 8.6,10.5 1.6,0 4,-11 5.2,-10.7 4,1.4 8.5,3.9 12.9,5.8 -6.3,-12.3 -12.7,-27.2 -18.3,-37.6 -5.7,12.8 -11.3,24.2 -17.9,36.9 z" />
     </g>
     <g
        id="$iron">
       <path
-         id="path2196"
-         stroke="#333333"
+         sodipodi:nodetypes="cccccccccccccccccc"
+         d="m 931.3,347.4 c 0.8,-2.9 1.5,-7.8 1.5,-7.8 0,0 -1.2,-4.7 -1,-6.3 2,-2.7 4.5,-5.4 7.2,-6.9 5.3,-1.3 13.8,-2.1 13.8,-2.1 0,0 4.2,1.5 4.7,2.2 0.6,5.2 3.7,8.1 3.7,8.1 l 1.4,2.4 -1.4,4.5 c 0,0 1.5,4.4 1.1,7.2 -2.5,2.3 -5.5,5.3 -7.2,6.2 -5.1,0 -14.7,2 -14.7,2 0,0 -1.1,3.7 -2.2,5.4 -6.6,3.2 -14.1,2.7 -15.4,-1.2 -1.5,-3.3 0,-3.3 1,-6.2 0.4,-1.4 0,-4.3 0,-4.3 L 927,348 c 0,0 2.7,-0.2 4.3,-0.6 z"
          fill="#999999"
-         d="m 931.3,347.4 c -0.4,-1.3 -0.5,-3.3 -0.4,-4.4 0.7,-1.3 1.9,-3.4 1.9,-3.4 0,0 -1.2,-4.7 -1,-6.3 2,-2.7 4.5,-5.4 7.2,-6.9 5.3,-1.3 13.8,-2.1 13.8,-2.1 0,0 4.2,1.5 4.7,2.2 0.7,0.9 -0.1,1.2 0.9,2.9 1.2,1.2 3.2,3.3 3.2,3.3 l -0.4,1.9 c 0,0 1.3,1.8 1.4,2.4 -0.1,1.8 -0.9,2.7 -1.4,4.5 1.3,2.5 1.5,4.4 1.1,7.2 -2.5,2.3 -5.5,5.3 -7.2,6.2 -5.1,0 -14.7,2 -14.7,2 0,0 -1.1,3.7 -2.2,5.4 -0.3,0.5 -1.7,0.8 -2.2,0.9 -1.6,0.1 -3,0.6 -4.4,1.3 -2.6,0.2 -5.7,-0.2 -7.9,-1.5 -0.6,-0.8 -0.8,-1.5 -0.9,-1.9 -0.1,-2 -1,-3.1 -1,-3.1 0,0 1.7,-2.1 2,-3.1 0.4,-1.4 0,-4.3 0,-4.3 0,0 2.2,-1.4 3.8,-1.4 0.8,-0.9 1.6,-1.9 1.6,-1.9 0,0 0.9,0.4 2.1,0.1 z"
-         sodipodi:nodetypes="csccccsscccccccccccccscccc" />
+         stroke="#333333"
+         id="path2196" />
       <path
-         id="path2198"
-         stroke="#aa4400"
-         fill="#d45500"
+         sodipodi:nodetypes="scccsccccccccc"
          d="m 927.7,353.4 c 0.3,-0.2 0.8,-1.6 1.4,-1.8 1.3,0.5 2.6,1.9 3.4,2.6 -0.8,1.4 -1.4,3.4 -2.4,2.8 -1.7,-1.2 -4.6,-2.2 -2.4,-3.6 z m 20.1,-25.7 c 1,5.1 2.9,3.6 5.6,1.6 -0.5,-1.8 -1.6,-2.2 -3.2,-3.5 -1.1,0.5 -1.9,0.8 -2.4,1.9 z m -10.7,5 c 1.3,-1.3 4.3,-2.4 5.1,-2 0.4,2.7 2.3,6.3 0.6,6.9 -2,1.1 -3.7,3.3 -4.9,2.2 -0.1,-2.6 -1.6,-4.9 -0.8,-7.1 z"
-         sodipodi:nodetypes="scccsccccccccc" />
+         fill="#d45500"
+         stroke="#aa4400"
+         id="path2198" />
       <path
-         id="path2200"
+         sodipodi:nodetypes="cccccccccccc"
+         d="m 947.5,345.9 c -0.6,4.9 -3.4,2.5 -5.8,3.9 -2.3,-2.4 -11.8,-9.2 -10.4,-2.4 4.6,-1.9 6.5,3.4 9,5.3 -5,7.6 -11.6,10.8 -17.5,8.3 3.7,5.8 8.6,2.9 13.2,2.3 2.5,-0.4 2.9,-1.5 4.4,-6.3 19.7,-3.8 11.9,0.7 21.8,-8.2 0.8,-2.7 -0.1,-5 -1,-7.3 0.5,-1.6 1.2,-3.1 1.4,-4.5 -4.2,-4.1 -3.5,-12.4 -9.8,-12.7 6.9,16.5 1.8,19 -5.3,21.6 z"
          opacity="0.3"
-         d="m 950.3,344.1 c -1,0.6 -2,0.8 -2.8,1.8 -0.6,4.9 -3.4,2.5 -5.8,3.9 -2.3,-2.4 -11.8,-9.2 -10.4,-2.4 4.6,-1.9 7.3,2.4 9,5.3 -4.2,6 -10.8,9.3 -17.5,8.3 3.7,5.8 8.6,2.9 13.2,2.3 2.5,-0.4 2.9,-1.5 4.4,-6.3 19.7,-3.8 11.9,0.7 21.8,-8.2 0.8,-2.7 -0.1,-5 -1,-7.3 0.5,-1.6 1.2,-3.1 1.4,-4.5 -2.7,-3.5 1.1,-3.6 -4.2,-7.6 -0.9,-3.1 -1.9,-4.3 -5.6,-5.1 6.3,11.8 1.8,17.3 -2.5,19.8 z"
-         sodipodi:nodetypes="cccccccccccccc" />
+         id="path2200" />
     </g>
     <g
        id="$gold">
       <path
-         d="m 974.4,477.2 h 38.6 v 52.7 h -38.6 z"
+         id="rect3474"
          style="fill:#ffdd4f"
-         id="rect3474" />
+         d="m 974.4,477.2 h 38.6 v 52.7 h -38.6 z" />
       <path
-         d="m 1002,508.4 a 7.991,15.51 30 0 1 -14.6,9.4 7.991,15.51 30 0 1 0.8,-17.4 7.991,15.51 30 0 1 14.8,-9.4 7.991,15.51 30 0 1 -1,17.4"
+         id="ellipse3476"
          style="fill:#ffd42a;stroke:#d4aa00"
-         id="ellipse3476" />
+         d="m 1002,508.4 a 7.991,15.51 30 0 1 -14.6,9.4 7.991,15.51 30 0 1 0.8,-17.4 7.991,15.51 30 0 1 14.8,-9.4 7.991,15.51 30 0 1 -1,17.4" />
       <path
-         d="m 999.4,506.9 a 7.991,15.51 30 0 1 -14.6,9.4 7.991,15.51 30 0 1 0.8,-17.4 7.991,15.51 30 0 1 14.4,-9.4 7.991,15.51 30 0 1 -0.6,17.4"
+         id="ellipse3480"
          style="fill:#ffd42a;stroke:#d4aa00"
-         id="ellipse3480" />
+         d="m 999.4,506.9 a 7.991,15.51 30 0 1 -14.6,9.4 7.991,15.51 30 0 1 0.8,-17.4 7.991,15.51 30 0 1 14.4,-9.4 7.991,15.51 30 0 1 -0.6,17.4" />
       <path
-         d="m 989.3,506.9 4.7,-7.5"
-         fill="#aa8800"
-         stroke-linejoin="round"
-         stroke-width="2"
+         style="stroke:#d4aa00"
          id="path3484"
-         style="stroke:#d4aa00" />
+         stroke-width="2"
+         stroke-linejoin="round"
+         fill="#aa8800"
+         d="m 989.3,506.9 4.7,-7.5" />
     </g>
     <g
        id="$lance">
       <path
-         sodipodi:nodetypes="cccccccccccccc"
-         id="path1723"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.5"
          d="m 662.5,561.3 -1.5,-0.5 -1.1,1 -0.4,-0.5 -5.5,4.8 -0.6,-0.5 5.4,-4.9 -0.4,-0.4 1,-0.9 -0.5,-1.6 1.7,-1.7 7.3,-3 -3.6,6.5 z"
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.5" />
+         id="path1723"
+         sodipodi:nodetypes="cccccccccccccc" />
     </g>
     <g
        id="$sword">
       <path
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.5"
-         id="path1773"
+         sodipodi:nodetypes="cccccc"
          d="m 718.1,560.7 7.3,-6.7 h 3.3 v 2.9 l -7.4,6.7 z"
-         sodipodi:nodetypes="cccccc" />
+         id="path1773"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.5" />
       <path
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.5"
-         id="path1775"
-         d="m 715.8,561.3 1.1,-0.9 4.8,4.4 -1,0.9 z" />
-      <path
-         sodipodi:nodetypes="cccc"
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.5"
+         d="m 721.6,563.9 -4.1,-3.7 -2.4,-0.7 0.6,2.4 3.7,3.5 2.9,1.2 z"
          id="path1777"
-         d="m 714.9,561.4 2,-1.8 -2.5,-0.4 z" />
-      <path
-         sodipodi:nodetypes="cccc"
          style="fill:#ffffff;stroke:#000000;stroke-width:0.5"
-         id="path1779"
-         d="m 722.6,564.8 -2,1.8 3,0.4 z" />
+         sodipodi:nodetypes="ccccccc" />
       <path
-         sodipodi:nodetypes="ccccccccccccc"
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.5"
+         d="m 716.8,563 -1.3,1.2 H 713 v 4 h 4.5 V 566 l 1.3,-1.2 z m -2.1,2.6 h 1.2 v 1.1 h -1.2 z"
          id="path1781"
-         d="m 716.8,563 -1.3,1.2 H 713 v 4 h 4.5 V 566 l 1.3,-1.2 z m -2.1,2.6 h 1.2 v 1.1 h -1.2 z" />
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.5"
+         sodipodi:nodetypes="ccccccccccccc" />
     </g>
     <g
        id="$gutter">
       <path
-         style="stroke:#000000"
-         d="M 1028,10.17 V 163.3 l 218,-0.6 v -46.8 c 0,-0.7 0,-1.2 -1,-1.7 -29,-14 -217,-104.03 -217,-104.03 z"
-         color="#000000"
-         fill="#ffcc00"
+         sodipodi:nodetypes="cccscc"
          id="path993"
-         sodipodi:nodetypes="cccscc" />
-      <path
-         style="stroke:#000000"
-         d="m 1031,14.49 212,101.41 v 44.6 h -212 z"
+         fill="#ffcc00"
          color="#000000"
+         d="M 1028,10.17 V 163.3 l 218,-0.6 v -46.8 c 0,-0.7 0,-1.2 -1,-1.7 -29,-14 -217,-104.03 -217,-104.03 z"
+         style="stroke:#000000" />
+      <path
+         id="path991"
          fill="#800000"
-         id="path991" />
+         color="#000000"
+         d="m 1031,14.49 212,101.41 v 44.6 h -212 z"
+         style="stroke:#000000" />
     </g>
     <g
-       id="$small-mine-wall"
-       inkscape:label="small-mine-wall">
+       inkscape:label="small-mine-wall"
+       id="$smw">
       <path
-         id="path1062"
-         stroke-width="2"
-         stroke="#1a1a1a"
-         fill="#666666"
+         sodipodi:nodetypes="ccccc"
          d="m 650.4,451.3 c -3.3,-12.8 8.8,-26.5 21.9,-21 31.4,2.9 61.5,-3.8 89.3,-0.6 6.2,6.9 7.4,24.2 -0.3,29.7 -28.4,-0.8 -109.8,2.9 -110.9,-8.1 z"
-         sodipodi:nodetypes="ccccc" />
+         fill="#666666"
+         stroke="#1a1a1a"
+         stroke-width="2"
+         id="path1062" />
       <path
-         style="stroke-width:2"
-         id="path1064"
-         opacity="0.3"
+         sodipodi:nodetypes="ccccc"
          d="m 755.8,453.8 c -29.2,-0.6 -73,5.7 -104.8,-5 -5.5,12.8 65.1,10.7 110.2,10.6 7.7,-5.5 6.5,-22.8 0.3,-29.8 -3.2,3.4 2.9,17.3 -5.7,24.2 z"
-         sodipodi:nodetypes="ccccc" />
+         opacity="0.3"
+         id="path1064"
+         style="stroke-width:2" />
     </g>
     <path
-       d="m 107.3,19.44 -21.77,23 -17.1,-18.9 -7.3,6.7 17.6,19.4 -16.8,17.7 7.2,6.8 16.3,-17.2 15.97,17.6 7.3,-6.6 -16.47,-18.1 22.27,-23.5 z"
-       fill="#d40000"
-       stroke="#000000"
+       inkscape:label="red_X"
        id="$cross"
-       inkscape:label="red_X" />
-    <path
-       sodipodi:nodetypes="scccss"
-       d="m 155.1,59.84 c -4.2,-4 -10.6,-9.42 -19.7,-11.5 1.5,10.92 18.3,26 21.1,26.5 11.1,-20.26 27.4,-41.96 34.2,-55.6 -14.6,10.02 -30,31.4 -35.5,40.6 z"
-       fill="#00ff00"
        stroke="#000000"
+       fill="#d40000"
+       d="m 107.3,19.44 -21.77,23 -17.1,-18.9 -7.3,6.7 17.6,19.4 -16.8,17.7 7.2,6.8 16.3,-17.2 15.97,17.6 7.3,-6.6 -16.47,-18.1 22.27,-23.5 z" />
+    <path
+       inkscape:label="green_V"
        id="$check"
-       inkscape:label="green_V" />
+       stroke="#000000"
+       fill="#00ff00"
+       d="m 155.1,59.84 c -4.2,-4 -10.6,-9.42 -19.7,-11.5 1.5,10.92 18.3,26 21.1,26.5 11.1,-20.26 27.4,-41.96 34.2,-55.6 -14.6,10.02 -30,31.4 -35.5,40.6 z"
+       sodipodi:nodetypes="scccss" />
     <g
        id="$fence">
       <path
-         id="rect2063"
+         d="m 1200,167.1 h 22 v 700.6 h -22 z"
          style="fill:url(#pattern2065)"
-         d="m 1200,167.1 h 22 v 700.6 h -22 z" />
+         id="rect2063" />
     </g>
     <g
        id="$sign">
       <path
-         id="path992"
-         stroke="#000000"
-         fill="#deaa87"
+         sodipodi:nodetypes="ccccccccc"
          d="m 200.7,161.2 c -1.7,0 -3,1.3 -3,3 v 70.3 c 0,1.7 1.3,3 3,3 h 113.2 c 1.7,0 3,-1.3 3,-3 v -70.3 c 0,-1.7 -1.3,-3 -3,-3 z"
-         sodipodi:nodetypes="ccccccccc" />
+         fill="#deaa87"
+         stroke="#000000"
+         id="path992" />
       <path
-         id="path990"
+         d="m 200.7,164.2 h 113.2 v 70.3 H 200.7 Z"
          fill="#800000"
-         d="m 200.7,164.2 h 113.2 v 70.3 H 200.7 Z" />
+         id="path990" />
     </g>
     <g
        id="$enemy">
       <path
-         id="path4"
-         style="stroke:#000000"
+         sodipodi:nodetypes="ccccscccsccsssscsc"
+         d="m 721.1,666.6 c -2.3,12.5 -19.5,-1.8 -3.7,-5.6 2.5,0 3.7,2.5 3.7,5.6 z m -27.2,-7.7 c 2.4,-1.2 8,-2.5 11.2,1.8 1.4,-0.4 0.8,-0.5 2.8,-0.3 7.4,16 -20.4,12.3 -14,-1.5 z m -6.1,27.3 c 0.4,17.7 11.2,14.5 10.8,0.8 -0.2,-2.4 -1.1,-5.1 -1.8,-6 -2,1.5 -7,3.9 -9,5.2 z m -15.2,1.6 c -0.9,2.7 -0.2,8.7 4,8.5 2.8,-0.2 6.3,-2.8 6.2,-6.3 -0.5,-7.9 -7.2,-4 -10.2,-2.2 z m 2.3,-14.7 c -4.5,0 -8.1,-3 -8.1,-6.7 0,-3.7 3.6,-6.7 8.1,-6.7"
          fill="#ffccaa"
-         d="m 721.1,666.6 c 0,3.1 -2,5.3 -4.5,5.3 -8.9,-2 -4.5,-9.7 0.8,-10.9 2.5,0 3.7,2.5 3.7,5.6 z m -27.2,-7.7 c 2.4,-1.2 8,-2.5 11.2,1.8 1.4,-0.4 0.8,-0.5 2.8,-0.3 4.6,5.8 0.7,11.1 -5.5,10 -6.7,0.6 -10.1,-5.5 -8.5,-11.5 z m -6.1,27.3 c 0.4,17.7 11.2,14.5 10.8,0.8 -0.2,-2.4 -1.1,-5.1 -1.8,-6 -2,1.5 -7,3.9 -9,5.2 z m -15.2,1.6 c -0.9,2.7 -0.2,8.7 4,8.5 2.8,-0.2 6.3,-2.8 6.2,-6.3 -0.5,-7.9 -7.2,-4 -10.2,-2.2 z m 2.3,-14.7 c -4.5,0 -8.1,-3 -8.1,-6.7 0,-3.7 3.6,-6.7 8.1,-6.7"
-         sodipodi:nodetypes="sccsssccscsccsssscsc" />
-      <path
          style="stroke:#000000"
-         id="path6"
-         fill="#502d16"
+         id="path4" />
+      <path
+         sodipodi:nodetypes="ccscccccccccccccsssc"
          d="m 706.5,670.4 c 2.5,-4.4 1.5,-7.6 1.4,-10.1 3,-0.7 6.8,1.2 6.4,7.5 -0.2,3.8 -5.3,3.8 -7.8,2.6 z m -7.6,20.9 c 0.9,3 1.2,7.6 1.1,10.5 9.5,8.5 -13.9,6.9 -13.6,0.5 0.8,-2.5 0.3,-7.2 1.6,-10.3 5.5,2 7.2,0.5 10.9,-0.7 z m -26.8,0.8 c -0.9,3.1 -0.7,6.2 -0.6,9.2 -9.5,8.4 13.5,6.3 13.2,1.6 -0.9,-2.5 -0.2,-8.6 -1.5,-11.6 -5.8,2.3 -5.3,2.1 -11.1,0.8 z m 3.6,-30.9 c -4.3,18.2 1.5,26.8 21.8,18.3 -1.5,-5.5 -0.5,-4.1 -0.3,-8.5 -0.6,-4.2 0.7,-10.1 -5,-10.6 -4.9,0.7 -11.5,0.5 -16.4,0.8 z"
-         sodipodi:nodetypes="ccscccccccccccccsssc" />
+         fill="#502d16"
+         id="path6"
+         style="stroke:#000000" />
       <path
-         style="stroke:#000000"
-         id="path8"
-         fill="#0044aa"
+         sodipodi:nodetypes="ccccc"
          d="m 681,686.9 c 0.8,1.7 4.1,1.4 6.1,1.2 3.1,-2.2 5.9,-3 9.7,-5.6 1.8,-1.2 1.1,-3.5 -1.1,-2.5 -7.9,1.4 -14.3,3.9 -14.7,6.9 z"
-         sodipodi:nodetypes="ccccc" />
+         fill="#0044aa"
+         id="path8"
+         style="stroke:#000000" />
       <path
-         id="$armor.fx"
-         style="stroke:#000000"
+         sodipodi:nodetypes="cssscccc"
+         d="m 687,677.9 c 0,7.2 -6.8,13.1 -15.1,13.1 -8.4,0 -15.2,-5.9 -15.2,-13.1 0,-7.2 6.8,-13.1 15.2,-13.1 8.3,0 15.1,5.9 15.1,13.1 m 7.3,-16.5 c 2.7,-31.3 -26.1,-23.1 -19.6,2.7 6.4,2.7 14.6,3.3 19.6,-2.7 z"
          fill="#d4aa00"
-         d="m 687,677.9 c 0,7.2 -6.8,13.1 -15.1,13.1 -8.4,0 -15.2,-5.9 -15.2,-13.1 0,-7.2 6.8,-13.1 15.2,-13.1 8.3,0 15.1,5.9 15.1,13.1 m 7.3,-16.5 c -0.1,-11.3 -1.3,-22.1 -10.8,-21.4 -11,0.8 -9.8,15.3 -8.8,24.1 2.4,1.1 8,1.8 10.3,1.7 3.6,-0.4 7.5,-2.2 9.3,-4.4 z"
-         sodipodi:nodetypes="csssccsccc" />
+         style="stroke:#000000"
+         id="$armor.fx" />
       <path
-         d="m 682.4,655.4 3.6,-0.1 -0.2,-4.5 c 0,0 5.4,-0.2 6.2,1.9 1.5,3.9 -5.5,4.1 -5.5,4.1 l 0.5,8.9 h -4.4 l -0.2,-8.8 c 0,0 -6.3,0.9 -6,-3.7 0.1,-1.9 5.8,-2.2 5.8,-2.2 z"
+         sodipodi:nodetypes="ccccccccc"
          id="path14"
-         sodipodi:nodetypes="cccsccccscc" />
+         d="m 682.4,655.4 3.6,-0.1 -0.2,-4.5 c 7.8,-1.5 8.7,6.4 0.7,6 l 0.5,8.9 h -4.4 l -0.2,-8.8 c -7.1,2.1 -9.2,-7.4 -0.2,-5.9 z" />
       <path
-         id="path16"
-         stroke="#000000"
-         fill="#afc6e9"
+         sodipodi:nodetypes="cccccc"
          d="m 717.5,633.8 c 3.9,-6.6 4.9,-14.7 8.1,-22.6 5.2,9.3 2.6,27.6 0,38.2 -4.6,0.6 -5.6,11.8 -5.6,11.8 l -4.1,-0.7 c 0,0 3.8,-20.6 1.6,-26.7 z"
-         sodipodi:nodetypes="cccccc" />
+         fill="#afc6e9"
+         stroke="#000000"
+         id="path16" />
       <path
-         id="path18"
+         d="m 689.6,653.6 a 0.8389,0.8389 0 0 1 -0.8,0.9 0.8389,0.8389 0 0 1 -0.8,-0.9 0.8389,0.8389 0 0 1 0.8,-0.8 0.8389,0.8389 0 0 1 0.8,0.8 m -9.1,0.2 a 0.8389,0.8389 0 0 1 -0.8,0.8 0.8389,0.8389 0 0 1 -0.9,-0.8 0.8389,0.8389 0 0 1 0.9,-0.9 0.8389,0.8389 0 0 1 0.8,0.9 z"
          fill="#ff0000"
-         d="m 689.6,653.6 a 0.8389,0.8389 0 0 1 -0.8,0.9 0.8389,0.8389 0 0 1 -0.8,-0.9 0.8389,0.8389 0 0 1 0.8,-0.8 0.8389,0.8389 0 0 1 0.8,0.8 m -9.1,0.2 a 0.8389,0.8389 0 0 1 -0.8,0.8 0.8389,0.8389 0 0 1 -0.9,-0.8 0.8389,0.8389 0 0 1 0.9,-0.9 0.8389,0.8389 0 0 1 0.8,0.9 z" />
+         id="path18" />
       <path
-         id="rect20"
-         transform="rotate(7.823)"
+         d="m 796.5,556.1 h 10.1 v 2.7 h -10.1 z"
          style="fill:#ffcc00;stroke:#000000"
-         d="m 796.5,556.1 h 10.1 v 2.7 h -10.1 z" />
+         transform="rotate(7.823)"
+         id="rect20" />
     </g>
     <g
        id="$bumper">
       <ellipse
-         ry="18.83"
-         rx="20.97"
-         cy="341.7"
-         cx="1018"
+         style="fill:#540000"
          id="path1066"
-         style="fill:#540000" />
-      <ellipse
-         ry="21.75"
-         rx="25.8"
-         cy="334.6"
          cx="1018"
+         cy="341.7"
+         rx="20.97"
+         ry="18.83" />
+      <ellipse
+         style="fill:#ffcc00;stroke:#000000"
          id="path1074"
-         style="fill:#ffcc00;stroke:#000000" />
+         cx="1018"
+         cy="334.6"
+         rx="25.8"
+         ry="21.75" />
       <path
-         id="path2237"
-         stroke-width="2"
+         d="m 1010,314.2 -1,8.8 -13.2,1 7.2,6.9 -9.6,9 13.6,-0.5 -1,14.1 11,-9.2 9,10.3 1,-13.4 14,1.5 -8,-9 9,-6.5 -13,-2.4 -1,-9.4 -7,4.3 -4,-0.8 z"
          fill="#800000"
-         d="m 1010,314.2 -1,8.8 -13.2,1 7.2,6.9 -9.6,9 13.6,-0.5 -1,14.1 11,-9.2 9,10.3 1,-13.4 14,1.5 -8,-9 9,-6.5 -13,-2.4 -1,-9.4 -7,4.3 -4,-0.8 z" />
+         stroke-width="2"
+         id="path2237" />
       <ellipse
-         ry="11.85"
-         rx="14.15"
-         cy="329.5"
-         cx="1018"
+         style="fill:#800000;stroke:#000000"
          id="path1080"
-         style="fill:#800000;stroke:#000000" />
-      <ellipse
-         ry="9.7"
-         rx="12"
-         cy="329.1"
          cx="1018"
+         cy="329.5"
+         rx="14.15"
+         ry="11.85" />
+      <ellipse
+         style="fill:#660000"
          id="path1078"
-         style="fill:#660000" />
+         cx="1018"
+         cy="329.1"
+         rx="12"
+         ry="9.7" />
     </g>
     <g
        id="$deflector">
       <path
-         sodipodi:nodetypes="ccccc"
-         id="path1135"
+         style="fill:#a68400;stroke:#000000"
          d="m 1125,455.8 -64,-61.5 v -4.1 l 63,0.3 z"
-         style="fill:#a68400;stroke:#000000" />
-      <path
-         id="path1092-2"
-         style="fill:#ffcc00;stroke:#000000;stroke-linejoin:round"
-         inkscape:transform-center-x="3.774"
-         inkscape:transform-center-y="3.382"
-         d="m 1125,452.8 -64,-62.7 h 64 z"
-         sodipodi:nodetypes="cccc" />
+         id="path1135"
+         sodipodi:nodetypes="ccccc" />
       <path
          sodipodi:nodetypes="cccc"
-         d="m 1123,448.6 -58,-57 h 58 z"
-         inkscape:transform-center-y="3.07"
-         inkscape:transform-center-x="3.253"
+         d="m 1125,452.8 -64,-62.7 h 64 z"
+         inkscape:transform-center-y="3.382"
+         inkscape:transform-center-x="3.774"
+         style="fill:#ffcc00;stroke:#000000;stroke-linejoin:round"
+         id="path1092-2" />
+      <path
+         id="path1092"
          style="fill:#800000"
-         id="path1092" />
+         inkscape:transform-center-x="3.253"
+         inkscape:transform-center-y="3.07"
+         d="m 1123,448.6 -58,-57 h 58 z"
+         sodipodi:nodetypes="cccc" />
     </g>
     <g
        id="$axe">
       <path
-         id="path1663-1"
-         d="m 695.5,555.3 c 0.2,-0.3 0.6,-0.2 0.8,0 0.3,0.2 0.3,0.4 0.1,0.7 l -8.4,8.4 c 0.4,0.2 0.2,0.6 -0.1,0.8 -1.1,1.1 -3.3,3.7 -3.5,3.6 -0.4,0 -1.6,-1.1 -1.6,-1.4 -0.2,-0.3 2.6,-2.7 3.7,-3.8 0.2,-0.2 0.6,0.2 0.6,0.2 2.8,-2.8 5.6,-5.6 8.4,-8.5 z"
+         sodipodi:nodetypes="cccccc"
          style="fill:#ffffff;stroke:#000000;stroke-width:0.5"
-         sodipodi:nodetypes="cssccccccc" />
-      <path
-         id="path1669"
-         d="m 693.2,560.2 2.9,-3 c 1,0.2 1.7,-0.1 2.5,-0.6 0.5,4.1 -2.4,6.1 -5.9,5.8 0.7,-0.7 0.7,-1.5 0.5,-2.2 z"
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.5"
-         sodipodi:nodetypes="ccccc" />
+         d="m 696.3,555.3 c 0.6,0.5 -6,6.9 -8.4,9.2 0.6,0.6 0.5,0.3 -3.5,4.3 -0.4,0 -1.6,-1.1 -1.6,-1.4 3.7,-4 3.6,-4.3 4.3,-3.6 2.3,-2.3 8.7,-9.1 9.2,-8.5 z"
+         id="path1663-1" />
       <path
          sodipodi:nodetypes="ccccc"
          style="fill:#ffffff;stroke:#000000;stroke-width:0.5"
+         d="m 693.2,560.2 2.9,-3 c 1,0.2 1.7,-0.1 2.5,-0.6 0.5,4.1 -2.4,6.1 -5.9,5.8 0.7,-0.7 0.7,-1.5 0.5,-2.2 z"
+         id="path1669" />
+      <path
+         id="path1669-5"
          d="m 694,555.6 -3,3.2 c -1.1,-0.3 -1.9,0.1 -2.7,0.6 -0.6,-4.5 1.5,-6.6 6.3,-6.1 -0.8,0.7 -0.8,1.6 -0.6,2.3 z"
-         id="path1669-5" />
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.5"
+         sodipodi:nodetypes="ccccc" />
     </g>
   </g>
   <g
-     inkscape:groupmode="layer"
-     id="$layer2"
-     inkscape:label="colliders">
+     style="display:inline"
+     inkscape:label="colliders"
+     id="$l2"
+     inkscape:groupmode="layer">
     <path
-       id="$kicker.collider.3"
-       d="M 616.5,11.74 686,125.6 670.8,129.6 608.4,26.64 Z" />
+       d="M 616.5,11.74 686,125.6 670.8,129.6 608.4,26.64 Z"
+       id="$kicker.collider.3" />
     <path
-       id="$kicker.collider.1"
-       d="m 616.5,11.64 -8.3,-3.601 -7.6,6.001 v 77.6 h 14.2 z" />
+       d="m 616.5,11.64 -8.3,-3.601 -7.6,6.001 v 77.6 h 14.2 z"
+       id="$kicker.collider.1" />
     <path
-       id="$kicker.collider.2"
-       d="m 600.5,91.64 73.7,44.96 8.4,-2 3.1,-9 -73.3,-41.96 z" />
+       d="m 600.5,91.64 73.7,44.96 8.4,-2 3.1,-9 -73.3,-41.96 z"
+       id="$kicker.collider.2" />
     <path
-       d="m 730.3,10.77 h 12.5 V 180.5 l -12.8,-5 z"
+       sodipodi:nodetypes="ccccc"
        id="$bend.2.collider"
-       sodipodi:nodetypes="ccccc" />
+       d="m 730.3,10.77 h 12.5 V 180.5 l -12.8,-5 z" />
     <path
-       id="$bend.1.collider"
+       sodipodi:nodetypes="ccccc"
        d="m 733.8,178.9 147.8,86.7 6.7,-11 -146.2,-84.7 z"
-       sodipodi:nodetypes="ccccc" />
+       id="$bend.1.collider" />
     <path
-       id="$flipper.collider"
-       d="m 926.7,23.54 5,-3.9 6,-0.7 52.2,41.4 0.7,7.5 -4.6,3.8 h -6.1 l -52.9,-30.9 -3.9,-7.9 z" />
+       d="m 926.7,23.54 5,-3.9 6,-0.7 52.2,41.4 0.7,7.5 -4.6,3.8 h -6.1 l -52.9,-30.9 -3.9,-7.9 z"
+       id="$flipper.collider" />
     <path
-       d="m 682.6,358.3 -3,3 -3,2.2 -3,1.3 -4,0.3 -4,-0.6 -3,-1.6 -3,-2.5 -3,-3.1 -1,-3.6 v -3.8 -3.8 l 2,-3.4 2,-3 4,-2.2 3,-1.3 4,-0.3 4,0.6 3,1.6 3,2.5 2,3.1 2,3.6 v 3.8 l -1,3.8 z"
-       id="$ball.collider" />
+       id="$ball.collider"
+       d="m 682.6,358.3 -3,3 -3,2.2 -3,1.3 -4,0.3 -4,-0.6 -3,-1.6 -3,-2.5 -3,-3.1 -1,-3.6 v -3.8 -3.8 l 2,-3.4 2,-3 4,-2.2 3,-1.3 4,-0.3 4,0.6 3,1.6 3,2.5 2,3.1 2,3.6 v 3.8 l -1,3.8 z" />
     <path
-       id="$fence.collider"
-       d="m 1204,202.2 h 13 v 665.3 h -13 z" />
+       d="m 1204,202.2 h 13 v 665.3 h -13 z"
+       id="$fence.collider" />
     <path
-       d="m 715.5,341.6 h 53 v 18.2 h -53 z"
-       id="$plunger.collider" />
+       id="$plunger.collider"
+       d="m 715.5,341.6 h 53 v 18.2 h -53 z" />
     <path
-       id="$tree.collider"
-       d="m 808.9,274.3 h 54.5 v 98.3 h -54.5 z" />
+       d="m 808.9,274.3 h 54.5 v 98.3 h -54.5 z"
+       id="$tree.collider" />
     <path
-       id="$iron.collider"
-       d="M 921.8,324.1 H 963 V 365 h -41.2 z" />
+       d="M 921.8,324.1 H 963 V 365 h -41.2 z"
+       id="$iron.collider" />
     <path
-       d="m 997.6,350.9 -4,-14.2 4,-14.3 12.4,-9 h 15 l 13,8.8 4,14.3 -4,14.3 -12,8.9 h -16 z"
-       id="$bumper.collider" />
+       id="$bumper.collider"
+       d="m 997.6,350.9 -4,-14.2 4,-14.3 12.4,-9 h 15 l 13,8.8 4,14.3 -4,14.3 -12,8.9 h -16 z" />
     <path
-       d="m 1266,0 h 800 v 100 h -800 z"
-       id="$top-wall.collider" />
+       id="$top-wall.collider"
+       d="m 1266,0 h 800 v 100 h -800 z" />
     <path
-       id="$left-wall.collider"
-       d="m 1266,100 h 100 v 800 h -100 z" />
+       d="m 1266,100 h 100 v 800 h -100 z"
+       id="$left-wall.collider" />
     <path
-       d="m 1966,100 h 100 v 800 h -100 z"
-       id="$right-wall.collider" />
+       id="$right-wall.collider"
+       d="m 1966,100 h 100 v 800 h -100 z" />
     <path
-       id="$gold.collider"
-       d="m 974.2,477.3 h 38.8 v 52.5 h -38.8 z" />
+       d="m 974.2,477.3 h 38.8 v 52.5 h -38.8 z"
+       id="$gold.collider" />
     <path
-       d="M 665.1,636.3 H 722 v 71.5 h -56.9 z"
-       id="$enemy.collider" />
+       id="$enemy.collider"
+       d="M 665.1,636.3 H 722 v 71.5 h -56.9 z" />
     <path
-       d="m 649.6,428.6 h 117 V 460 h -117 z"
+       id="$smw.collider"
        inkscape:label="small-mine-wall.colider"
-       id="$small-mine-wall.collider" />
+       d="m 649.6,428.6 h 117 V 460 h -117 z" />
     <path
-       d="m 1065,392.7 61,59.1 v -59.6 z"
+       inkscape:label="deflector.collider"
        id="$deflector.collider"
-       inkscape:label="deflector.collider" />
+       d="m 1065,392.7 61,59.1 v -59.6 z" />
     <path
-       d="m 1027,10 v 152.9 h 218 v -49 z"
+       inkscape:label="gutter.colider"
        id="$gutter.collider"
-       inkscape:label="gutter.colider" />
+       d="m 1027,10 v 152.9 h 218 v -49 z" />
   </g>
 </svg>

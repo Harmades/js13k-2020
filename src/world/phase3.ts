@@ -11,16 +11,13 @@ import { Entity } from "./entity";
 import { Gui } from "./gui";
 
 export class Phase3Impl {
-    entities: Entity[];
     year: string;
     text: string;
     collisionEngine: CollisionEngine;
     player: Ball;
-    enemies: any[];
-    boss: Boss;
+    entities: any[];
 
     constructor() {
-        this.entities = [];
         this.year = '-413';
         this.text = "(413 BC) Victory is near, commander. Now is time for war ⚔️. Defeat all incoming Delian soldiers!\n\nHit as many Delian soldiers as possible, and defeat their commander: if he dies, they will most likely surrender to our superiority.\n\nCharge!";
     }
@@ -30,24 +27,24 @@ export class Phase3Impl {
         this.collisionEngine = collisionEngine;
         this.player = Base.player;
         this.player.reset();
-        this.enemies = [];
+        this.entities = [];
         for (let i = 0; i < 40; i++) {
             const quotient = Math.floor(i / 5);
             const remainder = i % 5;
-			this.enemies.push(new Enemy(new Vector(50 + 100 * remainder, -100 -300 * quotient)));
+			this.entities.push(new Enemy(new Vector(50 + 100 * remainder, -100 -300 * quotient)));
         }
-        this.boss = new Boss(new Vector(225, -2500));
+        this.entities.push(new Boss(new Vector(225, -2500)));
     }
 
     update(delta: number) {
         Base.update(delta);
         Fx.update(delta);
-        for (const enemy of this.enemies) {
-            enemy.update(delta);
-            if (enemy.body.pos.y > -enemy.spriteBounds.height) this.collisionEngine.update(this.player.body, enemy.body);
+        for (const enemy of this.entities) {
+            enemy.up(delta);
+            if (enemy.body.pos.y > -enemy.spriteBounds.height) {
+                this.collisionEngine.update(this.player.body, enemy.body);
+            }
         }
-        this.boss.update(delta);
-        this.collisionEngine.update(this.player.body, this.boss.body);
     }
 
     renderStatic(context: CanvasRenderingContext2D) {
@@ -60,8 +57,7 @@ export class Phase3Impl {
     
     renderDynamic(context: CanvasRenderingContext2D) {
         Base.renderDynamic(context);
-        for (const enemy of this.enemies) if(enemy.body.pos.y > -enemy.spriteBounds.height) enemy.render(context);
-        this.boss.render(context);
+        for (const enemy of this.entities) if (enemy.body.pos.y > -enemy.spriteBounds.height) enemy.render(context);
         Fx.render(context);
     }
 
@@ -69,7 +65,7 @@ export class Phase3Impl {
 	  Songs.play_pthree();
 	}
 
-    isComplete() { return this.boss.life == 0; }
+    isComplete() { return (this.entities[this.entities.length - 1] as Boss).life == 0; }
     
 	nextPhase() {
 	  Songs.stop_song();

@@ -44,7 +44,7 @@ export class Bumper extends Entity {
         if (this.onCollision != null) this.onCollision();
     }
 
-    update(delta: number) {
+    up(delta: number) {
         if (this.bumperGlow != null) {
             if (this.bumperGlow.life > 1.45) {
                 this.scale.x += 1 * delta;

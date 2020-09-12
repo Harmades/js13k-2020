@@ -37,7 +37,7 @@ export class Phase1Impl {
         this.collisionEngine = collisionEngine;
         this.player = Base.player;
         this.entities = [
-            new StaticElement('small-mine-wall', new Vector(0, 220)),
+            new StaticElement('smw', new Vector(0, 220)),
             new Tree(new Vector(175, 0)),
             new Tree(new Vector(150, 150)),
             new Tree(new Vector(373, 266)),
@@ -56,7 +56,7 @@ export class Phase1Impl {
     update(delta: number) {
         Base.update(delta);
         for (let entity of this.entities) {
-            entity.update(delta);
+            entity.up(delta);
             this.collisionEngine.update(this.player.body, entity.body);
         }
         if (this.entities[9].jackpot && this.entities[10].jackpot && this.entities[11].jackpot) {

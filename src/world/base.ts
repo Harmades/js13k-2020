@@ -68,10 +68,10 @@ class BaseImpl {
     }
 
     update(delta: number) {
-        this.leftFlipper.update(delta);
-        this.rightFlipper.update(delta);
-        this.player.update(delta);
-        this.plunger.update(delta);
+        this.leftFlipper.up(delta);
+        this.rightFlipper.up(delta);
+        this.player.up(delta);
+        this.plunger.up(delta);
         this.leftKicker.update(delta);
         this.rightKicker.update(delta);
         this.collisionEngine.update(this.player.body, this.leftFlipper.body);

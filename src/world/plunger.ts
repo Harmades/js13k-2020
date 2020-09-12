@@ -15,7 +15,7 @@ export class Plunger extends Entity {
 		this.compression = 0;
     }
 
-    update(delta: number) {
+    up(delta: number) {
         const posY = this.body.pos.y;
 		if (Input.space) {
 			if (this.compression == 0) {

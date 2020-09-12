@@ -24,7 +24,7 @@ class AssetsImpl {
     }
 
     load(svg: SVGSVGElement, onload: () => void) {
-        const layer2 = svg.getElementById("$layer2") as SVGSVGElement;
+        const layer2 = svg.getElementById("$l2") as SVGSVGElement;
         for (const element of layer2.querySelectorAll("*")) {
             const node = element as SVGSVGElement;
             const d = node.getAttribute("d");
@@ -32,7 +32,7 @@ class AssetsImpl {
             const bBox = atlas != undefined ? atlas.getBBox() : node.getBBox();
             this.colliders[node.id.substring(1)] = Shape.fromSvgData(d, bBox);
         }
-        for (const element of svg.getElementById("$layer1").querySelectorAll("*")) {
+        for (const element of svg.getElementById("$l1").querySelectorAll("*")) {
             const node = element as SVGSVGElement;
             if (node.getBBox) this.sprites[node.id.substring(1)] = node.getBBox();
             if (node.id.endsWith(".fx")) this.fxs[node.id.substring(1)] = new Path2D(node.getAttribute("d"));

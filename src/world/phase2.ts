@@ -9,6 +9,7 @@ import { Gui } from "./gui";
 import { Ball } from "./ball";
 import { CollisionEngine } from "../physic/collisionEngine";
 import { Settings } from "../settings";
+import { Entity } from "./entity";
 
 export class Phase2Impl {
     weapons: string[];
@@ -25,6 +26,7 @@ export class Phase2Impl {
     crossSpriteBounds: SVGRect;
     checkSpriteBounds: SVGRect;
     enemyWeapon: string;
+    entities: Entity[];
 
     constructor() {
         this.weapons = ['sword', 'axe', 'lance'];
@@ -41,23 +43,24 @@ export class Phase2Impl {
         this.collisionEngine = collisionEngine;
         this.player = Base.player;
         this.player.reset();
-        this.lanceBumper = new Bumper(new Vector(20, 250), 'lance');
-        this.lanceBumper.onCollision = () => {
+        const lanceBumper = new Bumper(new Vector(20, 250), 'lance');
+        lanceBumper.onCollision = () => {
             this.playerWeapon = 'lance';
             this.resolveFight();
         }
 
-        this.axeBumper = new Bumper(new Vector(100, 50), 'axe');
-        this.axeBumper.onCollision = () => {
+        const axeBumper = new Bumper(new Vector(100, 50), 'axe');
+        axeBumper.onCollision = () => {
             this.playerWeapon = 'axe';
             this.resolveFight();
         }
 
-        this.swordBumper = new Bumper(new Vector(413, 193), 'sword');
-        this.swordBumper.onCollision = () => {
+        const swordBumper = new Bumper(new Vector(413, 193), 'sword');
+        swordBumper.onCollision = () => {
             this.playerWeapon = 'sword';
             this.resolveFight();
         }
+        this.entities = [ lanceBumper, axeBumper, swordBumper ];
 
         this.crossSpriteBounds = Assets.sprites['cross'];
         this.checkSpriteBounds = Assets.sprites['check'];
@@ -86,12 +89,10 @@ export class Phase2Impl {
 
     update(delta: number) {
         Base.update(delta);
-        this.axeBumper.update(delta);
-        this.swordBumper.update(delta);
-        this.lanceBumper.update(delta);
-        this.collisionEngine.update(this.player.body, this.axeBumper.body);
-        this.collisionEngine.update(this.player.body, this.swordBumper.body);
-        this.collisionEngine.update(this.player.body, this.lanceBumper.body);
+        for (let entity of this.entities) {
+            entity.up(delta);
+            this.collisionEngine.update(this.player.body, entity.body);
+        }
         Fx.update(delta);
     }
 
@@ -138,9 +139,7 @@ export class Phase2Impl {
             );
         }
 
-        this.axeBumper.render(context);
-        this.swordBumper.render(context);
-        this.lanceBumper.render(context);
+        for (let entity of this.entities) entity.render(context);
     }
 
     renderDynamic(context: CanvasRenderingContext2D) {

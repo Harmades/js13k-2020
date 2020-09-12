@@ -21,8 +21,8 @@ export class Boss extends Enemy {
         Effects.impact_boss();
     }
 
-    update(delta: number) {
+    up(delta: number) {
         if (this.body.pos.y > Settings.height) this.body.pos.y = -this.spriteBounds.height;
-        super.update(delta);
+        super.up(delta);
     }
 }

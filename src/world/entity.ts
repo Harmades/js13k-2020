@@ -32,12 +32,13 @@ export class Entity {
         this.offset.x -= this.spriteBounds.width;
     }
 
-    update(delta: number) { }
+    up(delta: number) { }
 
     render(context: CanvasRenderingContext2D) {
-        if (Settings.debug && this.body.shape) {
-            Shape.debugDraw(this.body, context);
-        } else if (this.spriteBounds) {
+        // if (Settings.debug && this.body.shape) {
+        //     Shape.debugDraw(this.body, context);
+        // } else 
+        if (this.spriteBounds) {
             context.save();
             context.scale(this.scale.x, this.scale.y);
             context.translate(this.scale.x * this.center.x,  this.scale.y * this.center.y);

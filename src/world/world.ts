@@ -4,11 +4,9 @@ import { Phase1, Phase1Impl } from "./phase1";
 import { Phase2, Phase2Impl } from "./phase2";
 import { Phase3, Phase3Impl } from "./phase3";
 import { Phase4, Phase4Impl } from "./phase4";
-import { Assets } from "../assets";
 import { Base } from "./base";
 import { Input } from "../input";
 import { Songs } from "../sounds";
-import { CanvasContext } from "../canvasContext";
 import { Gui } from "./gui";
 
 
@@ -59,7 +57,7 @@ export class World {
         }
     }
 
-    render(context: CanvasContext) {
+    render(context: any) {
         if (!this.staticDrawn) {
             context.staticContext.clearRect(0, 0, Settings.width, Settings.height);
             this.currentPhase.renderStatic(context.staticContext);

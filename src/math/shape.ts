@@ -44,20 +44,20 @@ export class Shape {
         return new Shape(vertices);
     }
 
-    static debugDraw(body: Body, context: CanvasRenderingContext2D) {
-        if (body.shape == undefined) return;
-        context.beginPath();
-        context.save();
-        context.fillStyle = "#FF0000";
-        context.translate(body.pos.x, body.pos.y);
-        for (let i = 0; i < body.shape.vertices.length; i++) {
-            const vertex = body.shape.vertices[i];
-            context.lineTo(vertex.x, vertex.y);
-        }
-        context.fill();
-        context.restore();
-        context.closePath();
-    }
+    // static debugDraw(body: Body, context: CanvasRenderingContext2D) {
+    //     if (body.shape == undefined) return;
+    //     context.beginPath();
+    //     context.save();
+    //     context.fillStyle = "#FF0000";
+    //     context.translate(body.pos.x, body.pos.y);
+    //     for (let i = 0; i < body.shape.vertices.length; i++) {
+    //         const vertex = body.shape.vertices[i];
+    //         context.lineTo(vertex.x, vertex.y);
+    //     }
+    //     context.fill();
+    //     context.restore();
+    //     context.closePath();
+    // }
 
     static fromSvgData(data: string, bBox: SVGRect) {
         let dataArray = data.split('');

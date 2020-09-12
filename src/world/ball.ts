@@ -14,5 +14,5 @@ export class Ball extends Entity {
 
     reset() { this.body.pos = this.initialPosition; }
 
-    update(delta: number) { this.body.update(delta); }
+    up(delta: number) { this.body.update(delta); }
 }

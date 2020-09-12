@@ -80,27 +80,26 @@ export class Kicker {
     }
 
     render(context: CanvasRenderingContext2D) {
-        if (Settings.debug) {
-            Shape.debugDraw(this.body, context);
-            Shape.debugDraw(this.body1, context);
-            Shape.debugDraw(this.body2, context);
-        } else {
+        // if (Settings.debug) {
+        //     Shape.debugDraw(this.body, context);
+        //     Shape.debugDraw(this.body1, context);
+        //     Shape.debugDraw(this.body2, context);
+        // } else 
 
-            context.save();
-            context.scale(this.side, 1);
-            const offset = this.side == -1 ? -this.spriteBounds.width -5 : -5;
-            context.drawImage(
-                Assets.atlas,
-                this.spriteBounds.x,
-                this.spriteBounds.y,
-                this.spriteBounds.width,
-                this.spriteBounds.height,
-                this.side * this.body.pos.x + offset,
-                this.body.pos.y,
-                this.spriteBounds.width,
-                this.spriteBounds.height
-            );
-            context.restore();
-        }
+        context.save();
+        context.scale(this.side, 1);
+        const offset = this.side == -1 ? -this.spriteBounds.width -5 : -5;
+        context.drawImage(
+            Assets.atlas,
+            this.spriteBounds.x,
+            this.spriteBounds.y,
+            this.spriteBounds.width,
+            this.spriteBounds.height,
+            this.side * this.body.pos.x + offset,
+            this.body.pos.y,
+            this.spriteBounds.width,
+            this.spriteBounds.height
+        );
+        context.restore();
     }
 }

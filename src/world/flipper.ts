@@ -40,7 +40,7 @@ export class Flipper extends Entity {
         this.flipping = true;
     }
 
-    update(delta: number) {
+    up(delta: number) {
 		if (this.flipping) {
 			if (this.angle == 0) {
 			  Effects.paddle();

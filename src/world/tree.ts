@@ -16,7 +16,7 @@ export class Tree extends DestroyableEntity {
         this.life = 2;
     }
 
-    update(delta: number) {
+    up(delta: number) {
         if (this.life == 2 && this.scale.x > 0) {
             this.scale = this.scale.s(new Vector(5 * delta, 5 * delta));
         }
