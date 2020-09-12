@@ -173,6 +173,7 @@ export class Shape {
                         case 'Z':
                             break;
                     }
+                    vertices.push(vertex);
                     lastPosition = vertex;
                     break;
             }
