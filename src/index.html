@@ -13,12 +13,6 @@
          z-index: -1;
       }
 
-      .canvas {
-         border: 1px solid black;
-         position: absolute;
-         top: 0px;
-      }
-
       #d {
          margin-left: 4px;
          position: absolute;
@@ -45,20 +39,26 @@
          right: 100px;
       }
 
-      .canvas-container {
+      canvas {
+         position: absolute;
+         top: 0px;
+      }
+
+      .cc {
          position: relative;
          width: 600px;
          height: 800px;
+         border: 1px solid black;
       }
    </style>
 </head>
 
 <body>
     <div>
-        <div class="canvas-container">
-            <canvas class="canvas" id="static-canvas" width="600" height="800"></canvas>
-            <canvas class="canvas" id="hybrid-canvas" width="600" height="800"></canvas>
-            <canvas class="canvas" id="dynamic-canvas" width="600" height="800"></canvas>
+        <div class="cc">
+            <canvas id="static-canvas" width="600" height="800"></canvas>
+            <canvas id="hybrid-canvas" width="600" height="800"></canvas>
+            <canvas id="dynamic-canvas" width="600" height="800"></canvas>
             <div id="d"></div>
             <div id="o"></div>
             <div id="s"></div>
