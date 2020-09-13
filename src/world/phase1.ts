@@ -28,7 +28,7 @@ export class Phase1Impl {
         this.goldScore = 0;
         this.ironScore = 0;
         this.year = '-431';
-        this.text = `(431 BC) Welcome, commander. The Spartan assembly voted war ⚔️ against our forever enemy, Athens and its Delian League. Commander, you must to lead Sparta and the Peloponnesian League to victory!\nWe need to be ready as soon as possible, but we're missing resources, strategy and soldiers.\n\nWe first need to collect some resources for our army:\n\n🌲 ${Settings.treeScoreGoal} units of wood\n⛏️ ${Settings.rockScoreGoal} units of iron\n💰 ${Settings.goldScoreGoal} gold\n`;
+        this.text = `(431 BC) Welcome, commander. The Spartan assembly voted war ⚔️ against our forever enemy, Athens and its Delian League. Commander, you must lead Sparta and the Peloponnesian League to victory!\nWe need to be ready as soon as possible, but we're missing resources, strategy and soldiers.\n\nWe first need to collect some resources for our army:\n\n🌲 ${Settings.treeScoreGoal} wood\n⛏️ ${Settings.rockScoreGoal} iron\n💰 ${Settings.goldScoreGoal} gold\n`;
         this.entities = [];
     }
 
